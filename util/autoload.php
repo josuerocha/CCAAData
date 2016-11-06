@@ -4,7 +4,7 @@ function LoadClass($classe)
     $classe = ltrim($classe, "\\");
 	$arquivo = "";
 	
-	$caminho = "/opt/lampp/htdocs/ccaa";
+	$caminho = "..";
 	
 	if(file_exists("{$caminho}/class/DAO/{$classe}.php")){
 		$arquivo = "/class/DAO/{$classe}.php";
