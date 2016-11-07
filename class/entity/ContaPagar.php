@@ -61,12 +61,12 @@ function getSituacao(){
 
 function toArray(){
     return array(
-        'code'=>$this->getCode(),
-        'tipo'=>$this->getTipo(),
-        'valor'=>$this->getValor(),
-        'dtVencimento'=>$this->getDtVencimento(),
-        'dtPagamento'=>$this->getDtPagamento(),
-        'situacao'=>$this->getSituacao()
+        'code' => $this->getCode(),
+        'tipo' => $this->getTipo(),
+        'valor' => $this->getValor(),
+        'dtVencimento' => $this->getDtVencimento(),
+        'dtPagamento' => $this->getDtPagamento(),
+        'situacao' => $this->getSituacao()
     );
 }
 

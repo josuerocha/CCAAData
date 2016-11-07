@@ -68,8 +68,8 @@
 			<div id="coluna_esquerda">&nbsp;
 				
 <form action="../helper/ContaPagarHelper.php?action=save" method="POST">
-				<input type="hidden" id="cd" name="code" value="<?php echo $_POST["code"] ?>"/>
-				<h3>Tipo: &nbsp <select name="tipo_conta">
+				<input type="hidden" id="codeHidden" name="codeHidden" value="0"/>
+				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
 								<?php
 								$tipoContaControl = new TipoContaController();
 								$tipos = $tipoContaControl->List();
@@ -80,27 +80,22 @@
 								</select>
 				</h3>
 		
-				<h3>Valor: &nbsp <input type="number" name="valor" size="10"><h3>
+				<h3>Valor: &nbsp <input type="number" id="valor" name="valor" size="10"><h3>
 					
-				<h3>Data de Vencimento: &nbsp <input type="date" name="Dt_venc"></h3>
-				<h3>Data de Pagamento: &nbsp <input type="date" name="Dt_pag"></h3>
-				<h3>Situação: &nbsp <input type="checkbox" name="Situacao" value="quitado"> Quitado <input type="checkbox" name="Situacao" value="pendente"> Pendente</h3>
+				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
+				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>
+				<h3>Situação: &nbsp <input type="checkbox" id="Situacao" name="Situacao" value="quitado"> Quitado <input type="checkbox" name="Situacao" value="pendente"> Pendente</h3>
 
 				<input type="submit" name="Salvar" value="Salvar">
 				<input type="button" name="Cancelar" value="Cancelar">
-</form>
+			</form>
 			</div>
 
 			<br/>
 			<br/>
 
 			<div id="coluna_esquerda">&nbsp;
-				
-				
-				<form onsubmit="return tagSearch(this)">
-    			<input type="date" name="Dt_venc" onfocus="if (this.value == '{text:Search Label}') {this.value=''}" onblur="if (this.value == '') {this.value='{text:Search Label}'}" />
-    			<input type="submit" value="Search" />
-				</form>
+
 
 				
 				<br/>
@@ -192,7 +187,6 @@
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
 	<script src="assets/js/contas_pagar.js"></script>
 </body>
 </html>

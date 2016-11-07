@@ -27,7 +27,9 @@ switch($action){
 			$control = new ContaPagarController();	
             $contaPagar = new ContaPagar();
             $contaPagar = $control->ListById($_GET["code"]);
-			echo  json_encode($contaPagar->toArray());
+			//var_dump ($contaPagar->toArray());
+			$array = $contaPagar->toArray();
+			echo  json_encode($array);
 
 		break;
 
