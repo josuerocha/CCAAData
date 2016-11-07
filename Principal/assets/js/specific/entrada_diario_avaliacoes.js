@@ -1,3 +1,9 @@
+$(document).ready(function() {
+    $('#example').DataTable();
+    alert('HUU');
+} );
+
+
 $('#tabelaNotas').submit(function(event)
 {	
     event.preventDefault(); // if you want to disable the action

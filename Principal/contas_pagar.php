@@ -117,7 +117,7 @@
 					echo "
 					<tr>
 					<th id='gridtipo'>{$contaPagar->getTipo()}</th>
-					<th id='gridVl'>{$contaPagar->getTipo()}</th>
+					<th id='gridVl'>{$contaPagar->getValor()}</th>
 					<th id='gridDt_venc'>{$contaPagar->getDtVencimento()}</th>
 					<th id='gridDt_Pg'>{$contaPagar->getDtPagamento()}</th>
 					<th id='gridSituacao'>{$contaPagar->getSituacao()}</th>
@@ -187,6 +187,7 @@
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/contas_pagar.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/specific/contas_pagar.js"></script>
 </body>
 </html>

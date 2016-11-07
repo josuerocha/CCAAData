@@ -200,6 +200,6 @@
 	<script type="text/javascript" src="assets/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.12.3.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/entrada_diario_avaliacoes.js"></script>
+	<script src="assets/js/specific/entrada_diario_avaliacoes.js"></script>
 </body>
 </html>

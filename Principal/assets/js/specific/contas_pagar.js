@@ -1,3 +1,8 @@
+$(document).ready(function() {
+    $('#listaContas').DataTable();
+    alert('HUU');
+} );
+
 
 $('#editarform').submit(function(event){
     

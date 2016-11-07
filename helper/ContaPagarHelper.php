@@ -8,7 +8,9 @@ switch($action){
 	        case 'save':
 			$control = new ContaPagarController();
 			$contaPagar = new ContaPagar();
-			
+			if(isset($_POST['codeHidden'])){
+				$contaPagar->setCode($_POST['codeHidden']);
+			}
 			$contaPagar->setTipo($_POST["tipo_conta"]);
             $contaPagar->setValor($_POST["valor"]);
             $contaPagar->setDtVencimento($_POST["Dt_venc"]);
