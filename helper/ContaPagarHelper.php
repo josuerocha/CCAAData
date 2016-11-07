@@ -23,19 +23,27 @@ switch($action){
 			echo "<script>location.href='../Principal/ContasAPagar.php';</script>"; 			
 			
 		break;	
+		case 'edit':
+			$control = new ContaPagarController();	
+            $contaPagar = new ContaPagar();
+            $contaPagar = $control->ListById($_GET["code"]);
+			
+			echo  json_encode($contaPagar->toArray());
+
+		break;
 
 		case 'delete':
 			$control = new ContaPagarController();	
             $contaPagar = new ContaPagar();
             $contaPagar->setCode($_GET["code"]);
 			if($control->Delete($contaPagar)){
-				echo "<script>alert('Registro excluído com sucesso!');location.href='../Principal/ContasAReceber.php';</script>"; 
+				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{
-				echo "<script>alert('Erro ao excluir ');location.href='../Principal/ContasAReceber.php';</script>"; 
+				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}						
 		break;			
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../Principal/indice.html';</script>";
+			echo "<script>alert('Acesso negado!');</script>";
 		break;
 	}	
 ?>

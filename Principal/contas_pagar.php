@@ -130,13 +130,13 @@ Author: Nick
 					<th id='gridDt_Pg'>{$contaPagar->getDtPagamento()}</th>
 					<th id='gridSituacao'>{$contaPagar->getSituacao()}</th>
 					<th>
-					<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
+					<form action=\"../helper/ContaPagarHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
 					<input type=\"submit\" value=\"Excluir\">
 						</form>
 					</th>
 
 					<th>
-					<form action=\"ContasAReceber.php?code={$contaPagar->getCode()}\" method=\"post\">
+					<form action=\"ContaPagarHelper.php?code={$contaPagar->getCode()}&action=edit\" method=\"post\">
 					<input type=\"submit\" value=\"Editar\">
 						</form>
 					</th>

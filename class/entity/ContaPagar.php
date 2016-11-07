@@ -59,5 +59,17 @@ function getSituacao(){
     return $this->situacao;
 }
 
+function toArray(){
+    return array(
+        'code'=>$this->getCode(),
+        'tipo'=>$this->getFKTipo(),
+        'valor'=>$this->getValor(),
+        'dtVencimento'=>$this->getDtVencimento(),
+        'dtPagamento'=>$this->getDtPagamento(),
+        'situacao'=>$this->getSituacao()
+    );
+}
+
+
 }
 ?>
