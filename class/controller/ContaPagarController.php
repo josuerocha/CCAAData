@@ -17,5 +17,10 @@ class ContaPagarController implements IControllerGeneral {
         $contaPagarDAO = new ContaPagarDAO();
         return $contaPagarDAO->List();
     }
+
+    function ListById($id){
+        $contaPagarDAO = new ContaPagarDAO();
+        return $contaPagarDAO->ListById($id);
+    }
 }
 ?> 

@@ -1,6 +1,3 @@
-<!--
-Author: Nick
--->
 <?PHP 
 		require_once (__DIR__."/../util/autoload.php");
 		spl_autoload_register("LoadClass");
@@ -121,7 +118,7 @@ Author: Nick
 				<?PHP
 					$controller = new ContaPagarController();
 					$contasPagar = $controller->List();
-					while($contaPagar=array_pop($contasPagar)){
+					while($contaPagar = array_pop($contasPagar)){
 					echo "
 					<tr>
 					<th id='gridtipo'>{$contaPagar->getTipo()}</th>
@@ -136,7 +133,8 @@ Author: Nick
 					</th>
 
 					<th>
-					<form action=\"ContaPagarHelper.php?code={$contaPagar->getCode()}&action=edit\" method=\"post\">
+					<form action=\"../helper/ContaPagarHelper.php?action=edit&code={$contaPagar->getCode()}\" name=\"editarform\" id=\"editarform\" method=\"post\">
+					<input type=\"hidden\" name=\"code\" value={$contaPagar->getCode()}>
 					<input type=\"submit\" value=\"Editar\">
 						</form>
 					</th>
@@ -147,12 +145,7 @@ Author: Nick
 					</table>
 
 		</div>
-
-
-
 	</div>
-
-
 <div>
 			<br/>
 			<br/>
@@ -200,5 +193,6 @@ Author: Nick
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/contas_pagar.js"></script>
 </body>
 </html>

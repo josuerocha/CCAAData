@@ -68,7 +68,8 @@
 				$this->Connect();	
 				$query = "select * from tbl_ContaPagar where cod_ContaPagar = {$id}";
 				$result = $this->connection->query($query);	
-				$this->Disconnect();				
+				$this->Disconnect();
+				$register = mysqli_fetch_assoc($result);
 				$contaPagar = new ContaPagar();
 				$contaPagar->setCode($register['cod_ContaPagar']);
 				$contaPagar->setTipo($register['tbl_TipoConta_cod_TipoConta']);
