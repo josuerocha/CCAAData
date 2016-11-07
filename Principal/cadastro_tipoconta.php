@@ -5,6 +5,7 @@
 		<title>CCAA - Cadastro Tipo Conta</title>
 		<meta charset='UTF-8'/>
 		<link rel="stylesheet" type="text/css" href="../_css/cadastroTipoConta.css" />
+		<link rel="icon" href="assets/images/favicon.png" >
 	</head>
 	<body>
 		<div id="barraFerramentas">
