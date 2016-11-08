@@ -63,8 +63,8 @@ Author: Nick
 				
 
 			<form action="../helper/ContaReceberHelper.php?action=save" method="POST">
-				<input type="hidden" id="cd" name="code" value="<?php echo $_POST["code"] ?>"/>
-				<h3>Tipo: &nbsp <select name="tipo_conta">
+				<input type="hidden" id="codeHidden" name="codeHidden" value="<?php echo $_POST["code"] ?>"/>
+				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
 					<?php
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
@@ -77,13 +77,13 @@ Author: Nick
 					</select>
 				</h3>
 		
-				<h3>Valor: &nbsp <input type="text" name="valor" size="10"><h3>
+				<h3>Valor: &nbsp <input type="text" id="valor" name="valor" size="10"><h3>
 					
-				<h3>Data de Vencimento: &nbsp <input type="date" name="Dt_venc"></h3>
-				<h3>Data de Pagamento: &nbsp <input type="date" name="Dt_pag"></h3>
+				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
+				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>
 				<h3>Situação: &nbsp 
-					<input type="checkbox" name="Situacao" value="quitado"> Quitado &nbsp 
-					<input type="checkbox" name="Situacao" value="pendente"> Pendente
+					<input type="radio" id="Situacao1" name="Situacao" value="quitado"> Quitado &nbsp 
+					<input type="radio" id="Situacao2" name="Situacao" value="pendente"> Pendente
 					</h3>
 
 				<input type="submit" name="Salvar" value="Salvar">
@@ -105,7 +105,7 @@ Author: Nick
 				
 				<br/>
 
-				<table border="2">
+				<table id="listaContas" border="2">
 					
 					<tr>
 						<th id="gridtipo">Tipo</th>&nbsp
@@ -124,7 +124,7 @@ Author: Nick
 					echo "
 					<tr>
 					<th id='gridtipo'>{$contaReceber->getTipo()}</th>
-					<th id='gridVl'>{$contaReceber->getTipo()}</th>
+					<th id='gridVl'>{$contaReceber->getValor()}</th>
 					<th id='gridDt_venc'>{$contaReceber->getDtVencimento()}</th>
 					<th id='gridDt_Pg'>{$contaReceber->getDtPagamento()}</th>
 					<th id='gridSituacao'>{$contaReceber->getSituacao()}</th>
@@ -135,7 +135,8 @@ Author: Nick
 					</th>
 
 					<th>
-					<form action=\"ContasAReceber.php?code={$contaReceber->getCode()}\" method=\"post\">
+					<form id=\"editarForm\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"post\">
+					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaReceber->getCode()}>
 					<input type=\"submit\" value=\"Editar\">
 						</form>
 					</th>
@@ -199,6 +200,7 @@ Author: Nick
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/specific/contas_receber.js"></script>
 </body>
 </html>

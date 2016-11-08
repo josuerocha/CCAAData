@@ -17,5 +17,11 @@ class ContaReceberController implements IControllerGeneral {
         $contaReceberDAO = new ContaReceberDAO();
         return $contaReceberDAO->List();
     }
+
+    function ListById($code){
+        $contaReceberDAO = new ContaReceberDAO();
+        return $contaReceberDAO->ListById($code);
+
+    }
 }
 ?> 

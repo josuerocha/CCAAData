@@ -70,6 +70,7 @@
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				$contaReceber = new ContaReceber();
+				$register = mysqli_fetch_assoc($result);
 				$contaReceber->setCode($register['cod_ContaReceber']);
 				$contaReceber->setTipo($register['tbl_TipoConta_cod_TipoConta']);
 				$contaReceber->setValor($register['valor_ContaReceber']);

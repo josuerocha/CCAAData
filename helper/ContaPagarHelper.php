@@ -28,7 +28,7 @@ switch($action){
 		case 'edit':
 			$control = new ContaPagarController();	
             $contaPagar = new ContaPagar();
-            $contaPagar = $control->ListById($_GET["code"]);
+            $contaPagar = $control->ListById($_POST["codeEdit"]);
 			//var_dump ($contaPagar->toArray());
 			$array = $contaPagar->toArray();
 			echo  json_encode($array);

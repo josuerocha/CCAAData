@@ -5,10 +5,13 @@ spl_autoload_register("LoadClass");
 $action = $_GET["action"];
 
 switch($action){
-	        case 'save':
+		case 'save':
 			$control = new ContaReceberController();
 			$contaReceber = new ContaReceber();
-			
+
+			if(isset($_POST["codeHidden"])){
+				$contaReceber->setTipo($_POST["codeHidden"]);
+			}
 			$contaReceber->setTipo($_POST["tipo_conta"]);
             $contaReceber->setValor($_POST["valor"]);
             $contaReceber->setDtVencimento($_POST["Dt_venc"]);
@@ -23,6 +26,16 @@ switch($action){
 			echo "<script>location.href='../Principal/ContasAReceber.php';</script>"; 			
 			
 		break;	
+
+		case 'edit':
+			$control = new ContaReceberController();
+			$contaReceber = new ContaReceber();
+            $contaReceber = $control->ListById($_POST["codeEdit"]);
+			//var_dump ($contaPagar->toArray());
+			$array = $contaReceber->toArray();
+			echo  json_encode($array);
+
+		break;
 
 		case 'delete':
 			$control = new ContaReceberController();	

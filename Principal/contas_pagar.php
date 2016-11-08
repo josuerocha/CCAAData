@@ -84,7 +84,11 @@
 					
 				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
 				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>
-				<h3>Situação: &nbsp <input type="checkbox" id="Situacao" name="Situacao" value="quitado"> Quitado <input type="checkbox" name="Situacao" value="pendente"> Pendente</h3>
+				<h3>Situação: &nbsp 
+				<h3>Situação: &nbsp 
+					<input type="radio" id="Situacao1" name="Situacao" value="quitado"> Quitado &nbsp 
+					<input type="radio" id="Situacao2" name="Situacao" value="pendente"> Pendente
+				</h3>
 
 				<input type="submit" name="Salvar" value="Salvar">
 				<input type="button" name="Cancelar" value="Cancelar">
@@ -128,8 +132,8 @@
 					</th>
 
 					<th>
-					<form action=\"../helper/ContaPagarHelper.php?action=edit&code={$contaPagar->getCode()}\" name=\"editarform\" id=\"editarform\" method=\"post\">
-					<input type=\"hidden\" name=\"code\" value={$contaPagar->getCode()}>
+					<form action=\"../helper/ContaPagarHelper.php?action=edit\" name=\"editarform\" id=\"editarform\" method=\"post\">
+					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaPagar->getCode()}>
 					<input type=\"submit\" value=\"Editar\">
 						</form>
 					</th>

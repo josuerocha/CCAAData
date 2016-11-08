@@ -3,7 +3,7 @@ $(document).ready(function() {
 } );
 
 
-$('#editarform').submit(function(event){
+$('#editarForm').submit(function(event){
     
 	event.preventDefault(); // if you want to disable the action
 	var $form = $(this),
@@ -15,11 +15,14 @@ $('#editarform').submit(function(event){
 			if(status == 'success'){
 
 				var contaEditar = JSON.parse(escapeSpecialChars(data));
+				console.log(contaEditar);
+
 				document.getElementById("codeHidden").value = contaEditar.code;
 				document.getElementById("tipo_conta").value = contaEditar.tipo;
 				document.getElementById("valor").value = contaEditar.valor;
 				document.getElementById("Dt_venc").value = contaEditar.dtVencimento;
 				document.getElementById("Dt_pag").value = contaEditar.dtPagamento;
+
 				if(contaEditar.situacao == "quitado"){
 					document.getElementById("Situacao1").checked = true;
 				}
