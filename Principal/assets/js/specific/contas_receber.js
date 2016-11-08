@@ -38,5 +38,14 @@ function escapeSpecialChars(jsonString) {
 
 
             return jsonString.replace(re, "");
+}
 
-        }
+function Novo(){
+	document.getElementById("codeHidden").value = "";
+	document.getElementById("tipo_conta").value = "";
+	document.getElementById("valor").value = "";
+	document.getElementById("Dt_venc").value = "";
+	document.getElementById("Dt_pag").value = "";
+	document.getElementById("Situacao1").checked = false;
+	document.getElementById("Situacao2").checked = false;
+}

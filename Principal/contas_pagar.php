@@ -90,7 +90,7 @@
 				</h3>
 
 				<input type="submit" name="Salvar" value="Salvar">
-				<input type="button" name="Cancelar" value="Cancelar">
+				<input type="button" name="Cancelar" value="Cancelar" onclick="Novo();">
 			</form>
 			</div>
 
