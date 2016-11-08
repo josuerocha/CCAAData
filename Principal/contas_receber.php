@@ -86,8 +86,8 @@ Author: Nick
 					<input type="radio" id="Situacao2" name="Situacao" value="pendente"> Pendente
 					</h3>
 
-				<input type="submit" name="Salvar" value="Salvar">
-				<input type="button" name="Cancelar" value="Cancelar">
+				<input type="submit" class="btn-primary" name="Salvar" value="Salvar">
+				<input type="button" class="btn-danger" name="Cancelar" value="Cancelar" onclick="Novo();">
 				</form>
 			</div>
 
