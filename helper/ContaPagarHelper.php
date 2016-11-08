@@ -22,7 +22,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/ContasAPagar.php';</script>"; 			
+			echo "<script>location.href='../Principal/contas_pagar.php';</script>"; 			
 			
 		break;	
 		case 'edit':

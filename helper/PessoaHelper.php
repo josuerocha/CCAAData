@@ -21,9 +21,9 @@ switch($action){
                 $pessoa->setSexo($_POST["SltSexo"]);
             }
             if($control->Save($pessoa)){		
-				echo "<script>alert('Registro salvo com sucesso!');location.href='../Principal/cadastroPessoas.php';</script>"; 
+				echo "<script>alert('Registro salvo com sucesso!');location.href='../Principal/cadastro_pessoa.php';</script>"; 
 			}else{		
-				echo "<script>alert('Erro ao salvar o registro.');location.href='../Principal/cadastroPessoas.php';</script>"; 
+				echo "<script>alert('Erro ao salvar o registro.');location.href='../Principal/cadastro_pessoa.php';</script>"; 
 			}			
 			//echo "<script>location.href='../cadastroPessoa.php';</script>"; 			
 			
