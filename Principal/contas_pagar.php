@@ -68,7 +68,7 @@
 			<div id="coluna_esquerda">&nbsp;
 				
 <form action="../helper/ContaPagarHelper.php?action=save" method="POST">
-				<input type="hidden" id="codeHidden" name="codeHidden" value="0"/>
+				<input type="hidden" id="codeHidden" name="codeHidden"/>
 				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
 								<?php
 								$tipoContaControl = new TipoContaController();
@@ -84,7 +84,6 @@
 					
 				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
 				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>
-				<h3>Situação: &nbsp 
 				<h3>Situação: &nbsp 
 					<input type="radio" id="Situacao1" name="Situacao" value="quitado"> Quitado &nbsp 
 					<input type="radio" id="Situacao2" name="Situacao" value="pendente"> Pendente

@@ -8,6 +8,7 @@ switch($action){
 	        case 'save':
 			$control = new ContaPagarController();
 			$contaPagar = new ContaPagar();
+			
 			if(isset($_POST['codeHidden'])){
 				$contaPagar->setCode($_POST['codeHidden']);
 			}

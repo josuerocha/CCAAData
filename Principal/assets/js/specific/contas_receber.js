@@ -13,7 +13,6 @@ $('#editarForm').submit(function(event){
 
 	var posting = $.post(url,{codeEdit: codigoValue},function(data,status){
 			if(status == 'success'){
-
 				var contaEditar = JSON.parse(escapeSpecialChars(data));
 				console.log(contaEditar);
 

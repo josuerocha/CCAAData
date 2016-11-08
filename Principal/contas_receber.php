@@ -63,7 +63,7 @@ Author: Nick
 				
 
 			<form action="../helper/ContaReceberHelper.php?action=save" method="POST">
-				<input type="hidden" id="codeHidden" name="codeHidden" value="<?php echo $_POST["code"] ?>"/>
+				<input type="hidden" id="codeHidden" name="codeHidden" />
 				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
 					<?php
 					require_once (__DIR__."/../util/autoload.php");
