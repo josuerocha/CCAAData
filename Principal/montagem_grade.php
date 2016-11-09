@@ -1,6 +1,3 @@
-<!--
-Author: Nick
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>

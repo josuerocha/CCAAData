@@ -6,11 +6,20 @@ class NotaController implements IControllerGeneral {
     function Save($nota) {
         $notaDAO = new NotaDAO();
 
-        if($nota->getMid() > 60 & $nota->getFinal() > 60 & $nota->getOral() > 60){
+        if($nota->getMid() >= 60 & $nota->getFinal() >= 60 & $nota->getOral() >= 60){
             $nota->setSituacao("Aprovado");
         }
         else if($nota->getMid() == "" | $nota->getFinal() == "" | $nota->getOral() == ""){
             $nota->setSituacao("Cursando");
+            if($nota->getMid() == ""){
+                $nota->setMid(NULL);
+            }
+            if($nota->getFinal() == ""){
+                $nota->setFinal(NULL);
+            }
+            if($nota->setOral() == ""){
+                $nota->setOral(NULL);
+            }
         }
         else{
             $nota->setSituacao("Reprovado");
