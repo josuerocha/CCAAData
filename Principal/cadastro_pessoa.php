@@ -8,7 +8,7 @@ Author: Nick
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Cadastros - Pessoas</title>
+	<title>CCAA-Cadastros - Pessoas</title>
 	<link rel="icon" href="assets/images/favicon.png" >
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -51,7 +51,7 @@ Author: Nick
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
                     <h1>Cadastros - Pessoas</h1>
                 </div>
@@ -167,7 +167,7 @@ Author: Nick
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2">
+		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
 

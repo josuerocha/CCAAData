@@ -51,7 +51,7 @@ Author: Nick
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
                     <h1>Pagamento</h1>
                 </div>
@@ -62,28 +62,26 @@ Author: Nick
 			<div id="coluna_esquerda">&nbsp;
 				<h2>Dados do Cartão</h2>
 				
-				<form action="../helper/PagamentoHelper.php?action=save" method="post">
-				<h3>Número do Cartão: * &nbsp <input type="text" name="numCartao" size="20"></h3>
-
-				<h3>Data de Vencimento: * &nbsp <input type="month" name="dtValCartao" </h3>
-
-				<h3>Nome e Sobrenome: * &nbsp <input type="text" name="nome" size="20"></h3>
-
-				<h3>Código de Segurança: * &nbsp <input type="text" name="codSeg" size="5"></h3>
+				<form action="../helper/PagamentoHelper.php?action=save" method="post" />
+				<h4>Número do Cartão: *</h4> &nbsp <input type="text" name="numCartao" size="20" />
+				<h4>Data de Vencimento: * </h4>&nbsp <input type="month" name="dtValCartao" /> 
+				<h4>Nome e Sobrenome: * </h4>&nbsp <input type="text" name="nome" size="20" />
+				<h4>Código de Segurança: * </h4>&nbsp <input type="text" name="codSeg" size="5" />
 				
 			</div>
 
 			<div id="coluna_direita">&nbsp;
 				<h2>Dados do Titular do Cartão</h2>
 
-				<h3>Tipo e número de documento: * &nbsp <select name="tipoDoc">
-															<option value="RG">RG</option>
-															<option value="CPF">CPF</option>
-															<option value="CNH">CNH</option>
-															</select>
-														<input type="text" name="documento" size="20">
-				</h3>
-				<h3>Telefone Fixo: * &nbsp <input type="text" name="ddd" size="3"> &nbsp <input type="text" name="telefone" size="20"><h3>
+				<h4>Tipo e número de documento: * </h4>&nbsp 
+				<select name="tipoDoc">
+				<option value="RG">RG</option>
+				<option value="CPF">CPF</option>
+				<option value="CNH">CNH</option>
+				</select>
+				<input type="text" name="documento" size="20" />
+				
+				<h4>Telefone Fixo: * </h4>&nbsp <input type="text" name="ddd" size="3"> &nbsp <input type="text" name="telefone" size="20">
 				<h4>Ex: (31) 9 9999-9999</h4>
 
 				<h3>Data de Nascimento: * &nbsp <input type="date" name="dtNasc" </h3>
@@ -92,7 +90,7 @@ Author: Nick
 				
 				<br/>
 	
-				<input type="submit" name="continuar" value="Continuar">&nbsp 
+				<input type="submit" name="continuar" value="Enviar">&nbsp 
 				</form>
 				&nbsp;
 			</div>
@@ -106,7 +104,7 @@ Author: Nick
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2">
+		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
 

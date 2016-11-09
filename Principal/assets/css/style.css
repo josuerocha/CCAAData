@@ -727,10 +727,47 @@ input[type="time"]{
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
+#btn_cancelar_temp{
+	position: absolute;
+	top: 360px;
+	left: 800px;
+}
+#btn_salvar_temp{
+	position: absolute;
+	top: 360px;
+	left: 738px;
+}
+#btn_reset{
+	position: absolute;
+	top: 360px;
+	left: 605px; 
+}
+#text_horario_inicial{
+	position: relative;
+	top: 33px;
+	left: 392px;
+}
+#text_horario_final{
+	position: relative;
+	top: 33px;
+	left: 403px;
+}
+/*.asterisco{
+	color: red;
+*/
+#input_horario_inicial{
+	position: relative;
+	left: 500px;
+}
+#input_horario_final{
+	position: relative;
+	left: 500px;
+}
 #altera_horario_escola{
 	position: relative;
 	top: -9px;
 }
+
 #inputSenha, #input_confirma_senha{
 	position: relative;
 	left: 460px;

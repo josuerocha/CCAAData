@@ -61,11 +61,11 @@ Author: Nick
     
     <div class="container">
 	<form action="../helper/HorarioHelper.php?action=save" method = "post">
-		<h4>Horário inicial:</h4>&nbsp <input type="time" name="tempoinicial">
-		<h4>Horário final: </h4> &nbsp <input type="time" name="tempofinal">
-			<input type="reset">&nbsp 	
-			<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
-			<input type="button" name="cancelar_temp" value="Cancelar">
+		<h4 id="text_horario_inicial">Horário inicial:</h4>&nbsp <input id="input_horario_inicial" type="time" name="tempoinicial" />
+		<h4 id="text_horario_final">Horário final: </h4> &nbsp <input id="input_horario_final" type="time" name="tempofinal" />
+			<input id="btn_reset" type="reset" />&nbsp 	
+			<input id="btn_salvar_temp" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
+			<input id="btn_cancelar_temp" type="button" name="cancelar_temp" value="Cancelar" />
 	</form>
 	</div>
 
