@@ -157,7 +157,9 @@
 				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 				<input type="button" name="cancelar_temp" value="Cancelar">
 				<!-- BOTÃO NOTIFICAR POR EMAIL -->
-				<input class="btn-notifica" type="button" name="notifica_temp" value="Notificar Email">
+				</form>
+				<form action="../util/EnviarEmail.php" method="post">
+				<input class="btn-notifica" type="submit" name="notifica_temp" value="Notificar Email">
 				</form>
 				<table id="listaContas" border="2">
 					

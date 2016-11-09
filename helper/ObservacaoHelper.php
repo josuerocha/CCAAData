@@ -21,7 +21,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			//echo "<script>location.href='../Principal/entrada_diario_avaliacoes.php';</script>"; 			
+			echo "<script>location.href='../Principal/entrada_diario_avaliacoes.php';</script>"; 			
 			
 		break;	
 
