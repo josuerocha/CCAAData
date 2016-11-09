@@ -39,10 +39,8 @@ switch($action){
                 //echo $nota->getCodeAluno();
                 if($control->Save($nota)){		
 				    $flag = "ok"; 
-                    echo "<script>alert('Registro salvo com sucesso!');</script>"; 
 			    }else{
                     $flag = "ops";
-                    echo "<script>alert('Erro ao salvar o registro.');</script>"; 
                     break;	 
 			    }			
             }
