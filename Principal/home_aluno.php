@@ -51,10 +51,10 @@ Author: Nick
 
 		<header id="head" class="secondary_aluno">
             <div class="container">
-                <h4 id="texto_modulo">Módulo do Aluno</h4>
+                <h1 id="texto_modulo">Módulo do Aluno</h1>
             </div>
     	</header>
-    
+    <!--
         <div class="container">
 			<h3 class="academico">Acadêmico</h3>
 			<h3 class="financeiro">Financeiro</h3>
@@ -65,6 +65,7 @@ Author: Nick
 			<img src="assets/images/materiais.jpg" class="icon-materiais" alt="Techro HTML5 materiais"><a id="materiais" href="aluno_boletim.html">Materiais</a>
 			<img src="assets/images/pagamento-online.png"" class="icon-pagamento-online" alt="Techro HTML5 pagamento-online"><a id="pagamento-online" href="aluno_alterar_senha.html">Pagamento online</a>
         </div>
+    -->
 		<div class="footer2_aluno"> <!-- alterar css -->
 			<div class="container">
 				<div class="row">

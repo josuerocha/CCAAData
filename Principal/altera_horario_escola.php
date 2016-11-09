@@ -8,7 +8,7 @@ Author: Nick
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Alteração do Horário da Escola</title>
+	<title>CCAA-Alteração do Horário da Escola</title>
 	<link rel="icon" href="assets/images/favicon.png" >
 	<link rel="favicon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -52,31 +52,27 @@ Author: Nick
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Alteração do Horário de funcionamento da Escola</h1>
+                    <h1 id="altera_horario_escola">Alteração do Horário de funcionamento da Escola</h1>
                 </div>
     </header>
 
     
     <div class="container">
 	<form action="../helper/HorarioHelper.php?action=save" method = "post">
-		<h3>Horário inicial:&nbsp <input type="time" name="tempoinicial"></h3>
-		<br/>
-		<h3>Horário final: &nbsp <input type="time" name="tempofinal"></h3>
-
+		<h4>Horário inicial:</h4>&nbsp <input type="time" name="tempoinicial">
+		<h4>Horário final: </h4> &nbsp <input type="time" name="tempofinal">
 			<input type="reset">&nbsp 	
 			<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 			<input type="button" name="cancelar_temp" value="Cancelar">
 	</form>
 	</div>
-			<br/>
-			<br/>
 
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2">
+		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
 

@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Registro de entrada do diário - Avaliações</title>
+	<title>CCAA-Registro de entrada do diário - Avaliações</title>
 	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -155,7 +155,9 @@
 				<br/>
 				
 				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
-				<input type="button" name="cancelar_temp" value="Cancelar">	
+				<input type="button" name="cancelar_temp" value="Cancelar">
+				<!-- BOTÃO NOTIFICAR POR EMAIL -->
+				<input class="btn-notifica" type="button" name="notifica_temp" value="Notificar Email">
 				</form>
 				<table id="listaContas" border="2">
 					

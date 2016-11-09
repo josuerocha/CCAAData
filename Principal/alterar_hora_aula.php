@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Alteração de hora-aula do professor</title>
+	<title>CCAA-Alteração de hora-aula do professor</title>
 	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -54,16 +54,17 @@
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Alteração de hora-aula do professor</h1>
+                    <h1 id="alterar_hora_aula">Alteração de hora-aula do professor</h1>
                 </div>
     </header>
 
     
     <div class="container">
 <form action="../helper/PessoaHelper.php?action=horaAula" method = "post">
-		<h3>Professor:&nbsp <select name="prof">
+		<h4 id="text_hora_prof">Professor:</h4>&nbsp 
+		<select id="select_hora_prof"name="prof">
 		<?PHP
 								$codProfessor = 0;
 								$perfilControl = new PerfilController();
@@ -80,26 +81,19 @@
 									echo "<option value='{$pessoa->getCode()}'>{$pessoa->getNome()}</option>";
 								}
 		?>
-								</select>
-		</h3>
-
-		<br/>
+		</select>
 		
-		<h3>Valor da hora/aula: &nbsp R$<input type="number" name="valor" min="1" max="500">
-
-		</h3>
-
-			<input type="submit" onclick="alert('Tem certeza que deseja alterar hora/aula do professor?')" name="salvar_temp" value="Salvar">&nbsp 
-			<input type="button" name="cancelar_temp" value="Cancelar">
+		
+			<h4 id="text_valor_hora_prof">Valor da hora/aula (R$):</h4> &nbsp <h5><input id="input_valor_hora_prof" type="number" name="valor" min="1" max="500"></h5>
+			<input id="btn_salvar_hora_prof" type="submit" onclick="alert('Tem certeza que deseja alterar hora/aula do professor?')" name="salvar_temp" value="Salvar">&nbsp 
+			<input id="btn_cancelar_hora_prof" type="button" name="cancelar_temp" value="Cancelar">
 </form>
 </div>
-			<br/>
-			<br/>
 
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2">
+		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
 

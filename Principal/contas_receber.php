@@ -8,7 +8,7 @@ Author: Nick
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA-- Cadastro Contas a Receber</title>
+	<title>CCAA-Cadastro Contas a Receber</title>
 	<link rel="favicon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -51,7 +51,7 @@ Author: Nick
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
                     <h1>Cadastro Contas a Receber</h1>
                 </div>
@@ -60,11 +60,10 @@ Author: Nick
     
     <div class="container">
 			<div id="coluna_esquerda">&nbsp;
-				
 
 			<form action="../helper/ContaReceberHelper.php?action=save" method="POST">
 				<input type="hidden" id="codeHidden" name="codeHidden" />
-				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
+				<h3>Tipo: </h3>&nbsp <select id="tipo_conta" name="tipo_conta">
 					<?php
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
@@ -75,9 +74,9 @@ Author: Nick
 					}
 					?>
 					</select>
-				</h3>
+				
 		
-				<h3>Valor: &nbsp <input type="text" id="valor" name="valor" size="10"><h3>
+				<h3>Valor: &nbsp <input type="text" id="valor" name="valor" size="10"></h3>
 					
 				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
 				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>
@@ -91,9 +90,6 @@ Author: Nick
 				</form>
 			</div>
 
-			<br/>
-			<br/>
-
 			<div id="coluna_esquerda">&nbsp;
 				
 				
@@ -101,9 +97,6 @@ Author: Nick
     			<input type="date" name="Dt_venc" onfocus="if (this.value == '{text:Search Label}') {this.value=''}" onblur="if (this.value == '') {this.value='{text:Search Label}'}" />
     			<input type="submit" value="Search" />
 				</form>
-
-				
-				<br/>
 
 				<table id="listaContas" border="2">
 					
@@ -145,23 +138,16 @@ Author: Nick
 					}
 					?>
 
-					</table>
-
+				</table>
 		</div>
 
-
-
 	</div>
-
-
 <div>
-			<br/>
-			<br/>
 
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2">
+		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
 

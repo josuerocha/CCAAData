@@ -276,6 +276,44 @@ label {
 	left: 54px;
 	top: 230px;
 }
+#alterar_hora_aula{
+	position: relative;
+	top: -10px;
+}
+
+
+#text_hora_prof{
+	position: relative;
+	top: 32px;
+	left: 430px;
+}
+#select_hora_prof{
+	position: relative;
+	left: 508px;
+}
+#text_valor_hora_prof{
+	position: relative;
+	top: 8px;
+	left: 333px;
+}
+#btn_salvar_hora_prof{
+	position: relative;
+	top: -25px;
+	left: 600px;
+}
+#btn_cancelar_hora_prof{
+	position: relative;
+	top: -25px;
+	left: 600px;
+}
+#input_valor_hora_prof{
+	position: relative;
+	text-align: center;
+	top: -53px;
+	left: 512px;
+	width: 55px;
+	height: 28px;
+}
 .select_sala{
 	position: absolute;
 	left: 100px;
@@ -682,6 +720,16 @@ input[type="text"]{
 	height: 32px;
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
+}
+input[type="time"]{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+#altera_horario_escola{
+	position: relative;
+	top: -9px;
 }
 #inputSenha, #input_confirma_senha{
 	position: relative;
@@ -1192,9 +1240,9 @@ nav#filter a.current {
 }
 
 #texto_modulo{
-	position: relative;
-	left: 462px;
-	top: -5px;
+	position: absolute;
+	left: 560px;
+	top: -3px;
 }
 
 /*Price table*/
