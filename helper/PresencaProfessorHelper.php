@@ -17,8 +17,7 @@ switch($action){
                 $presenca->setSituacao(1);
             }
             $presenca->setData($_POST["data"]);
-            echo "<script>alert('".$_POST["data"]."');</script>"; 
-
+            
             if($control->Save($presenca)){		
 				echo "<script>alert('Registro salvo com sucesso!');</script>"; 
 			}else{		

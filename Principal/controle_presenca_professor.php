@@ -80,7 +80,7 @@
 					
 					<input class="input_check" name="situacao" type="checkbox">&nbsp 
 					<?PHP
-						echo "<input type=\"hidden\" name=\"data\" value=\"date(\"Y-m-d\")\" >";
+						echo "<input type=\"hidden\" name=\"data\" value=\"".date("Y-m-d")."\" >";
 					?>
 			<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 			<input type="button" class="btn_cancelar_freq_prof" value="Cancelar"/>
@@ -90,6 +90,7 @@
 					<th id="gridCodigo">Código</th>
 					<th id="gridConta">Professor</th>
 					<th id="gridConta">Situacao</th>
+					<th id="gridConta">Data</th>
 					<th colspan="2" id="gridAcao">Ação</th>
 				</tr>
 			                 <?PHP
@@ -104,6 +105,7 @@
                 <th id='gridCodigo'>{$presenca->getCode()}</th>
 				<th id='gridCodigo'>{$pessoa->getNome()}</th>
 				<th id='gridCodigo'>{$presenca->getSituacao()}</th>
+				<th id='gridCodigo'>{$presenca->getData()}</th>
                 <th>
 				   <form id=\"formDelete\" action=\"../helper/PresencaProfessorHelper.php?action=delete\" method=\"post\">
 				   <input type=\"hidden\" name=\"deleteCode\" id=\"deleteCode\" value=\"{$presenca->getCode()}\"/>
