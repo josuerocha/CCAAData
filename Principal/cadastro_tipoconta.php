@@ -20,7 +20,7 @@
 			<a id="voltar" href="">Voltar</a>
 		</div>
 		<div id="conteudo">
-			<input id="pesquisar" type="text" name="pesquisar" value="Pesquisar" />
+			<div id="result">
 			<table>
 				<tr>
 					<th id="gridCodigo">Código</th>
@@ -38,7 +38,8 @@
                 <th id='gridCodigo'>{$tipoConta->getCode()}</th>
 				<th id='gridCodigo'>{$tipoConta->getTipo()}</th>
                 <th>
-				   <form action=\"../helper/TipoContaHelper.php?action=delete&code={$tipoConta->getCode()}\" method=\"post\">
+				   <form id=\"formDelete\" action=\"../helper/TipoContaHelper.php?action=delete\" method=\"post\">
+				   <input type=\"hidden\" name=\"deleteCode\" id=\"deleteCode\" />
                    <input type=\"submit\" value=\"Excluir\">
                     </form>
                 </th>
@@ -46,14 +47,18 @@
 				";
 				}
 				?>
+				</div>
 				<div id="cadastro">
-                <form action="../helper/TipoContaHelper.php?action=save" method="POST">
-                    <p id="textoTipoConta">Conta:</p><input id="tipoConta" type="text" name="tipoconta" />
+                <form id="formCadastro" action="../helper/TipoContaHelper.php?action=save" method="post">
+                    <p id="textoTipoConta">Conta:</p>
+					<input type="text" name="contatipo" id="contatipo" />
                     <input id="salvar" type="submit" name="btnSalvar" value="Salvar" />
                     <input id="cancelar" type="button" name="btnCancelar" value="Cancelar" />
                 </form>
 			</div>
 			</table>
-		</div>
+		</div>	
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+				<script src="assets/js/specific/cadastro_tipoconta.js"></script>
 	</body>
 </html>

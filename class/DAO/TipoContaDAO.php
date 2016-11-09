@@ -10,7 +10,7 @@
 				if($tipoConta->getCode()==0){				
 					$query = "insert into tbl_TipoConta (tipo_TipoConta) values ('{$tipoConta->getTipo()}')";
 					$this->connection->query($query);					
-					$code = $this->conexao->insert_id;
+					$code = $this->connection->insert_id;
 					$tipoConta->setCode($code);
 				}else{	
 					$query = "update tbl_TipoConta set tipo_TipoConta = '{$tipoConta->getTipo()}' where cod_TipoConta = {$tipoConta->getCode()}";

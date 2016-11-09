@@ -44,7 +44,8 @@ switch($action){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
-			}						
+			}			
+			echo "<script>location.href='../Principal/contas_pagar.php';</script>"; 			
 		break;			
 		default:
 			echo "<script>alert('Acesso negado!');</script>";

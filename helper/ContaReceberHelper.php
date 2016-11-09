@@ -9,9 +9,7 @@ switch($action){
 			$control = new ContaReceberController();
 			$contaReceber = new ContaReceber();
 
-			echo "<script>alert('OUT!');</script>";
 			if(isset($_POST["codeHidden"])){
-				echo "<script>alert('HIDDEN!');</script>";
 				$contaReceber->setCode($_POST["codeHidden"]);
 			}
 			$contaReceber->setTipo($_POST["tipo_conta"]);
