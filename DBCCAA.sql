@@ -154,4 +154,14 @@ CREATE TABLE tbl_Turma (
   INDEX tbl_Turma_FKIndex2(tbl_Sala_numero_Sala)
 );
 
+CREATE TABLE `ccaa`.`tbl_Notas` (
+  `cod_Notas` INT NOT NULL,
+  `cod_Aluno` INT NULL,
+  `mid_Aluno` FLOAT NULL,
+  `final_Aluno` FLOAT NULL,
+  `oral_Aluno` FLOAT NULL,
+  `ano_Aluno` INT NULL,
+  `semestre_Aluno` INT NULL,
+  PRIMARY KEY (`cod_Notas`));
+
 INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root', 'e10adc3949ba59abbe56e057f20f883e');
