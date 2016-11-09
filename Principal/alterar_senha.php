@@ -8,7 +8,7 @@ Author: Nick
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Alterar Senha</title>
+	<title>CCAA-Alterar Senha</title>
 	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -61,12 +61,12 @@ Author: Nick
     <div class="container">
 		<form action="../helper/LoginHelper.php?action=changePassword" method="POST">
 			<h4 id="senha_atual">Senha atual:</h4>
-			<input type="text" name="senhaAnterior"/>
+			<input id="input_senha_atual" type="text" name="senhaAnterior"/>
 			<h4 id="nova_senha">Nova senha:</h4>
 			<input type="text" name="senha"/>
 			<h4 id="confirmar_senha">Confirmar senha:</h4>
-			<input type="text" name="confirma_senha"/>
-			<input type="submit" name="Eviar" value="Enviar">
+			<input id="input_confirma_senha" type="text" name="confirma_senha"/>
+			<input id="btn_alterar_senha" type="submit" name="Eviar" value="Enviar">
 		</form>
 	</div>
 			<div class="clear"></div>

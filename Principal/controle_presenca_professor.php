@@ -54,7 +54,7 @@
 
 		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1 id="avaliacoes">Controle de Presença do Professor</h1>
+                    <h1 id="text_freq_prof">Controle de Presença do Professor</h1>
                 </div>
     </header>
 
@@ -64,6 +64,7 @@
 			<!-- TABELA DE LANÇAMENTO DE FREQUENCIA DOS ALUNOS-->
 				<!-- Exemplo de linhas que devem ser geradas para cada aluno -->
 				<form action="../helper/PresencaProfessorHelper.php?action=save" method="post">
+					<h3 id="text_presenca_prof">Presença do Professor</h3>
 					<select id="sltProf" name="sltProf">
 					<?PHP
 					require_once (__DIR__."/../util/autoload.php");
@@ -82,10 +83,10 @@
 					<?PHP
 						echo "<input type=\"hidden\" name=\"data\" value=\"".date("Y-m-d")."\" >";
 					?>
-			<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
+			<input type="submit" class="btn_salvar_freq_prof" name="salvar_temp" value="Salvar">&nbsp 
 			<input type="button" class="btn_cancelar_freq_prof" value="Cancelar"/>
 			</form>
-			<table>
+			<table id="table_freq_prof">
 				<tr>
 					<th id="gridCodigo">Código</th>
 					<th id="gridConta">Professor</th>
@@ -116,14 +117,15 @@
 				";
 				}
 				?>
+			</table>
 		</div>
 			
 	</div>
 	<!-- COLOQUEI ESSA GUAMBEARRA SÓ PRA MEXER NOS COMPONENTES NA TELA. AINDA FAREI O CSS-->
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
 		<div class="clear"></div>
 			<!--CLEAR FLOATS-->
-		<div class="footer2">
+		<div class="footer2_aluno">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 panel">
