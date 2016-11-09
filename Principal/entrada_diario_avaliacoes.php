@@ -181,7 +181,7 @@
 					
 					<th>
 					<form action=\"../helper/ObservacaoHelper.php?action=delete\" name=\"editarform\" id=\"editarform\" method=\"post\">
-					<input type=\"hidden\" name=\"codeEdit\" id=\"codeDelete\" value={$observacao->getCode()}>
+					<input type=\"hidden\" name=\"codeDelete\" id=\"codeDelete\" value={$observacao->getCode()}>
 					<input type=\"submit\" value=\"Excluir\">
 						</form>
 					</th>
