@@ -41,7 +41,7 @@ Author: Nick
 					<li ><a href="aluno_boletim.html">Materiais</a></li>
 					<li ><a href="aluno_boletim.html">Mensalidades</a></li>
 					<li ><a href="aluno_boletim.html">Pagamento Online</a></li>
-					<li ><a href="AlterarSenha.php">Alterar Senha</a></li>
+					<li ><a href="alterar_senha.php">Alterar Senha</a></li>
 					<li ><a href="../util/logout.php">Logout</a></li>
 			</div>
 			<!--/.nav-collapse -->

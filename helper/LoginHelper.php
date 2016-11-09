@@ -13,8 +13,10 @@ switch($action){
 			if($login->getSenha() == MD5($_POST["senhaAnterior"])){
 				$novaSenha = MD5($_POST["senha"]);
                 $login->setSenha($novaSenha);
-				 if($control->Update($login)){		
-				echo "<script>alert('Registro salvo com sucesso!;');</script>"; 
+				
+				if($control->Update($login)){		
+				
+					echo "<script>alert('Registro salvo com sucesso!;');</script>"; 
 				}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 				}			
@@ -22,6 +24,7 @@ switch($action){
 			else{
 				echo "<script>alert('Senha anterior informada inválida.');</script>"; 
 			}
+				echo "<script>	document.location.href = '../Principal/alterar_senha.php';</script>";
 			break;
 
 			case 'validate':

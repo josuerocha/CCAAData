@@ -46,16 +46,19 @@
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				while($register = mysqli_fetch_assoc($result)) {
-					$sala = new Sala();
-					$sala->setCode($register['numero_Sala']);
-                    $sala->setDescricao($register['descricao_Sala']);
-					array_push($salas, $sala);
+					$turma = new Turma();
+					$turma->setCode($register['cod_Turma']);
+                    $turma->setNumeroSala($register['tbl_Sala_numero_Sala']);
+                    $turma->setIdioma($register['tbl_Idioma_cod_Idioma']);
+                    $turma->setDescricao($register['descricao_Turma']);
+                    $turma->setHorario($register['horario_Turma']);
+					array_push($turmas, $turma);
 				}		
 				$result->close();				
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}			
-			return $salas;
+			return $turmas;
 		}
 
         function ListById($id){
@@ -63,13 +66,3 @@
         }
 }
 ?>
-CREATE TABLE tbl_Turma (
-  cod_Turma INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  tbl_Sala_numero_Sala INTEGER UNSIGNED NOT NULL,
-  tbl_Idioma_cod_Idioma INTEGER UNSIGNED NOT NULL,
-  descricao_Turma VARCHAR(200) NOT NULL,
-  horario_Turma TIME NOT NULL,
-  PRIMARY KEY(cod_Turma),
-  INDEX tbl_Turma_FKIndex1(tbl_Idioma_cod_Idioma),
-  INDEX tbl_Turma_FKIndex2(tbl_Sala_numero_Sala)
-);
