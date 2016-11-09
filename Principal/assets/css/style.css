@@ -243,17 +243,18 @@ label {
 	position: absolute;
 	top: 265px;
 	left: 320px;
+	border:2px;
 }
 .btn_salvar_freq_prof{
 	position: absolute;
 	left: 120px;
-	top: 350px;
+	top: 320px;
 }
 
 .btn_cancelar_freq_prof{
 	position: absolute;
 	left: 180px;
-	top: 350px;
+	top: 320px;
 }
 .btn_salvar{
 	position: absolute;
@@ -682,7 +683,7 @@ input[type="text"]{
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
-#inputSenha{
+#inputSenha, #input_confirma_senha{
 	position: relative;
 	left: 460px;
 	top: 40px;
@@ -691,6 +692,40 @@ input[type="text"]{
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 	
+}
+#senha_atual{
+	position: relative;
+	top: 110px;
+	left: 362px;
+}
+#nova_senha{
+	position: relative;
+	top: 92px;
+	left: 365px;
+}
+#confirmar_senha{
+	position: relative;
+	top: 72px;
+	left: 330px;
+}
+#input_senha_atual{
+	position: relative;
+	left: 460px;
+	top: 80px;
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+#input_nova_senha{
+	position: relative;
+	left: 460px;
+	top: 60px;
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+
 }
 #enviarEmail, #btn_alterar_senha{
 	position: relative;

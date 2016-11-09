@@ -63,7 +63,7 @@ Author: Nick
 			<h4 id="senha_atual">Senha atual:</h4>
 			<input id="input_senha_atual" type="text" name="senhaAnterior"/>
 			<h4 id="nova_senha">Nova senha:</h4>
-			<input type="text" name="senha"/>
+			<input id="input_nova_senha" type="text" name="senha"/>
 			<h4 id="confirmar_senha">Confirmar senha:</h4>
 			<input id="input_confirma_senha" type="text" name="confirma_senha"/>
 			<input id="btn_alterar_senha" type="submit" name="Eviar" value="Enviar">
