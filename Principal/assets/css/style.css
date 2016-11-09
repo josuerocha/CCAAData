@@ -239,15 +239,21 @@ label {
 	left: 300px;
 	top: 230px;
 }
+#table_freq_prof{
+	position: absolute;
+	top: 265px;
+	left: 320px;
+}
 .btn_salvar_freq_prof{
 	position: absolute;
-	left: 390px;
-	top: 420px;
+	left: 120px;
+	top: 350px;
 }
+
 .btn_cancelar_freq_prof{
 	position: absolute;
-	left: 450px;
-	top: 420px;
+	left: 180px;
+	top: 350px;
 }
 .btn_salvar{
 	position: absolute;
@@ -276,6 +282,7 @@ label {
 }
 select{
 	width: 150px;
+	height: 30px;
 	border-radius: 3px;
 }
 #texto_idioma_turma{
@@ -308,6 +315,21 @@ select{
 	position: absolute;
 	left: 190px;
 	top: 370px;
+}
+.input_check{
+	position: absolute;
+	top: 275px;
+	left: 50px;
+}
+#sltProf{
+	position: absolute;
+	top: 270px;
+	left: 80px;
+}
+#text_presenca_prof{
+	position: absolute;
+	top: 190px;
+	left: 30px;
 }
 .input_pesquisar_frequencia{
 	position: absolute;
@@ -654,7 +676,7 @@ footer {
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
-input[type="text", "subimit"]{
+input[type="text"]{
 	width: 220px;
 	height: 32px;
 	border: 1px solid #D3D3D3;
@@ -670,7 +692,7 @@ input[type="text", "subimit"]{
 	border-radius: 3px;
 	
 }
-#enviarEmail{
+#enviarEmail, #btn_alterar_senha{
 	position: relative;
 	left: 235px;
 	top: 90px;
@@ -693,6 +715,11 @@ input[type="text", "subimit"]{
 	position: relative;
 	left: 405px;
 	top: 75px;
+}
+#text_freq_prof{
+	position: absolute;
+	top: -2px;
+	left: 410px;
 }
 .footer2_login {
 	background: #fafafa;
