@@ -202,6 +202,125 @@ label {
 .panel-body {
 	padding: 0px;
 }
+#texto_pesquisar_trabalhos{
+	position: absolute;
+	left: 80px;
+	top: 275px;
+}
+.input_pesquisar_trabalhos{
+	position: absolute;
+	left: 170px;
+	top: 285px;
+	border-radius: 3px;
+}
+#table_trabalhos_aluno{
+	position: absolute;
+	left: 60px;
+	top: 340px;
+}
+#table_frequencia_aluno{
+	position: absolute;
+	left: 750px;
+	top: 330px;
+}
+.texto_pesquisar_frequencia_prof{
+	position: absolute;
+	left: 20px;
+	top: 220px;
+}
+.input_pesquisar_frequencia_prof{
+	position: absolute;
+	left: 105px;
+	top: 230px;
+	border-radius: 3px;
+}
+#table_frequencia_professor{
+	position: absolute;
+	left: 300px;
+	top: 230px;
+}
+.btn_salvar_freq_prof{
+	position: absolute;
+	left: 390px;
+	top: 420px;
+}
+.btn_cancelar_freq_prof{
+	position: absolute;
+	left: 450px;
+	top: 420px;
+}
+.btn_salvar{
+	position: absolute;
+	left: 1000px;
+	top: 450px;
+}
+.btn_cancelar{
+	position: absolute;
+	left: 1065px;
+	top: 450px;
+}
+#texto_frequencia_aluno{
+	position: absolute;
+	left: 780px;
+	top: 198px;
+}
+#textoSala{
+	position: absolute;
+	left: 54px;
+	top: 230px;
+}
+.select_sala{
+	position: absolute;
+	left: 100px;
+	top: 240px;
+}
+select{
+	width: 150px;
+	border-radius: 3px;
+}
+#texto_idioma_turma{
+	position: absolute;
+	left: 38px;
+	top: 260px;
+}
+.select_idioma{
+	position: absolute;
+	left: 100px;
+	top: 270px;
+}
+#textoDesc{
+	position: absolute;
+	left: 20px;
+	top: 290px;
+}
+.desc_turma{
+	position: absolute;
+	left: 100px;
+	top: 300px;
+	border-radius: 3px;
+}
+#add_turma{
+	position: absolute;
+	left: 100px;
+	top: 370px;
+}
+#cancel_turma{
+	position: absolute;
+	left: 190px;
+	top: 370px;
+}
+.input_pesquisar_frequencia{
+	position: absolute;
+	left: 800px;
+	top: 275px;
+	border-radius: 3px;
+}
+
+.texto_pesquisar_frequencia{
+	position: absolute;
+	left: 710px;
+	top: 265px;
+}
 .btn-action, .btn-primary {
 	color: #FFEFD7;
 	background-image: -webkit-linear-gradient(top, #0ecfec 0%, #09bed9 100%);
@@ -702,6 +821,11 @@ input[type="text", "subimit"]{
 	border-radius: 4px;
 	top: 322px;
 	left: 330px;
+}
+#avaliacoes{
+	position: absolute;
+	left: 350px;
+	top: -2px;
 }
 .panel-simplenav {
 	margin-left: -5px;

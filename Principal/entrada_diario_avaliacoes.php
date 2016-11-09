@@ -52,9 +52,9 @@
 	</div>
 	<!-- /.navbar -->
 
-		<header id="head" class="secondary">
+		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Registro de entrada do diário - Avaliações</h1>
+                    <h1 id="avaliacoes">Registro de entrada do diário - Avaliações</h1>
                 </div>
     </header>
 
