@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?PHP 
-	require_once (__DIR__."/../util/autoload.php");
+	require_once ("../util/autoload.php");
 	spl_autoload_register("LoadClass");
 ?>
 <head>
@@ -55,7 +55,7 @@
 		<header id="head" class="secondary_login">
             <div class="container">
                     <h1 id="avaliacoes">Registro de entrada do diário - Avaliações</h1>
-                </div>
+			</div>
     </header>
 
 
@@ -66,10 +66,15 @@
 				
 				<br/>
 			<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
-			<h4>Ano: &nbsp<input type="year" name="ano"></h4>
+			<?PHP 
+				$date = date("Y-m-d");
+				$ano =  explode('-', $date);
+				echo "<h4>Ano: &nbsp<input type=\"year\" name=\"ano\" value=\"$ano[0]\"></h4>"
+			?>
+			
 			<h4>Semestre: &nbsp<select name="semestre"></h4>
 				<option value='1'>1º</option>
-				<option value='1'>2º</option>
+				<option value='2'>2º</option>
 			</select>
 			<br>
 			<br>
@@ -126,8 +131,8 @@
 		<div id="coluna_direita">
 				
 				<h3>Observações</h3>
-
-				<h4>Aluno: &nbsp <select name="Aluno">
+				<form action="../helper/ObservacaoHelper.php?action=save" method="post">
+				<h4>Aluno: &nbsp <select name="codeAluno">
 					<?PHP
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
@@ -142,19 +147,47 @@
 					</select>
 				</h4>
 
-
-				<h4>Data: &nbsp <input type="date"></h4>
-
 				<br/>
 				<br/>
 				
-				<input type="text" name="Obs_time_aluno" value="Observações" size="40">
+				<input type="text" name="descricao" placeholder="Observações" size="40">
 				<br/>
 				<br/>
 				
-				<input type="button" name="salvar_temp" value="Salvar">&nbsp 
+				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 				<input type="button" name="cancelar_temp" value="Cancelar">	
-				
+				</form>
+				<table id="listaContas" border="2">
+					
+					<tr>
+						<th id="gridtipo">Nome</th>&nbsp
+						<th id="gridVl">Observacao</th>&nbsp
+
+					</tr>
+				<?PHP
+					$controller = new ObservacaoController();
+					$pessoaControl = new PessoaController();
+					$observacoes = $controller->List();
+					while($observacao = array_pop($observacoes)){
+					$aluno = $pessoaControl->ListById($observacao->getCodeAluno());
+					echo "
+					<tr>
+					<th id='gridVl'>{$aluno->getNome()}</th>
+					<th id='gridDt_venc'>{$observacao->getDescricao()}</th>
+					
+					<th>
+					<form action=\"../helper/ObservacaoHelper.php?action=delete\" name=\"editarform\" id=\"editarform\" method=\"post\">
+					<input type=\"hidden\" name=\"codeEdit\" id=\"codeDelete\" value={$observacao->getCode()}>
+					<input type=\"submit\" value=\"Excluir\">
+						</form>
+					</th>
+					</tr>
+					";
+					}
+					?>
+					</table>
+
+
 			</div>
 			<br/>
 			<br/>

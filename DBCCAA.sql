@@ -165,4 +165,10 @@ CREATE TABLE `ccaa`.`tbl_Nota` (
   `situacao_Nota` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`cod_Nota`));
 
+CREATE TABLE `ccaa`.`tbl_Observacao` (
+  `cod_Observacao` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `cod_Aluno` INT NOT NULL,
+  `descricao_Observacao` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`cod_Observacao`));
+
 INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root', 'e10adc3949ba59abbe56e057f20f883e');

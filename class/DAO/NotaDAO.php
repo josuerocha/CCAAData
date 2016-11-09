@@ -14,7 +14,6 @@
 					$nota->setCode($code);
 				}else{	
 					$query = "update tbl_Nota set cod_Aluno = {$nota->getCodeAluno()},mid_Nota = {$nota->getMid()},final_Nota = {$nota->getFinal()},oral_Nota = {$nota->getOral()},ano_Nota = {$nota->getAno()},semestre_Nota = {$nota->getSemestre()},situacao_Nota = '{$nota->getSituacao()}' where cod_Nota = {$nota->getCode()}";
-                    echo $query;
                     $this->connection->query($query);
 				}
 				$this->Disconnect();
@@ -55,6 +54,7 @@
                     $nota->setOral($register['oral_Nota']);
                     $nota->setAno($register['ano_Nota']);
                     $nota->setSemestre($register['semestre_Nota']);
+                    $nota->setSituacao($register['situacao_Nota']);
 					array_push($notas, $nota);
 				}		
 				$result->close();				
@@ -79,6 +79,7 @@
                 $nota->setOral($register['oral_Nota']);
                 $nota->setAno($register['ano_Nota']);
                 $nota->setSemestre($register['semestre_Nota']);
+                $nota->setSituacao($register['situacao_Nota']);
 				$result->close();				
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
@@ -101,6 +102,7 @@
                 $nota->setOral($register['oral_Nota']);
                 $nota->setAno($register['ano_Nota']);
                 $nota->setSemestre($register['semestre_Nota']);
+                $nota->setSituacao($register['situacao_Nota']);
 				$result->close();				
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
