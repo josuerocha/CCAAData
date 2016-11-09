@@ -48,27 +48,66 @@
 				while($register = mysqli_fetch_assoc($result)) {
 					$nota = new Nota();
 					$nota->setCode($register['cod_Nota']);
-                    $nota->setCodeAluno($register['descricao_Nota']);
-					array_push($idiomas, $idioma);
+                    $nota->setCodeAluno($register['cod_Aluno']);
+                    $nota->setMid($register['mid_Nota']);
+                    $nota->setFinal($register['final_Nota']);
+                    $nota->setOral($register['oral_Nota']);
+                    $nota->setAno($register['ano_Nota']);
+                    $nota->setSemestre($register['semestre_Nota']);
+					array_push($notas, $nota);
 				}		
 				$result->close();				
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}			
-			return $idiomas;
+			return $notas;
 		}
 
-        function ListById($id){
-            
+        function ListById($code){
+            $nota = new Nota();
+            try{
+				$this->Connect();	
+				$query = "select * from tbl_Nota where cod_Nota = {$code}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				$register = mysqli_fetch_assoc($result));
+                $nota->setCode($register['cod_Nota']);
+                $nota->setCodeAluno($register['cod_Aluno']);
+                $nota->setMid($register['mid_Nota']);
+                $nota->setFinal($register['final_Nota']);
+                $nota->setOral($register['oral_Nota']);
+                $nota->setAno($register['ano_Nota']);
+                $nota->setSemestre($register['semestre_Nota']);
+				$result->close();				
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $nota;          
         }
+
+        function ListByAluno($codeAluno){
+			$notas = array();			
+			try{
+				$this->Connect();	
+				$query = "select * from tbl_Nota where cod_Aluno = {$codeAluno}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				while($register = mysqli_fetch_assoc($result)) {
+					$nota = new Nota();
+					$nota->setCode($register['cod_Nota']);
+                    $nota->setCodeAluno($register['cod_Aluno']);
+                    $nota->setMid($register['mid_Nota']);
+                    $nota->setFinal($register['final_Nota']);
+                    $nota->setOral($register['oral_Nota']);
+                    $nota->setAno($register['ano_Nota']);
+                    $nota->setSemestre($register['semestre_Nota']);
+					array_push($notas, $nota);
+				}		
+				$result->close();				
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $notas;
+		}
 }
 ?>
-CREATE TABLE `ccaa`.`tbl_Nota` (
-  `cod_Nota` INT NOT NULL,
-  `cod_Aluno` INT NULL,
-  `mid_Nota` FLOAT NULL,
-  `final_Nota` FLOAT NULL,
-  `oral_Nota` FLOAT NULL,
-  `ano_Nota` INT NULL,
-  `semestre_Nota` INT NULL,
-  PRIMARY KEY (`cod_Nota`));

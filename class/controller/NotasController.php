@@ -2,7 +2,7 @@
 
 require_once 'IControllerGeneral.php';
 
-class NotasController implements IControllerGeneral {
+class NotaController implements IControllerGeneral {
     function Save($nota) {
         $notaDAO = new NotaDAO();
         return $notaDAO->Save($nota);
@@ -16,6 +16,16 @@ class NotasController implements IControllerGeneral {
     function List(){
         $notaDAO = new NotaDAO();
         return $notaDAO->List();
+    }
+
+    function ListById($code){
+        $notaDAO = new NotaDAO();
+        return $notaDAO->ListById($code);
+    }
+
+    function ListByAluno($codeAluno){
+        $notaDAO = new NotaDAO();
+        return $notaDAO->ListByAluno($codeAluno);
     }
 }
 ?> 
