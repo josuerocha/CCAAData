@@ -1,14 +1,14 @@
 <?php	
 	require_once 'ACrudDAO.php';
 
-    class SalaDAO extends ACrudDAO{
+    class TurmaDAO extends ACrudDAO{
 
-        function Save($sala){	
+        function Save($turma){	
 			$situation = TRUE;
 			try{
 				$this->Connect();		
 				if($sala->getCode()==0){				
-					$query = "insert into tbl_Sala (descricao_Sala) values ('{$sala->getDescricao()}')";
+					$query = "insert into tbl_Turma (descricao_Sala) values ('{$sala->getDescricao()}')";
 					$this->connection->query($query);					
 					$code = $this->connection->insert_id;
 					$sala->setCode($code);
