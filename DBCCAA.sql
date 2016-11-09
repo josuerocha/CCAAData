@@ -155,13 +155,14 @@ CREATE TABLE tbl_Turma (
 );
 
 CREATE TABLE `ccaa`.`tbl_Nota` (
-  `cod_Nota` INT NOT NULL,
-  `cod_Aluno` INT NULL,
-  `mid_Nota` FLOAT NULL,
-  `final_Nota` FLOAT NULL,
-  `oral_Nota` FLOAT NULL,
-  `ano_Nota` INT NULL,
-  `semestre_Nota` INT NULL,
+  `cod_Nota` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `cod_Aluno` INT NOT NULL,
+  `mid_Nota` FLOAT NOT NULL,
+  `final_Nota` FLOAT NOT NULL,
+  `oral_Nota` FLOAT NOT NULL,
+  `ano_Nota` INT NOT NULL,
+  `semestre_Nota` INT NOT NULL,
+  `situacao_Nota` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`cod_Nota`));
 
 INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root', 'e10adc3949ba59abbe56e057f20f883e');

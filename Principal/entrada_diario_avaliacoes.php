@@ -65,7 +65,14 @@
 				<br/>
 				
 				<br/>
-			<form id="tabelaNotas" action="../helper/DiarioHelper.php?action=save" method = "post">
+			<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
+			<h4>Ano: &nbsp<input type="year" name="ano"></h4>
+			<h4>Semestre: &nbsp<select name="semestre"></h4>
+				<option value='1'>1º</option>
+				<option value='1'>2º</option>
+			</select>
+			<br>
+			<br>
 			<table id="example" class="display" cellspacing="0" width="100%">
 			
 				<thead>
@@ -81,27 +88,26 @@
 
 				<tbody>
 				<?PHP
-					$cont = 1;
 					$perfilControl = new PerfilController();
 					$pessoaControl = new PessoaController();
 
 					$perfil = $perfilControl->getByDescricao("Aluno");
 					$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
 					while($aluno = array_pop($alunos)){
-						echo "<tr>
-							
-							<input type='hidden' name='codigo{$cont}' value='{$aluno->getCode()}' />
+						$controlNota = new NotaController();
+						$nota = $controlNota->ListByAluno($aluno->getCode());
+						echo "<tr>	
+							<input type='hidden' name='codigoNota[]' value='{$nota->getCode()}' />
+							<input type='hidden' name='codigoAluno[]' value='{$aluno->getCode()}' />
 							<th>  {$aluno->getCode()} </th>
 							<th>  {$aluno->getNome()}  </th>
-							<th>  <input type='text' name='notaFinal{$cont}' value='{$aluno->getNome()}' />    </th>
-							<th>  <input type='text' name='notaMid{$cont}' value='{$aluno->getNome()}' />    </th>
-							<th>  <input type='text' name='oral{$cont}' value='{$aluno->getNome()}' />    </th>
-							<th><input type='text' name='situacao{$cont}' value='{$aluno->getNome()}' />    </th>
+							<th>  <input type='text' name='notaFinal[]' value='{$nota->getFinal()}' />    </th>
+							<th>  <input type='text' name='notaMid[]' value='{$nota->getMid()}' />    </th>
+							<th>  <input type='text' name='notaOral[]' value='{$nota->getOral()}' />    </th>
+							<th>  {$nota->getSituacao()}   </th>
 							<th>";
 							echo "</tr>";
-							$cont++;
 					}
-				echo	"<input type='hidden' name='qtd' value={$cont} />";
 				?>
 
 			</tbody>
@@ -122,11 +128,18 @@
 				<h3>Observações</h3>
 
 				<h4>Aluno: &nbsp <select name="Aluno">
-								<option value="Aluno1">Antonio</option>
-								<option value="Aluno2">Jose</option>
-								<option value="Aluno3">Jessica</option>
-								<option value="Aluno">Josue</option>
-								</select>
+					<?PHP
+					require_once (__DIR__."/../util/autoload.php");
+					spl_autoload_register("LoadClass");
+					$pessoaControl = new PessoaController();
+					$perfilControl = new PerfilController();
+					$perfil = $perfilControl->getByDescricao("Aluno");
+					$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
+					while($aluno = array_pop($alunos)){
+					echo "<option value='{$aluno->getCode()}'>{$aluno->getNome()}</option>";
+					}
+					?>
+					</select>
 				</h4>
 
 

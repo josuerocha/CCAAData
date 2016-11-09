@@ -1,5 +1,5 @@
 <?php
-class TipoConta{
+class Nota{
 
 private $code;
 private $codeAluno;
@@ -8,6 +8,7 @@ private $final;
 private $oral;
 private $ano;
 private $semestre;
+private $situacao;
 
 function __construct(){
     $this->setCode(0);
@@ -69,12 +70,13 @@ function getSemestre(){
     return $this->semestre;
 }
 
+function setSituacao($situacao){
+    $this->situacao = $situacao;
+}
+
+function getSituacao(){
+    return $this->situacao;
+}
+
 }
 ?>
-cod_Notas` INT NOT NULL,
-  `cod_Aluno` INT NULL,
-  `mid_Aluno` FLOAT NULL,
-  `final_Aluno` FLOAT NULL,
-  `oral_Aluno` FLOAT NULL,
-  `ano_Aluno` INT NULL,
-  `semestre_Aluno` INT NULL,

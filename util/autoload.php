@@ -18,9 +18,8 @@ function LoadClass($classe)
 	else if(file_exists("{$caminho}/class/entity/{$classe}.php")){
 		$arquivo = "/class/entity/{$classe}.php";
 	}
-
+	
 	$caminho = $caminho.$arquivo;
-		
 	require_once $caminho;
 }
 

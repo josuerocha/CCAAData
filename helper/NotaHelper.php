@@ -6,24 +6,53 @@ $action = $_GET["action"];
 
 switch($action){
 	        case 'save':
-			$control = new ContaPagarController();
-			$contaPagar = new ContaPagar();
-			
-			if(isset($_POST['codeHidden'])){
-				$contaPagar->setCode($_POST['codeHidden']);
-			}
-			$contaPagar->setTipo($_POST["tipo_conta"]);
-            $contaPagar->setValor($_POST["valor"]);
-            $contaPagar->setDtVencimento($_POST["Dt_venc"]);
-            $contaPagar->setDtPagamento($_POST["Dt_pag"]);
-            $contaPagar->setSituacao($_POST["Situacao"]);
+            $flag = "ok";
+			$control = new NotaController();
+            
+            $ano = $_POST['ano'];
+            $semestre = $_POST['semestre'];
 
-            if($control->Save($contaPagar)){		
+            $vetorCodeNota = $_POST['codigoNota'];
+            $vetorCodeAluno = $_POST['codigoAluno'];
+            $vetorNotaMid = $_POST['notaMid'];
+            $vetorNotaFinal = $_POST['notaFinal'];
+            $vetorNotaOral = $_POST['notaOral'];
+
+            while($codeAluno = array_pop($vetorCodeAluno)){
+                $nota = new Nota();
+                $codeNota = array_pop($vetorCodeNota);
+
+                $nota->setCodeAluno($codeAluno);
+
+                if($codeNota != ""){
+                    $nota->setCode($codeNota);
+                }
+                else{
+                    $nota->setCode(0);
+                }
+                $nota->setMid(array_pop($vetorNotaMid));
+                $nota->setFinal(array_pop($vetorNotaFinal));
+                $nota->setOral(array_pop($vetorNotaOral));
+                $nota->setAno($ano);
+                $nota->setSemestre($semestre);
+
+                //echo $nota->getCodeAluno();
+                if($control->Save($nota)){		
+				    $flag = "ok"; 
+                    echo "<script>alert('Registro salvo com sucesso!');</script>"; 
+			    }else{
+                    $flag = "ops";
+                    echo "<script>alert('Erro ao salvar o registro.');</script>"; 
+                    break;	 
+			    }			
+            }
+			
+            if($flag == "ok"){		
 				echo "<script>alert('Registro salvo com sucesso!');</script>"; 
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/contas_pagar.php';</script>"; 			
+			//echo "<script>location.href='../Principal/entrada_diario_avaliacoes.php';</script>"; 			
 			
 		break;	
 		case 'edit':
