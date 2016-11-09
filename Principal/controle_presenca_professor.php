@@ -61,24 +61,59 @@
 
     <div class="container">
 		<div class="frequencia_professor">
-			<h4 class="texto_pesquisar_frequencia_prof">Pesquisar: </h4><input class="input_pesquisar_frequencia_prof" type="text">
 			<!-- TABELA DE LANÇAMENTO DE FREQUENCIA DOS ALUNOS-->
-			<table id="table_frequencia_professor" border='2'>
-				<!-- Atributos da tabela -->
-				<tr>
-					<td>Numero</td>
-					<td>Professor</td>
-					<td>Presença</td>
-				</tr>
 				<!-- Exemplo de linhas que devem ser geradas para cada aluno -->
-				<tr>
-					<td>1</td>
-					<td>Josué Rocha Lima</td>
-					<td><input class="input_check" type="checkbox"></td>
-				</tr>
-			</table>
-			<input type="button" class="btn_salvar_freq_prof" value="Salvar"/>
+				<form action="../helper/PresencaProfessorHelper.php?action=save" method="post">
+					<select id="sltProf" name="sltProf">
+					<?PHP
+					require_once (__DIR__."/../util/autoload.php");
+					spl_autoload_register("LoadClass");
+					$pessoaControl = new PessoaController();
+					$perfilControl = new PerfilController();
+					$perfil = $perfilControl->getByDescricao("Professor");
+					$professores = $pessoaControl->ListByPerfil($perfil->getCode());
+					while($professor = array_pop($professores)){
+					
+					echo "<option value='{$professor->getCode()}'>{$professor->getNome()}</option>";
+					}
+					?>
+					
+					<input class="input_check" name="situacao" type="checkbox">&nbsp 
+					<?PHP
+						echo "<input type=\"hidden\" name=\"data\" value=\"date(\"Y-m-d\")\" >";
+					?>
+			<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 			<input type="button" class="btn_cancelar_freq_prof" value="Cancelar"/>
+			</form>
+			<table>
+				<tr>
+					<th id="gridCodigo">Código</th>
+					<th id="gridConta">Professor</th>
+					<th id="gridConta">Situacao</th>
+					<th colspan="2" id="gridAcao">Ação</th>
+				</tr>
+			                 <?PHP
+				$controller = new PresencaProfessorController();
+				$presencas = $controller->List();
+				while($presenca=array_pop($presencas)){
+				$pessoaControl = new PessoaController();
+				$pessoa = $pessoaControl->ListById($presenca->getCodePessoa());
+
+				echo "
+				<tr>
+                <th id='gridCodigo'>{$presenca->getCode()}</th>
+				<th id='gridCodigo'>{$pessoa->getNome()}</th>
+				<th id='gridCodigo'>{$presenca->getSituacao()}</th>
+                <th>
+				   <form id=\"formDelete\" action=\"../helper/PresencaProfessorHelper.php?action=delete\" method=\"post\">
+				   <input type=\"hidden\" name=\"deleteCode\" id=\"deleteCode\" value=\"{$presenca->getCode()}\"/>
+                   <input type=\"submit\" value=\"Excluir\">
+                    </form>
+                </th>
+				</tr>
+				";
+				}
+				?>
 		</div>
 			
 	</div>
@@ -126,6 +161,5 @@
 	<script type="text/javascript" src="assets/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.12.3.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/specific/entrada_diario_avaliacoes.js"></script>
 </body>
 </html>
