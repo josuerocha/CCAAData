@@ -68,7 +68,7 @@ else
     	</header>
         <div class="container">
 			<form action="../helper/LoginHelper.php?action=validate" id="loginForm" method="post">
-				<h4 id="usuario">Email:</h4></p><input type="text" name="email" id=inputEmail />
+				<h4 id="usuario">Email:</h4></p><input type="email" name="email" id=inputEmail />
 				<h4 id="textoSenha">Senha:</h4><input type="password" name="senha" id="inputSenha"/>
 				<input id="enviarEmail" type="submit" name="btnEnviar" value="Fazer Login">
 			</form>
