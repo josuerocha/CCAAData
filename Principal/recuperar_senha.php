@@ -68,7 +68,7 @@ else
     	</header>
         <div class="container">
 			<form  method="post">
-				<h4 id="usuario_recup">Email:</h4></p><input type="text" name="email" id="input_email_recup" />
+				<h4 id="usuario_recup">Email:</h4></p><input type="email" name="email" id="input_email_recup" />
 				<h4 id="texto_matricula">Matrícula:</h4><input type="text" name="matricula" id="input_matricula"/>
 				<h4 id="texto_cpf">CPF:</h4><input type="text" name="cpf" id="input_cpf"/>
 				<!-- COLOCAR TIPO DATA-->

@@ -21,6 +21,7 @@ Author: Nick
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+	<script src="assets/js/specific/jquery.mask.js"></script>
 </head>
 
 <body>
@@ -83,12 +84,12 @@ Author: Nick
 					
 				<h3>CPF: &nbsp <input type="text" name="inputCpf" size="20"></h3>
 
-				<h3>Telefone: &nbsp <input type="text" name="inputTel" size="15"> &nbsp  Celular: &nbsp <input type="text" name="inputCel" size="15"><h3>
+				<h3>Telefone: &nbsp <input type="text" name="inputTel" size="15" pattern="\(\d{2}\)\d{4}-\d{4}"> &nbsp  Celular: &nbsp <input type="text" name="inputCel" size="15" pattern="\(\d{2}\)\d{4}-\d{4}"><h3>
 
-				<h3>Email: &nbsp <input type="text" name="email" size="20"></h3>
+				<h3>Email: &nbsp <input type="email" name="email" size="20"></h3>
 
 				<h3>Logradouro: &nbsp <input type="text" name="logradouro" size="20"> &nbsp  
-					Número: &nbsp <input type="text" name="num" size="3"> &nbsp  
+					Número: &nbsp <input type="number" name="num" size="3"> &nbsp  
 					Complemento: &nbsp <input type="text" name="compl" size="2">
 				</h3>
 
