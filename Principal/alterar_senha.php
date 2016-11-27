@@ -60,12 +60,12 @@ Author: Nick
     
     <div class="container">
 		<form action="../helper/LoginHelper.php?action=changePassword" method="POST">
-			<h4 id="senha_atual">Senha atual:</h4>
-			<input id="input_senha_atual" type="password" name="senhaAnterior"/>
+			<h4 id="senha_atual">Senha atual*:</h4>
+			<input id="input_senha_atual" type="password" name="senhaAnterior" required/>
 			<h4 id="nova_senha">Nova senha:</h4>
-			<input id="input_nova_senha" type="password" name="senha"/>
+			<input id="input_nova_senha" type="password" name="senha" required/>
 			<h4 id="confirmar_senha">Confirmar senha:</h4>
-			<input id="input_confirma_senha" type="password" name="confirma_senha"/>
+			<input id="input_confirma_senha" type="password" name="confirma_senha" required/>
 			<input id="btn_alterar_senha" type="submit" name="Eviar" value="Enviar">
 		</form>
 	</div>

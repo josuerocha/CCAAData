@@ -21,7 +21,6 @@ Author: Nick
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
-	<script src="assets/js/specific/jquery.mask.js"></script>
 </head>
 
 <body>
@@ -74,7 +73,7 @@ Author: Nick
 								</select>
 				</h3>
 		
-				<h3>Nome Completo: &nbsp <input type="text" name="inputNome" size="20"></h3>
+				<h3>Nome Completo: &nbsp <input type="text" name="inputNome" size="20" pattern="[a-z\s]+$"></h3>
 
 				<h3>Sexo: &nbsp <select name="sexo">
 								<option value="f">Feminino</option>
@@ -82,19 +81,20 @@ Author: Nick
 								</select>
 				</h3>
 					
-				<h3>CPF: &nbsp <input type="text" name="inputCpf" size="20"></h3>
+				<h3>CPF*: &nbsp <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/></h3>
 
-				<h3>Telefone: &nbsp <input type="text" name="inputTel" size="15" pattern="\(\d{2}\)\d{4}-\d{4}"> &nbsp  Celular: &nbsp <input type="text" name="inputCel" size="15" pattern="\(\d{2}\)\d{4}-\d{4}"><h3>
+				<h3>Telefone*: &nbsp <input type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" required> &nbsp  
+				Celular*: &nbsp <input type="text" name="inputCel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required><h3>
 
-				<h3>Email: &nbsp <input type="email" name="email" size="20"></h3>
+				<h3>Email*: &nbsp <input type="email" name="email" size="20" placeholder="email@email.com" required></h3>
 
 				<h3>Logradouro: &nbsp <input type="text" name="logradouro" size="20"> &nbsp  
-					Número: &nbsp <input type="number" name="num" size="3"> &nbsp  
-					Complemento: &nbsp <input type="text" name="compl" size="2">
+					Número: &nbsp <input type="number" name="num" size="4"> &nbsp  
+					Complemento: &nbsp <input type="text" name="compl" size="4">
 				</h3>
 
 				<h3>Bairro: &nbsp <input type="text" name="bairro" size="10"> &nbsp  
-					Cidade: &nbsp <input type="text" name="cidade" size="10">
+					Cidade: &nbsp <input type="text" name="cidade" size="10" pattern="[a-z\s]+$">
 				</h3>
 
 				<h3>Data de Nascimento: <input type="date" name="dtNasc"></h3>

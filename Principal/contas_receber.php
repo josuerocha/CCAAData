@@ -76,7 +76,7 @@ Author: Nick
 					</select>
 				
 		
-				<h3>Valor: &nbsp <input type="text" id="valor" name="valor" size="10"></h3>
+				<h3>Valor: &nbsp <input type="number" id="valor" name="valor" size="10" min="1" max="500"></h3>
 					
 				<h3>Data de Vencimento: &nbsp <input type="date" id="Dt_venc" name="Dt_venc"></h3>
 				<h3>Data de Pagamento: &nbsp <input type="date" id="Dt_pag" name="Dt_pag"></h3>

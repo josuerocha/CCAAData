@@ -60,34 +60,31 @@ Author: Nick
     
     <div class="container">
 			<div id="coluna_esquerda">&nbsp;
-				<h2>Dados do Cartão</h2>
+				<h3>Dados do Cartão</h3>
 				
 				<form action="../helper/PagamentoHelper.php?action=save" method="post" />
-				<h4>Número do Cartão: *</h4> &nbsp <input type="text" name="numCartao" size="20" />
-				<h4>Data de Vencimento: * </h4>&nbsp <input type="month" name="dtValCartao" /> 
-				<h4>Nome e Sobrenome: * </h4>&nbsp <input type="text" name="nome" size="20" />
-				<h4>Código de Segurança: * </h4>&nbsp <input type="text" name="codSeg" size="5" />
+				<h4>Número do Cartão *:</h4><input type="text" name="numCartao" size="20" required pattern="[0-9]+$"title="Somente numeros"/>
+
+				<h4>Data de Vencimento *:</h4><input type="month" name="dtValCartao" required/> 
+				
+				<h4>Nome e Sobrenome *: </h4><input type="text" name="nome" size="20" required pattern="[a-z\s]+$" title="Somente letras"/>
+				
+				<h4>Código de Segurança *: </h4><input type="text" name="codSeg" size="3" placeholder="999" required pattern="[0-9]+$" title="Somente numeros"/>
 				
 			</div>
 
 			<div id="coluna_direita">&nbsp;
-				<h2>Dados do Titular do Cartão</h2>
+				<h3>Dados do Titular do Cartão</h3>
 
-				<h4>Tipo e número de documento: * </h4>&nbsp 
-				<select name="tipoDoc">
-				<option value="RG">RG</option>
-				<option value="CPF">CPF</option>
-				<option value="CNH">CNH</option>
-				</select>
-				<input type="text" name="documento" size="20" />
+				<h4>CPF *: </h4>&nbsp 
+				<input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" title="Somente numeros" required/>
 				
-				<h4>Telefone Fixo: * </h4>&nbsp <input type="text" name="ddd" size="3"> &nbsp <input type="text" name="telefone" size="20">
-				<h4>Ex: (31) 9 9999-9999</h4>
+				<h4>Telefone *: </h4> &nbsp <input type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" title="Somente numeros" required/>
 
-				<h3>Data de Nascimento: * &nbsp <input type="date" name="dtNasc" </h3>
+				<h4>Data de Nascimento *: </h4>&nbsp <input type="date" name="dtNasc" required/>
 				
-				<h3>Nome da Mãe: * &nbsp <input type="text" name="nmMae" size="20"></h3>
-				
+				<h4>Nome da Mãe *: </h4>&nbsp <input type="text" name="nmMae" size="20" required pattern="[a-z\s]+$" title="Somente letras"/>
+
 				<br/>
 	
 				<input type="submit" name="continuar" value="Enviar">&nbsp 

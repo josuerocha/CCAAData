@@ -30,8 +30,9 @@ else
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
-</head>
-
+	
+	</head>
+	
 <body>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse">
@@ -68,12 +69,13 @@ else
     	</header>
         <div class="container">
 			<form  method="post">
-				<h4 id="usuario_recup">Email:</h4></p><input type="email" name="email" id="input_email_recup" />
+				<h4 id="usuario_recup">Email*:</h4></p><input type="email" name="email" id="input_email_recup" placeholder="email@email.com" required/>
 				<h4 id="texto_matricula">Matrícula:</h4><input type="text" name="matricula" id="input_matricula"/>
-				<h4 id="texto_cpf">CPF:</h4><input type="text" name="cpf" id="input_cpf"/>
-				<!-- COLOCAR TIPO DATA-->
-				<h4 id="texto_dt">Data de Nascimento:</h4><input type="text" name="dt_nasc" id="input_de_nasc"/>
+				<h4 id="texto_cpf">CPF*:</h4><input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
+				<!--COLOCAR TIPO DATA-->
+				<h4 id="texto_dt">Data de Nascimento*:</h4><input type="date" name="dt_nasc" id="input_de_nasc" required/>
 				<input id="enviar_info" type="submit" name="btn_enviar_info" value="Continuar">
+
 			</form>
 			<div id="result"></div>
 			<!-- CASO OS CAMPOS PREENCHIDOS CORRESPONDEREM COM O BANCO DE DADOS, ABRIR A TELA DE ALTERAR SENHA
