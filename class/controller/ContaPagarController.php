@@ -13,9 +13,9 @@ class ContaPagarController implements IControllerGeneral {
         return $contaPagarDAO->Delete($contaPagar);
     }
 
-    function List(){
+    function ListAll(){
         $contaPagarDAO = new ContaPagarDAO();
-        return $contaPagarDAO->List();
+        return $contaPagarDAO->ListAll();
     }
 
     function ListById($id){

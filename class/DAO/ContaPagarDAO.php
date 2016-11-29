@@ -39,7 +39,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$contasReceber = array();			
 			try{
 				$this->Connect();	
@@ -51,8 +51,8 @@
 					$contaPagar->setCode($register['cod_ContaPagar']);
                     $contaPagar->setTipo($register['tbl_TipoConta_cod_TipoConta']);
 					$contaPagar->setValor($register['valor_ContaPagar']);
-					$contaPagar->setDtVencimento($register['dataVencimento_ContaPagar']);
-					$contaPagar->setDtPagamento($register['dataPagamento_ContaPagar']);
+					$contaPagar->setDtVencimento(date("d-m-Y", strtotime($register['dataVencimento_ContaPagar'])));
+					$contaPagar->setDtPagamento(date("d-m-Y", strtotime($register['dataPagamento_ContaPagar'])));
 					$contaPagar->setSituacao($register['situacao_ContaPagar']);
 					array_push($contasReceber, $contaPagar);
 				}		

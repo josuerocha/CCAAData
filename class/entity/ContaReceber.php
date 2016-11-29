@@ -1,6 +1,7 @@
 <?php
 class ContaReceber{
 private $code;
+private $pessoa;
 private $tipo;
 private $valor;
 private $dtVencimento;
@@ -17,6 +18,14 @@ function getCode(){
 
 function setCode($code){
     $this->code = $code;
+}
+
+function getPessoa(){
+    return $this->pessoa;
+}
+
+function setPessoa($pessoa){
+    $this->pessoa = $pessoa;
 }
 
 function setTipo($tipo){

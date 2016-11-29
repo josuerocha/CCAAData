@@ -23,6 +23,7 @@ CREATE TABLE tbl_ContaPagar (
 
 CREATE TABLE tbl_ContaReceber (
   cod_ContaReceber INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  aluno_ContaPagar INTEGER UNSIGNED NOT NULL,
   tbl_TipoConta_cod_TipoConta INTEGER UNSIGNED NOT NULL,
   valor_ContaReceber FLOAT NOT NULL,
   dataVencimento_ContaReceber DATE NOT NULL,
