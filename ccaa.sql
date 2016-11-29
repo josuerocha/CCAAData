@@ -172,4 +172,4 @@ CREATE TABLE `ccaa`.`tbl_Observacao` (
   `descricao_Observacao` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`cod_Observacao`));
 
-INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e');
