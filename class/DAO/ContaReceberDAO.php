@@ -39,7 +39,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$contasReceber = array();			
 			try{
 				$this->Connect();	

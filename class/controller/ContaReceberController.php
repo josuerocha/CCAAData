@@ -13,9 +13,9 @@ class ContaReceberController implements IControllerGeneral {
         return $contaReceberDAO->Delete($contaReceber);
     }
 
-    function List(){
+    function ListAll(){
         $contaReceberDAO = new ContaReceberDAO();
-        return $contaReceberDAO->List();
+        return $contaReceberDAO->ListAll();
     }
 
     function ListById($code){
