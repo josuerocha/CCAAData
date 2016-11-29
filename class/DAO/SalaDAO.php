@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$salas = array();			
 			try{
 				$this->Connect();	

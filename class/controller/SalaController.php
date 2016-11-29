@@ -13,9 +13,9 @@ class SalaController implements IControllerGeneral {
         return $salaDAO->Delete($sala);
     }
 
-    function List(){
+    function ListAll(){
         $salaDAO = new SalaDAO();
-        return $salaDAO->List();
+        return $salaDAO->ListAll();
     }
 }
 ?> 

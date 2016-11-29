@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$idiomas = array();			
 			try{
 				$this->Connect();	

@@ -15,7 +15,7 @@ class TipoContaController implements IControllerGeneral {
 
     function ListAll(){
         $tipoContaDAO = new TipoContaDAO();
-        return $tipoContaDAO->List();
+        return $tipoContaDAO->ListAll();
     }
 
     function ListByCode($code){

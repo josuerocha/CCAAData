@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$pagamentos = array();			
 			try{
 				$this->Connect();	

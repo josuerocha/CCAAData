@@ -15,7 +15,7 @@ class PerfilController implements IControllerGeneral {
 
     function ListAll(){
         $perfilDAO = new PerfilDAO();
-        return $perfilDAO->List();
+        return $perfilDAO->ListAll();
     }
 
     function getByDescricao($descricao){

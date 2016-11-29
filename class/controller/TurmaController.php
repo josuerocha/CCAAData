@@ -13,9 +13,9 @@ class TurmaController implements IControllerGeneral {
         return $turmaDAO->Delete($turma);
     }
 
-    function List(){
+    function ListAll(){
         $turmaDAO = new TurmaDAO();
-        return $turmaDAO->List();
+        return $turmaDAO->ListAll();
     }
 }
 ?> 

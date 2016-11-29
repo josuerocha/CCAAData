@@ -13,9 +13,9 @@ class PagamentoController implements IControllerGeneral {
         return $pagamentoDAO->Delete($pagamento);
     }
 
-    function List(){
+    function ListAll(){
         $pagamentoDAO = new PagamentoDAO();
-        return $pagamentoDAO->List();
+        return $pagamentoDAO->ListAll();
     }
 }
 ?> 

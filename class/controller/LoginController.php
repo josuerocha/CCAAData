@@ -40,7 +40,7 @@ class LoginController implements IControllerLogin {
 
     function ListAll(){
         $loginDAO = new LoginDAO();
-        return $loginDAO->List();
+        return $loginDAO->ListAll();
     }
 }
 ?> 

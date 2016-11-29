@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$notas = array();			
 			try{
 				$this->Connect();	

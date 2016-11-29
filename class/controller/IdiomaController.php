@@ -13,9 +13,9 @@ class IdiomaController implements IControllerGeneral {
         return $idiomaDAO->Delete($idioma);
     }
 
-    function List(){
+    function ListAll(){
         $idiomaDAO = new IdiomaDAO();
-        return $idiomaDAO->List();
+        return $idiomaDAO->ListAll();
     }
 }
 ?> 

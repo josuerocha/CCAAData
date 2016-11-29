@@ -13,9 +13,9 @@ class HorarioController implements IControllerGeneral {
         return $horarioDAO->Delete($horario);
     }
 
-    function List(){
+    function ListAll(){
         $horarioDAO = new HorarioDAO();
-        return $horarioDAO->List();
+        return $horarioDAO->ListAll();
     }
 }
 ?> 

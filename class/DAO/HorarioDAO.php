@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$horarios = array();			
 			try{
 				$this->Connect();	

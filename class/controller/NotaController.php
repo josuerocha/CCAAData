@@ -35,7 +35,7 @@ class NotaController implements IControllerGeneral {
 
     function ListAll(){
         $notaDAO = new NotaDAO();
-        return $notaDAO->List();
+        return $notaDAO->ListAll();
     }
 
     function ListById($code){

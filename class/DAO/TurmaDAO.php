@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$turmas = array();			
 			try{
 				$this->Connect();	
