@@ -68,7 +68,7 @@ Author: Nick
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
 					$tipoContaControl = new TipoContaController();
-					$tipos = $tipoContaControl->List();
+					$tipos = $tipoContaControl->ListAll();
 					while($tipo=array_pop($tipos)){                                                 
 					echo "<option value='{$tipo->getCode()}'>{$tipo->getTipo()}</option>";
 					}
@@ -112,7 +112,7 @@ Author: Nick
 					require_once ("../util/autoload.php");
 					spl_autoload_register("LoadClass");
 					$controller = new ContaReceberController();
-					$contasReceber = $controller->List();
+					$contasReceber = $controller->ListAll();
 					while($contaReceber=array_pop($contasReceber)){
 					echo "
 					<tr>

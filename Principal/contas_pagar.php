@@ -72,7 +72,7 @@
 				<h3>Tipo: &nbsp <select id="tipo_conta" name="tipo_conta">
 								<?php
 								$tipoContaControl = new TipoContaController();
-								$tipos = $tipoContaControl->List();
+								$tipos = $tipoContaControl->ListAll();
 								while($tipo=array_pop($tipos)){                                                 
 								echo "<option value='{$tipo->getCode()}'>{$tipo->getTipo()}</option>";
 								}
@@ -115,7 +115,7 @@
 					</tr>
 				<?PHP
 					$controller = new ContaPagarController();
-					$contasPagar = $controller->List();
+					$contasPagar = $controller->ListAll();
 					while($contaPagar = array_pop($contasPagar)){
 					echo "
 					<tr>

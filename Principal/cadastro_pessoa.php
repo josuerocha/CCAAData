@@ -65,7 +65,7 @@ Author: Nick
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
 					$perfilControl = new PerfilController();
-					$perfis = $perfilControl->List();
+					$perfis = $perfilControl->ListAll();
 					while($perfil=array_pop($perfis)){                                                 
 					echo "<option value='{$perfil->getCode()}'>{$perfil->getDescricao()}</option>";
 				}
@@ -132,7 +132,7 @@ Author: Nick
 				</tr>
 				<?PHP
 				$controller = new PessoaController();
-				$pessoas = $controller->List();
+				$pessoas = $controller->ListAll();
 				while($pessoa=array_pop($pessoas)){
 				echo "
 				<tr>

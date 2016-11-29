@@ -68,14 +68,14 @@
 		<?PHP
 								$codProfessor = 0;
 								$perfilControl = new PerfilController();
-								$perfis = $perfilControl->List();
+								$perfis = $perfilControl->ListAll();
 								while($perfil=array_pop($perfis)){                                                 
 									if($perfil->getDescricao() == "Professor"){
 										$codProfessor = $perfil->getCode();
 									}
 								}
 								$controller = new PessoaController();
-								$pessoas = $controller->List();
+								$pessoas = $controller->ListAll();
 								while($pessoa=array_pop($pessoas)){
 									if($pessoa->getFKPerfil() == 1)
 									echo "<option value='{$pessoa->getCode()}'>{$pessoa->getNome()}</option>";
