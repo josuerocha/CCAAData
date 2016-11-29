@@ -12,8 +12,11 @@
 <?PHP
 require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
-$control = new ContaReceberController();
-$contas = $control->ListAll();
+
+$contasControl = new ContaReceberController();
+$contas = $contasControl->ListAll();
+
+$tipoControl = new TipoContaController();
 ?>
 
 
@@ -34,11 +37,12 @@ $contas = $control->ListAll();
     <tbody>
 		
         <?PHP
-		 while ($contaReceber = array_pop($contas)) {         
+		 while ($contaReceber = array_pop($contas)) { 
+            $tipoConta = $tipoControl->ListByCode($contaReceber->getTipo());
         echo "
-		    <tr>
-					<td >{$contaReceber->getTipo()}</th>
-					<td >{$contaReceber->getValor()}</th>
+		    <tr align=\"center\">
+					<td >{$tipoConta->getTipo()}</th>
+					<td >R\$ {$contaReceber->getValor()}</th>
 					<td >{$contaReceber->getDtVencimento()}</th>
 					<td >{$contaReceber->getDtPagamento()}</th>
 					<td >{$contaReceber->getSituacao()}</th>                   
@@ -57,6 +61,8 @@ $contas = $control->ListAll();
 </body>
 <script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="assets/js/dataTables.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json
+"></script>
 <script type="text/javascript" src="assets/js/relatorio_contasreceber.js"></script>
 
 </html>

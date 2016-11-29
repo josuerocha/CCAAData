@@ -13,9 +13,14 @@ class TipoContaController implements IControllerGeneral {
         return $tipoContaDAO->Delete($tipoConta);
     }
 
-    function List(){
+    function ListAll(){
         $tipoContaDAO = new TipoContaDAO();
         return $tipoContaDAO->List();
+    }
+
+    function ListByCode($code){
+        $tipoContaDAO = new TipoContaDAO();
+        return $tipoContaDAO->ListByCode($code);
     }
 }
 ?> 

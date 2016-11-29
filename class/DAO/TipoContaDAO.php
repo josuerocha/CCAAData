@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$tipoContas = array();			
 			try{
 				$this->Connect();	
@@ -58,7 +58,21 @@
 			return $tipoContas;
 		}
 
-        function ListById($id){
+        function ListByCode($code){
+			try{
+				$this->Connect();	
+				$query = "select * from tbl_TipoConta where cod_TipoConta = {$code}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				$register = mysqli_fetch_assoc($result);
+				$tipoConta = new TipoConta();
+				$tipoConta->setCode($register['cod_TipoConta']);
+                $tipoConta->setTipo($register['tipo_TipoConta']);
+				$result->close();				
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $tipoConta;
             
         }
 }

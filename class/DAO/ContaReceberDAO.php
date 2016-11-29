@@ -48,11 +48,12 @@
 				$this->Disconnect();				
 				while($register = mysqli_fetch_assoc($result)) {
 					$contaReceber = new ContaReceber();
+
 					$contaReceber->setCode($register['cod_ContaReceber']);
                     $contaReceber->setTipo($register['tbl_TipoConta_cod_TipoConta']);
 					$contaReceber->setValor($register['valor_ContaReceber']);
-					$contaReceber->setDtVencimento($register['dataVencimento_ContaReceber']);
-					$contaReceber->setDtPagamento($register['dataPagamento_ContaReceber']);
+					$contaReceber->setDtVencimento(date("d-m-Y", strtotime($register['dataVencimento_ContaReceber'])));
+					$contaReceber->setDtPagamento(date("d-m-Y", strtotime($register['dataPagamento_ContaReceber'])));
 					$contaReceber->setSituacao($register['situacao_ContaReceber']);
 					array_push($contasReceber, $contaReceber);
 				}		

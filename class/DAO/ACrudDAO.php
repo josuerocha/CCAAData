@@ -19,7 +19,6 @@ spl_autoload_register("LoadClass");
 		abstract function Save($objeto);
 		abstract function Delete($objeto);
 		abstract function ListAll();
-		abstract function ListById($code);
 	}
 	
 ?> 
