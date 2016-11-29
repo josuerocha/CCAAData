@@ -39,7 +39,7 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="inicio.html">Home</a></li>
 					<li><a href="about.html">Sobre</a></li>
 					<li><a href="courses.html">Cursos</a></li>
           			<li><a href="courses.html">Estude no CCAA</a></li>
