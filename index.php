@@ -1,7 +1,7 @@
 ﻿<?PHP
 
 
-header("location:Principal/inicio.html");
+header("location:pages/inicio.html");
 
 
 ?>

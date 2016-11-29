@@ -13,6 +13,6 @@ while($observacao = array_pop($observacoes)){
     echo "<script> alert('Email enviado para {$aluno->getEmail()}'); </script>";
 }
 
-    echo "<script>	document.location.href = '../Principal/entrada_diario_avaliacoes.php';</script>";
+    echo "<script>	document.location.href = '../pages/entrada_diario_avaliacoes.php';</script>";
 
 ?>

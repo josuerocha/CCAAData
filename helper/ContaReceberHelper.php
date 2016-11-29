@@ -23,7 +23,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/contas_receber.php';</script>"; 			
+			echo "<script>location.href='../pages/contas_receber.php';</script>"; 			
 			
 		break;	
 
@@ -42,13 +42,13 @@ switch($action){
             $contaReceber = new ContaReceber();
             $contaReceber->setCode($_GET["code"]);
 			if($control->Delete($contaReceber)){
-				echo "<script>alert('Registro excluído com sucesso!');location.href='../Principal/contas_receber.php';</script>"; 
+				echo "<script>alert('Registro excluído com sucesso!');location.href='../pages/contas_receber.php';</script>"; 
 			}else{
-				echo "<script>alert('Erro ao excluir ');location.href='../Principal/contas_receber.php';</script>"; 
+				echo "<script>alert('Erro ao excluir ');location.href='../pages/contas_receber.php';</script>"; 
 			}						
 		break;			
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../Principal/indice.html';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/indice.html';</script>";
 		break;
 	}	
 ?>

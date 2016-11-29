@@ -20,7 +20,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/altera_horario_escola.php';</script>"; 			
+			echo "<script>location.href='../pages/altera_horario_escola.php';</script>"; 			
 			
 		break;	
 
@@ -29,13 +29,13 @@ switch($action){
             $horario = new Horario();
             $horario->setCode($_GET["code"]);
 			if($control->Delete($horario)){
-				echo "<script>alert('Registro excluído com sucesso!');location.href='../Principal/cadastroTipoConta.php';</script>"; 
+				echo "<script>alert('Registro excluído com sucesso!');location.href='../pages/cadastroTipoConta.php';</script>"; 
 			}else{
-				echo "<script>alert('Erro ao excluir ');location.href='../Principal/altera_horario_escola.php';</script>"; 
+				echo "<script>alert('Erro ao excluir ');location.href='../pages/altera_horario_escola.php';</script>"; 
 			}						
 		break;			
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../Principal/inicio.php';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/inicio.php';</script>";
 		break;
 	}	
 ?>

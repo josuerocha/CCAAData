@@ -11,7 +11,7 @@ switch($action){
 
 
     		default:
-			echo "<script>alert('Acesso negado!'); location.href='../Principal/indice.html';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/indice.html';</script>";
 		break;
 	}	
 ?>

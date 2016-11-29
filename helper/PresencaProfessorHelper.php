@@ -23,7 +23,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/controle_presenca_professor.php';</script>"; 			
+			echo "<script>location.href='../pages/controle_presenca_professor.php';</script>"; 			
 			
 		break;	
 
@@ -36,7 +36,7 @@ switch($action){
 			}else{
 				echo "<script>alert('Erro ao excluir ');;</script>"; 
 			}
-            echo "<script>location.href='../Principal/controle_presenca_professor.php';</script>"; 				
+            echo "<script>location.href='../pages/controle_presenca_professor.php';</script>"; 				
 		break;			
 		default:
 			echo "<script>alert('Acesso negado!'); location.href='../paginaInicial.html';</script>";

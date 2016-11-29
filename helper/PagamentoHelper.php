@@ -25,7 +25,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao efetuar o pagamento.');</script>"; 
 			}			
-			echo "<script>location.href='../Principal/pagamento.php';</script>"; 			
+			echo "<script>location.href='../pages/pagamento.php';</script>"; 			
 			
 		break;	
 

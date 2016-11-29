@@ -35,12 +35,12 @@ require_once("../util/checkSession.php");
 			</div>
 				<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li class="active"><a href="home_aluno.html">Home</a></li>
+					<li class="active"><a href="home_aluno.php">Home</a></li>
 					<li ><a href="aluno_diarios.html">Diários</a></li>
 					<li ><a href="aluno_boletim.html">Boletim</a></li>
 					<li ><a href="aluno_boletim.html">Materiais</a></li>
 					<li ><a href="aluno_boletim.html">Mensalidades</a></li>
-					<li ><a href="aluno_boletim.html">Pagamento Online</a></li>
+					<li ><a href="pagamento.php">Pagamento Online</a></li>
 					<li ><a href="alterar_senha.php">Alterar Senha</a></li>
 					<li ><a href="../util/logout.php">Logout</a></li>
 			</div>

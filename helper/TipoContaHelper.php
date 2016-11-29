@@ -31,7 +31,7 @@ switch($action){
 			ReloadList();
 		break;			
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../Principal/paginaInicial.html';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/paginaInicial.html';</script>";
 		break;
 	}
 

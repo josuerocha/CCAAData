@@ -24,14 +24,14 @@ switch($action){
 			else{
 				echo "<script>alert('Senha anterior informada inválida.');</script>"; 
 			}
-				echo "<script>	document.location.href = '../Principal/alterar_senha.php';</script>";
+				echo "<script>	document.location.href = '../pages/alterar_senha.php';</script>";
 			break;
 
 			case 'validate':
 				$control = new LoginController();
 				$validation = '';
 				if($control->Validate($_POST["email"],MD5($_POST["senha"]))){
-					$validation = "<script>	document.location.href = '../Principal/home_aluno.php';
+					$validation = "<script>	document.location.href = '../pages/home_aluno.php';
 		    					   	</script>";
 					if(!isset($_SESSION)) 
     				{ 

@@ -21,9 +21,9 @@ switch($action){
                 $pessoa->setSexo($_POST["SltSexo"]);
             }
             if($control->Save($pessoa)){		
-				echo "<script>alert('Registro salvo com sucesso!');location.href='../Principal/cadastro_pessoa.php';</script>"; 
+				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/cadastro_pessoa.php';</script>"; 
 			}else{		
-				echo "<script>alert('Erro ao salvar o registro.');location.href='../Principal/cadastro_pessoa.php';</script>"; 
+				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/cadastro_pessoa.php';</script>"; 
 			}			
 			//echo "<script>location.href='../cadastroPessoa.php';</script>"; 			
 			
@@ -41,9 +41,9 @@ switch($action){
 				$pessoa->setHoraAula($valor);
 
 				if($control->Save($pessoa)){		
-				echo "<script>alert('Registro salvo com sucesso!');location.href='../Principal/alterar_hora_aula.php';</script>"; 
+				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/alterar_hora_aula.php';</script>"; 
 				}else{		
-				echo "<script>alert('Erro ao salvar o registro.');location.href='../Principal/alterar_hora_aula.php';</script>"; 
+				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/alterar_hora_aula.php';</script>"; 
 				}	
 
 				break;
@@ -56,7 +56,7 @@ switch($action){
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}
-			//echo "<script>location.href='../Principal/cadastroPessoas.php';</script>";						
+			//echo "<script>location.href='../pages/cadastroPessoas.php';</script>";						
 		break;			
 		
 		default:

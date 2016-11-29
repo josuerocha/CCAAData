@@ -25,11 +25,6 @@ else
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -52,7 +47,6 @@ else
 					<li><a href="price.html">Preços</a></li>
                     <li><a href="courses.html">Convênios</a></li>
                     <li><a href="courses.html">Contato</a></li>
-					<li class="active"><a href="login.html">Login</a></li>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
