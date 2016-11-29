@@ -1,13 +1,5 @@
 <?PHP
-session_start();
-if(isset($_SESSION["email"]))
-{
-	header("Location: home_aluno.php");
-}
-else
-{
-
-}
+require_once("../util/checkSession.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

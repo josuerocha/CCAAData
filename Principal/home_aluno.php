@@ -1,6 +1,6 @@
-<!--
-Author: Nick
--->
+<?PHP
+require_once("../util/checkSession.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

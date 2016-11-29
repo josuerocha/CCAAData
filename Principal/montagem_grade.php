@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?PHP
+require_once("../util/checkSession.php");
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8">

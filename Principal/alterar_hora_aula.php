@@ -1,5 +1,6 @@
-
-<!DOCTYPE html>
+<?PHP
+require_once("../util/checkSession.php");
+?>
 <html lang="en">
 <?PHP 
 	require_once (__DIR__."/../util/autoload.php");

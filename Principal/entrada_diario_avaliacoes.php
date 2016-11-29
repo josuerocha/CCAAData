@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?PHP
+require_once("../util/checkSession.php");
+?>
 <html lang="en">
 <?PHP 
 	require_once ("../util/autoload.php");
