@@ -2,11 +2,13 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="assets/css/dataTablesCss.css">
+<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
+
 </head>
 
 <body>
-<table id="tabela" class="display" cellspacing="0" width="100%">
+<table id="tabela" class="display nowrap" cellspacing="0" width="100%">
 
 
 <?PHP
@@ -21,7 +23,7 @@ $tipoControl = new TipoContaController();
 
 
 <thead>
-<tr class="bootgrid-header"> 
+<tr> 
             <th data-column-id="Código" data-type="numeric">Tipo</th>
             <th data-column-id="Nome da turma"> Valor</th>
             <th data-column-id="Horario" data-order="desc">Data de vencimento</th>
@@ -52,17 +54,24 @@ $tipoControl = new TipoContaController();
       }
 	?>
 	</tr>
-        ...
     </tbody>
 </table>
 
 
 
 </body>
+
 <script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="assets/js/dataTables.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json
-"></script>
+<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
 <script type="text/javascript" src="assets/js/relatorio_contasreceber.js"></script>
+</script>
+
 
 </html>
