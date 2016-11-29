@@ -60,9 +60,9 @@ Author: Nick
     
     <div class="container">
 		<form action="../helper/LoginHelper.php?action=changePassword" method="POST">
-			<h4 id="email">Email*:</h4><input id="inputEmail" type="password" name="senhaAnterior" required/>
-			<h4 id="senha">Senha:</h4><input id="inputSenha" type="password" name="senha" required/>
-			<h4 id="confirmar">Confirmar senha:</h4><input id="inputConfirmar" type="password" name="confirma_senha" required/>
+			<h4 id="email">Email*:</h4><input id="inputEmail" type="email" name="senhaAnterior" required/>
+			<h4 id="senha">Senha*:</h4><input id="inputSenha" type="password" name="senha" required/>
+			<h4 id="confirmar">Confirmar senha*:</h4><input id="inputConfirmar" type="password" name="confirma_senha" required/>
 			<input id="salvar" type="submit" name="Eviar" value="Salvar">
 			<input id="cancelar" type="button" name="btnCancelar" value="Cancelar" />
 		</form>
