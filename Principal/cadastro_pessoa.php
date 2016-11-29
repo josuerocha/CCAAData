@@ -84,7 +84,7 @@ Author: Nick
 				<h3>CPF*: &nbsp <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/></h3>
 
 				<h3>Telefone*: &nbsp <input type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" required> &nbsp  
-				Celular*: &nbsp <input type="text" name="inputCel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required><h3>
+				Celular*: &nbsp <input type="text" name="inputCel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required></h3>
 
 				<h3>Email*: &nbsp <input type="email" name="email" size="20" placeholder="email@email.com" required></h3>
 
