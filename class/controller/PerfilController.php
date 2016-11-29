@@ -13,7 +13,7 @@ class PerfilController implements IControllerGeneral {
         return $perfilDAO->Delete($perfil);
     }
 
-    function List(){
+    function ListAll(){
         $perfilDAO = new PerfilDAO();
         return $perfilDAO->List();
     }

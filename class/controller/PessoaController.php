@@ -14,7 +14,7 @@ class PessoaController implements IControllerGeneral{
         return $pessoaDAO->Delete($pessoa);
     }
 
-    function List(){
+    function ListAll(){
         $pessoaDAO = new PessoaDAO();
         return $pessoaDAO->List();
     }

@@ -13,9 +13,9 @@ class ObservacaoController implements IControllerGeneral {
         return $observacaoDAO->Delete($observacao);
     }
 
-    function List(){
+    function ListAll(){
         $observacaoDAO = new ObservacaoDAO();
-        return $observacaoDAO->List();
+        return $observacaoDAO->ListAll();
     }
 }
 ?> 

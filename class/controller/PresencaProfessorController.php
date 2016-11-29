@@ -13,9 +13,9 @@ class PresencaProfessorController implements IControllerGeneral {
         return $presencaProfessorDAO->Delete($presencaProfessor);
     }
 
-    function List(){
+    function ListAll(){
         $presencaProfessorDAO = new PresencaProfessorDAO();
-        return $presencaProfessorDAO->List();
+        return $presencaProfessorDAO->ListAll();
     }
 }
 ?> 

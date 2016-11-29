@@ -130,7 +130,7 @@
 			return $login;
 		}	
 
-        function List(){
+        function ListAll(){
 			$logins = array();			
 			try{
 				$this->Connect();	

@@ -6,7 +6,7 @@ interface IControllerGeneral {
 
     public  function Delete($objeto);
 
-    public  function List();
+    public  function ListAll();
 }
 
 ?> 

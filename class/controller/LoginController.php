@@ -38,7 +38,7 @@ class LoginController implements IControllerLogin {
         return $loginDAO->getByEmail($email);
     }
 
-    function List(){
+    function ListAll(){
         $loginDAO = new LoginDAO();
         return $loginDAO->List();
     }

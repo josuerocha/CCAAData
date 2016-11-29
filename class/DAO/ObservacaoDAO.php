@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$observacoes = array();			
 			try{
 				$this->Connect();	

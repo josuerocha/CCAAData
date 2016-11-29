@@ -706,15 +706,6 @@ footer {
 	left: 460px;
 
 }
-#inputEmail{
-	position: relative;
-	left: 460px;
-	top: 50px;
-	width: 220px;
-	height: 32px;
-	border: 1px solid #D3D3D3;
-	border-radius: 3px;
-}
 input[type="text"]{
 	width: 220px;
 	height: 32px;
@@ -768,7 +759,7 @@ input[type="time"]{
 	top: -9px;
 }
 
-#inputSenha, #input_confirma_senha{
+#input_confirma_senha{
 	position: relative;
 	left: 460px;
 	top: 40px;
@@ -778,10 +769,21 @@ input[type="time"]{
 	border-radius: 3px;
 	
 }
+
+#email{
+	position: relative;
+	top: 50px;
+	left: -10px;
+}
 #senha_atual{
 	position: relative;
 	top: 110px;
 	left: 362px;
+}
+#senha{
+	position: relative;
+	top: 22px;
+	left: -10px;
 }
 #nova_senha{
 	position: relative;
@@ -793,6 +795,39 @@ input[type="time"]{
 	top: 72px;
 	left: 330px;
 }
+#confirmar{
+	position: relative;
+	top: -8px;
+	left: -82px;
+}
+
+#inputEmail{
+	position: relative;
+	left: 48px;
+	top: 17px;
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+#inputSenha{
+	position: relative;
+	left: 48px;
+	top: -10px;
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+#inputConfirmar{
+	position: relative;
+	left: 48px;
+	top: -38px;
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
 #input_senha_atual{
 	position: relative;
 	left: 460px;
@@ -802,6 +837,7 @@ input[type="time"]{
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
+
 #input_nova_senha{
 	position: relative;
 	left: 460px;
@@ -810,7 +846,6 @@ input[type="time"]{
 	height: 32px;
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
-
 }
 #enviarEmail, #btn_alterar_senha{
 	position: relative;
@@ -825,6 +860,34 @@ input[type="time"]{
 	border-radius: 3px;
 	border-color: #3d84e6;
 	background-color: #3d84e6;
+}
+#salvar{
+	position: relative;
+	left: -158px;
+	top: 20px;
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	font-size: 16px;
+	border: 1px;
+	font-weight: bold;
+	border-radius: 3px;
+	border-color: #3d84e6;
+	background-color: #3d84e6;
+}
+#cancelar{
+	position: relative;
+	left: -158px;
+	top: 20px;
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	font-size: 16px;
+	border: 1px;
+	font-weight: bold;
+	border-radius: 3px;
+	border-color: #DA252A;
+	background-color: #DA252A;
 }
 #usuario{
 	position: relative;

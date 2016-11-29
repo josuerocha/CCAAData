@@ -33,7 +33,7 @@ class NotaController implements IControllerGeneral {
         return $notaDAO->Delete($nota);
     }
 
-    function List(){
+    function ListAll(){
         $notaDAO = new NotaDAO();
         return $notaDAO->List();
     }

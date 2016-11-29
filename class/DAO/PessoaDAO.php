@@ -42,7 +42,7 @@
 			return $situation;
 		}		
 
-		function List(){
+		function ListAll(){
 			$pessoas = array();			
 			try{
 				
@@ -108,10 +108,15 @@
 			try{
 				$this->Connect();	
 				$query = "select * from tbl_Pessoa where tbl_Perfil_cod_Perfil = {$fkPerfil}";
+				//echo $fkPerfil;
+				//echo $query;
 				$result = $this->connection->query($query);	
+				
 				$this->Disconnect();	
 				
 				$register = mysqli_fetch_assoc($result);	
+				
+				echo $result;
 				
 				while($register = mysqli_fetch_assoc($result)) {
 					$pessoa = new Pessoa();

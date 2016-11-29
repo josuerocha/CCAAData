@@ -171,7 +171,7 @@
 				<?PHP
 					$controller = new ObservacaoController();
 					$pessoaControl = new PessoaController();
-					$observacoes = $controller->List();
+					$observacoes = $controller->ListAll();
 					while($observacao = array_pop($observacoes)){
 					$aluno = $pessoaControl->ListById($observacao->getCodeAluno());
 					echo "

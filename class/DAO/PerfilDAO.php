@@ -38,7 +38,7 @@
             return $situation;
         }
 
-        function List(){
+        function ListAll(){
 			$perfis = array();			
 			try{
 				$this->Connect();	
