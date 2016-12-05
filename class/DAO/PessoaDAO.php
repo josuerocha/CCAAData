@@ -73,7 +73,7 @@
 			return $pessoas;
 		}			
 		
-		function ListById($code){
+		function ListByCode($code){
 			
 			$pessoa = new Pessoa();			
 			try{
@@ -115,8 +115,6 @@
 				$this->Disconnect();	
 				
 				$register = mysqli_fetch_assoc($result);	
-				
-				echo $result;
 				
 				while($register = mysqli_fetch_assoc($result)) {
 					$pessoa = new Pessoa();

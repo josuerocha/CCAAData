@@ -23,7 +23,7 @@ $pessoaControl = new PessoaController();
 $perfilControl = new PerfilController();
 
 $perfil = $perfilControl->getByDescricao("Professor");
-$pessoas = $contasControl->ListByPerfil($perfil->getCode());
+$professores = $pessoaControl->ListByPerfil($perfil->getCode());
 
 ?>
 
@@ -41,15 +41,11 @@ $pessoas = $contasControl->ListByPerfil($perfil->getCode());
     <tbody>
 		
         <?PHP
-		 while ($contaPagar = array_pop($contas)) { 
-            $tipoConta = $tipoControl->ListByCode($contaPagar->getTipo());
+		 while ($professor = array_pop($professores)) { 
+            $perfil = $pessoaControl->ListByCode($professor->getCode());
         echo "
 		    <tr align=\"center\">
-					<td >{$tipoConta->getTipo()}</th>
-					<td >R\$ {$contaPagar->getValor()}</th>
-					<td >{$contaPagar->getDtVencimento()}</th>
-					<td >{$contaPagar->getDtPagamento()}</th>
-					<td >{$contaPagar->getSituacao()}</th>                   
+					<td >{$professor->getNome()}</th>             
  
 		    </tr>
 			";

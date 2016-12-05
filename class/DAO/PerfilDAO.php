@@ -60,8 +60,27 @@
 			return $perfis;
 		}
 
-        function ListById($id){
-            
+        function ListByCode($code){
+		
+			try{
+
+				$this->Connect();	
+				$query = "select * from tbl_Perfil";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				
+				$register = mysqli_fetch_assoc($result);
+				
+				$perfil = new Perfil();
+				$perfil->setCode($register['cod_Perfil']);
+                $perfil->setDescricao($register['perfil_Perfil']);
+						
+				$result->close();	
+
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $perfil;
         }
 
 		function getByDescricao($descricao){
