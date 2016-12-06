@@ -1,5 +1,7 @@
-$("#professor").change(function (){
-    document.getElementById("formularioProfessor").submit();
+
+
+$("#sltProfessor").change(function (){
+    document.getElementById("formProfessor").submit();
 });
 
 $.fn.dataTable.ext.search.push(

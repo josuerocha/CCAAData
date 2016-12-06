@@ -66,7 +66,7 @@
         		$presencas = array();
     			try{
 				$this->Connect();	
-				$query = "select * from tbl_PresencaProfessor";
+				$query = "select * from tbl_PresencaProfessor where tbl_Pessoa_cod_Pessoa = {$code}";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				
