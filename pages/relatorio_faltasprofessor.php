@@ -15,7 +15,7 @@ require_once("../util/checkSession.php");
 <body>
 <table id="tabela" class="display nowrap" cellspacing="0" width="100%">
 
-
+<h3><select name="professor">
 <?PHP
 require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
@@ -26,9 +26,15 @@ $perfilControl = new PerfilController();
 $perfil = $perfilControl->getByDescricao("Professor");
 $professores = $pessoaControl->ListByPerfil($perfil->getCode());
 
+	
+ 	while ($professor = array_pop($professores)) { 
+        $perfil = $pessoaControl->ListByCode($professor->getCode());
+        echo "<option value=\"{$professor->getCode()}\" > {$professor->getNome()} </option>";
+    }
+
 ?>
-
-
+</select>
+</h3>
 <thead>
 		<tr> 
             <th> Data</th>
@@ -45,17 +51,6 @@ $professores = $pessoaControl->ListByPerfil($perfil->getCode());
 
     <tbody>
 		
-        <?PHP
-		 while ($professor = array_pop($professores)) { 
-            $perfil = $pessoaControl->ListByCode($professor->getCode());
-        echo "
-		    <tr align=\"center\">
-					<td >{$professor->getNome()}</th>             
- 
-		    </tr>
-			";
-      }
-	?>
 	</tr>
     </tbody>
 </table>

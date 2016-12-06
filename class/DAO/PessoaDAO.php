@@ -110,13 +110,10 @@
 			try{
 				$this->Connect();	
 				$query = "select * from tbl_Pessoa where tbl_Perfil_cod_Perfil = {$fkPerfil}";
-				//echo $fkPerfil;
-				//echo $query;
+
 				$result = $this->connection->query($query);	
 				
 				$this->Disconnect();	
-				
-				$register = mysqli_fetch_assoc($result);	
 				
 				while($register = mysqli_fetch_assoc($result)) {
 					$pessoa = new Pessoa();
@@ -134,6 +131,7 @@
 					$pessoa->setHoraAula($register['horaAula_Pessoa']);
 					$pessoa->setFoto($register['foto_Pessoa']);
 					array_push($pessoas,$pessoa);
+
 				}
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
