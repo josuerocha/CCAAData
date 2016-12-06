@@ -1,5 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once (__DIR__."/../util/autoload.php");
+spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,8 +71,6 @@ require_once("../util/checkSession.php");
 				<h4 id="texto-perfil-pessoa">Perfil:</h4><span id="perfil-span-pessoa">*</span> &nbsp 
 					<select id="perfil-selec-pessoa" name="perfil">
 					<?php
-					require_once (__DIR__."/../util/autoload.php");
-					spl_autoload_register("LoadClass");
 					$perfilControl = new PerfilController();
 					$perfis = $perfilControl->ListAll();
 					while($perfil=array_pop($perfis)){                                               

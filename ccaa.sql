@@ -127,7 +127,8 @@ CREATE TABLE tbl_PresencaProfessor (
 );
 
 CREATE TABLE tbl_Sala (
-  numero_Sala INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  numero_Sala INTEGER UNSIGNED NOT NULL,
+  descricao_Sala VARCHAR(200) NOT NULL,
   PRIMARY KEY(numero_Sala)
 );
 
@@ -179,6 +180,12 @@ CREATE TABLE tbl_Observacao (
 
 INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES 
 ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
+
+INSERT INTO tbl_Sala(numero_Sala, descricao_Sala) VALUES
+(1, 'Sala de aula em vídeo conferência'),
+(2, 'Sala de aula regular - 10 pessoas'),
+(3, 'Sala de aula regular - 10 pessoas'),
+(4, 'Sala de aula regular - 15 pessoas');
 
 INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
 (1,'Administrador'),

@@ -1,5 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once (__DIR__."/../util/autoload.php");
+spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -79,9 +81,17 @@ require_once("../util/checkSession.php");
 						<th id="gridPerfil">Sala</th>
 					</tfoot>
 					<tbody>
-						
+						<tr>
+						<?PHP
+							$salaControl = new SalaController();
+							$salas = $salaControl->ListAll();
 
-
+							while($sala = array_pop($salas)){
+								echo "<td> {$sala->getCode()} </td>";
+								echo "<td> {$sala->getDescricao()} </td>";
+							}
+						?>
+						</tr>
 					</tbody>
 				</table>
 			</div>
