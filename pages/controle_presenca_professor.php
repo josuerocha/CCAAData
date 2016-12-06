@@ -102,7 +102,7 @@ require_once("../util/checkSession.php");
 				$presencas = $controller->ListAll();
 				while($presenca=array_pop($presencas)){
 				$pessoaControl = new PessoaController();
-				$pessoa = $pessoaControl->ListById($presenca->getCodePessoa());
+				$pessoa = $pessoaControl->ListByCode($presenca->getCodePessoa());
 
 				echo "
 				<tr>

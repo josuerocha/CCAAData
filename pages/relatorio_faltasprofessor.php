@@ -13,9 +13,11 @@ require_once("../util/checkSession.php");
 </head>
 
 <body>
+<div id = "result">
 <table id="tabela" class="display nowrap" cellspacing="0" width="100%">
 
-<h3><select name="professor">
+<form id="formularioProfessor" action="../pages/relatorio_faltasprofessor.php" method="post">
+<h3><select name="professorCode" id="professorCode">
 <?PHP
 require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
@@ -25,12 +27,22 @@ $perfilControl = new PerfilController();
 
 $perfil = $perfilControl->getByDescricao("Professor");
 $professores = $pessoaControl->ListByPerfil($perfil->getCode());
-
+$codeProfessor = 0;
 	
- 	while ($professor = array_pop($professores)) { 
+ 	while ($professor = array_pop($professores)){ 
+ 		$codeProfessor = $professor->getCode();
         $perfil = $pessoaControl->ListByCode($professor->getCode());
-        echo "<option value=\"{$professor->getCode()}\" > {$professor->getNome()} </option>";
+        echo "<option value=\"{$professor->getCode()}\"> {$professor->getNome()} </option>";
     }
+echo "</select>";
+echo "</form>";
+
+if(isset($_POST['professorCode'])){
+	$codeProfessor = $_POST['professorCode'];
+	echo "<script> alert('{$codeProfessor}'); </script>";
+}
+
+
 
 ?>
 </select>
@@ -39,7 +51,6 @@ $professores = $pessoaControl->ListByPerfil($perfil->getCode());
 		<tr> 
             <th> Data</th>
             <th> Presença</th>
-			
         </tr>
 </thead>
 <tfoot>
@@ -48,13 +59,30 @@ $professores = $pessoaControl->ListByPerfil($perfil->getCode());
         <th> Presença</th>	
     </tr>
 </tfoot>
+    <tbody>    	
+    	<?PHP
+    		$presencaProfessorControl = new PresencaProfessorController();
+    		$presencas = $presencaProfessorControl->ListByProfessor($codeProfessor);
+    		while ($presenca = array_pop($presencas)) { 
+    			echo "<tr>
+    					  <td align=\"center\">{$presenca->getData()}</td>";
+    					  if($presenca->getSituacao()){
+    					  	echo "<td align=\"center\"><img src=\"assets/images/checkmark.png\" alt=\"Presente\" ></td>";
 
-    <tbody>
+    					  }
+    					  else{
+    					  	echo "<td align=\"center\"><img src=\"assets/images/xmark.png\" alt=\"Ausente\" ></td>";
+
+    					  }
+    					  
+
+    			echo "</tr>";
+    		}
+		?>
 		
-	</tr>
     </tbody>
 </table>
-
+</div>
 </body>
 
 <script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
