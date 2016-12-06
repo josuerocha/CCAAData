@@ -38,8 +38,8 @@ require_once("../util/checkSession.php");
 					<li><a href="home_secretario.php">Home</a></li>
 					<li class="active"><a href="cadastros.php">Cadastros</a></li>
 					<li><a href="cadastro_pessoa.php">Cadastrar Pessoa</a></li>
-					<li><a href="contas_pagar.php">Contas a Pagar</a></li>
-					<li><a href="contas_receber.php">Contas a Receber</a></li>
+					<li><a href="cadastro_contaspagar.php">Contas a Pagar</a></li>
+					<li><a href="cadastro_contasreceber.php">Contas a Receber</a></li>
           			<li><a href="alterar_senha.php">Alterar Senha</a></li>
 					<li><a href="../util/logout.php">Logout</a></li>
 				</ul>
@@ -84,8 +84,8 @@ require_once("../util/checkSession.php");
 								<a href="home_secretario.php">Home</a>| 
 								<a href="cadastros.php">Cadastros</a>|
 								<a href="cadastro_pessoa.php">Cadastrar Pessoa</a>|
-								<a href="contas_pagar.php">Contas a pagar</a>|
-                				<a href="contas_receber.php">Contas a receber</a>|
+								<a href="cadastro_contaspagar.php">Contas a pagar</a>|
+                				<a href="cadastro_contasreceber.php">Contas a receber</a>|
                 				<a href="alterar_senha.php">Alterar Senha</a>|
                 				<a id="fo-logout" href="../util/logout.php">Logout</a>
 							</p>

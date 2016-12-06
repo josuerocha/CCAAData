@@ -70,7 +70,7 @@ switch($action){
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}			
-			echo "<script>location.href='../pages/contas_pagar.php';</script>"; 			
+			echo "<script>location.href='../pages/cadastro_contaspagar.php';</script>"; 			
 		break;			
 		default:
 			echo "<script>alert('Acesso negado!');</script>";

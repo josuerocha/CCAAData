@@ -23,7 +23,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../pages/contas_receber.php';</script>"; 			
+			echo "<script>location.href='../pages/cadastro_contasreceber.php';</script>"; 			
 			
 		break;	
 
@@ -42,9 +42,9 @@ switch($action){
             $contaReceber = new ContaReceber();
             $contaReceber->setCode($_GET["code"]);
 			if($control->Delete($contaReceber)){
-				echo "<script>alert('Registro excluído com sucesso!');location.href='../pages/contas_receber.php';</script>"; 
+				echo "<script>alert('Registro excluído com sucesso!');location.href='../pages/cadastro_contasreceber.php';</script>"; 
 			}else{
-				echo "<script>alert('Erro ao excluir ');location.href='../pages/contas_receber.php';</script>"; 
+				echo "<script>alert('Erro ao excluir ');location.href='../pages/cadastro_contasreceber.php';</script>"; 
 			}						
 		break;			
 		default:
