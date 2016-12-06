@@ -114,8 +114,8 @@
 				$result = $this->connection->query($query);	
 				
 				$this->Disconnect();	
-				
 				while($register = mysqli_fetch_assoc($result)) {
+					
 					$pessoa = new Pessoa();
 					$pessoa->setCode($register['cod_Pessoa']);
 					$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
@@ -134,6 +134,7 @@
 
 				}
 			}catch(Exception $ex){
+
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}
 			

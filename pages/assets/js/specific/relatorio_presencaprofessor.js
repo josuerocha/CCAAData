@@ -1,3 +1,7 @@
+$("#professor").change(function (){
+    alert('FALA');
+});
+
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
         var valueMin = $('#min').val();

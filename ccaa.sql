@@ -187,5 +187,7 @@ INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
 (5,'Tutor'),
 (6,'Responsável');
 
-INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,tbl_Login_email_Login,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES ('1','0','Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png');
+INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,tbl_Login_email_Login,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (1,0,'Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
+(3,0,'Josué Rocha', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
+(3,0,'Wolmer', '111.111.111-75','40 Belo Horizonte','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png');
 
