@@ -10,22 +10,21 @@ switch($action){
 			$pessoa = new Pessoa();
 
 			if(isset($_POST["inputNome"])){
-			    $pessoa->setFKPerfil($_POST["SltPerfil"]);
+			    $pessoa->setFKPerfil($_POST["perfil"]);
                 $pessoa->setNome($_POST["inputNome"]);
-                $pessoa->setCPF($_POST["inputCpf"]);
+                $pessoa->setCPF($_POST["cpf"]);
                 $pessoa->setEndereco($_POST["num"]." ".$_POST["logradouro"].$_POST["compl"]);
                 $pessoa->setTelefone($_POST["inputTel"]);
                 $pessoa->setCelular($_POST["inputCel"]);
                 $pessoa->setEmail($_POST["email"]);
                 $pessoa->setDataNascimento($_POST["dtNasc"]);
-                $pessoa->setSexo($_POST["SltSexo"]);
+                $pessoa->setSexo($_POST["sexo"]);
             }
             if($control->Save($pessoa)){		
 				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/cadastro_pessoa.php';</script>"; 
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/cadastro_pessoa.php';</script>"; 
-			}			
-			//echo "<script>location.href='../cadastroPessoa.php';</script>"; 			
+			}						
 			
 		break;	
 
@@ -50,13 +49,13 @@ switch($action){
 		case 'delete':
 			$control = new PessoaController();
 
-			$pessoa = $control->ListByID($_GET["code"]);		
+			$pessoa = $control->ListByCode($_GET["code"]);		
 			if($control->Delete($pessoa)){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}
-			//echo "<script>location.href='../pages/cadastroPessoas.php';</script>";						
+			echo "<script>location.href='../pages/cadastro_pessoa.php';</script>";						
 		break;			
 		
 		default:

@@ -12,11 +12,14 @@ class Pessoa{
     private $dataNascimento;
     private $sexo;
     private $horaAula;
+    private $foto;
 
     function __construct(){
         $this->setCode(0);
         $this->nome = 0;
         $this->fkLogin = 0;
+        $this->setHoraAula(0);
+        $this->setFoto("noimg.png");
     }
 
     function getCode(){
@@ -113,6 +116,14 @@ class Pessoa{
 
     function setHoraAula($horaAula){
         $this->horaAula = $horaAula;
+    }
+
+    function getFoto(){
+        return $this->foto;
+    }
+
+    function setFoto($foto){
+        $this->foto = $foto;
     }
 }
 ?>

@@ -60,20 +60,20 @@ require_once("../util/checkSession.php");
     
     <div class="container">
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
-				<h3>Perfil: &nbsp <select name="SltPerfil">
+				<h3>Perfil: &nbsp <select name="perfil">
 					<?php
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
 					$perfilControl = new PerfilController();
 					$perfis = $perfilControl->ListAll();
-					while($perfil=array_pop($perfis)){                                                 
-					echo "<option value='{$perfil->getCode()}'>{$perfil->getDescricao()}</option>";
+					while($perfil=array_pop($perfis)){                                               
+					echo "<option value=\"{$perfil->getCode()}\">{$perfil->getDescricao()}</option>";
 				}
 			?>
-								</select>
+					</select>
 				</h3>
 		
-				<h3>Nome Completo: &nbsp <input type="text" name="inputNome" size="20" pattern="[a-z\s]+$"></h3>
+				<h3>Nome Completo: &nbsp <input type="text" name="inputNome" size="40"></h3>
 
 				<h3>Sexo: &nbsp <select name="sexo">
 								<option value="f">Feminino</option>

@@ -92,7 +92,9 @@ CREATE TABLE tbl_Pessoa (
   celular_Pessoa VARCHAR(14) NOT NULL,
   email_Pessoa VARCHAR(100) NOT NULL,
   dataNascimento_Pessoa DATE NOT NULL,
-  sexo_Pessoa VARCHAR(1) NOT NULL,
+  sexo_Pessoa VARCHAR(10) NOT NULL,
+  horaAula_Pessoa FLOAT NOT NULL,
+  foto_Pessoa VARCHAR(100) NOT NULL,
   PRIMARY KEY(cod_Pessoa),
   INDEX tbl_Pessoa_FKIndex1(tbl_Login_email_Login),
   INDEX tbl_Pessoa_FKIndex2(tbl_Perfil_cod_Perfil)
@@ -174,4 +176,16 @@ CREATE TABLE tbl_Observacao (
   descricao_Observacao VARCHAR(300) NOT NULL,
   PRIMARY KEY (cod_Observacao));
 
-INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
+INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES 
+('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
+
+INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
+(1,'Administrador'),
+(2,'Secretário(a)'),
+(3,'Professor'),
+(4,'Aluno'),
+(5,'Tutor'),
+(6,'Responsável');
+
+INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,tbl_Login_email_Login,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES ('1','0','Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png');
+
