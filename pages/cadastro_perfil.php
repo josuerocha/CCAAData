@@ -61,15 +61,12 @@ require_once("../util/checkSession.php");
 					<h4 id="text_perfil">Perfil: <span>*</span></h4><input id="input_perfil" type="text" name="perfil">	
 					<input id="btn-salvar-perfil" type="submit" name="Salvar" value="Salvar">
 					<input id="btn-cancelar-perfil" type="button" name="Cancelar" value="Cancelar">
-    			<h4 id="text-pesquisar-perfil">Pesquisar:</h4><input id="input-pesquisar-perfil" type="text" name="pesquisar"/>
-    			<input id="btn-pesquisar-perfil" type="submit" value="Enviar" />
-				
-
 				<!-- TABELA DO GRID AQUI!!! -->
 				<table id="table_perfil" border="2">
 					<tr>
 						<th id="gridcod">Código</th>
 						<th id="gridPerfil">Perfil</th>
+						<th colspan="2" id="gridAcao">Ação</th>
 					</tr>
 				</table>
 			</div>
@@ -78,7 +75,7 @@ require_once("../util/checkSession.php");
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 			</div>
-		<div id="footer2_perfil" class="footer2_login">
+		<div id="fo_perfil" class="footer2_login">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 panel">
@@ -90,7 +87,7 @@ require_once("../util/checkSession.php");
 								<a href="contas_pagar.php">Contas a pagar</a>|
                 				<a href="contas_receber.php">Contas a receber</a>|
                 				<a href="alterar_senha.php">Alterar Senha</a>|
-                				<a href="../util/logout.php">Logout</a>
+                				<a id="fo-logout" href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>
