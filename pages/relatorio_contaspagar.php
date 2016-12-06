@@ -26,15 +26,24 @@ $tipoControl = new TipoContaController();
 
 
 <thead>
-<tr> 
-            <th data-column-id="Código" data-type="numeric">Tipo</th>
-            <th data-column-id="Nome da turma"> Valor</th>
-            <th data-column-id="Horario" data-order="desc">Data de vencimento</th>
-			<th data-column-id="Nível" data-order="desc">Data de pagamento</th>
-			<th data-column-id="Descricao" data-order="desc">Situação</th>
-			
-        </tr>
+	<tr> 		
+        <th data-type="numeric">Tipo</th>
+        <th>Valor</th>
+        <th>Data de vencimento</th>
+		<th>Data de pagamento</th>
+		<th>Situação</th>
+	</tr>
 </thead>
+<tfoot>
+	<tr> 		
+	    <th data-type="numeric">Tipo</th>
+        <th>Valor</th>
+        <th>Vencimento</th>
+		<th>Pagamento</th>
+		<th>Situação</th>
+    </tr>
+
+</tfoot>
     <tbody>
 		
         <?PHP
@@ -42,11 +51,11 @@ $tipoControl = new TipoContaController();
             $tipoConta = $tipoControl->ListByCode($contaPagar->getTipo());
         echo "
 		    <tr align=\"center\">
-					<td >{$tipoConta->getTipo()}</th>
-					<td >{$contaPagar->getValor()}</th>
-					<td >{$contaPagar->getDtVencimento()}</th>
-					<td >{$contaPagar->getDtPagamento()}</th>
-					<td >{$contaPagar->getSituacao()}</th>                   
+					<td>{$tipoConta->getTipo()}</th>
+					<td>{$contaPagar->getValor()}</th>
+					<td>{$contaPagar->getDtVencimento()}</th>
+					<td>{$contaPagar->getDtPagamento()}</th>
+					<td>{$contaPagar->getSituacao()}</th>                   
  
 		    </tr>
 			";

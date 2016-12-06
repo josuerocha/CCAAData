@@ -28,19 +28,33 @@ $(document).ready(function() {
 
     $('#tabela tfoot th').each( function () {
         var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+        $(this).html( '<input type="text" placeholder="Pesquisar '+title+'" />' );
     } );
 
     var table = $('#tabela').DataTable( {
         searching : true,
-        dom: 'B<"toolbar">frtip',
+        dom: 'B<"toolbar">rtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     } );
 
-    $("div.toolbar").html("<b>Data inicial  </b><input type='date' id='min' name='min'>           <b>Data final</b>    <input type='date' id='max' name='max'>");
 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+
+
+    $("div.toolbar").html("<b>Data inicial  </b><input type='date' id='min' name='min'>           <b>Data final</b>    <input type='date' id='max' name='max'>");
         // Event listener to the two range filtering inputs to redraw on input
     $('#min, #max').keyup( function() {
         table.draw();
