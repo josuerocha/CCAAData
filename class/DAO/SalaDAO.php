@@ -8,7 +8,7 @@
 			try{
 				$this->Connect();		
 				if($sala->getCode()==0){				
-					$query = "insert into tbl_Sala (descricao_Sala) values ('{$sala->getDescricao()}')";
+					$query = "insert into tbl_Sala (numero_Sala) values ('{$sala->getCode()}')";
 					$this->connection->query($query);					
 					$code = $this->connection->insert_id;
 					$sala->setCode($code);

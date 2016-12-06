@@ -1,5 +1,5 @@
 <?php
-require_once "../../util/autoload.php";
+require_once "../util/autoload.php";
 spl_autoload_register("LoadClass");
 
 $action = $_GET["action"];
@@ -8,8 +8,7 @@ switch($action){
 	        case 'save':
 			$control = new SalaController();
 			$sala = new Sala();
-			
-			$sala->setDescricao($_POST["code"]);
+			$sala->setDescricao($_POST["descricao"]);
 
             if($control->Save($sala)){		
 				echo "<script>alert('Registro salvo com sucesso!');</script>"; 

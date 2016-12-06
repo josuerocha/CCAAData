@@ -58,9 +58,12 @@ require_once("../util/checkSession.php");
     
     <div class="container" contenteditable>
 				<div id="coluna_esquerda">
+
+				<form action="../helper/SalaHelper.php?action=save" method="POST">
 					<h4 id="textoSala">Salas: <span>*</span></h4><input id="sala" type="text" name="descricao">	
 					<input id="btn-salvar-sala" type="submit" name="btnSalvar" value="Salvar">
 					<input id="btn-cancelar-sala" type="button" name="btnCancelar" value="Cancelar">
+				</form>
 
 				<!-- TABELA DO GRID AQUI!!! -->
 				<table id="table_sala" border="2">

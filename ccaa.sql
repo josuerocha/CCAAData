@@ -189,6 +189,12 @@ INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
 (6,'Tutor'),
 (7,'Responsavel');
 
+INSERT INTO tbl_TipoConta (cod_TipoConta,tipo_TipoConta) VALUES
+(1,'Mensalidade'),
+(2,'Agua'),
+(3,'Luz'),
+(4,'Gas');
+
 INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
 (4,'Josué Rocha', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
 (4,'Wolmer', '111.111.111-75','40 Belo Horizonte','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
