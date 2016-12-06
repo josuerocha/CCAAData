@@ -17,7 +17,7 @@ class NotaController implements IControllerGeneral {
             if($nota->getFinal() == ""){
                 $nota->setFinal(NULL);
             }
-            if($nota->setOral() == ""){
+            if($nota->getOral() == ""){
                 $nota->setOral(NULL);
             }
         }

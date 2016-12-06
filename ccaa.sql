@@ -182,14 +182,15 @@ INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmac
 
 INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
 (1,'Administrador'),
-(2,'Secretário(a)'),
-(3,'Professor'),
-(4,'Aluno'),
-(5,'Tutor'),
-(6,'Responsável');
+(2,'Coordenador(a)'),
+(3,'Secretario(a)'),
+(4,'Professor'),
+(5,'Aluno'),
+(6,'Tutor'),
+(7,'Responsavel');
 
-INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (1,'Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
-(3,'Josué Rocha', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
-(3,'Wolmer', '111.111.111-75','40 Belo Horizonte','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
-(4,'Root', '111.111.111-75','40 RootLandia','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
+INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
+(4,'Josué Rocha', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
+(4,'Wolmer', '111.111.111-75','40 Belo Horizonte','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
+(1,'Root', '111.111.111-75','40 RootLandia','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
 
