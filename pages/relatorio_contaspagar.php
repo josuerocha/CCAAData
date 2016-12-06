@@ -13,8 +13,8 @@ require_once("../util/checkSession.php");
 
 <body>
 <table id="tabela" class="display nowrap" cellspacing="0" width="100%">
-<input type="text" id="min" name="min">
-<input type="text" id="max" name="max">
+<input type="date" id="min" name="min">
+<input type="date" id="max" name="max">
 
 <?PHP
 require_once ("../util/autoload.php");
@@ -45,7 +45,7 @@ $tipoControl = new TipoContaController();
         echo "
 		    <tr align=\"center\">
 					<td >{$tipoConta->getTipo()}</th>
-					<td >R\$ {$contaPagar->getValor()}</th>
+					<td >{$contaPagar->getValor()}</th>
 					<td >{$contaPagar->getDtVencimento()}</th>
 					<td >{$contaPagar->getDtPagamento()}</th>
 					<td >{$contaPagar->getSituacao()}</th>                   
@@ -69,7 +69,7 @@ $tipoControl = new TipoContaController();
 <script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
-<script type="text/javascript" src="assets/js/specific/relatorio_contasreceber.js"></script>
+<script type="text/javascript" src="assets/js/specific/relatorio_contaspagar.js"></script>
 </script>
 
 </html>
