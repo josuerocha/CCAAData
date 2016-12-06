@@ -31,7 +31,7 @@ class PessoaController implements IControllerGeneral{
 
     function getByEmail($email){
         $pessoaDAO = new PessoaDAO();
-        return $pessoaDAO->ListByEmail($email);
+        return $pessoaDAO->getByEmail($email);
     }    
 }
 

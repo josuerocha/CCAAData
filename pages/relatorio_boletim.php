@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<?PHP
-require_once("../util/checkSession.php");
-?>
-<html lang="en">
+<html lang="pt-br">
 <?PHP 
 	require_once ("../util/autoload.php");
 	spl_autoload_register("LoadClass");
+	require_once("../util/checkSession.php");
 ?>
 <head>
 	<meta charset="utf-8">
@@ -85,8 +83,7 @@ require_once("../util/checkSession.php");
 			
 				<thead>
 				<tr>
-					<th id="gridnum">Número      </th>&nbsp
-					<th id="gridAlunio">Aluno    </th>&nbsp
+					<th id="gridnum">Disciplina</th>&nbsp
 					<th id="gridNotaFinal">Nota final   </th>&nbsp
 					<th id="gridNotaFinal">Nota midterm </th>&nbsp
 					<th id="gridNotaOral">Oral     </th>&nbsp
@@ -96,23 +93,19 @@ require_once("../util/checkSession.php");
 
 				<tbody>
 				<?PHP
-					$perfilControl = new PerfilController();
-					$pessoaControl = new PessoaController();
-					$perfil = $perfilControl->getByDescricao("Aluno");
-					$aluno = $pessoaControl->ListByCode($perfil->getCode());
-						$controlNota = new NotaController();
-						$nota = $controlNota->ListByAluno($aluno->getCode());
-						echo "<tr>	
-							<input type='hidden' name='codigoNota[]' value='{$nota->getCode()}' />
-							<input type='hidden' name='codigoAluno[]' value='{$aluno->getCode()}' />
-							<th> {$aluno->getCode()} </th>
-							<th> {$aluno->getNome()} </th>
-							<th> {$nota->getFinal()} </th>
-							<th> {$nota->getMid()}   </th>
-							<th> {$nota->getOral()}  </th>
-							<th> {$nota->getSituacao()} </th>
-							<th>";
-							echo "</tr>";
+				$pessoaControl = new PessoaController();
+				$pessoa = $pessoaControl->getByEmail($_SESSION['email']);
+				$controlNota = new NotaController();
+				$nota = $controlNota->ListByAluno($aluno->getCode());
+
+				echo "<tr>
+					<th> {$nota->getDisciplina()} </th>
+					<th> {$nota->getFinal()} </th>
+					<th> {$nota->getMid()}   </th>
+					<th> {$nota->getOral()}  </th>
+					<th> {$nota->getSituacao()} </th>
+					<th>";
+					echo "</tr>";
 				?>
 
 			</tbody>

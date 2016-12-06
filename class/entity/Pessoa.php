@@ -2,7 +2,6 @@
 class Pessoa{
     private $code;
     private $fkPerfil;
-    private $fkLogin;
     private $nome;
     private $cpf;
     private $endereco;
@@ -17,7 +16,6 @@ class Pessoa{
     function __construct(){
         $this->setCode(0);
         $this->nome = 0;
-        $this->fkLogin = 0;
         $this->setHoraAula(0);
         $this->setFoto("noimg.png");
     }
@@ -36,14 +34,6 @@ class Pessoa{
 
     function setFKPerfil($fkPerfil){
         $this->fkPerfil = $fkPerfil; 
-    }
-
-    function getFKLogin(){
-        return $this->fkLogin; 
-    }
-
-    function setFKLogin($fkLogin){
-        $this->fkLogin = $fkLogin;
     }
 
     function getNome(){

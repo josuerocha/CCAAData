@@ -116,7 +116,6 @@
 			return $login;
 		}	
 
-
         function ListByID($codigo){
 			$login = new Login();			
 			try{
