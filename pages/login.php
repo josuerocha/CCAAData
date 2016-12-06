@@ -14,11 +14,10 @@ else
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="free-educational-responsive-web-template-webEdu">
-	<meta name="author" content="webThemez.com">
-	<link rel="icon" href="assets/images/favicon.png" >
-	<title>CCAA - Login</title>
-	<link rel="favicon" href="assets/images/favicon.png">
+	<title>Login</title>
+
+	<?include "../util/StandardHeader.php" ?>
+
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
