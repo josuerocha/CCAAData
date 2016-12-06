@@ -1,4 +1,3 @@
-
 <?PHP
 	require_once "../util/checkSession.php";
 	require_once "../util/StandardHeader.php";

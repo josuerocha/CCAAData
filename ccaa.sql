@@ -1,3 +1,5 @@
+ALTER DATABASE `ccaa` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 CREATE TABLE tbl_Avaliacao (
   cod_Avaliacao INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   tbl_Pessoa_cod_Pessoa INTEGER UNSIGNED NOT NULL,
