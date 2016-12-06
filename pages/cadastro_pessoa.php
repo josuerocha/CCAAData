@@ -56,19 +56,19 @@ require_once("../util/checkSession.php");
     </header>
 
     
-    <div class="container" contenteditable>
+    <div class="container" >
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
 				<h4 id="texto-nome-pessoa">Nome Completo: &nbsp</h4><span id="nome-span-pessoa">*</span>  
 					<input id="input-nome-pessoa" type="text" name="inputNome" />
 				<h4 id="texto-sexo-pessoa">Sexo: &nbsp</h4><span id="sexo-span-pessoa">*</span>  
-					<select id="sexo-selec-pessoa" name="sexo">
-						<option value="f">Feminino</option>
-						<option value="m">Masculino</option>
+					<select id="sexo-selec-pessoa" class="" name="sexo">
+							<option value="f">Feminino</option>
+							<option value="m">Masculino</option>
 					</select>
 		
 				<h4 id="texto-perfil-pessoa">Perfil:</h4><span id="perfil-span-pessoa">*</span> &nbsp 
 					<select id="perfil-selec-pessoa" name="perfil">
-						<?php
+					<?php
 					require_once (__DIR__."/../util/autoload.php");
 					spl_autoload_register("LoadClass");
 					$perfilControl = new PerfilController();
@@ -100,7 +100,7 @@ require_once("../util/checkSession.php");
 					<input id="input-bairro-pessoa" type="text" name="bairro" required/> &nbsp  
 				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
 					<input id="input-cid-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
-				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa" required>*</span> &nbsp 
+				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
 					<input id="input-uf-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
 
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 

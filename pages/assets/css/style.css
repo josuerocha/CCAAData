@@ -397,8 +397,8 @@ label {
 	top: 240px;
 }
 select{
-	width: 150px;
-	height: 30px;
+	width: 160px;
+	height: 32px;
 	border-radius: 3px;
 }
 #texto_idioma_turma{
@@ -1677,10 +1677,8 @@ nav#filter a.current {
 }
 #sexo-selec-pessoa{
 	position: relative;
-	font-size: 15px;
 	left: 155px;
 	top: -40px;
-	height: 32px;
 	border-radius: 4px;
 }
 #texto-perfil-pessoa{
