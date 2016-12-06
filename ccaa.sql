@@ -70,6 +70,8 @@ CREATE TABLE tbl_Idioma (
 CREATE TABLE tbl_Login (
   email_Login VARCHAR(200) NOT NULL,
   senha_Login VARCHAR(200) NOT NULL,
+  isConfirmed_Login BOOL NOT NULL,
+  chaveConfirmacao_Login VARCHAR(200) NOT NULL,
   PRIMARY KEY(email_Login)
 );
 
@@ -155,21 +157,21 @@ CREATE TABLE tbl_Turma (
   INDEX tbl_Turma_FKIndex2(tbl_Sala_numero_Sala)
 );
 
-CREATE TABLE `ccaa`.`tbl_Nota` (
-  `cod_Nota` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  `cod_Aluno` INT NOT NULL,
-  `mid_Nota` FLOAT NOT NULL,
-  `final_Nota` FLOAT NOT NULL,
-  `oral_Nota` FLOAT NOT NULL,
-  `ano_Nota` INT NOT NULL,
-  `semestre_Nota` INT NOT NULL,
-  `situacao_Nota` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`cod_Nota`));
+CREATE TABLE tbl_Diario (
+  cod_Diario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  cod_Aluno INT NOT NULL,
+  mid_Diario FLOAT NOT NULL,
+  final_Diario FLOAT NOT NULL,
+  oral_Diario FLOAT NOT NULL,
+  ano_Diario INT NOT NULL,
+  semestre_Diario INT NOT NULL,
+  situacao_Diario VARCHAR(100) NOT NULL,
+  PRIMARY KEY (cod_Diario));
 
-CREATE TABLE `ccaa`.`tbl_Observacao` (
-  `cod_Observacao` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  `cod_Aluno` INT NOT NULL,
-  `descricao_Observacao` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`cod_Observacao`));
+CREATE TABLE tbl_Observacao (
+  cod_Observacao INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  cod_Aluno INT NOT NULL,
+  descricao_Observacao VARCHAR(300) NOT NULL,
+  PRIMARY KEY (cod_Observacao));
 
-INSERT INTO `tbl_Login` (`email_Login`, `senha_Login`) VALUES ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');

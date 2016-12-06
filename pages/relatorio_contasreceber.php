@@ -6,6 +6,8 @@ require_once("../util/checkSession.php");
 <html>
 <head>
 
+<?include "header.php" ?>
+
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 
