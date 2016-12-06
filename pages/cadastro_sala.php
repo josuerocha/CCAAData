@@ -67,11 +67,22 @@ require_once("../util/checkSession.php");
 
 				<!-- TABELA DO GRID AQUI!!! -->
 				<table id="table_sala" border="2">
-					<tr>
+					<thead>
+						<tr>
+							<th id="gridcod">Código</th>
+							<th id="gridPerfil">Sala</th>
+							<th colspan="2" id="gridAcao">Ação</th>
+						</tr>
+					</thead>
+					<tfoot>
 						<th id="gridcod">Código</th>
 						<th id="gridPerfil">Sala</th>
-						<th colspan="2" id="gridAcao">Ação</th>
-					</tr>
+					</tfoot>
+					<tbody>
+						
+
+
+					</tbody>
 				</table>
 			</div>
 
@@ -115,6 +126,5 @@ require_once("../util/checkSession.php");
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
 </body>
 </html>
