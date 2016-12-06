@@ -7,7 +7,7 @@
 			$situation = TRUE;
 			try{
 				$this->Connect();						
-					$query = "insert into tbl_Login (email_Login, senha_Login) values ('{$login->getEmail()}', '{$login->getSenha()}')";
+					$query = "insert into tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) values ('{$login->getEmail()}', '{$login->getSenha()}','{$login->getIsConfirmed()}','{$login->getChaveConfirmacao()}')";
 					$this->connection->query($query);					
 
 					$this->Disconnect();
@@ -22,14 +22,17 @@
 			$situation = TRUE;
 			try{
 				$this->Connect();						
-					$query = "update tbl_Login set senha_Login = '{$login->getSenha()}' where email_Login = '{$login->getEmail()}'";
-					$this->connection->query($query);					
+				$query = "update tbl_Login set senha_Login = '{$login->getSenha()}',isConfirmed_Login = '{$login->getIsConfirmed()}',chaveConfirmacao_Login = '{$login->getChaveConfirmacao()}' where email_Login = '{$login->getEmail()}'";
+				$this->connection->query($query);					
+				$this->Disconnect();
 
-					$this->Disconnect();
-			}catch(Exception $ex){
+			}
+
+			catch(Exception $ex){
 				$situation = FALSE;
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
-			}			
+			}
+
 			return $situation;
 		}
 
@@ -51,13 +54,14 @@
             try{
                 $this->Connect();	
                 $query = "select * from tbl_Login where email_Login = '{$email}' and senha_Login = '{$password}'";
-                $result = $this->connection->query($query);	
+                $result = $this->connection->query($query);
                 $quantity = $this->connection->affected_rows;
                 $this->Disconnect();
             }catch(Exception $ex){
                 echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
             }			
-            $situation = ($quantity > 0 ? TRUE : FALSE);			
+            $situation = ($quantity > 0 ? TRUE : FALSE);
+
             return $situation;
         }
 
@@ -102,6 +106,8 @@
 				$register = mysqli_fetch_assoc($result);				
                 $login->setEmail($register['email_Login']);
                 $login->setSenha($register['senha_Login']);
+                $login->setIsConfirmed($register['isConfirmed_Login']);
+                $login->setChaveConfirmacao($register['chaveConfirmacao_Login']);
 								
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
@@ -122,6 +128,8 @@
 				$register = mysqli_fetch_assoc($result);				
                 $login->setEmail($register['email_Login']);
                 $login->setSenha($register['senha_Login']);
+                $login->setIsConfirmed($register['isConfirmed_Login']);
+                $login->setChaveConfirmacao($register['chaveConfirmacao_Login']);
 								
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();

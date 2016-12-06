@@ -27,6 +27,11 @@ class PessoaController implements IControllerGeneral{
     function ListByPerfil($fkPerfil){
             $pessoaDAO = new PessoaDAO();
             return $pessoaDAO->ListByPerfil($fkPerfil);
+    }
+
+    function getByEmail($email){
+        $pessoaDAO = new PessoaDAO();
+        return $pessoaDAO->ListByEmail($email);
     }    
 }
 

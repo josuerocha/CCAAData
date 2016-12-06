@@ -161,16 +161,17 @@ CREATE TABLE tbl_Turma (
   INDEX tbl_Turma_FKIndex2(tbl_Sala_numero_Sala)
 );
 
-CREATE TABLE tbl_Diario (
-  cod_Diario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE tbl_Nota (
+  cod_Nota INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   cod_Aluno INT NOT NULL,
-  mid_Diario FLOAT NOT NULL,
-  final_Diario FLOAT NOT NULL,
-  oral_Diario FLOAT NOT NULL,
-  ano_Diario INT NOT NULL,
-  semestre_Diario INT NOT NULL,
-  situacao_Diario VARCHAR(100) NOT NULL,
-  PRIMARY KEY (cod_Diario));
+  disciplina_Nota VARCHAR(100) NOT NULL,
+  mid_Nota FLOAT NOT NULL,
+  final_Nota FLOAT NOT NULL,
+  oral_Nota FLOAT NOT NULL,
+  ano_Nota INT NOT NULL,
+  semestre_Nota INT NOT NULL,
+  situacao_Nota VARCHAR(100) NOT NULL,
+  PRIMARY KEY (cod_Nota));
 
 CREATE TABLE tbl_Observacao (
   cod_Observacao INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,

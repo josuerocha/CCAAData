@@ -5,6 +5,7 @@ require_once 'IControllerLogin.php';
 class LoginController implements IControllerLogin {
     function Save($login) {
         $loginDAO = new LoginDAO();
+        $login->setChaveConfirmacao(rand(0,100));
         return $loginDAO->Save($login);
     }
 

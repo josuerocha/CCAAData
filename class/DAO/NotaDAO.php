@@ -8,12 +8,12 @@
 			try{
 				$this->Connect();		
 				if($nota->getCode()==0){		
-					$query = "insert into tbl_Nota (cod_Aluno,mid_Nota,final_Nota,oral_Nota,ano_Nota,semestre_Nota,situacao_Nota) values ({$nota->getCodeAluno()},{$nota->getMid()},{$nota->getFinal()},{$nota->getOral()},{$nota->getAno()},{$nota->getSemestre()},'{$nota->getSituacao()}')";
+					$query = "insert into tbl_Nota (cod_Aluno,disciplina_Nota,mid_Nota,final_Nota,oral_Nota,ano_Nota,semestre_Nota,situacao_Nota) values ({$nota->getCodeAluno()},'{$nota->getDisciplina()}',{$nota->getMid()},{$nota->getFinal()},{$nota->getOral()},{$nota->getAno()},{$nota->getSemestre()},'{$nota->getSituacao()}')";
                     $this->connection->query($query);					
 					$code = $this->connection->insert_id;
 					$nota->setCode($code);
 				}else{	
-					$query = "update tbl_Nota set cod_Aluno = {$nota->getCodeAluno()},mid_Nota = {$nota->getMid()},final_Nota = {$nota->getFinal()},oral_Nota = {$nota->getOral()},ano_Nota = {$nota->getAno()},semestre_Nota = {$nota->getSemestre()},situacao_Nota = '{$nota->getSituacao()}' where cod_Nota = {$nota->getCode()}";
+					$query = "update tbl_Nota set cod_Aluno = {$nota->getCodeAluno()}, disciplina_Nota = '{$nota->getDisciplina()}',mid_Nota = {$nota->getMid()},final_Nota = {$nota->getFinal()},oral_Nota = {$nota->getOral()},ano_Nota = {$nota->getAno()},semestre_Nota = {$nota->getSemestre()},situacao_Nota = '{$nota->getSituacao()}' where cod_Nota = {$nota->getCode()}";
                     $this->connection->query($query);
 				}
 				$this->Disconnect();
@@ -49,6 +49,7 @@
 					$nota = new Nota();
 					$nota->setCode($register['cod_Nota']);
                     $nota->setCodeAluno($register['cod_Aluno']);
+                    $nota->setDisciplina($register['disciplina_Nota']);
                     $nota->setMid($register['mid_Nota']);
                     $nota->setFinal($register['final_Nota']);
                     $nota->setOral($register['oral_Nota']);
@@ -74,6 +75,7 @@
 				$register = mysqli_fetch_assoc($result);
                 $nota->setCode($register['cod_Nota']);
                 $nota->setCodeAluno($register['cod_Aluno']);
+                $nota->setDisciplina($register['disciplina_Nota']);
                 $nota->setMid($register['mid_Nota']);
                 $nota->setFinal($register['final_Nota']);
                 $nota->setOral($register['oral_Nota']);
@@ -97,6 +99,7 @@
 				$register = mysqli_fetch_assoc($result);
                 $nota->setCode($register['cod_Nota']);
                 $nota->setCodeAluno($register['cod_Aluno']);
+                $nota->setDisciplina($register['disciplina_Nota']);
                 $nota->setMid($register['mid_Nota']);
                 $nota->setFinal($register['final_Nota']);
                 $nota->setOral($register['oral_Nota']);

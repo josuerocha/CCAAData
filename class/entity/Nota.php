@@ -3,6 +3,7 @@ class Nota{
 
 private $code;
 private $codeAluno;
+private $disciplina;
 private $mid;
 private $final;
 private $oral;
@@ -28,6 +29,14 @@ function setCodeAluno($codeAluno){
 
 function getCodeAluno(){
     return $this->codeAluno;
+}
+
+function setDisciplina($disciplina){
+    $this->disciplina = $disciplina;
+}
+
+function getDisciplina(){
+    return $this->disciplina;
 }
 
 function setMid($mid){

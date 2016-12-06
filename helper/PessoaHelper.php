@@ -6,8 +6,11 @@ $action = $_GET["action"];
 
 switch($action){
 	        case 'save':
-			$control = new PessoaController();
+			$pessoaControl = new PessoaController();
 			$pessoa = new Pessoa();
+
+			$loginControl = new LoginController();
+			$login = new Login();
 
 			if(isset($_POST["inputNome"])){
 			    $pessoa->setFKPerfil($_POST["perfil"]);
@@ -19,8 +22,12 @@ switch($action){
                 $pessoa->setEmail($_POST["email"]);
                 $pessoa->setDataNascimento($_POST["dtNasc"]);
                 $pessoa->setSexo($_POST["sexo"]);
+
+                $login->setEmail($_POST["email"]);
+                $login->setSenha(MD5('unconfirmed'));
+
             }
-            if($control->Save($pessoa)){		
+            if($pessoaControl->Save($pessoa) && $loginControl->Save($login)){		
 				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/cadastro_pessoa.php';</script>"; 
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/cadastro_pessoa.php';</script>"; 

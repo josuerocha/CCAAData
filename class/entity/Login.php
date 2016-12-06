@@ -3,6 +3,8 @@ class Login{
 
 private $email;
 private $senha;
+private $isConfirmed;
+private $chaveConfirmacao;
 
 
 function __construct(){
@@ -24,6 +26,22 @@ function getSenha(){
 
 function setSenha($senha){
     $this->senha = $senha;
+}
+
+function getIsConfirmed(){
+    return $this->isConfirmed;
+}
+
+function setIsConfirmed($isConfirmed){
+    $this->isConfirmed = $isConfirmed;
+}
+
+function getChaveConfirmacao(){
+    return $this->chaveConfirmacao;
+}
+
+function setChaveConfirmacao($chaveConfirmacao){
+    $this->chaveConfirmacao = $chaveConfirmacao;
 }
 
 }
