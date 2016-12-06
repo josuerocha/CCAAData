@@ -220,10 +220,15 @@ label {
 	position: relative;
 	left: 500px;
 }
-#table_perfil,#table_idioma{
+#table_perfil,#table_idioma,#table_conta{
 	position: relative;
 	left: 540px;
 	top: -35px;
+}
+#table_sala{
+	position: relative;
+	left: 540px;
+	top: -5px;
 }
 #text_cad_perf{
 	position: relative;
@@ -237,11 +242,15 @@ label {
 #inputSenhaUsuario{
 	top: 41px;
 }
-#footer2_perfil{
+#fo_sala{
 	position: relative;
-	top: 30px;
+	top: 140px;
 }
-#text_perfil,#text_idioma{
+#fo_perfil{
+	position: relative;
+	top: 100px;
+}
+#text_perfil,#text_idioma,#textoSala,#textoTipoConta{
 	position: relative;
 	left: -70px;
 	top: 32px;
@@ -267,10 +276,14 @@ label {
 	left: -5px;
 
 }
-#input_idioma{
+#input_idioma,#contatipo{
 	position: relative;
 	left: 5px;
 
+}
+#sala{
+	position: relative;
+	top: 32px;
 }
 #table_trabalhos_aluno{
 	position: absolute;
@@ -964,7 +977,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn-salvar-conta, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
@@ -990,11 +1003,27 @@ input[type="time"]{
 	left: -158px;
 	top: 20px;
 }
-#btn-salvar-perfil,#btn-salvar-idioma{
+#btn-salvar-perfil{
 	top: 60px;
 	left: -225px;
 }
-#btn-cancelar-perfil,#btn-cancelar-idioma{
+#btn-salvar-idioma,#btn-salvar-conta{
+	top: 60px;
+	left: -216px;
+}
+#btn-salvar-sala{
+	top: 85px;
+	left: -216px;
+}
+#btn-cancelar-sala{
+	top: 85px;
+	left: -216px;
+}
+#btn-cancelar-idioma,#btn-cancelar-conta{
+	top: 60px;
+	left: -216px;
+}
+#btn-cancelar-perfil{
 	top: 60px;
 	left: -225px;
 }
@@ -1006,7 +1035,7 @@ input[type="time"]{
 	//top: -71px;
 	//left: 590px;
 }
-#cancelar, #btn-cancelar-perfil,#btn-cancelar-idioma,#btn_cancelar_hora_prof{
+#cancelar, #btn-cancelar-perfil,#btn-cancelar-conta,#btn-cancelar-idioma,#btn_cancelar_hora_prof,#btn-cancelar-sala{
 	position: relative;
 	
 	width: 100px;
@@ -1068,7 +1097,11 @@ input[type="time"]{
 	position: relative;
 	left: -115px;
 }
-
+#fo-logout{
+	position: relative;
+	top: -17px;
+	left: 550px;
+}
 /*aluno*/
 
 .footer2_aluno {
@@ -1389,6 +1422,15 @@ nav#filter a.current {
 .da-arrows span {
 	position: absolute;
 	top: 45%;
+}
+#nome-span-pessoa{
+	position: relative;
+	left: 120px;
+	top: -40px;
+}
+#input-nome-pessoa{
+	position: relative;
+	left: 140px;
 }
 .da-dots span.da-dots-current:after {
 	content: '';

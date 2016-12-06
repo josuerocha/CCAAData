@@ -2,7 +2,7 @@
 require_once("../util/checkSession.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,15 +35,13 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="inicio.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="home_secretario.php">Home</a></li>
+					<li class="active"><a href="cadastros.php">Cadastros</a></li>
+					<li><a href="cadastro_pessoa.php">Cadastrar Pessoa</a></li>
+					<li><a href="contas_pagar.php">Contas a Pagar</a></li>
+					<li><a href="contas_receber.php">Contas a Receber</a></li>
+          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
+					<li><a href="../util/logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -58,46 +56,54 @@ require_once("../util/checkSession.php");
     </header>
 
     
-    <div class="container">
+    <div class="container" contenteditable>
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
-				<h3>Perfil: &nbsp <select name="perfil">
-					<?php
-					require_once (__DIR__."/../util/autoload.php");
-					spl_autoload_register("LoadClass");
-					$perfilControl = new PerfilController();
-					$perfis = $perfilControl->ListAll();
-					while($perfil=array_pop($perfis)){                                               
-					echo "<option value=\"{$perfil->getCode()}\">{$perfil->getDescricao()}</option>";
-				}
-			?>
+				<h4>Nome Completo:</h4><span id="nome-span-pessoa">*</span> &nbsp 
+					<input id="input-nome-pessoa" type="text" name="inputNome">
+				<h4>Perfil:</h4><span>*</span> &nbsp 
+					<select name="perfil">
+						<?php
+							require_once (__DIR__."/../util/autoload.php");
+							spl_autoload_register("LoadClass");
+							$perfilControl = new PerfilController();
+							$perfis = $perfilControl->ListAll();
+							while($perfil=array_pop($perfis))
+							{                                               
+								echo "<option value=\"{$perfil->getCode()}\">{$perfil->getDescricao()}</option>";
+							}
+						?>
 					</select>
-				</h3>
-		
-				<h3>Nome Completo: &nbsp <input type="text" name="inputNome" size="40"></h3>
-
-				<h3>Sexo: &nbsp <select name="sexo">
-								<option value="f">Feminino</option>
-								<option value="m">Masculino</option>
-								</select>
-				</h3>
+				
+				<h4>Sexo:</h4><span>*</span> &nbsp 
+					<select name="sexo">
+						<option value="f">Feminino</option>
+						<option value="m">Masculino</option>
+					</select>
+				
 					
-				<h3>CPF*: &nbsp <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/></h3>
+				<h4>CPF:</h3><span>*</span> &nbsp 
+					<input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
+				<h4>Telefone:</h4> &nbsp 
+					<input type="text" name="inputTel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" required> &nbsp  
+				<h4>Celular:</h4><span>*</span> &nbsp
+				 	<input type="text" name="inputCel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required>
+				<h4>Email: </h4><span>*</span> &nbsp 
+					<input type="email" name="email" placeholder="email@email.com" required>
 
-				<h3>Telefone*: &nbsp <input type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" required> &nbsp  
-				Celular*: &nbsp <input type="text" name="inputCel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required></h3>
+				<h4>Logradouro:</h4> &nbsp 
+					<input type="text" name="logradouro"> &nbsp  
+				<h4>Número:</h4> &nbsp 
+					<input type="number" name="num"> &nbsp  
+				<h4>Complemento:</h4>&nbsp 
+					<input type="text" name="compl">
+				
 
-				<h3>Email*: &nbsp <input type="email" name="email" size="20" placeholder="email@email.com" required></h3>
-
-				<h3>Logradouro: &nbsp <input type="text" name="logradouro" size="20"> &nbsp  
-					Número: &nbsp <input type="number" name="num" size="4"> &nbsp  
-					Complemento: &nbsp <input type="text" name="compl" size="4">
-				</h3>
-
-				<h3>Bairro: &nbsp <input type="text" name="bairro" size="10"> &nbsp  
-					Cidade: &nbsp <input type="text" name="cidade" size="10" pattern="[a-z\s]+$">
-				</h3>
-
-				<h3>Data de Nascimento: <input type="date" name="dtNasc"></h3>
+				<h4>Bairro:</h4> &nbsp 
+					<input type="text" name="bairro"> &nbsp  
+				<h4>Cidade:</h4> &nbsp 
+					<input type="text" name="cidade" pattern="[a-z\s]+$">
+				<h4>Data de Nascimento:</h4> 
+					<input type="date" name="dtNasc">
 
 				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
 				<input type="button" name="cancelar_temp" value="Cancelar">	
@@ -113,10 +119,8 @@ require_once("../util/checkSession.php");
     				<input type="text" id="txtBusca" placeholder="Buscar..."/>
     				<input type="button" name="btnBusca" value="Buscar"/>
 				</div>
-				
-				<br/>
 
-				<table border="2">
+				<table id="table_pessoas" border="2">
 				
 				<tr>
 					<th id="gridcod">Código</th>
@@ -162,9 +166,6 @@ require_once("../util/checkSession.php");
 			</div>	
 
 	<div>
-			<br/>
-			<br/>
-
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
@@ -175,14 +176,13 @@ require_once("../util/checkSession.php");
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
-								<a href="index.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+								<a href="home_secretario.php">Home</a>| 
+								<a href="cadastros.php">Cadastros</a>|
+								<a href="cadastro_pessoa.php">Cadastrar Pessoa</a>|
+								<a href="contas_pagar.php">Contas a pagar</a>|
+                				<a href="contas_receber.php">Contas a receber</a>|
+                				<a href="alterar_senha.php">Alterar Senha</a>|
+                				<a id="fo-logout" href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>
@@ -191,7 +191,6 @@ require_once("../util/checkSession.php");
 						<div class="panel-body">
 							<p class="text-right">
 								Copyright &copy; 2016. 
-								<br/>
 								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
 							</p>
 						</div>

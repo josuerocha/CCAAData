@@ -71,11 +71,6 @@ require_once("../util/checkSession.php");
 						<th id="gridPerfil">Idioma</th>
 						<th colspan="2" id="gridAcao">Ação</th>
 					</tr>
-					<tr>
-						<td id="gridcod">1</td>
-						<td id="gridPerfil">Espanhol</td>
-						<td colspan="2" id="gridAcao"><input type="button" name="btnCancelar" value="Excluir"></td>
-					</tr>
 				</table>
 			</div>
 
@@ -83,7 +78,7 @@ require_once("../util/checkSession.php");
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 			</div>
-		<div id="footer2_perfil" class="footer2_login">
+		<div id="fo_perfil" class="footer2_login">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 panel">
@@ -95,7 +90,7 @@ require_once("../util/checkSession.php");
 								<a href="contas_pagar.php">Contas a pagar</a>|
                 				<a href="contas_receber.php">Contas a receber</a>|
                 				<a href="alterar_senha.php">Alterar Senha</a>|
-                				<a href="../util/logout.php">Logout</a>
+                				<a id="fo-logout" href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>
