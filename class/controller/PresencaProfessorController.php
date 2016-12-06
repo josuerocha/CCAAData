@@ -17,5 +17,10 @@ class PresencaProfessorController implements IControllerGeneral {
         $presencaProfessorDAO = new PresencaProfessorDAO();
         return $presencaProfessorDAO->ListAll();
     }
+
+    function ListByProfessor($code){
+        $presencaProfessorDAO = new PresencaProfessorDAO();
+        return $presencaProfessorDAO->ListByProfessor($code);
+    }
 }
 ?> 

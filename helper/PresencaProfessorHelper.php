@@ -27,6 +27,67 @@ switch($action){
 			
 		break;	
 
+		case 'list':
+
+		?>
+			<table id="tabela" class="display nowrap" cellspacing="0" width="100%">
+			<h3><select name="professor" id="professor">
+
+			<?PHP
+			$pessoaControl = new PessoaController();
+			$perfilControl = new PerfilController();
+
+			$perfil = $perfilControl->getByDescricao("Professor");
+			$professores = $pessoaControl->ListByPerfil($perfil->getCode());
+			$codeProfessor = 0;
+				
+			 	while ($professor = array_pop($professores)) { 
+			 		$codeProfessor = $professor->getCode();
+			        $perfil = $pessoaControl->ListByCode($professor->getCode());
+			        echo "<option value=\"{$professor->getCode()}\" > {$professor->getNome()} </option>";
+			    }
+
+			?>
+			</select>
+			</h3>
+			<thead>
+					<tr> 
+			            <th> Data</th>
+			            <th> Presença</th>
+						
+			        </tr>
+			</thead>
+			<tfoot>
+				<tr> 
+			        <th> Data</th>
+			        <th> Presença</th>	
+			    </tr>
+			</tfoot>
+			    <tbody>    	
+			    	<?PHP
+			    		$presencaProfessorControl = new PresencaProfessorController();
+			    		$presencas = $presencaProfessorControl->ListByProfessor($_POST['code']);
+			    		while ($presenca = array_pop($presencas)) { 
+			    			echo "<tr>
+			    					  <td align=\"center\">{$presenca->getData()}</td>";
+			    					  if($presenca->getSituacao()){
+			    					  	echo "<td align=\"center\"><img src=\"assets/images/checkmark.png\" alt=\"Presente\" ></td>";
+
+			    					  }
+			    					  else{
+			    					  	echo "<td align=\"center\"><img src=\"assets/images/xmark.png\" alt=\"Presente\" ></td>";
+
+			    					  }
+			    			echo "</tr>";
+			    		}
+					?>
+					
+			    </tbody>
+			</table>
+		<?PHP
+
+		break;
+
 		case 'delete':
 			$control = new PresencaProfessorController();	
             $presenca = new PresencaProfessor();
@@ -39,7 +100,7 @@ switch($action){
             echo "<script>location.href='../pages/controle_presenca_professor.php';</script>"; 				
 		break;			
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../paginaInicial.html';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/inicio.html;</script>";
 		break;
 	}	
 ?>

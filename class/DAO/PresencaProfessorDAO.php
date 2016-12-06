@@ -10,7 +10,7 @@
 				if($presenca->getCode()==0){				
 					$query = "insert into tbl_PresencaProfessor (tbl_Pessoa_cod_Pessoa,situacao_PresencaProfessor,data_PresencaProfessor) values ('{$presenca->getCodePessoa()}','{$presenca->getSituacao()}','{$presenca->getData()}')";
 					$this->connection->query($query);					
-					$code = $this->conexao->insert_id;
+					$code = $this->connection->insert_id;
 					$presenca->setCode($code);
 				}else{	
 					$query = "update tbl_PresencaProfessor set situacao_PresencaProfessor = '{$presenca->getSituacao()}' where cod_PresencaProfessor = {$presenca->getCode()}";
@@ -62,8 +62,27 @@
 			return $presencas;
 		}
 
-        function ListById($id){
-            
+        function ListByProfessor($code){
+        		$presencas = array();
+    			try{
+				$this->Connect();	
+				$query = "select * from tbl_PresencaProfessor where tbl_Pessoa_cod_Pessoa = {$code}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				
+				while($register = mysqli_fetch_assoc($result)){
+					$presenca = new PresencaProfessor();
+					$presenca->setCode($register['cod_PresencaProfessor']);
+                    $presenca->setCodePessoa($register['tbl_Pessoa_cod_Pessoa']);
+                    $presenca->setSituacao($register['situacao_PresencaProfessor']);
+                    $presenca->setData($register['data_PresencaProfessor']);
+                    array_push($presencas,$presenca);
+                }
+				$result->close();				
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $presencas;
         }
 }
 ?>
