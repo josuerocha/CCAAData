@@ -5,7 +5,7 @@ spl_autoload_register("LoadClass");
 $action = $_GET["action"];
 
 switch($action){
-	        case 'save':
+        case 'save':
 			$control = new TipoContaController();
 			$tipoConta = new TipoConta();
 			
@@ -47,7 +47,7 @@ switch($action){
 		require_once ("../util/autoload.php");
 		spl_autoload_register("LoadClass");
 		$controller = new TipoContaController();
-		$tipoContas = $controller->List();
+		$tipoContas = $controller->ListAll();
 		while($tipoConta=array_pop($tipoContas)){
 		echo "
 		<tr>

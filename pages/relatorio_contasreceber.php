@@ -76,7 +76,7 @@ $tipoControl = new TipoContaController();
 <script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
-<script type="text/javascript" src="assets/js/relatorio_contasreceber.js"></script>
+<script type="text/javascript" src="assets/js/specific/relatorio_contasreceber.js"></script>
 </script>
 
 
