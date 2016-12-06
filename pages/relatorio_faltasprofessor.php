@@ -30,15 +30,19 @@ $professores = $pessoaControl->ListByPerfil($perfil->getCode());
 
 
 <thead>
-<tr> 
-            <th data-column-id="Código" data-type="numeric">Professor</th>
-            <th data-column-id="Nome da turma"> Valor</th>
-            <th data-column-id="Horario" data-order="desc">Data de vencimento</th>
-			<th data-column-id="Nível" data-order="desc">Data de pagamento</th>
-			<th data-column-id="Descricao" data-order="desc">Situação</th>
+		<tr> 
+            <th> Data</th>
+            <th> Presença</th>
 			
         </tr>
 </thead>
+<tfoot>
+	<tr> 
+        <th> Data</th>
+        <th> Presença</th>	
+    </tr>
+</tfoot>
+
     <tbody>
 		
         <?PHP
@@ -67,7 +71,7 @@ $professores = $pessoaControl->ListByPerfil($perfil->getCode());
 <script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
-<script type="text/javascript" src="assets/js/specific/relatorio_contasreceber.js"></script>
+<script type="text/javascript" src="assets/js/specific/relatorio_presencaprofessor.js"></script>
 </script>
 
 </html>

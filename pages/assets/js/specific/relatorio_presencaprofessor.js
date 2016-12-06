@@ -1,9 +1,9 @@
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
-        var valueMin = $('#dataMin').val();
-        var valueMax = $('#dataMax').val();
-        var min = new Date($('#dataMin').val());
-        var max = new Date($('#dataMax').val());
+        var valueMin = $('#min').val();
+        var valueMax = $('#max').val();
+        var min = new Date($('#min').val());
+        var max = new Date($('#max').val());
         var dateExp = new Date(data[2]) || 0; // use data for the dateExp column
         var datePay = new Date(data[3]) || 0;
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $('#tabela tfoot th').each( function () {
         var title = $(this).text();
-        $(this).html( '<input type="text" class="inputPesquisa" placeholder="Pesquisar '+title+'" />' );
+        $(this).html( '<input type="text" placeholder="Pesquisar '+title+'" />' );
     } );
 
     var table = $('#tabela').DataTable( {
@@ -54,9 +54,9 @@ $(document).ready(function() {
     } );
 
 
-    $("div.toolbar").html("<b>Data inicial  </b><input type='date' id='dataMin' name='dataMin'>           <b>Data final</b>    <input type='date' id='dataMax' name='dataMax'>");
+    $("div.toolbar").html("<b>Data inicial  </b><input type='date' id='min' name='min'>           <b>Data final</b>    <input type='date' id='max' name='max'>");
         // Event listener to the two range filtering inputs to redraw on input
-    $('#dataMin, #dataMax').keyup( function() {
+    $('#min, #max').keyup( function() {
         table.draw();
     } );
 } );
