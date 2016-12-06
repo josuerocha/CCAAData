@@ -56,20 +56,20 @@ else
 
 		<header id="head" class="secondary_login">
             <div class="container">
-                <h1>Login</h1>
+                <h1 class="texto_login">Login</h1>
             </div>
     	</header>
         <div class="container">
 			<form action="../helper/LoginHelper.php?action=validate" id="loginForm" method="post">
-				<h4 id="usuario">Email:</h4><input type="email" name="email" id="inputUsuário" />
+				<h4 id="usuario">Email:</h4><input type="email" name="email" id="inputUsuario" />
 				<h4 id="textoSenha">Senha:</h4><input type="password" name="senha" id="inputSenhaUsuario"/>
 				<input id="enviarEmail" type="submit" name="btnEnviar" value="Fazer Login">
 			</form>
 			<div id="result"></div>
 		
-            <a class="recuperar" href="recuperar_senha.html">Esqueceu a senha?</a>
+            <a class="recuperar" href="recuperar_senha.php">Esqueceu a senha?</a>
         </div>
-		<div class="footer2_login"> <!-- alterar css -->
+		<div id="login_id" class="footer2_login"> <!-- alterar css -->
 			<div class="container">
 				<div class="row">
 

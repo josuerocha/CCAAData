@@ -1,15 +1,15 @@
-<!--
-Author: Nick
--->
+<?PHP
+require_once("../util/checkSession.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
 	<title>CCAA-Cadastro - Perfis</title>
-	<link rel="favicon" href="assets/images/favicon.png">
+	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -35,15 +35,13 @@ Author: Nick
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="home_secretario.php">Home</a></li>
+					<li class="active"><a href="cadastros.php">Cadastros</a></li>
+					<li><a href="cadastro_pessoa.php">Cadastrar Pessoa</a></li>
+					<li><a href="contas_pagar.php">Contas a Pagar</a></li>
+					<li><a href="contas_receber.php">Contas a Receber</a></li>
+          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
+					<li><a href="../util/logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -53,28 +51,24 @@ Author: Nick
 
 		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Cadastros - Perfis</h1>
+                    <h1 id="text_cad_perf">Cadastros - Perfis</h1>
                 </div>
     </header>
 
     
-    <div class="container">
-				<div id="coluna_esquerda">&nbsp;
+    <div class="container" contenteditable>
+				<div id="coluna_esquerda">
+					<h4 id="text_perfil">Perfil: <span>*</span></h4><input id="input_perfil" type="text" name="perfil">	
+					<input id="btn-salvar-perfil" type="submit" name="Salvar" value="Salvar">
+					<input id="btn-cancelar-perfil" type="button" name="Cancelar" value="Cancelar">
+    			<h4 id="text-pesquisar-perfil">Pesquisar:</h4><input id="input-pesquisar-perfil" type="text" name="pesquisar"/>
+    			<input id="btn-pesquisar-perfil" type="submit" value="Enviar" />
+				
 
-					<h4>Perfil: </h4> &nbsp <input type="text" name="perfil">	
-
-					<input type="button" name="Salvar" value="Salvar">
-					<input type="button" name="Cancelar" value="Cancelar">
-				</div>
-			<div id="coluna_direita">&nbsp;
-				<form onsubmit="return tagSearch(this)">
-    			<input type="text" name="tag" value="Pesquisar" onfocus="if (this.value == '{text:Search Label}') {this.value=''}" onblur="if (this.value == '') {this.value='{text:Search Label}'}" />
-    			<input type="submit" value="Search" />
-				</form>
-
-				<table border="2">
+				<!-- TABELA DO GRID AQUI!!! -->
+				<table id="table_perfil" border="2">
 					<tr>
-						<th id="gridcod">Código</th>&nbsp
+						<th id="gridcod">Código</th>
 						<th id="gridPerfil">Perfil</th>
 					</tr>
 				</table>
@@ -84,20 +78,19 @@ Author: Nick
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 			</div>
-		<div class="footer2_login">
+		<div id="footer2_perfil" class="footer2_login">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
-								<a href="index.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+								<a href="home_secretario.php">Home</a>| 
+								<a href="cadastros.php">Cadastros</a>|
+								<a href="cadastro_pessoa.php">Cadastrar Pessoa</a>|
+								<a href="contas_pagar.php">Contas a pagar</a>|
+                				<a href="contas_receber.php">Contas a receber</a>|
+                				<a href="alterar_senha.php">Alterar Senha</a>|
+                				<a href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>

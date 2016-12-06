@@ -12,7 +12,9 @@ body {
     color: #6E6E6E;
 }
 /*General*/
-
+span{
+	color: red;
+}
 /*codigo borda sombra vermelha ao inserir dados inválidos*/
 input:focus:invalid { 
 	box-shadow: 0 0 5px #ff0000; 
@@ -106,13 +108,13 @@ label {
 }
 .texto_login{
 	position: absolute;
-	left: 623px;
+	left: 625px;
 	top: -2px;
 }
 #texto_altera_senha{
 	position: absolute;
-	top: 4px;
-	left: 585px;
+	top: -2px;
+	left: 557px;
 }
 #head.secondary_aluno {
 	height: 100px;
@@ -213,6 +215,63 @@ label {
 	top: 285px;
 	border-radius: 3px;
 }
+
+#btn-pesquisar-perfil,#btn-pesquisar-idioma{
+	position: relative;
+	left: 500px;
+}
+#table_perfil,#table_idioma{
+	position: relative;
+	left: 540px;
+	top: -35px;
+}
+#text_cad_perf{
+	position: relative;
+	top: -12px;
+}
+#inputUsuario, #inputSenhaUsuario{
+	position: relative;
+	left: 460px;
+	top: 53px;
+}
+#inputSenhaUsuario{
+	top: 41px;
+}
+#footer2_perfil{
+	position: relative;
+	top: 30px;
+}
+#text_perfil,#text_idioma{
+	position: relative;
+	left: -70px;
+	top: 32px;
+}
+#text-pesquisar-perfil,#text-pesquisar-idioma{
+	position: relative;
+	top: -66px;
+	left: 580px;
+
+}
+#pesquisar{
+	position: relative;
+	top: -200px;
+	left: 680px;
+}
+#input-pesquisar-perfil,#input-pesquisar-idioma{
+	position: relative;
+	top: -100px;
+	left: 665px;
+}
+#input_perfil{
+	position: relative;
+	left: -5px;
+
+}
+#input_idioma{
+	position: relative;
+	left: 5px;
+
+}
 #table_trabalhos_aluno{
 	position: absolute;
 	left: 60px;
@@ -299,12 +358,12 @@ label {
 #btn_salvar_hora_prof{
 	position: relative;
 	top: -25px;
-	left: 600px;
+	left: 510px;
 }
 #btn_cancelar_hora_prof{
 	position: relative;
 	top: -25px;
-	left: 600px;
+	left: 510px;
 }
 #input_valor_hora_prof{
 	position: relative;
@@ -706,6 +765,24 @@ footer {
 	left: 460px;
 
 }
+#min,#max{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+input[type="email"]{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+input[type="password"]{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
 input[type="text"]{
 	width: 220px;
 	height: 32px;
@@ -761,8 +838,8 @@ input[type="time"]{
 
 #input_confirma_senha{
 	position: relative;
-	left: 460px;
-	top: 40px;
+	left: 465px;
+	top: 0px;
 	width: 220px;
 	height: 32px;
 	border: 1px solid #D3D3D3;
@@ -777,7 +854,7 @@ input[type="time"]{
 }
 #senha_atual{
 	position: relative;
-	top: 110px;
+	top: 70px;
 	left: 362px;
 }
 #senha{
@@ -787,12 +864,12 @@ input[type="time"]{
 }
 #nova_senha{
 	position: relative;
-	top: 92px;
+	top: 52px;
 	left: 365px;
 }
 #confirmar_senha{
 	position: relative;
-	top: 72px;
+	top: 32px;
 	left: 330px;
 }
 #confirmar{
@@ -830,8 +907,8 @@ input[type="time"]{
 }
 #input_senha_atual{
 	position: relative;
-	left: 460px;
-	top: 80px;
+	left: 465px;
+	top: 40px;
 	width: 220px;
 	height: 32px;
 	border: 1px solid #D3D3D3;
@@ -840,19 +917,19 @@ input[type="time"]{
 
 #input_nova_senha{
 	position: relative;
-	left: 460px;
-	top: 60px;
+	left: 465px;
+	top: 20px;
 	width: 220px;
 	height: 32px;
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
-#enviarEmail, #btn_alterar_senha{
+#enviarEmail, #btn_alterar_senha,#enviar_info{
 	position: relative;
 	left: 235px;
 	top: 90px;
 	width: 220px;
-	height: 30px;
+	height: 32px;
 	color: #fff;
 	font-size: 16px;
 	border: 1px;
@@ -860,25 +937,78 @@ input[type="time"]{
 	border-radius: 3px;
 	border-color: #3d84e6;
 	background-color: #3d84e6;
+}
+#enviar_info{
+	top: 120px;
+	}
+#fo_recup-senha{
+	position: relative;
+	top: 120px;
+}
+#usuario_recup{
+	position: relative;
+	left: 395px;
+	top: 104px;
+}
+#input_email_recup{
+	position: relative;
+	left: 458px;
+	top: 70px;
+}
+#btn_alterar_senha{
+	left:242px;
+	top: 50px;
+}
+
+#fo_alterar-senha{
+	position: relative;
+	top: -20px;
+}
+#salvar, #btn-salvar-perfil, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+	position: relative;
+	height: 30px;
+	width: 100px;
+	color: #fff;
+	font-size: 16px;
+	border: 1px;
+	font-weight: bold;
+	border-radius: 3px;
+	border-color: #3d84e6;
+	background-color: #3d84e6;
+}
+#btn-enviar-pesquisa{
+	left: 680px;
+	top: -200px;
+	width: 70px;
 }
 #salvar{
-	position: relative;
 	left: -158px;
 	top: 20px;
-	width: 100px;
-	height: 30px;
-	color: #fff;
-	font-size: 16px;
-	border: 1px;
-	font-weight: bold;
-	border-radius: 3px;
-	border-color: #3d84e6;
-	background-color: #3d84e6;
+	
 }
 #cancelar{
-	position: relative;
 	left: -158px;
 	top: 20px;
+}
+#btn-salvar-perfil,#btn-salvar-idioma{
+	top: 60px;
+	left: -225px;
+}
+#btn-cancelar-perfil,#btn-cancelar-idioma{
+	top: 60px;
+	left: -225px;
+}
+#btn-pesquisar-perfil,#btn-pesquisar-idioma
+{
+	top: -100px;
+	left: 670px;
+	width: 70px;
+	//top: -71px;
+	//left: 590px;
+}
+#cancelar, #btn-cancelar-perfil,#btn-cancelar-idioma,#btn_cancelar_hora_prof{
+	position: relative;
+	
 	width: 100px;
 	height: 30px;
 	color: #fff;
@@ -911,6 +1041,7 @@ input[type="time"]{
 	font-size: 12px;
 	position: absolute;
 	margin-top: 138px;
+	//top: 10px;
 }
 .footer2_login a {
 	/*color: #aaa;*/
@@ -921,6 +1052,13 @@ input[type="time"]{
 }
 .footer2_login p {
 	margin: 0;
+}
+.campo_obrigatorio{
+	color: red;
+}
+#login_id{
+	position: relative;
+	top: 30px;
 }
 .text-right{
 	position: relative;
