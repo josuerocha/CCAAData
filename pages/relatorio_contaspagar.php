@@ -13,8 +13,6 @@ require_once("../util/checkSession.php");
 
 <body>
 <table id="tabela" class="display nowrap" cellspacing="0" width="100%">
-<input type="date" id="min" name="min">
-<input type="date" id="max" name="max">
 
 <?PHP
 require_once ("../util/autoload.php");

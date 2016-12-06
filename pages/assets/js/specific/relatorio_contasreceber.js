@@ -25,12 +25,21 @@ $.fn.dataTable.ext.search.push(
 
 
 $(document).ready(function() {
+
+    $('#tabela tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
     var table = $('#tabela').DataTable( {
-        dom: 'Bfrtip',
+        searching : true,
+        dom: 'B<"toolbar">frtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     } );
+
+    $("div.toolbar").html("<b>Data inicial  </b><input type='date' id='min' name='min'>           <b>Data final</b>    <input type='date' id='max' name='max'>");
 
         // Event listener to the two range filtering inputs to redraw on input
     $('#min, #max').keyup( function() {
