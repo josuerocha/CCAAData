@@ -65,35 +65,6 @@
             return $situation;
         }
 
-		function getPessoa($email){
-			$pessoa = new Pessoa();
-
-			try{
-				$this->Connect();	
-				$query = "select * from tbl_Pessoa where email_Pessoa = {$email}";
-				$result = $this->connection->query($query);	
-				$this->Disconnect();	
-				
-				$register = mysqli_fetch_assoc($result);	
-
-				$pessoa->setCode($register['cod_Pessoa']);
-				$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
-				$pessoa->setFKLogin($register['tbl_Login_email_Login']);
-				$pessoa->setNome($register['nome_Pessoa']);
-				$pessoa->setCPF($register['cpf_Pessoa']);
-				$pessoa->setEndereco($register['endereco_Pessoa']);
-				$pessoa->setTelefone($register['telefone_Pessoa']);
-				$pessoa->setCelular($register['celular_Pessoa']);
-				$pessoa->setEmail($register['email_Pessoa']);
-				$pessoa->setDataNascimento($register['dataNascimento_Pessoa']);
-				$pessoa->setSexo($register['sexo_Pessoa']);
-								
-			}catch(Exception $ex){
-				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
-			}
-
-			return $pessoa;
-		}
 
         function getByEmail($email){
 			$login = new Login();			

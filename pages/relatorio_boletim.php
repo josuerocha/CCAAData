@@ -94,7 +94,7 @@
 				<tbody>
 				<?PHP
 				$pessoaControl = new PessoaController();
-				$pessoa = $pessoaControl->getByEmail($_SESSION['email']);
+				$aluno = $pessoaControl->getByEmail($_SESSION['email']);
 				$controlNota = new NotaController();
 				$nota = $controlNota->ListByAluno($aluno->getCode());
 

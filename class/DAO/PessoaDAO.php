@@ -142,34 +142,32 @@
 		function getByEmail($email){
 			try{
 				$this->Connect();	
-				$query = "select * from tbl_Pessoa where email_Login = '{$email}'";
-				echo $query;
+				$query = "select * from tbl_Pessoa where email_Pessoa = '{$email}'";
 				$result = $this->connection->query($query);
 				
 				$this->Disconnect();	
-				while($register = mysqli_fetch_assoc($result)) {
-					
-					$pessoa = new Pessoa();
-					$pessoa->setCode($register['cod_Pessoa']);
-					$pessoa->setNome($register['nome_Pessoa']);
-					$pessoa->setCPF($register['cpf_Pessoa']);
-					$pessoa->setEndereco($register['endereco_Pessoa']);
-					$pessoa->setTelefone($register['telefone_Pessoa']);
-					$pessoa->setCelular($register['celular_Pessoa']);
-					$pessoa->setEmail($register['email_Pessoa']);
-					$pessoa->setDataNascimento($register['dataNascimento_Pessoa']);
-					$pessoa->setSexo($register['sexo_Pessoa']);
-					$pessoa->setHoraAula($register['horaAula_Pessoa']);
-					$pessoa->setFoto($register['foto_Pessoa']);
-					array_push($pessoas,$pessoa);
+				$register = mysqli_fetch_assoc($result);
+				
+				$pessoa = new Pessoa();
+				$pessoa->setCode($register['cod_Pessoa']);
+				$pessoa->setNome($register['nome_Pessoa']);
+				$pessoa->setCPF($register['cpf_Pessoa']);
+				$pessoa->setEndereco($register['endereco_Pessoa']);
+				$pessoa->setTelefone($register['telefone_Pessoa']);
+				$pessoa->setCelular($register['celular_Pessoa']);
+				$pessoa->setEmail($register['email_Pessoa']);
+				$pessoa->setDataNascimento($register['dataNascimento_Pessoa']);
+				$pessoa->setSexo($register['sexo_Pessoa']);
+				$pessoa->setHoraAula($register['horaAula_Pessoa']);
+				$pessoa->setFoto($register['foto_Pessoa']);
+			}
 
-				}
-			}catch(Exception $ex){
+			catch(Exception $ex){
 
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}
 			
-			return $pessoas;
+			return $pessoa;
 
 		}
 
