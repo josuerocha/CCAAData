@@ -225,6 +225,11 @@ label {
 	left: 540px;
 	top: -35px;
 }
+#table_pessoas{
+	position: relative;
+	top:-380px;
+	left: 70px;
+}
 #table_sala{
 	position: relative;
 	left: 540px;
@@ -392,8 +397,8 @@ label {
 	top: 240px;
 }
 select{
-	width: 150px;
-	height: 30px;
+	width: 160px;
+	height: 32px;
 	border-radius: 3px;
 }
 #texto_idioma_turma{
@@ -784,6 +789,40 @@ footer {
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
+#texto-data-pessoa{
+	position: relative;
+	top: -85px;
+}
+#input-data-pessoa{
+	position: relative;
+	width: 125px;
+	height: 32px;
+	left: 155px;
+	top: -115px;
+	font-size: 18px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+#nome-span-data{
+	position: relative;
+	left: 150px;
+	top: -125px;
+}
+#texto-tel-pessoa{
+	position: relative;
+	left: 80px;
+	top: -105px;
+}
+#input-tel-pessoa{
+	position: relative;
+	width: 150px;
+	height: 32px;
+	left: 157px;
+	top: -140px;
+	font-size: 18px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
 input[type="email"]{
 	width: 220px;
 	height: 32px;
@@ -977,7 +1016,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil,#btn-salvar-conta, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn-salvar-conta,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
@@ -1035,7 +1074,15 @@ input[type="time"]{
 	//top: -71px;
 	//left: 590px;
 }
-#cancelar, #btn-cancelar-perfil,#btn-cancelar-conta,#btn-cancelar-idioma,#btn_cancelar_hora_prof,#btn-cancelar-sala{
+#btn-salvar-pessoa{
+	top: -450px;
+	left: 20px;
+}
+#btn-cancelar-pessoa{
+	top: -450px;
+	left: 20px;
+}
+#cancelar, #btn-cancelar-perfil,#btn-cancelar-conta,#btn-cancelar-idioma,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
 	position: relative;
 	
 	width: 100px;
@@ -1423,14 +1470,234 @@ nav#filter a.current {
 	position: absolute;
 	top: 45%;
 }
+
+#texto-nome-pessoa{
+	position: relative;
+	top: 20px;
+	left: 30px;
+}
 #nome-span-pessoa{
 	position: relative;
-	left: 120px;
-	top: -40px;
+	left: 150px;
+	top: -20px;
 }
 #input-nome-pessoa{
 	position: relative;
-	left: 140px;
+	font-size: 18px;
+	width: 400px;
+	left: 155px;
+	top: -15px;
+}
+
+#texto-comple-pessoa{
+	position: relative;
+	top: -390px;
+	left: 750px;
+}
+#comple-span-pessoa{
+	position: relative;
+	left: 643px;
+	top: -360px;
+}
+#input-comple-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 85px;
+	left: 860px;
+	top: -425px;
+}
+#texto-uf-pessoa{
+	position: relative;
+	top: -498px;
+	left: 465px;
+}
+#uf-span-pessoa{
+	position: relative;
+	left: 495px;
+	top: -540px;
+}
+#input-uf-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 75px;
+	left: 500px;
+	top: -532px;
+}
+#texto-numero-pessoa{
+	position: relative;
+	top: -318px;
+	left: 582px;
+}
+#numero-span-pessoa{
+	position: relative;
+	left: 643px;
+	top: -360px;
+}
+#input-numero-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 75px;
+	left: 642px;
+	top: -352px;
+}
+#texto-logra-pessoa{
+	position: relative;
+	top: -245px;
+	left: 59px;
+}
+#logra-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -285px;
+}
+#input-logra-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 400px;
+	left: 147px;
+	top: -280px;
+}
+
+
+
+#texto-cel-pessoa{
+	position: relative;
+	top: -176px;
+	left: 330px;
+}
+#cel-span-pessoa{
+	position: relative;
+	left: 388px;
+	top: -217px;
+}
+#input-cel-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 150px;
+	left: 385px;
+	top: -212px;
+}
+#texto-email-pessoa{
+	position: relative;
+	left: 100px;
+	top: -200px;
+}
+#email-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -240px;
+}
+#input-email-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 260px;
+	left: 148px;
+	top: -235px;
+}
+#texto-bairro-pessoa{
+	position: relative;
+	left: 93px;
+	top: -410px;
+}
+#bairro-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -450px;
+}
+#input-bairro-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 265px;
+	left: 148px;
+	top: -442px;
+}
+#texto-cid-pessoa{
+	position: relative;
+	left: 93px;
+	top: -428px;
+}
+#cid-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -465px;
+}
+#input-cid-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 265px;
+	left: 148px;
+	top: -460px;
+}
+#texto-cpf-pessoa{
+	position: relative;
+	top: -55px;
+	left: 115px;
+}
+#cpf-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -100px;
+}
+#input-cpf-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 150px;
+	left: 148px;
+	top: -90px;
+}
+#texto-cep-pessoa{
+	position: relative;
+	top: -225px;
+	left: 111px;
+}
+#cep-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -270px;
+}
+#input-cep-pessoa{
+	position: relative;
+	font-size: 18px;
+	width: 150px;
+	left: 148px;
+	top: -260px;
+}
+
+
+
+#texto-sexo-pessoa{
+	position: relative;
+	top: -6px;
+	left: 107px;
+}
+#sexo-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -45px;
+}
+#sexo-selec-pessoa{
+	position: relative;
+	left: 155px;
+	top: -40px;
+	border-radius: 4px;
+}
+#texto-perfil-pessoa{
+	position: relative;
+	top: -30px;
+	left: 104px;
+}
+#perfil-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: -72px;
+}
+#perfil-selec-pessoa{
+	position: relative;
+	font-size: 15px;
+	left: 149px;
+	top: -65px;
+	height: 32px;
+	border-radius: 4px;
 }
 .da-dots span.da-dots-current:after {
 	content: '';

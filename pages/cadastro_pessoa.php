@@ -56,72 +56,59 @@ require_once("../util/checkSession.php");
     </header>
 
     
-    <div class="container" contenteditable>
+    <div class="container" >
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
-				<h4>Nome Completo:</h4><span id="nome-span-pessoa">*</span> &nbsp 
-					<input id="input-nome-pessoa" type="text" name="inputNome">
-				<h4>Perfil:</h4><span>*</span> &nbsp 
-					<select name="perfil">
-						<?php
-							require_once (__DIR__."/../util/autoload.php");
-							spl_autoload_register("LoadClass");
-							$perfilControl = new PerfilController();
-							$perfis = $perfilControl->ListAll();
-							while($perfil=array_pop($perfis))
-							{                                               
-								echo "<option value=\"{$perfil->getCode()}\">{$perfil->getDescricao()}</option>";
-							}
-						?>
+				<h4 id="texto-nome-pessoa">Nome Completo: &nbsp</h4><span id="nome-span-pessoa">*</span>  
+					<input id="input-nome-pessoa" type="text" name="inputNome" />
+				<h4 id="texto-sexo-pessoa">Sexo: &nbsp</h4><span id="sexo-span-pessoa">*</span>  
+					<select id="sexo-selec-pessoa" class="" name="sexo">
+							<option value="f">Feminino</option>
+							<option value="m">Masculino</option>
 					</select>
-				
-				<h4>Sexo:</h4><span>*</span> &nbsp 
-					<select name="sexo">
-						<option value="f">Feminino</option>
-						<option value="m">Masculino</option>
+		
+				<h4 id="texto-perfil-pessoa">Perfil:</h4><span id="perfil-span-pessoa">*</span> &nbsp 
+					<select id="perfil-selec-pessoa" name="perfil">
+					<?php
+					require_once (__DIR__."/../util/autoload.php");
+					spl_autoload_register("LoadClass");
+					$perfilControl = new PerfilController();
+					$perfis = $perfilControl->ListAll();
+					while($perfil=array_pop($perfis)){                                               
+					echo "<option value=\"{$perfil->getCode()}\">{$perfil->getDescricao()}</option>";
+				}
+			?>
 					</select>
-				
-					
-				<h4>CPF:</h3><span>*</span> &nbsp 
-					<input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
-				<h4>Telefone:</h4> &nbsp 
-					<input type="text" name="inputTel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" required> &nbsp  
-				<h4>Celular:</h4><span>*</span> &nbsp
-				 	<input type="text" name="inputCel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required>
-				<h4>Email: </h4><span>*</span> &nbsp 
-					<input type="email" name="email" placeholder="email@email.com" required>
+				<h4 id="texto-cpf-pessoa">CPF:</h3><span id="cpf-span-pessoa">*</span> &nbsp 
+					<input id="input-cpf-pessoa" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
+				<h4 id="texto-data-pessoa">Data de Nascimento:</h4><span id="nome-span-data">*</span>
+					<input id="input-data-pessoa" type="date" name="dtNasc">
+				<h4 id="texto-tel-pessoa">Telefone:</h4> &nbsp 
+					<input id="input-tel-pessoa" type="text" name="inputTel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"/> &nbsp  
+				<h4 id="texto-cel-pessoa">Celular:</h4><span id="cel-span-pessoa">*</span> &nbsp
+				 	<input id="input-cel-pessoa" type="text" name="inputCel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}$" required />
+				<h4 id="texto-email-pessoa">Email: </h4><span id="email-span-pessoa">*</span> &nbsp 
+					<input id="input-email-pessoa" type="email" name="email" placeholder="email@email.com" required />
+				<h4 id="texto-cep-pessoa">CEP:</h4><span id="cep-span-pessoa">*</span> &nbsp 
+					<input id="input-cep-pessoa" type="text" name="inputCep" required /> &nbsp  
+				<h4 id="texto-logra-pessoa">Logradouro:</h4><span id="logra-span-pessoa">*</span> &nbsp 
+					<input id="input-logra-pessoa" type="text" name="logradouro" required> &nbsp  
+				<h4 id="texto-numero-pessoa">Número:</h4><span id="numero-span-pessoa">*</span> &nbsp 
+					<input id="input-numero-pessoa" type="text" name="num" required> &nbsp  
+				<h4 id="texto-comple-pessoa">Complemento:</h4>&nbsp 
+					<input id="input-comple-pessoa" type="text" name="compl" />
+				<h4 id="texto-bairro-pessoa">Bairro:</h4><span id="bairro-span-pessoa" >*</span> &nbsp 
+					<input id="input-bairro-pessoa" type="text" name="bairro" required/> &nbsp  
+				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
+					<input id="input-cid-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
+				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
+					<input id="input-uf-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
 
-				<h4>Logradouro:</h4> &nbsp 
-					<input type="text" name="logradouro"> &nbsp  
-				<h4>Número:</h4> &nbsp 
-					<input type="number" name="num"> &nbsp  
-				<h4>Complemento:</h4>&nbsp 
-					<input type="text" name="compl">
-				
-
-				<h4>Bairro:</h4> &nbsp 
-					<input type="text" name="bairro"> &nbsp  
-				<h4>Cidade:</h4> &nbsp 
-					<input type="text" name="cidade" pattern="[a-z\s]+$">
-				<h4>Data de Nascimento:</h4> 
-					<input type="date" name="dtNasc">
-
-				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
-				<input type="button" name="cancelar_temp" value="Cancelar">	
+				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
+				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar" />	
 			</form>
-		</div>
-
-				
-	
-	
+		</div>	
 	<div class="container">&nbsp
-				<br/>
-				<div id="divBusca">
-    				<input type="text" id="txtBusca" placeholder="Buscar..."/>
-    				<input type="button" name="btnBusca" value="Buscar"/>
-				</div>
-
 				<table id="table_pessoas" border="2">
-				
 				<tr>
 					<th id="gridcod">Código</th>
 					<th id="gridnome">Perfil</th>
@@ -169,10 +156,9 @@ require_once("../util/checkSession.php");
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2_login">
+		<div id="fo_pessoa" class="footer2_login">
 			<div class="container">
 				<div class="row">
-
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
