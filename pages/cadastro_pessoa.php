@@ -156,11 +156,13 @@ spl_autoload_register("LoadClass");
 					<td id='gridEndereco'>{$pessoa->getEndereco()}</td>
 					<td id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
 					<td colspan='2' id='gridAcao'> 
-						<form id=\"meu_formulario\" action=\"helper/PessoaHelper.php?action=edit&code={$pessoa->getCode()}\" method=\"post\">
+						<form class=\"form_edit\" action=\"helper/PessoaHelper.php?action=edit\" method=\"post\">
+						<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
                    		<input type=\"submit\" value=\"Editar\">
                    		</form>
 				   
-				   		<form action=\"../helper/PessoaHelper.php?action=delete&code={$pessoa->getCode()}\" method=\"post\">
+				   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
+				   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
                    		<input type=\"submit\" value=\"Excluir\">
 						</form>         	
 					</td>

@@ -56,7 +56,7 @@ switch($action){
 		case 'delete':
 			$control = new PessoaController();
 
-			$pessoa = $control->ListByCode($_GET["code"]);		
+			$pessoa = $control->ListByCode($_POST["codeDelete"]);		
 			if($control->Delete($pessoa)){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{
@@ -66,7 +66,7 @@ switch($action){
 		break;			
 		
 		default:
-		   echo "<script> location.href='../cadastroPessoas.php';</script>";
+		   echo "<script> location.href='../cadastro_pessoa.php';</script>";
 		break;
 	}	
 
