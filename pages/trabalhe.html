@@ -1,17 +1,11 @@
-<!--
-Author: WebThemez
-Author URL: http://webthemez.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="free-educational-responsive-web-template-webEdu">
-	<meta name="author" content="webThemez.com">
-	<title>Contato</title>
+	<meta name="description" content="trabalhe">
+	<meta name="author" content="nick">
+	<title>Trabalhe Conosco</title>
 	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -45,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <li><a href="unidades.html">Unidades</a></li>
 					<li><a href="precos.html">Preços</a></li>
           <li><a href="convenios.html">Convênios</a></li>
-          <li class="active"><a href="contato.html">Contato</a></li>
+          <li><a href="contato.html">Contato</a></li>
 					<li><a href="login.php">Login</a></li>
 				</ul>
 			</div>
@@ -56,78 +50,103 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		<header id="head" class="secondary">
             <div class="container">
-                    <h1>Fale conosco</h1>
-                    <p>Aqui você pode tirar dúvidas e encontrar informações sobre os nossos serviços e produtos.</p>
+                    <h1>Trabalhe conosco</h1>
+                    <p>Esta área é destinada ao cadastro de currículos de profissionais que tenham interesse em trabalhar no CCAA.</p>
                 </div>
     </header>
 
 
 	<!-- container -->
-	<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<h3 class="section-title">Mande-nos uma mensagem</h3>
+<div class="container">
+			<div class="row">
+			<div class="col-md-8">
+						<h3 class="section-title">Banco de currículos</h3>
 						<p>
-						Você deseja alguma informação sobre os nossos cursos? Na seção “Perguntas frequentes”, você pode tirar suas dúvidas sobre 
-						nossos cursos. Caso sua pergunta não esteja relacionada na seção, utilize o formulário “Mande-nos uma mensagem” 
-						e esclareça suas dúvidas sobre os cursos e metodologia do CCAA.
-						</p>
-						
-					  
-		<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-		<form name="sentMessage" id="contactForm"  novalidate> 
-		<div class="control-group">
-		<div class="controls">
-		<input type="text" class="form-control" 
-		placeholder="Nome Completo" id="name" required
-		data-validation-required-message="Por favor seu nome completo" />
-		<p class="help-block"></p>
-		</div>
-		</div> 	
-		<div class="control-group">
-		<div class="controls">
-		<input type="email" class="form-control" placeholder="Email" 
-		id="email" required
-		data-validation-required-message="Por favor digite seu email" />
-		</div>
-		</div>
-		<br>
-		<br>
-		<br>
-
-		<div class="control-group">
-		<div class="controls">
-		<textarea rows="10" cols="100" class="form-control" 
-		placeholder="Mensagem" id="message" required
-		data-validation-required-message="Insira aqui sua mensagem" minlength="5" 
-		data-validation-minlength-message="Min 5 characters" 
-		maxlength="999" style="resize:none"></textarea>
-		</div>
-		</div> 		 
-		<div id="success"> </div> <!-- For success/fail messages -->
-		<button type="submit" class="btn btn-primary pull-right">Enviar</button><br />
-		</form>
-					</div>
-					<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-6">
-								<h3 class="section-title">Endereço da Unidade</h3>
-								<div class="contact-info">
-									<h5>Endereço</h5>
-									<p>Av. Juscelino Kubitscheck, 4 - Funcionários, Timóteo - MG, 35180-410</p>
-									
-									<h5>Email</h5>
-									<p>timoteo@ccaa.com.br</p>
-									
-									<h5>Telefone</h5>
-									<p>(31) 3848-3432</p>
-								</div>
-							</div> 
-						</div> 						
-					</div>
-				</div>
+						Campos marcados com um Asterísco (*) devem ser preenchidos antes do envio da inscrição.
+						</p>	
 			</div>
-	<!-- /container -->
+			</div>
+			<input type="text" class="form-control" placeholder="Cargo" id="name" required />
+		<br/>
+		
+		<h4>Dados Pessoais</h4>
+				<input type="text" class="form-control" placeholder="Nome Completo*" id="name" required data-validation-required-message="Por favor digite seu nome" />
+				<br/>
+
+				<input type="email" class="form-control" placeholder="Email*" id="name" required data-validation-required-message="Por favor digite seu email" />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Telefone residencial*" id="name" required data-validation-required-message="Por favor digite seu telefone" />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Telefone celular (Opcional)" id="name" required />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="CEP*" id="name" required data-validation-required-message="Por favor digite CEP" />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Endereço*" id="name" required data-validation-required-message="Por favor digite seu endereço" />
+				<br/>
+
+				<input type="number" class="form-control" placeholder="Número*" id="name" required data-validation-required-message="Por favor digite numero da sua casa" />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Complemento" id="name" required/>
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Bairro*" id="name" required data-validation-required-message="Por favor digite seu bairro" />
+				<br/>
+
+				<input type="text" class="form-control" placeholder="Cidade*" id="name" required data-validation-required-message="Por favor digite sua cidade" />
+				<br/>
+				<select name="Estado">
+  					<option value="AC">AC</option>
+  					<option value="AL">AL</option>
+  					<option value="AP">AP</option>
+  					<option value="AM">AM</option>
+						<option value="BA">BA</option>
+						<option value="CE">CE</option>
+						<option value="DF">DF</option>
+						<option value="ES">ES</option>
+						<option value="GO">GO</option>
+						<option value="MA">MA</option>
+						<option value="MT">MT</option>
+						<option value="MS">MS</option>
+						<option value="MG">MG</option>
+						<option value="PA">PA</option>
+						<option value="PB">PB</option>
+						<option value="PR">PR</option>
+						<option value="PE">PE</option>
+						<option value="PI">PI</option>
+						<option value="RJ">RJ</option>
+						<option value="RN">RN</option>
+						<option value="RS">RS</option>
+						<option value="RO">RO</option>
+						<option value="RR">RR</option>
+						<option value="SC">SC</option>
+						<option value="SP">SP</option>
+						<option value="SE">SE</option>
+						<option value="TO">TO</option>
+
+				</select>
+				<br/>
+				<br/>
+				<h4>Qualificações</h4>
+
+				<p>Você possui algum curso de nível superior? *</p>
+					<p><input type="checkbox" name="your-group" value="unit-in-group"/>&nbsp Sim &nbsp &nbsp<input type="checkbox" name="your-group" value="unit-in-group"/>Nâo</p>
+
+				<p>Qual instituição você cursou o ensino superior?<input type="text" class="form-control" placeholder="Complemento" id="name" required/></p>
+
+				<p>Em qual curso você se formou?<input type="text" class="form-control" placeholder="Complemento" id="name" required/></p>
+
+				<p>Envie seu CV - Curriculum Vitae (Arquivos com extensão pdf / doc / docx / jpg / gif)*<button type="submit" class="btn btn-primary pull-right">Curriculo</button></p>
+				<br/>
+				<br/>
+
+		<button type="submit" class="btn btn-primary pull-right">Enviar sua Inscrição</button><br />
+</div>		
+			
 
 	 <footer id="footer">
  

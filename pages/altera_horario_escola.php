@@ -2,7 +2,7 @@
 require_once("../util/checkSession.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,15 +36,14 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="inicio.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="home_coordenador.php">Home</a></li>
+					<li class="active"><a href="altera_horario_escola.php">Horário da Escola</a></li>
+					<li><a href="contas.php">Contas</a></li>
+					<li><a href="montagem_grade.php">Grade de Horário</a></li>
+					<li><a href="alterar_hora_aula.php">Hora/Aula</a></li>
+					<li><a href="visualizar-receita.php">Receita</a></li>
+          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
+					<li><a href="../util/logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -61,8 +60,8 @@ require_once("../util/checkSession.php");
     
     <div class="container">
 	<form action="../helper/HorarioHelper.php?action=save" method = "post">
-		<h4 id="text_horario_inicial">Horário inicial:</h4>&nbsp <input id="input_horario_inicial" type="time" name="tempoinicial" />
-		<h4 id="text_horario_final">Horário final: </h4> &nbsp <input id="input_horario_final" type="time" name="tempofinal" />
+		<h3 id="text_horario_inicial">Horário inicial:</h3><span id="inicio-span-horario">*</span>&nbsp <input id="input_horario_inicial" type="time" name="tempoinicial" required/>
+		<h3 id="text_horario_final">Horário final: </h3><span id="fim-span-horario">*</span>&nbsp <input id="input_horario_final" type="time" name="tempofinal" required/>
 			<input id="btn_reset" type="reset" />&nbsp 	
 			<input id="btn_salvar_temp" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 			<input id="btn_cancelar_temp" type="button" name="cancelar_temp" value="Cancelar" />
@@ -72,21 +71,21 @@ require_once("../util/checkSession.php");
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2_login">
+		<div id="fo_altera-hora-aula" class="footer2_login">
 			<div class="container">
 				<div class="row">
 
 					<div class="col-md-6 panel">
-						<div class="panel-body">
+						<div id="panel-hora-aula" class="panel-body">
 							<p class="simplenav">
-								<a href="index.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+								<a href="home_coordenador.php">Home</a>| 
+								<a href="altera_horario_escola.php">Horário da Escola</a>|
+								<a href="contas.php">Contas</a>|
+                				<a href="montagem_grade.php">Grade de Horário</a>|
+                				<a href="alterar_hora_aula.php">Hora/Aula</a>|
+                				<a href="visualizar_receita.php">Receita</a>|
+                				<a href="alterar_senha.php">Alterar Senha</a>|
+                				<a href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>
@@ -95,7 +94,6 @@ require_once("../util/checkSession.php");
 						<div class="panel-body">
 							<p class="text-right">
 								Copyright &copy; 2016. 
-								<br/>
 								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
 							</p>
 						</div>

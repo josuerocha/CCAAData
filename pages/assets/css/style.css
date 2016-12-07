@@ -361,35 +361,55 @@ label {
 
 #text_hora_prof{
 	position: relative;
-	top: 32px;
-	left: 430px;
+	top: 70px;
+	left: 465px;
 }
 #select_hora_prof{
 	position: relative;
-	left: 508px;
+	top: 35px;
+	left: 570px;
 }
 #text_valor_hora_prof{
 	position: relative;
-	top: 8px;
+	top: -80px;
 	left: 333px;
 }
 #btn_salvar_hora_prof{
 	position: relative;
-	top: -25px;
-	left: 510px;
+	top: -35px;
+	left: 435px;
 }
 #btn_cancelar_hora_prof{
 	position: relative;
-	top: -25px;
-	left: 510px;
+	top: -35px;
+	left: 435px;
 }
 #input_valor_hora_prof{
 	position: relative;
 	text-align: center;
-	top: -53px;
-	left: 512px;
+	border-radius: 3px;
+	top: -145px;
+	left: 580px;
 	width: 55px;
 	height: 28px;
+}
+#fo_hora-professor{
+	position: relative;
+	padding-left: 200px;
+}
+#fo-home-hora-professor{
+	position: relative;
+	left: -220px;
+}
+#hora-span-aula{
+	position: relative;
+	top: -118px;
+	left: 562px;
+}
+#hora-span-professor{
+	position: relative;
+	top: 25px;
+	left: 565px;
 }
 .select_sala{
 	position: absolute;
@@ -849,39 +869,74 @@ input[type="time"]{
 }
 #btn_cancelar_temp{
 	position: absolute;
-	top: 360px;
-	left: 800px;
+	top: 15px;
+	left: 270px; 
 }
 #btn_salvar_temp{
 	position: absolute;
-	top: 360px;
-	left: 738px;
+	top: 15px;
+	left: 270px;
 }
 #btn_reset{
 	position: absolute;
-	top: 360px;
-	left: 605px; 
+	background-color: #F77C1C !important;
+	border-color: #F77C1C !important;
+	top: 15px;
+	left: 270px; 
+}
+#footer-login{
+	position: relative;
+	top: -15px;
+	left: 540px;
+}
+#btn_reset-hora-aula{
+	position: absolute;
+	left: 435px;
+	top: -35px;
+	background-color: #F77C1C !important;
+	border-color: #F77C1C !important;
+}
+#panel-hora-aula{
+	position: relative;
+	left: -75px;
+}
+#fo_altera-hora-aula{
+	position: relative;
+	padding-left:100px;
+	top: 70px;
 }
 #text_horario_inicial{
 	position: relative;
 	top: 33px;
-	left: 392px;
+	left: 412px;
 }
 #text_horario_final{
 	position: relative;
-	top: 33px;
-	left: 403px;
+	top: -13px;
+	left: 425px;
 }
-/*.asterisco{
-	color: red;
-*/
+
 #input_horario_inicial{
 	position: relative;
-	left: 500px;
+	top: -1px;
+	width: 120px;
+	left: 558px;
 }
 #input_horario_final{
 	position: relative;
-	left: 500px;
+	width: 120px;
+	top: -51px;
+	left: 558px;
+}
+#inicio-span-horario{
+	position: relative;
+	top: -10px;
+	left: 555px;
+}
+#fim-span-horario{
+	position: relative;
+	top: -60px;
+	left: 555px;
 }
 #altera_horario_escola{
 	position: relative;
@@ -1016,7 +1071,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil,#btn-salvar-conta,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
@@ -1082,7 +1137,7 @@ input[type="time"]{
 	top: -450px;
 	left: 20px;
 }
-#cancelar, #btn-cancelar-perfil,#btn-cancelar-conta,#btn-cancelar-idioma,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
+#cancelar, #btn-cancelar-perfil,#btn_cancelar_temp, #btn_reset,#btn_reset-hora-aula,#btn-cancelar-conta,#btn-cancelar-idioma,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
 	position: relative;
 	
 	width: 100px;
@@ -1662,9 +1717,6 @@ nav#filter a.current {
 	left: 148px;
 	top: -260px;
 }
-
-
-
 #texto-sexo-pessoa{
 	position: relative;
 	top: -6px;
