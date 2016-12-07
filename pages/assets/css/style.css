@@ -17,8 +17,8 @@ span{
 }
 /*codigo borda sombra vermelha ao inserir dados inválidos*/
 input:focus:invalid { 
-	box-shadow: 0 0 5px #ff0000; 
-	border: 1px solid #ff0000; 
+	box-shadow: 0 0 5px #ff0000 !important; 
+	border: 1px solid #ff0000 !important; 
 }
 /*codigo borda sombra azul ao clicar*/
 textarea:focus, input:focus, select:focus {

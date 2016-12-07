@@ -60,7 +60,7 @@ spl_autoload_register("LoadClass");
     <div class="container" >
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
 				<h4 id="texto-nome-pessoa">Nome Completo: &nbsp</h4><span id="nome-span-pessoa">*</span>  
-					<input id="input-nome-pessoa" type="text" name="inputNome" />
+					<input id="input-nome-pessoa" type="text" name="inputNome" required/>
 				<h4 id="texto-sexo-pessoa">Sexo: &nbsp</h4><span id="sexo-span-pessoa">*</span>  
 					<select id="sexo-selec-pessoa" class="" name="sexo">
 							<option value="f">Feminino</option>
@@ -82,7 +82,7 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-cpf-pessoa">CPF:</h3><span id="cpf-span-pessoa">*</span> &nbsp 
 					<input id="input-cpf-pessoa" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
 				<h4 id="texto-data-pessoa">Data de Nascimento:</h4><span id="nome-span-data">*</span>
-					<input id="input-data-pessoa" type="date" name="dtNasc">
+					<input id="input-data-pessoa" type="date" name="dtNasc" required>
 				<h4 id="texto-tel-pessoa">Telefone:</h4> &nbsp 
 					<input id="input-tel-pessoa" type="text" name="inputTel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"/> &nbsp  
 				<h4 id="texto-cel-pessoa">Celular:</h4><span id="cel-span-pessoa">*</span> &nbsp
