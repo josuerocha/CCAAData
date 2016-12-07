@@ -72,7 +72,6 @@ $('.form_edit').submit(function(event){
 
     var posting = $.post(url,{codeEdit: codigoValue},function(data,status){
             if(status == 'success'){
-                alert(data);
                 var pessoaEditar = JSON.parse(escapeSpecialChars(data));
                 document.getElementById("codeHidden").value = pessoaEditar.code;
                 document.getElementById("codeEndHidden").value = pessoaEditar.codeEndereco;
