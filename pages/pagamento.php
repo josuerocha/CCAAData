@@ -35,12 +35,12 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li class="active"><a href="home_aluno.php">Home</a></li>
+					<li ><a href="home_aluno.php">Home</a></li>
 					<li ><a href="aluno_diarios.html">Diários</a></li>
 					<li ><a href="aluno_boletim.html">Boletim</a></li>
 					<li ><a href="aluno_boletim.html">Materiais</a></li>
 					<li ><a href="aluno_boletim.html">Mensalidades</a></li>
-					<li ><a href="pagamento.php">Pagamento Online</a></li>
+					<li class="active"><a href="pagamento.php">Pagamento Online</a></li>
 					<li ><a href="alterar_senha.php">Alterar Senha</a></li>
 					<li ><a href="../util/logout.php">Logout</a></li>
 				</ul>
@@ -52,41 +52,34 @@ require_once("../util/checkSession.php");
 
 		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Pagamento</h1>
+                    <h1 id="titulo-pagamento">Pagamento</h1>
                 </div>
     </header>
 
     
     <div class="container">
 			<div id="coluna_esquerda">&nbsp;
-				<h3>Dados do Cartão</h3>
-				
+				<h3 id="text-dados-cartao">Dados do Cartão</h3>
 				<form action="../helper/PagamentoHelper.php?action=save" method="post" />
-				<h4>Número do Cartão *:</h4><input type="text" name="numCartao" size="20" required pattern="[0-9]+$"title="Somente numeros"/>
-
-				<h4>Data de Vencimento *:</h4><input type="month" name="dtValCartao" required/> 
-				
-				<h4>Nome e Sobrenome *: </h4><input type="text" name="nome" size="20" required pattern="[a-z\s]+$" title="Somente letras"/>
-				
-				<h4>Código de Segurança *: </h4><input type="text" name="codSeg" size="3" placeholder="999" required pattern="[0-9]+$" title="Somente numeros"/>
-				
+					<h4 id="text-numero-cartao">Número do Cartão :</h4><span id="numero-span-cartao">*</span>
+						<input id="input-numero-cartao" type="text" name="numCartao" required pattern="[0-9]+$"title="Somente numeros"/>
+					<h4 id="text-dat-cartao">Data de Vencimento:</h4><span id="dat-span-cartao">*</span>
+						<input id="input-dat-cartao" type="month" name="dtValCartao" required/> 
+					<h4 id="text-nome-cartao">Nome no Cartão: </h4><span id="nome-span-cartao">*</span>
+						<input id="input-nome-cartao" type="text" name="nome" required pattern="[a-z\s]+$" title="Somente letras"/>
+					<h4 id="text-cod-cartao">Código de Segurança: </h4><span id="cod-span-cartao">*</span>
+						<input id="input-cod-cartao" type="text" name="codSeg" placeholder="999" required pattern="[0-9]+$" title="Somente numeros"/>		
 			</div>
 
 			<div id="coluna_direita">&nbsp;
-				<h3>Dados do Titular do Cartão</h3>
-
-				<h4>CPF *: </h4>&nbsp 
-				<input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" title="Somente numeros" required/>
-				
-				<h4>Telefone *: </h4> &nbsp <input type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" title="Somente numeros" required/>
-
-				<h4>Data de Nascimento *: </h4>&nbsp <input type="date" name="dtNasc" required/>
-				
-				<h4>Nome da Mãe *: </h4>&nbsp <input type="text" name="nmMae" size="20" required pattern="[a-z\s]+$" title="Somente letras"/>
-
-				<br/>
-	
-				<input type="submit" name="continuar" value="Enviar">&nbsp 
+				<h3 id="text-dados-titular">Dados do Titular do Cartão</h3>
+				<h4 id="text-cpf-titular">CPF: </h4><span id="cpf-span-titular">*</span>&nbsp 
+					<input id="input-cpf-titular" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" title="Somente numeros" required/>
+				<h4 id="text-tel-titular">Telefone: </h4><span id="tel-span-titular">*</span> &nbsp 
+					<input id="input-tel-titular" type="text" name="inputTel" size="15" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" title="Somente numeros" required/>
+				<h4 id="text-dat-titular">Data de Nascimento:</h4><span id="dat-span-titular">*</span>&nbsp 
+					<input id="input-dat-titular" type="date" name="dtNasc" required/>
+				<input id="btn-pagamento" type="submit" name="continuar" value="Concluir">&nbsp 
 				</form>
 				&nbsp;
 			</div>
