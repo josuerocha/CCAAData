@@ -20,11 +20,15 @@ spl_autoload_register("LoadClass");
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/grafico.css">
+	<script type="text/javascript" src="assets/js/canvas/canvasjs.js"></script>
+	<script type="text/javascript" src="assets/js/canvas/excanvas.js"></script>
+	<script type="text/javascript" src="assets/js/canvas/jquery.canvasjs.js"></script>
+	<script type="text/javascript" src="assets/js/chart/chart.js"></script>
+	<script type="text/javascript" src="assets/js/specific/relatorio_visualizarreceita.js"></script>
 </head>
 
-<body>
+<body onload = "mostrarResultados()">
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse">
 		<div class="container">
@@ -69,6 +73,17 @@ spl_autoload_register("LoadClass");
 
     ?>
 	</div>
+
+
+	<div class="caixaGrafico">
+	<canvas id="areaGrafico"></canvas>	
+	</div>
+
+	<div class="container" contenteditable >
+
+	</div>
+	
+
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 			</div>
@@ -109,14 +124,6 @@ spl_autoload_register("LoadClass");
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
-	<script type="text/javascript" src="assets/js/specific/cadastro_sala.js"></script>
+	
 </body>
 </html>

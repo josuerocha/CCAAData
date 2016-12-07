@@ -5,6 +5,7 @@ function LoadClass($classe)
 	$arquivo = "";
 	
 	$caminho = "..";
+
 	
 	if(file_exists("{$caminho}/class/DAO/{$classe}.php")){
 		$arquivo = "/class/DAO/{$classe}.php";
@@ -20,7 +21,7 @@ function LoadClass($classe)
 	}
 	
 	$caminho = $caminho.$arquivo;
-	//echo $caminho."<br>";
+	
 	require_once $caminho;
 }
 
