@@ -115,5 +115,22 @@ class Pessoa{
     function setFoto($foto){
         $this->foto = $foto;
     }
+
+    function toArray(){
+    return array(
+        'code' => $this->getCode(),
+        'perfil' => $this->getFKPerfil(),
+        'nome' => $this->getNome(),
+        'cpf' => $this->getCPF(),
+        'endereco' => $this->getEndereco(),
+        'telefone' => $this->getTelefone(),
+        'celular' => $this->getCelular(),
+        'email' => $this->getEmail(),
+        'dataNascimento' => $this->getDataNascimento(),
+        'sexo' => $this->getSexo(),
+        'horaAula' => $this->getHoraAula(),
+        'foto' => $this->getFoto(),
+    );
+}
 }
 ?>

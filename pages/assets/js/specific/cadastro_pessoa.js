@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 
 
-$('.form_editar').submit(function(event){
+$('.form_edit').submit(function(event){
     
     event.preventDefault(); // if you want to disable the action
     var $form = $(this),

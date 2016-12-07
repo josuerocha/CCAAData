@@ -161,6 +161,19 @@ CREATE TABLE tbl_Turma (
   INDEX tbl_Turma_FKIndex2(tbl_Sala_numero_Sala)
 );
 
+CREATE TABLE tbl_Endereco (
+  cod_Endereco INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  cod_Pessoa INTEGER UNSIGNED NOT NULL,
+  cep_Endereco VARCHAR(200) NOT NULL,
+  logradouro_Endereco VARCHAR(200) NOT NULL,
+  numero_Endereco VARCHAR(200) NOT NULL,
+  complemento_Endereco VARCHAR(200) NOT NULL,
+  bairro_Endereco VARCHAR(200) NOT NULL,
+  cidade_Endereco VARCHAR(200) NOT NULL,
+  uf_Endereco VARCHAR(200) NOT NULL,
+  PRIMARY KEY(cod_Endereco)
+);
+
 CREATE TABLE tbl_Nota (
   cod_Nota INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   cod_Aluno INT NOT NULL,

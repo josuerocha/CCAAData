@@ -36,23 +36,33 @@ switch($action){
 		break;	
 
 		case 'horaAula':
-				$pessoa = new Pessoa();
-				$control = new PessoaController();
+			$pessoa = new Pessoa();
+			$control = new PessoaController();
 
-				$codProfessor = $_POST['prof'];
-				$valor = $_POST['valor'];
+			$codProfessor = $_POST['prof'];
+			$valor = $_POST['valor'];
 
-				$pessoa = $control->ListByID($codProfessor);
-				echo $pessoa->getNome();
-				$pessoa->setHoraAula($valor);
+			$pessoa = $control->ListByID($codProfessor);
+			echo $pessoa->getNome();
+			$pessoa->setHoraAula($valor);
 
-				if($control->Save($pessoa)){		
-				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/alterar_hora_aula.php';</script>"; 
-				}else{		
-				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/alterar_hora_aula.php';</script>"; 
-				}	
+			if($control->Save($pessoa)){		
+			echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/alterar_hora_aula.php';</script>"; 
+			}else{		
+			echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/alterar_hora_aula.php';</script>"; 
+			}	
 
-				break;
+			break;
+		case 'edit':
+			$control = new PessoaController();	
+        	$pessoa = $control->getByCode($_POST["codeEdit"]);
+            
+			$array = $pessoa->toArray();
+
+			echo  json_encode($array);
+
+		break;
+
 		case 'delete':
 			$control = new PessoaController();
 
