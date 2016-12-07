@@ -120,6 +120,7 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Email</th>
 					<th id="gridnome">Endereco</th>
 					<th id="gridnome">Data Nascimento</th>
+					<th id="gridnome">Ação</th>
 				</tr>
 				<?PHP
 				$controller = new PessoaController();
@@ -137,13 +138,15 @@ spl_autoload_register("LoadClass");
 					<td id='gridEmail'>{$pessoa->getEmail()}</td>
 					<td id='gridEndereco'>{$pessoa->getEndereco()}</td>
 					<td id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
-					<td colspan='2' id='gridAcao'> <form id=\"meu_formulario\" action=\"helper/PessoaHelper.php?action=edit&code={$pessoa->getCode()}\" method=\"post\">
-                   <input type=\"submit\" value=\"Editar\">
-                   </form>
+					<td colspan='2' id='gridAcao'> 
+						<form id=\"meu_formulario\" action=\"helper/PessoaHelper.php?action=edit&code={$pessoa->getCode()}\" method=\"post\">
+                   		<input type=\"submit\" value=\"Editar\">
+                   		</form>
 				   
-				   <form action=\"../helper/PessoaHelper.php?action=delete&code={$pessoa->getCode()}\" method=\"post\">
-                   <input type=\"submit\" value=\"Excluir\">
-</form>      </th>
+				   		<form action=\"../helper/PessoaHelper.php?action=delete&code={$pessoa->getCode()}\" method=\"post\">
+                   		<input type=\"submit\" value=\"Excluir\">
+						</form>         	
+					</td>
 				</tr>
 				";
 				}

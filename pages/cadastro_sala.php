@@ -1,6 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
 require_once (__DIR__."/../util/autoload.php");
+include "../util/StandardHeader.php";
 spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
@@ -18,11 +19,9 @@ spl_autoload_register("LoadClass");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -62,7 +61,8 @@ spl_autoload_register("LoadClass");
 				<div id="coluna_esquerda">
 
 				<form action="../helper/SalaHelper.php?action=save" method="POST">
-					<h4 id="textoSala">Salas: <span>*</span></h4><input id="sala" type="text" name="descricao">	
+					<input type="hidden" id="codeHidden" name="codeHidden">
+					<h4 id="textoSala">Salas: <span>*</span></h4><input id="sala" type="text" name="numero">
 					<input id="btn-salvar-sala" type="submit" name="btnSalvar" value="Salvar">
 					<input id="btn-cancelar-sala" type="button" name="btnCancelar" value="Cancelar">
 				</form>
@@ -71,27 +71,42 @@ spl_autoload_register("LoadClass");
 				<table id="table_sala" border="2">
 					<thead>
 						<tr>
-							<th id="gridcod">Código</th>
-							<th id="gridPerfil">Sala</th>
+							<th id="gridcod">Número</th>
+							<th id="gridPerfil">Descrição</th>
 							<th colspan="2" id="gridAcao">Ação</th>
 						</tr>
 					</thead>
 					<tfoot>
-						<th id="gridcod">Código</th>
-						<th id="gridPerfil">Sala</th>
+						<tr>
+							<th id="gridcod">Código</th>
+							<th id="gridPerfil">Sala</th>
+						</tr>
 					</tfoot>
 					<tbody>
-						<tr>
+						
 						<?PHP
 							$salaControl = new SalaController();
 							$salas = $salaControl->ListAll();
 
 							while($sala = array_pop($salas)){
+								echo "<tr>";
 								echo "<td> {$sala->getCode()} </td>";
 								echo "<td> {$sala->getDescricao()} </td>";
+								echo "	<td > 
+											<form id=\"form_editar\" action=\"../helper/SalaHelper.php?action=edit\" method=\"post\">
+											<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
+               								<input type=\"submit\" value=\"Editar\">
+               								</form>
+				   
+				   							<form action=\"../helper/SalaHelper.php?action=delete\" method=\"post\">
+                   							<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
+                   							<input type=\"submit\" value=\"Excluir\">
+											</form>         	
+										</td>";
+
+								echo "</tr>";
 							}
 						?>
-						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -136,5 +151,15 @@ spl_autoload_register("LoadClass");
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/cadastro_sala.js"></script>
 </body>
 </html>
