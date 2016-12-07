@@ -39,15 +39,14 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="inicio.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="home_coordenador.php">Home</a></li>
+					<li><a href="altera_horario_escola.php">Horário da Escola</a></li>
+					<li><a href="contas.php">Contas</a></li>
+					<li><a href="montagem_grade.php">Grade de Horário</a></li>
+					<li class="active"><a href="alterar_hora_aula.php">Hora/Aula</a></li>
+					<li><a href="visualizar-receita.php">Receita</a></li>
+          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
+					<li><a href="../util/logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -64,7 +63,7 @@ require_once("../util/checkSession.php");
     
     <div class="container">
 <form action="../helper/PessoaHelper.php?action=horaAula" method = "post">
-		<h4 id="text_hora_prof">Professor:</h4>&nbsp 
+		<h3 id="text_hora_prof">Professor:</h3><span id="hora-span-professor">*</span>&nbsp 
 		<select id="select_hora_prof"name="prof">
 		<?PHP
 								$codProfessor = 0;
@@ -85,30 +84,30 @@ require_once("../util/checkSession.php");
 		</select>
 		
 		
-			<h4 id="text_valor_hora_prof">Valor da hora/aula (R$):</h4> &nbsp <h5><input id="input_valor_hora_prof" type="number" name="valor" min="1" max="500"></h5>
-			<input id="btn_salvar_hora_prof" type="submit" onclick="alert('Tem certeza que deseja alterar hora/aula do professor?')" name="salvar_temp" value="Salvar">&nbsp 
-			<input id="btn_cancelar_hora_prof" type="button" name="cancelar_temp" value="Cancelar">
+			<h3 id="text_valor_hora_prof">Valor da hora/aula (R$):</h3> &nbsp<span id="hora-span-aula">*</span> <h5><input id="input_valor_hora_prof" type="number" name="valor" min="1" max="500" required/></h5>
+			<input id="btn_reset-hora-aula" type="reset" />&nbsp 
+			<input id="btn_salvar_hora_prof" type="submit" onclick="alert('Tem certeza que deseja alterar hora/aula do professor?')" name="salvar_temp" value="Salvar"/>&nbsp 
+			<input id="btn_cancelar_hora_prof" type="button" name="cancelar_temp" value="Cancelar"/>
 </form>
 </div>
 
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
-		<div class="footer2_login">
+		<div id="fo_hora-professor" class="footer2_login">
 			<div class="container">
 				<div class="row">
-
 					<div class="col-md-6 panel">
 						<div class="panel-body">
-							<p class="simplenav">
-								<a href="index.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+							<p id="fo-home-hora-professor" class="simplenav">
+								<a href="home_coordenador.php">Home</a>| 
+								<a href="altera_horario_escola.php">Horário Escola</a>|
+								<a href="contas.php">Contas</a>|
+                				<a href="montagem_grade.php">Grade Horário</a>|
+                				<a href="alterar_hora_aula.php">Hora/Aula</a>|
+                				<a href="visualizar_receita.php">Receita</a>|
+                				<a href="alterar_senha.php">Alterar Senha</a>|
+                				<a id="footer-login" href="../util/logout.php">Logout</a>
 							</p>
 						</div>
 					</div>
@@ -117,12 +116,10 @@ require_once("../util/checkSession.php");
 						<div class="panel-body">
 							<p class="text-right">
 								Copyright &copy; 2016. 
-								<br/>
 								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
 							</p>
 						</div>
 					</div>
-
 				</div>
 				<!-- /row of panels -->
 			</div>
