@@ -17,7 +17,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			//echo "<script>location.href='../pages/cadastro_sala.php';</script>"; 			
+			echo "<script>location.href='../pages/cadastro_sala.php';</script>"; 			
 			
 		break;
 		case 'edit':

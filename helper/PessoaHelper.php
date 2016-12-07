@@ -9,6 +9,9 @@ switch($action){
 			$pessoaControl = new PessoaController();
 			$pessoa = new Pessoa();
 
+			$enderecoControl = new EnderecoController();
+			$endereco = new Endereco();
+
 			$loginControl = new LoginController();
 			$login = new Login();
 
@@ -16,23 +19,40 @@ switch($action){
 			    $pessoa->setFKPerfil($_POST["perfil"]);
                 $pessoa->setNome($_POST["inputNome"]);
                 $pessoa->setCPF($_POST["cpf"]);
-                $pessoa->setEndereco($_POST["num"]." ".$_POST["logradouro"].$_POST["compl"]);
                 $pessoa->setTelefone($_POST["inputTel"]);
                 $pessoa->setCelular($_POST["inputCel"]);
                 $pessoa->setEmail($_POST["email"]);
                 $pessoa->setDataNascimento($_POST["dtNasc"]);
                 $pessoa->setSexo($_POST["sexo"]);
 
+                $endereco->setCep($_POST["cep"]);
+                $endereco->setNumero($_POST["num"]);
+                $endereco->setLogradouro($_POST["logradouro"]);
+                $endereco->setComplemento($_POST["compl"]);
+                $endereco->setBairro($_POST["bairro"]);
+                $endereco->setCidade($_POST["cidade"]);
+                $endereco->setUF($_POST["uf"]);
+
                 $login->setEmail($_POST["email"]);
                 $login->setSenha(MD5('unconfirmed'));
 
             }
-            if($pessoaControl->Save($pessoa) && $loginControl->Save($login)){		
-				echo "<script>alert('Registro salvo com sucesso!');location.href='../pages/cadastro_pessoa.php';</script>"; 
-			}else{		
-				echo "<script>alert('Erro ao salvar o registro.');location.href='../pages/cadastro_pessoa.php';</script>"; 
+            if($pessoaControl->Save($pessoa) && $loginControl->Save($login)){
+
+            	$endereco->setCodePessoa($pessoa->getCode());
+            	if($enderecoControl->Save($endereco)){
+
+				echo "<script>alert('Registro salvo com sucesso!');</script>"; 
+				}
+				else{
+					echo "<script>alert('Erro ao salvar endereço!');</script>";
+				}
+			}
+
+			else{		
+				echo "<script>alert('Erro ao salvar o registro.');</script>";
 			}						
-			
+			echo "<script>location.href='../pages/cadastro_pessoa.php';</script>";
 		break;	
 
 		case 'horaAula':

@@ -47,15 +47,16 @@
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				while($register = mysqli_fetch_assoc($result)) {
-					$endereco = new Sala();
+					$endereco = new Endereco();
 					$endereco->setCode($register['cod_Endereco']);
 					$endereco->setCodePessoa($register['cod_Pessoa']);
                     $endereco->setCep($register['cep_Endereco']);
                     $endereco->setLogradouro($register['logradouro_Endereco']);
-                    $endereco->setLogradouro($register['logradouro_Endereco']);
                     $endereco->setNumero($register['numero_Endereco']);
-                    
-
+                    $endereco->setComplemento($register['complemento_Endereco']);
+                    $endereco->setBairro($register['bairro_Endereco']);
+                    $endereco->setCidade($register['cidade_Endereco']);
+                    $endereco->setUF($register['uf_Endereco']);
 					array_push($enderecos, $endereco);
 				}		
 				$result->close();				
@@ -65,22 +66,61 @@
 			return $enderecos;
 		}
 
-        function getByCode($code){			
+        function getByCode($code){						
 			try{
 				$this->Connect();	
-				$query = "select * from tbl_Sala where cod_Sala = {$code}";
+				$query = "select * from tbl_Enderecos where cod_Endereco = {$code}";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				$register = mysqli_fetch_assoc($result);
-				$sala = new Sala();
-				$sala->setCode($register['cod_Sala']);
-				$sala->setNumero($register['numero_Sala']);
-                $sala->setDescricao($register['descricao_Sala']);
+
+				$endereco = new Endereco();
+				$endereco->setCode($register['cod_Endereco']);
+				$endereco->setCodePessoa($register['cod_Pessoa']);
+                $endereco->setCep($register['cep_Endereco']);
+                $endereco->setLogradouro($register['logradouro_Endereco']);
+                $endereco->setNumero($register['numero_Endereco']);
+                $endereco->setComplemento($register['complemento_Endereco']);
+                $endereco->setBairro($register['bairro_Endereco']);
+                $endereco->setCidade($register['cidade_Endereco']);
+                $endereco->setUF($register['uf_Endereco']);
+
 				$result->close();				
-			}catch(Exception $ex){
+			}
+
+			catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}			
-			return $sala;
+			return $endereco;
+            
+        }
+
+        function getByPessoa($codePessoa){						
+			try{
+				$this->Connect();	
+				$query = "select * from tbl_Enderecos where cod_Pessoa = {$code}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+				$register = mysqli_fetch_assoc($result);
+
+				$endereco = new Endereco();
+				$endereco->setCode($register['cod_Endereco']);
+				$endereco->setCodePessoa($register['cod_Pessoa']);
+                $endereco->setCep($register['cep_Endereco']);
+                $endereco->setLogradouro($register['logradouro_Endereco']);
+                $endereco->setNumero($register['numero_Endereco']);
+                $endereco->setComplemento($register['complemento_Endereco']);
+                $endereco->setBairro($register['bairro_Endereco']);
+                $endereco->setCidade($register['cidade_Endereco']);
+                $endereco->setUF($register['uf_Endereco']);
+
+				$result->close();				
+			}
+
+			catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $endereco;
             
         }
 }

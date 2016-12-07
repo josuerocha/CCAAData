@@ -4,7 +4,6 @@ class Pessoa{
     private $fkPerfil;
     private $nome;
     private $cpf;
-    private $endereco;
     private $telefone;
     private $celular;
     private $email;
@@ -12,12 +11,16 @@ class Pessoa{
     private $sexo;
     private $horaAula;
     private $foto;
+    public $endereco;
 
     function __construct(){
         $this->setCode(0);
         $this->nome = 0;
         $this->setHoraAula(0);
         $this->setFoto("noimg.png");
+
+        $enderecoControl = new EnderecoController();
+        $this->endereco = enderecoControl->getByPessoa($this->getCode());
     }
 
     function getCode(){
@@ -50,14 +53,6 @@ class Pessoa{
 
     function setCPF($cpf){
         $this->cpf = $cpf;
-    }
-
-    function getEndereco(){
-        return $this->endereco;
-    }
-
-    function setEndereco($endereco){
-        $this->endereco = $endereco;
     }
 
     function getTelefone(){
@@ -130,6 +125,14 @@ class Pessoa{
         'sexo' => $this->getSexo(),
         'horaAula' => $this->getHoraAula(),
         'foto' => $this->getFoto(),
+        'codeEndereco' => $this->endereco=>getCode(),
+        'cep' => $this->endereco=>getCep(),
+        'logradouro' => $this->endereco=>getLogradouro(),
+        'numero' => $this->endereco=>getNumero(),
+        'complemento' => $this->endereco=>getComplemento(),
+        'bairro' => $this->endereco=>getBairro(),
+        'cidade' => $this->endereco=>getCidade(),
+        'uf' => $this->endereco=>getUF()
     );
 }
 }

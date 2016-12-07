@@ -22,5 +22,10 @@ class EnderecoController implements IControllerGeneral {
         $enderecoDAO = new EnderecoDAO();
         return $enderecoDAO->getByCode($code);
     }
+
+    function getByPessoa($codePessoa){
+        $enderecoDAO = new EnderecoDAO();
+        return $enderecoDAO->getByPessoa($codePessoa);
+    }
 }
 ?> 

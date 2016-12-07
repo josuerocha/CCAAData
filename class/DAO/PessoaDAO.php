@@ -8,14 +8,14 @@
 			try{
 				$this->Connect();		
 				if($pessoa->getCode()==0){				
-					$query = "insert into  tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) values 
-                    ('{$pessoa->getFKPerfil()}','{$pessoa->getNome()}', '{$pessoa->getCPF()}','{$pessoa->getEndereco()}','{$pessoa->getTelefone()}','{$pessoa->getCelular()}','{$pessoa->getEmail()}','{$pessoa->getDataNascimento()}','{$pessoa->getSexo()}','{$pessoa->getHoraAula()}','{$pessoa->getFoto()}')";
+					$query = "insert into  tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) values 
+                    ('{$pessoa->getFKPerfil()}','{$pessoa->getNome()}', '{$pessoa->getCPF()}','{$pessoa->getTelefone()}','{$pessoa->getCelular()}','{$pessoa->getEmail()}','{$pessoa->getDataNascimento()}','{$pessoa->getSexo()}','{$pessoa->getHoraAula()}','{$pessoa->getFoto()}')";
 
 					$this->connection->query($query);					
 					$codigo = $this->connection->insert_id;
 					$pessoa->setCode($codigo);
 				}else{	
-					$query = "update tbl_Pessoa set tbl_Perfil_cod_Perfil = '{$pessoa->getFKPerfil()}', nome_Pessoa = '{$pessoa->getNome()}',cpf_Pessoa = '{$pessoa->getCPF()}',endereco_Pessoa = '{$pessoa->getEndereco()}', telefone_Pessoa = '{$pessoa->getTelefone()}',celular_Pessoa = '{$pessoa->getCelular()}', email_Pessoa = '{$pessoa->getEmail()}', dataNascimento_Pessoa = '{$pessoa->getDataNascimento()}',sexo_Pessoa = '{$pessoa->getSexo()}',horaAula_Pessoa = '{$pessoa->getHoraAula()}',foto_Pessoa = '{$pessoa->getFoto()}' where cod_Pessoa = {$pessoa->getCode()}";
+					$query = "update tbl_Pessoa set tbl_Perfil_cod_Perfil = '{$pessoa->getFKPerfil()}', nome_Pessoa = '{$pessoa->getNome()}',cpf_Pessoa = '{$pessoa->getCPF()}',telefone_Pessoa = '{$pessoa->getTelefone()}',celular_Pessoa = '{$pessoa->getCelular()}', email_Pessoa = '{$pessoa->getEmail()}', dataNascimento_Pessoa = '{$pessoa->getDataNascimento()}',sexo_Pessoa = '{$pessoa->getSexo()}',horaAula_Pessoa = '{$pessoa->getHoraAula()}',foto_Pessoa = '{$pessoa->getFoto()}' where cod_Pessoa = {$pessoa->getCode()}";
 					$this->connection->query($query);
 				}
 				$this->Disconnect();

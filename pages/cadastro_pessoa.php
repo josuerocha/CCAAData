@@ -88,7 +88,7 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-email-pessoa">Email: </h4><span id="email-span-pessoa">*</span> &nbsp 
 					<input id="input-email-pessoa" type="email" name="email" placeholder="email@email.com" required />
 				<h4 id="texto-cep-pessoa">CEP:</h4><span id="cep-span-pessoa">*</span> &nbsp 
-					<input id="input-cep-pessoa" type="text" name="inputCep" required /> &nbsp  
+					<input id="input-cep-pessoa" type="text" name="cep" required /> &nbsp  
 				<h4 id="texto-logra-pessoa">Logradouro:</h4><span id="logra-span-pessoa">*</span> &nbsp 
 					<input id="input-logra-pessoa" type="text" name="logradouro" required> &nbsp  
 				<h4 id="texto-numero-pessoa">Número:</h4><span id="numero-span-pessoa">*</span> &nbsp 
@@ -100,7 +100,7 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
 					<input id="input-cid-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
 				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
-					<input id="input-uf-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
+					<input id="input-uf-pessoa" type="text" name="uf" pattern="[a-z\s]+$" required/>
 
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar" />	
