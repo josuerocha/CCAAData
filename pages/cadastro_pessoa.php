@@ -52,7 +52,7 @@ spl_autoload_register("LoadClass");
 
 		<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Cadastros - Pessoas</h1>
+                    <h1 id="cad-titulo-pessoa">Cadastros - Pessoas</h1>
                 </div>
     </header>
 

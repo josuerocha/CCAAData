@@ -21,6 +21,10 @@ input:focus:invalid {
 	border: 1px solid #ff0000 !important; 
 }
 #icones-home-aluno{
+	position: relative;
+	padding-left: 100px;
+	top: -150px;
+	left: -80px;
 
 }
 /*codigo borda sombra azul ao clicar*/
@@ -242,6 +246,10 @@ label {
 	position: relative;
 	top: -52px;
 	left: 455px;
+}
+#cad-titulo-pessoa{
+	position: relative;
+	top: -15px;
 }
 #btn-pagamento{
 	position: relative;
@@ -1227,7 +1235,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil, #btn_salvar_freq_prof,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
