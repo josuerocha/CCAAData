@@ -20,6 +20,7 @@ function LoadClass($classe)
 	}
 	
 	$caminho = $caminho.$arquivo;
+	//echo $caminho."<br>";
 	require_once $caminho;
 }
 

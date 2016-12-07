@@ -58,10 +58,16 @@ spl_autoload_register("LoadClass");
 
     
     <div class="container" contenteditable>
-				
+	<?PHP	
+    $receitaControl = new ReceitaController();
+	$receitaControl->CalculateProfit();
+    
 
-				
+    echo "<h1><b>Gastos:</b>  {$receitaControl->getSpenditures()}  </h1>";
+    echo "<h1><b>Receita:</b>  {$receitaControl->getEarnings()}  </h1>";
+    echo "<h1><b>Lucro:</b>  {$receitaControl->getProfit()}  </h1>";
 
+    ?>
 	</div>
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
