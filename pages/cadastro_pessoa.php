@@ -105,7 +105,7 @@ spl_autoload_register("LoadClass");
 					<input id="input-uf-pessoa" type="text" name="uf" pattern="[a-z\s]+$" required/>
 
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
-				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar" />	
+				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
 			</form>
 		</div>	
 	<div class="container">&nbsp
