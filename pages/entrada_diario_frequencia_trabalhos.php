@@ -40,14 +40,14 @@ require_once("../util/checkSession.php");
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
 					<li><a href="inicio.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="sobre.html">Sobre</a></li>
+					<li><a href="cursos.html">Cursos</a></li>
+          			<li><a href="estude.html">Estude no CCAA</a></li>
+          			<li><a href="unidades.html">Unidades</a></li>
+					<li><a href="precos.html">Preços</a></li>
+          			<li><a href="convenios.html">Convênios</a></li>
+          			<li><a href="contato.html">Contato</a></li>
+					<li><a href="login.php">Login</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -133,14 +133,14 @@ require_once("../util/checkSession.php");
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
-								<a href="index.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+								<a href="inicio.html">Home</a>
+								<a href="sobre.html">Sobre</a>
+								<a href="cursos.html">Cursos</a>
+          						<a href="estude.html">Estude no CCAA</a>
+          						<a href="unidades.html">Unidades</a>
+								<a href="precos.html">Preços</a>
+          						<a href="convenios.html">Convênios</a>
+          						<a href="contato.html">Contato</a>
 							</p>
 						</div>
 					</div>

@@ -73,14 +73,14 @@ require_once("../util/checkSession.php");
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
-								<a href="inicio.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                                <a href="videos.html">Estude no CCAA</a>|
-                                <a href="videos.html">Unidades</a>|
-                                <a href="price.html">Preços</a>|
-                                <a href="price.html">Convênios</a>|
-                                <a href="contact.html">Contato</a>
+								<a href="inicio.html">Home</a>
+								<a href="sobre.html">Sobre</a>
+								<a href="cursos.html">Cursos</a>
+          						<a href="estude.html">Estude no CCAA</a>
+          						<a href="unidades.html">Unidades</a>
+								<a href="precos.html">Preços</a>
+          						<a href="convenios.html">Convênios</a>
+          						<a href="contato.html">Contato</a>
 							</p>
 						</div>
 					</div>

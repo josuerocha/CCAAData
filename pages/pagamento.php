@@ -2,13 +2,13 @@
 require_once("../util/checkSession.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>CCAA--Pagamento</title>
+	<title>CCAA - Pagamento</title>
 	<link rel="icon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -35,15 +35,14 @@ require_once("../util/checkSession.php");
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="inicio.html">Home</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="courses.html">Cursos</a></li>
-          			<li><a href="courses.html">Estude no CCAA</a></li>
-          			<li><a href="courses.html">Unidades</a></li>
-					<li><a href="price.html">Preços</a></li>
-          			<li><a href="courses.html">Convênios</a></li>
-          			<li><a href="courses.html">Contato</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li class="active"><a href="home_aluno.php">Home</a></li>
+					<li ><a href="aluno_diarios.html">Diários</a></li>
+					<li ><a href="aluno_boletim.html">Boletim</a></li>
+					<li ><a href="aluno_boletim.html">Materiais</a></li>
+					<li ><a href="aluno_boletim.html">Mensalidades</a></li>
+					<li ><a href="pagamento.php">Pagamento Online</a></li>
+					<li ><a href="alterar_senha.php">Alterar Senha</a></li>
+					<li ><a href="../util/logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -108,14 +107,14 @@ require_once("../util/checkSession.php");
 					<div class="col-md-6 panel">
 						<div class="panel-body">
 							<p class="simplenav">
-								<a href="index.html">Home</a>| 
+								<a href="inicio.html">Home</a>| 
 								<a href="about.html">Sobre</a>|
 								<a href="courses.html">Cursos</a>|
-                				<a href="videos.html">Estude no CCAA</a>|
-                				<a href="videos.html">Unidades</a>|
-                				<a href="price.html">Preços</a>|
-                				<a href="price.html">Convênios</a>|
-                				<a href="contact.html">Contato</a>
+                                <a href="videos.html">Estude no CCAA</a>|
+                                <a href="videos.html">Unidades</a>|
+                                <a href="price.html">Preços</a>|
+                                <a href="price.html">Convênios</a>|
+                                <a href="contact.html">Contato</a>
 							</p>
 						</div>
 					</div>
@@ -124,7 +123,6 @@ require_once("../util/checkSession.php");
 						<div class="panel-body">
 							<p class="text-right">
 								Copyright &copy; 2016. 
-								<br/>
 								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
 							</p>
 						</div>
