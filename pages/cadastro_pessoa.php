@@ -122,7 +122,7 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Email</th>
 					<th id="gridnome">Endereco</th>
 					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome">Ação</th>
+					<th id="gridnome" colspan='2'>Ação</th>
 				</tr>
 				</thead>
 				<tfoot>
@@ -137,7 +137,7 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Email</th>
 					<th id="gridnome">Endereco</th>
 					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome">Ação</th>
+					<th id="gridnome" colspan='2'>Ação</th>
 				</tr>
 				</tfoot>
 				<tbody>
@@ -147,25 +147,26 @@ spl_autoload_register("LoadClass");
 				while($pessoa=array_pop($pessoas)){
 				echo "
 				<tr>
-					<td id='gridCodigo'>{$pessoa->getCode()}</td>
-					<td id='gridPerfil'>{$pessoa->getFKPerfil()}</td>
-					<td id='gridNome'>{$pessoa->getNome()}</td>
-					<td id='gridSexo'>{$pessoa->getSexo()}</td>
-					<td id='gridCPF'>{$pessoa->getCPF()}</td>
-					<td id='gridTelefone'>{$pessoa->getTelefone()}</td>
-					<td id='gridCelular'>{$pessoa->getCelular()}</td>
-					<td id='gridEmail'>{$pessoa->getEmail()}</td>
-					<td id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
-					<td id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
-					<td colspan='2' id='gridAcao'> 
+					<td align=center id='gridCodigo'>{$pessoa->getCode()}</td>
+					<td align=center id='gridPerfil'>{$pessoa->getFKPerfil()}</td>
+					<td align=center id='gridNome'>{$pessoa->getNome()}</td>
+					<td align=center id='gridSexo'>{$pessoa->getSexo()}</td>
+					<td align=center id='gridCPF'>{$pessoa->getCPF()}</td>
+					<td align=center id='gridTelefone'>{$pessoa->getTelefone()}</td>
+					<td align=center id='gridCelular'>{$pessoa->getCelular()}</td>
+					<td align=center id='gridEmail'>{$pessoa->getEmail()}</td>
+					<td align=center id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
+					<td align=center id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
+					<td align=center id='gridAcao'> 
 						<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
 						<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
-                   		<input type=\"submit\" value=\"Editar\">
+                   		<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
                    		</form>
-				   
+				   </td>
+				   <td align=center>
 				   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
 				   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
-                   		<input type=\"submit\" value=\"Excluir\">
+                   		<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
 						</form>         	
 					</td>
 				</tr>

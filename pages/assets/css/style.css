@@ -20,6 +20,9 @@ input:focus:invalid {
 	box-shadow: 0 0 5px #ff0000 !important; 
 	border: 1px solid #ff0000 !important; 
 }
+#icones-home-aluno{
+
+}
 /*codigo borda sombra azul ao clicar*/
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 5px  #51A7E8;
@@ -228,7 +231,7 @@ label {
 #table_pessoas{
 	position: relative;
 	top:-380px;
-	left: 70px;
+	left: -100px;
 }
 #table_sala{
 	position: relative;

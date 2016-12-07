@@ -28,7 +28,7 @@ div.dt-button-info
 	border-bottom: none;
 	border-style: none;
 }
-#gridCod,#gridPerfil,#gridAcao{
+#gridCod,#gridPerfil,#gridAcao,#gridnome{
 	text-align: center;
 }
 div.dt-button-info h2
