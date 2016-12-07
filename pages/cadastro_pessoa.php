@@ -103,7 +103,6 @@ spl_autoload_register("LoadClass");
 					<input id="input-cid-pessoa" type="text" name="cidade"  required/>
 				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
 					<input id="input-uf-pessoa" type="text" name="uf"  required/>
-
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
 			</form>

@@ -20,13 +20,7 @@ input:focus:invalid {
 	box-shadow: 0 0 5px #ff0000 !important; 
 	border: 1px solid #ff0000 !important; 
 }
-#icones-home-aluno{
-	position: relative;
-	padding-left: 100px;
-	top: -150px;
-	left: -80px;
 
-}
 /*codigo borda sombra azul ao clicar*/
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 5px  #51A7E8;
