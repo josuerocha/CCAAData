@@ -235,6 +235,143 @@ label {
 	left: 540px;
 	top: -5px;
 }
+#text-dados-titular{
+	position: relative;
+	top: -52px;
+	left: 455px;
+}
+#btn-pagamento{
+	position: relative;
+	top: -45px;
+	left: 375px;
+}
+#input-cpf-titular{
+	position: relative;
+	border-radius: 3px;
+	top: -60px;
+	width: 130px;
+	left: 505px;
+}
+#input-tel-titular{
+	position: relative;
+	border-radius: 3px;
+	top: -80px;
+	width: 150px;
+	left: 502px;
+}
+#input-dat-titular{
+	position: relative;
+	border-radius: 3px;
+	top: -102px;
+	width: 130px;
+	left: 505px;
+}
+#text-cpf-titular{
+	position: relative;
+	top: -27px;
+	left: 465px;
+}
+#text-tel-titular{
+	position: relative;
+	top: -47px;
+	left: 432px;
+}
+#titulo-pagamento{
+	position: relative;
+	top: -12px;
+}
+#text-dat-titular{
+	position: relative;
+	top: -67px;
+	left: 351px;
+}
+#cpf-span-titular{
+	position: relative;
+	left: 505px;
+	top: -65px;
+}
+#tel-span-titular{
+	position: relative;
+	left: 505px;
+	top: -83px;
+}
+#dat-span-titular{
+	position: relative;
+	left: 505px;
+	top: -110px;
+}
+#text-dat-cartao{
+	position: relative;
+	top: 22px;
+	left: 353px;
+}
+#dat-span-cartao{
+	position: relative;
+	left: 505px;
+	top: -18px;
+}
+#input-dat-cartao{
+	position: relative;
+	border-radius: 3px;
+	top: -12px;
+	width: 130px;
+	left: 508px;
+}
+#text-nome-cartao{
+	position: relative;
+	top: 2px;
+	width: 200px;
+	left: 380px;
+}
+#nome-span-cartao{
+	position: relative;
+	left: 505px;
+	top: -38px;
+}
+#input-nome-cartao{
+	position: relative;
+	border-radius: 3px;
+	top: -32px;
+	width: 200px;
+	left: 508px;
+}
+#text-numero-cartao{
+	position: relative;
+	top: 38px;
+	width: 200px;
+	left: 364px;
+}
+#input-numero-cartao{
+	position: relative;
+	top: 5px;
+	width: 200px;
+	left: 508px;
+}
+#numero-span-cartao{
+	position: relative;
+	left: 505px;
+	top: -5px;
+}
+#text-cod-cartao{
+	position: relative;
+	top: -18px;
+	left: 345px;
+}
+#cod-span-cartao{
+	position: relative;
+	left: 505px;
+	top: -60px;
+}
+#input-cod-cartao{
+	position: relative;
+	top: -52px;
+	width: 50px;
+	left: 508px;
+}
+#text-dados-cartao{
+	position: relative;
+	left: 490px;
+}
 #text_cad_perf{
 	position: relative;
 	top: -12px;
@@ -855,6 +992,18 @@ input[type="password"]{
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 }
+input[type="date"]{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
+input[type="month"]{
+	width: 220px;
+	height: 32px;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+}
 input[type="text"]{
 	width: 220px;
 	height: 32px;
@@ -1071,7 +1220,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
