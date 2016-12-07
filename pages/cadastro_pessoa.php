@@ -1,5 +1,6 @@
 <?PHP
 require_once("../util/checkSession.php");
+include "../util/StandardHeader.php";
 require_once (__DIR__."/../util/autoload.php");
 spl_autoload_register("LoadClass");
 ?>
@@ -18,11 +19,9 @@ spl_autoload_register("LoadClass");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -109,6 +108,7 @@ spl_autoload_register("LoadClass");
 		</div>	
 	<div class="container">&nbsp
 				<table id="table_pessoas" border="2">
+				<thead>
 				<tr>
 					<th id="gridcod">Código</th>
 					<th id="gridnome">Perfil</th>
@@ -122,6 +122,23 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Data Nascimento</th>
 					<th id="gridnome">Ação</th>
 				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+					<th id="gridcod">Código</th>
+					<th id="gridnome">Perfil</th>
+					<th id="gridnome">Nome</th>
+					<th id="gridnome">Sexo</th>
+					<th id="gridnome">CPF</th>
+					<th id="gridnome">Telefone</th>
+					<th id="gridnome">Celular</th>
+					<th id="gridnome">Email</th>
+					<th id="gridnome">Endereco</th>
+					<th id="gridnome">Data Nascimento</th>
+					<th id="gridnome">Ação</th>
+				</tr>
+				</tfoot>
+				<tbody>
 				<?PHP
 				$controller = new PessoaController();
 				$pessoas = $controller->ListAll();
@@ -151,6 +168,7 @@ spl_autoload_register("LoadClass");
 				";
 				}
 				?>
+				</tbody>
 				</table>
 				
 			</div>	
@@ -195,6 +213,15 @@ spl_autoload_register("LoadClass");
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/cadastro_pessoa.js"></script>
 </body>
 </html>
