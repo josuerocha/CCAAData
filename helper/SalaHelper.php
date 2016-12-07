@@ -8,7 +8,8 @@ switch($action){
 	        case 'save':
 			$control = new SalaController();
 			$sala = new Sala();
-			$sala->setCode($_POST["numero"]);
+			$sala->setCode($_POST["codeHidden"]);
+			$sala->setNumero($_POST["numero"]);
 			$sala->setDescricao("Padrão");
 
             if($control->Save($sala)){		
@@ -16,16 +17,16 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../pages/cadastro_sala.php';</script>"; 			
+			//echo "<script>location.href='../pages/cadastro_sala.php';</script>"; 			
 			
 		break;
 		case 'edit':
 			$control = new SalaController();	
-            $sala = $control->getByCode($_POST["code"]);
+            $sala = $control->getByCode($_POST["codeEdit"]);
             
 			$array = $sala->toArray();
 
-			echo "{\"code\":3,\"numero\":3}"; //json_encode($array);
+			echo  json_encode($array);
 		break;	
 
 		case 'delete':

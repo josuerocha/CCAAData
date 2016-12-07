@@ -38,8 +38,8 @@ function getDescricao(){
 function toArray(){
     return array(
         'code' => $this->getCode(),
-        'numero' => $this->getNumero()
-        //'descricao' => "{$this->getDescricao()}"
+        'numero' => $this->getNumero(),
+        'descricao' => $this->getDescricao()
     );
 }
 

@@ -8,12 +8,13 @@
 			try{
 				$this->Connect();		
 				if($sala->getCode()==0){				
-					$query = "insert into tbl_Sala (numero_Sala,descricao_Sala) values ('{$sala->getNumero()}','{$sala->getDescricao()}')";
+					$query = "insert into tbl_Sala (numero_Sala,descricao_Sala) values ({$sala->getNumero()},'{$sala->getDescricao()}')";
 					$this->connection->query($query);					
 					$code = $this->connection->insert_id;
 					$sala->setCode($code);
 				}else{	
 					$query = "update tbl_Sala set numero_Sala = {$sala->getNumero()}, descricao_Sala = '{$sala->getDescricao()}' where cod_Sala = {$sala->getCode()}";
+					echo $query;
 					$this->connection->query($query);
 				}
 				$this->Disconnect();

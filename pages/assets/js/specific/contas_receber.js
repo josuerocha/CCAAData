@@ -3,7 +3,7 @@ $(document).ready(function() {
 } );
 
 
-$('#editarForm').submit(function(event){
+$('.form_edit').submit(function(event){
     
 	event.preventDefault(); // if you want to disable the action
 	var $form = $(this),

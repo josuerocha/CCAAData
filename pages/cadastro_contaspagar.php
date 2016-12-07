@@ -132,7 +132,7 @@
 					</th>
 
 					<th>
-					<form action=\"../helper/ContaPagarHelper.php?action=edit\" name=\"editarform\" id=\"editarform\" method=\"post\">
+					<form class=\"form_edit\" action=\"../helper/ContaPagarHelper.php?action=edit\"  method=\"post\">
 					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaPagar->getCode()}>
 					<input type=\"submit\" value=\"Editar\">
 						</form>

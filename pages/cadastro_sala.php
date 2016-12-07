@@ -64,7 +64,7 @@ spl_autoload_register("LoadClass");
 					<input type="hidden" id="codeHidden" name="codeHidden">
 					<h4 id="textoSala">Salas: <span>*</span></h4><input id="sala" type="text" name="numero">
 					<input id="btn-salvar-sala" type="submit" name="btnSalvar" value="Salvar">
-					<input id="btn-cancelar-sala" type="button" name="btnCancelar" value="Cancelar">
+					<input id="btn-cancelar-sala" type="button" name="btnCancelar" value="Cancelar" onclick="Novo();">
 				</form>
 
 				<!-- TABELA DO GRID AQUI!!! -->
@@ -78,7 +78,7 @@ spl_autoload_register("LoadClass");
 					</thead>
 					<tfoot>
 						<tr>
-							<th id="gridcod">Código</th>
+							<th id="gridcod">Número</th>
 							<th id="gridPerfil">Sala</th>
 						</tr>
 					</tfoot>
@@ -90,10 +90,10 @@ spl_autoload_register("LoadClass");
 
 							while($sala = array_pop($salas)){
 								echo "<tr>";
-								echo "<td> {$sala->getCode()} </td>";
+								echo "<td> {$sala->getNumero()} </td>";
 								echo "<td> {$sala->getDescricao()} </td>";
 								echo "	<td > 
-											<form id=\"form_editar\" action=\"../helper/SalaHelper.php?action=edit\" method=\"post\">
+											<form class=\"form_editar\" action=\"../helper/SalaHelper.php?action=edit\" method=\"post\">
 											<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
                								<input type=\"submit\" value=\"Editar\">
                								</form>

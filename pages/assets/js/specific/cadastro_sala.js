@@ -13,22 +13,9 @@ $(document).ready(function() {
         ]
     } );
 
-
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
- 
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
 } );
 
-$('#form_editar').submit(function(event){
+$('.form_editar').submit(function(event){
     
     event.preventDefault(); // if you want to disable the action
     var $form = $(this),

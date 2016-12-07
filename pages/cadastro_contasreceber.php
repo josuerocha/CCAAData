@@ -124,11 +124,11 @@ require_once("../util/checkSession.php");
 					<th>
 					<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
 					<input type=\"submit\" value=\"Excluir\">
-						</form>
+					</form>
 					</th>
 
 					<th>
-					<form id=\"editarForm\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"post\">
+					<form class=\"form_edit\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"POST\">
 					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaReceber->getCode()}>
 					<input type=\"submit\" value=\"Editar\">
 						</form>
