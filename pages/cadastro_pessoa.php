@@ -100,9 +100,9 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-bairro-pessoa">Bairro:</h4><span id="bairro-span-pessoa" >*</span> &nbsp 
 					<input id="input-bairro-pessoa" type="text" name="bairro" required/> &nbsp  
 				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
-					<input id="input-cid-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
+					<input id="input-cid-pessoa" type="text" name="cidade"  required/>
 				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
-					<input id="input-uf-pessoa" type="text" name="uf" pattern="[a-z\s]+$" required/>
+					<input id="input-uf-pessoa" type="text" name="uf"  required/>
 
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
