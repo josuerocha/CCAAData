@@ -127,9 +127,10 @@ CREATE TABLE tbl_PresencaProfessor (
 );
 
 CREATE TABLE tbl_Sala (
+  cod_Sala INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   numero_Sala INTEGER UNSIGNED NOT NULL,
   descricao_Sala VARCHAR(200) NOT NULL,
-  PRIMARY KEY(numero_Sala)
+  PRIMARY KEY(cod_Sala)
 );
 
 CREATE TABLE tbl_TipoConta (

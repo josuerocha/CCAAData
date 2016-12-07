@@ -17,5 +17,10 @@ class SalaController implements IControllerGeneral {
         $salaDAO = new SalaDAO();
         return $salaDAO->ListAll();
     }
+
+    function getByCode($code){
+        $salaDAO = new SalaDAO();
+        return $salaDAO->getByCode($code);
+    }    
 }
 ?> 
