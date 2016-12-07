@@ -56,7 +56,7 @@ require_once("../util/checkSession.php");
     </header>
 
     
-    <div class="container" contenteditable>
+    <div class="container">
 				<div id="coluna_esquerda">
 					<h4 id="text_idioma">Idioma: <span>*</span></h4><input id="input_idioma" type="text" name="descricao">	
 					<input id="btn-salvar-idioma" type="submit" name="btnSalvar" value="Salvar">

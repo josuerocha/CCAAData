@@ -60,7 +60,7 @@ spl_autoload_register("LoadClass");
     <div class="container" >
 	<form action="../helper/PessoaHelper.php?action=save" method="POST">
 				<h4 id="texto-nome-pessoa">Nome Completo: &nbsp</h4><span id="nome-span-pessoa">*</span>  
-					<input id="input-nome-pessoa" type="text" name="inputNome" />
+					<input id="input-nome-pessoa" type="text" name="inputNome" required/>
 				<h4 id="texto-sexo-pessoa">Sexo: &nbsp</h4><span id="sexo-span-pessoa">*</span>  
 					<select id="sexo-selec-pessoa" class="" name="sexo">
 							<option value="f">Feminino</option>
@@ -82,7 +82,7 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-cpf-pessoa">CPF:</h3><span id="cpf-span-pessoa">*</span> &nbsp 
 					<input id="input-cpf-pessoa" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
 				<h4 id="texto-data-pessoa">Data de Nascimento:</h4><span id="nome-span-data">*</span>
-					<input id="input-data-pessoa" type="date" name="dtNasc">
+					<input id="input-data-pessoa" type="date" name="dtNasc" required>
 				<h4 id="texto-tel-pessoa">Telefone:</h4> &nbsp 
 					<input id="input-tel-pessoa" type="text" name="inputTel" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"/> &nbsp  
 				<h4 id="texto-cel-pessoa">Celular:</h4><span id="cel-span-pessoa">*</span> &nbsp
@@ -100,9 +100,9 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-bairro-pessoa">Bairro:</h4><span id="bairro-span-pessoa" >*</span> &nbsp 
 					<input id="input-bairro-pessoa" type="text" name="bairro" required/> &nbsp  
 				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
-					<input id="input-cid-pessoa" type="text" name="cidade" pattern="[a-z\s]+$" required/>
+					<input id="input-cid-pessoa" type="text" name="cidade"  required/>
 				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
-					<input id="input-uf-pessoa" type="text" name="uf" pattern="[a-z\s]+$" required/>
+					<input id="input-uf-pessoa" type="text" name="uf"  required/>
 
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
@@ -122,7 +122,7 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Email</th>
 					<th id="gridnome">Endereco</th>
 					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome">Ação</th>
+					<th id="gridnome" colspan='2'>Ação</th>
 				</tr>
 				</thead>
 				<tfoot>
@@ -137,7 +137,7 @@ spl_autoload_register("LoadClass");
 					<th id="gridnome">Email</th>
 					<th id="gridnome">Endereco</th>
 					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome">Ação</th>
+					<th id="gridnome" colspan='2'>Ação</th>
 				</tr>
 				</tfoot>
 				<tbody>
@@ -147,25 +147,26 @@ spl_autoload_register("LoadClass");
 				while($pessoa=array_pop($pessoas)){
 				echo "
 				<tr>
-					<td id='gridCodigo'>{$pessoa->getCode()}</td>
-					<td id='gridPerfil'>{$pessoa->getFKPerfil()}</td>
-					<td id='gridNome'>{$pessoa->getNome()}</td>
-					<td id='gridSexo'>{$pessoa->getSexo()}</td>
-					<td id='gridCPF'>{$pessoa->getCPF()}</td>
-					<td id='gridTelefone'>{$pessoa->getTelefone()}</td>
-					<td id='gridCelular'>{$pessoa->getCelular()}</td>
-					<td id='gridEmail'>{$pessoa->getEmail()}</td>
-					<td id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
-					<td id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
-					<td colspan='2' id='gridAcao'> 
+					<td align=center id='gridCodigo'>{$pessoa->getCode()}</td>
+					<td align=center id='gridPerfil'>{$pessoa->getFKPerfil()}</td>
+					<td align=center id='gridNome'>{$pessoa->getNome()}</td>
+					<td align=center id='gridSexo'>{$pessoa->getSexo()}</td>
+					<td align=center id='gridCPF'>{$pessoa->getCPF()}</td>
+					<td align=center id='gridTelefone'>{$pessoa->getTelefone()}</td>
+					<td align=center id='gridCelular'>{$pessoa->getCelular()}</td>
+					<td align=center id='gridEmail'>{$pessoa->getEmail()}</td>
+					<td align=center id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
+					<td align=center id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
+					<td align=center id='gridAcao'> 
 						<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
 						<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
-                   		<input type=\"submit\" value=\"Editar\">
+                   		<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
                    		</form>
-				   
+				   </td>
+				   <td align=center>
 				   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
 				   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
-                   		<input type=\"submit\" value=\"Excluir\">
+                   		<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
 						</form>         	
 					</td>
 				</tr>

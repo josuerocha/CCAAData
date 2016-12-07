@@ -28,7 +28,7 @@ div.dt-button-info
 	border-bottom: none;
 	border-style: none;
 }
-#gridCod,#gridPerfil,#gridAcao{
+#gridCod,#gridPerfil,#gridAcao,#gridnome{
 	text-align: center;
 }
 div.dt-button-info h2
@@ -69,9 +69,10 @@ div.dt-button-info>div{padding:1em}button.dt-button,div.dt-button,a.dt-button
 	text-decoration:none;
 	outline:none
 	}
-	span{
-		color: #000;
-	}
+.dt-buttons span{
+	color: #000;
+}
+
 button.dt-button.disabled,div.dt-button.disabled,a.dt-button.disabled
 	{
 		color:#999;
