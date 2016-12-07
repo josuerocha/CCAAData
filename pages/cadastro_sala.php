@@ -57,12 +57,13 @@ spl_autoload_register("LoadClass");
     </header>
 
     
-    <div class="container" contenteditable>
+    <div class="container">
 				<div id="coluna_esquerda">
 
 				<form action="../helper/SalaHelper.php?action=save" method="POST">
 					<input type="hidden" id="codeHidden" name="codeHidden">
-					<h4 id="textoSala">Salas: <span>*</span></h4><input id="sala" type="text" name="numero">
+					<h4 id="textoSala">Salas: <span id="sala-span">*</span></h4>
+						<input id="sala" type="text" name="numero" required>
 					<input id="btn-salvar-sala" type="submit" name="btnSalvar" value="Salvar">
 					<input id="btn-cancelar-sala" type="button" name="btnCancelar" value="Cancelar" onclick="Novo();">
 				</form>
@@ -90,20 +91,20 @@ spl_autoload_register("LoadClass");
 
 							while($sala = array_pop($salas)){
 								echo "<tr>";
-								echo "<td> {$sala->getNumero()} </td>";
-								echo "<td> {$sala->getDescricao()} </td>";
-								echo "	<td > 
+								echo "<td align=center valign=center> {$sala->getNumero()} </td>";
+								echo "<td align=center valign=center> {$sala->getDescricao()} </td>";
+								echo "	<td align=center valign=center> 
 											<form class=\"form_editar\" action=\"../helper/SalaHelper.php?action=edit\" method=\"post\">
 											<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
-               								<input type=\"submit\" value=\"Editar\">
+               								<input id=btn-edit-sala type=\"submit\" value=\"Editar\">
                								</form>
-				   
+				   						</td>
+				   						<td align=center valign=center>
 				   							<form action=\"../helper/SalaHelper.php?action=delete\" method=\"post\">
                    							<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
-                   							<input type=\"submit\" value=\"Excluir\">
+                   							<input id=\"btn-exc-sala\"type=\"submit\" value=\"Excluir\">
 											</form>         	
 										</td>";
-
 								echo "</tr>";
 							}
 						?>

@@ -13,7 +13,24 @@ div.dt-button-info
 	text-align:center;
 	z-index:21
 }
-
+#btn-edit-sala,#btn-exc-sala{
+	color: blue;
+	text-decoration: underline;
+	background-color: #fff;
+	border-color: #fff;
+	border-collapse: 0px;
+	border-spacing: 0px;
+	box-shadow: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	border-radius: 0px;
+	border-bottom: none;
+	border-style: none;
+}
+#gridCod,#gridPerfil,#gridAcao{
+	text-align: center;
+}
 div.dt-button-info h2
 {
 	padding:0.5em;
@@ -26,7 +43,7 @@ div.dt-button-info>div{padding:1em}button.dt-button,div.dt-button,a.dt-button
 {
 	position:relative;
 	left: 420px;
-	top: 172px;
+	top: 102px;
 	display:inline-block;
 	box-sizing:border-box;
 	margin-right:0.333em;
