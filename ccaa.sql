@@ -88,7 +88,6 @@ CREATE TABLE tbl_Pessoa (
   tbl_Perfil_cod_Perfil INTEGER UNSIGNED NOT NULL,
   nome_Pessoa VARCHAR(200) NOT NULL,
   cpf_Pessoa VARCHAR(14) NOT NULL,
-  endereco_Pessoa VARCHAR(300) NOT NULL,
   telefone_Pessoa VARCHAR(14) NULL,
   celular_Pessoa VARCHAR(14) NOT NULL,
   email_Pessoa VARCHAR(100) NOT NULL,
@@ -216,8 +215,13 @@ INSERT INTO tbl_TipoConta (cod_TipoConta,tipo_TipoConta) VALUES
 (3,'Luz'),
 (4,'Gas');
 
-INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,endereco_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
-(4,'Josué Rocha', '111.111.111-75','40 RUA TRINTA E SETE02','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
-(4,'Wolmer', '111.111.111-75','40 Belo Horizonte','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
-(1,'Root', '111.111.111-75','40 RootLandia','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
+INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
+(4,'Josué Rocha', '111.111.111-75','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
+(4,'Wolmer', '111.111.111-75','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
+(1,'Root', '111.111.111-75','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
+
+INSERT INTO tbl_Endereco(cod_Pessoa,cep_Endereco,logradouro_Endereco,numero_Endereco,complemento_Endereco,bairro_Endereco,cidade_Endereco,uf_Endereco) VALUES
+(1,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),
+(2,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),
+(3,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG');
 

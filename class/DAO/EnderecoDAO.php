@@ -98,7 +98,7 @@
         function getByPessoa($codePessoa){						
 			try{
 				$this->Connect();	
-				$query = "select * from tbl_Enderecos where cod_Pessoa = {$code}";
+				$query = "select * from tbl_Endereco where cod_Pessoa = {$codePessoa}";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				$register = mysqli_fetch_assoc($result);

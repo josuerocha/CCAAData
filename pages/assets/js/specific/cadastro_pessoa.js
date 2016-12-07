@@ -66,16 +66,32 @@ $('.form_edit').submit(function(event){
     
     event.preventDefault(); // if you want to disable the action
     var $form = $(this),
-    codigoValue = $form.find('input[name="code"]').val(),
+    codigoValue = $form.find('input[name="codeEdit"]').val(),
     type = $form.attr('method'),
     url = $form.attr('action');
 
     var posting = $.post(url,{codeEdit: codigoValue},function(data,status){
             if(status == 'success'){
-                var salaEditar = JSON.parse(escapeSpecialChars(data));
-                document.getElementById("codeHidden").value = salaEditar.code;
-                document.getElementById("sala").value = salaEditar.numero;
-                //document.getElementById("descricao").value = contaEditar.valor;
+                alert(data);
+                var pessoaEditar = JSON.parse(escapeSpecialChars(data));
+                document.getElementById("codeHidden").value = pessoaEditar.code;
+                document.getElementById("codeEndHidden").value = pessoaEditar.codeEndereco;
+                document.getElementById("input-nome-pessoa").value = pessoaEditar.nome;
+                document.getElementById("input-cpf-pessoa").value = pessoaEditar.cpf;
+                document.getElementById("sexo-selec-pessoa").value = pessoaEditar.sexo;
+                document.getElementById("perfil-selec-pessoa").value = pessoaEditar.sexo;
+                document.getElementById("perfil-selec-pessoa").value = pessoaEditar.perfil;
+                document.getElementById("input-data-pessoa").value = pessoaEditar.dataNascimento;
+                document.getElementById("input-tel-pessoa").value = pessoaEditar.telefone;
+                document.getElementById("input-cel-pessoa").value = pessoaEditar.celular;
+                document.getElementById("input-email-pessoa").value = pessoaEditar.email;
+                document.getElementById("input-cep-pessoa").value = pessoaEditar.cep;
+                document.getElementById("input-logra-pessoa").value = pessoaEditar.logradouro;
+                document.getElementById("input-numero-pessoa").value = pessoaEditar.numero;
+                document.getElementById("input-comple-pessoa").value = pessoaEditar.complemento;
+                document.getElementById("input-bairro-pessoa").value = pessoaEditar.bairro;
+                document.getElementById("input-cid-pessoa").value = pessoaEditar.cidade;
+                document.getElementById("input-uf-pessoa").value = pessoaEditar.uf;
             }
         }
         );
@@ -89,7 +105,22 @@ function escapeSpecialChars(jsonString) {
 
         }
 function Novo(){
-    document.getElementById("codeHidden").value = "";
-    document.getElementById("sala").value = "";
-    document.getElementById("descricao").value = "";
+   document.getElementById("codeHidden").value = '';
+    document.getElementById("codeEndHidden").value = '';
+    document.getElementById("input-nome-pessoa").value = '';
+    document.getElementById("input-cpf-pessoa").value = '';
+    document.getElementById("sexo-selec-pessoa").value = '';
+    document.getElementById("perfil-selec-pessoa").value = '';
+    document.getElementById("perfil-selec-pessoa").value = '';
+    document.getElementById("input-data-pessoa").value = '';
+    document.getElementById("input-tel-pessoa").value = '';
+    document.getElementById("input-cel-pessoa").value = '';
+    document.getElementById("input-email-pessoa").value = '';
+    document.getElementById("input-cep-pessoa").value = '';
+    document.getElementById("input-logra-pessoa").value = '';
+    document.getElementById("input-numero-pessoa").value = '';
+    document.getElementById("input-comple-pessoa").value = '';
+    document.getElementById("input-bairro-pessoa").value = '';
+    document.getElementById("input-cid-pessoa").value = '';
+    document.getElementById("input-uf-pessoa").value = '';
 }

@@ -10,12 +10,13 @@
 				if($pessoa->getCode()==0){				
 					$query = "insert into  tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) values 
                     ('{$pessoa->getFKPerfil()}','{$pessoa->getNome()}', '{$pessoa->getCPF()}','{$pessoa->getTelefone()}','{$pessoa->getCelular()}','{$pessoa->getEmail()}','{$pessoa->getDataNascimento()}','{$pessoa->getSexo()}','{$pessoa->getHoraAula()}','{$pessoa->getFoto()}')";
-
+                    echo $query;
 					$this->connection->query($query);					
 					$codigo = $this->connection->insert_id;
 					$pessoa->setCode($codigo);
 				}else{	
 					$query = "update tbl_Pessoa set tbl_Perfil_cod_Perfil = '{$pessoa->getFKPerfil()}', nome_Pessoa = '{$pessoa->getNome()}',cpf_Pessoa = '{$pessoa->getCPF()}',telefone_Pessoa = '{$pessoa->getTelefone()}',celular_Pessoa = '{$pessoa->getCelular()}', email_Pessoa = '{$pessoa->getEmail()}', dataNascimento_Pessoa = '{$pessoa->getDataNascimento()}',sexo_Pessoa = '{$pessoa->getSexo()}',horaAula_Pessoa = '{$pessoa->getHoraAula()}',foto_Pessoa = '{$pessoa->getFoto()}' where cod_Pessoa = {$pessoa->getCode()}";
+					echo $query;
 					$this->connection->query($query);
 				}
 				$this->Disconnect();
@@ -54,7 +55,6 @@
 					$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
 					$pessoa->setNome($register['nome_Pessoa']);
 					$pessoa->setCPF($register['cpf_Pessoa']);
-					$pessoa->setEndereco($register['endereco_Pessoa']);
 					$pessoa->setTelefone($register['telefone_Pessoa']);
 					$pessoa->setCelular($register['celular_Pessoa']);
 					$pessoa->setEmail($register['email_Pessoa']);
@@ -87,7 +87,6 @@
 				$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
 				$pessoa->setNome($register['nome_Pessoa']);
 				$pessoa->setCPF($register['cpf_Pessoa']);
-				$pessoa->setEndereco($register['endereco_Pessoa']);
 				$pessoa->setTelefone($register['telefone_Pessoa']);
 				$pessoa->setCelular($register['celular_Pessoa']);
 				$pessoa->setEmail($register['email_Pessoa']);
@@ -119,7 +118,6 @@
 					$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
 					$pessoa->setNome($register['nome_Pessoa']);
 					$pessoa->setCPF($register['cpf_Pessoa']);
-					$pessoa->setEndereco($register['endereco_Pessoa']);
 					$pessoa->setTelefone($register['telefone_Pessoa']);
 					$pessoa->setCelular($register['celular_Pessoa']);
 					$pessoa->setEmail($register['email_Pessoa']);
@@ -152,7 +150,6 @@
 				$pessoa->setCode($register['cod_Pessoa']);
 				$pessoa->setNome($register['nome_Pessoa']);
 				$pessoa->setCPF($register['cpf_Pessoa']);
-				$pessoa->setEndereco($register['endereco_Pessoa']);
 				$pessoa->setTelefone($register['telefone_Pessoa']);
 				$pessoa->setCelular($register['celular_Pessoa']);
 				$pessoa->setEmail($register['email_Pessoa']);

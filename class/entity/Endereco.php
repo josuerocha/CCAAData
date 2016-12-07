@@ -87,5 +87,8 @@ class Endereco{
         $this->cidade = $cidade;
     }
 
+    function getAll(){
+        return "{$this->getLogradouro()}"." "."{$this->getNumero()}"." "."{$this->getComplemento()}".", "."{$this->getCidade()}".", "."{$this->getUF()}".", "."{$this->getCep()}";
+    }
 }
 ?>

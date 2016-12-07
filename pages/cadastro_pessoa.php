@@ -77,6 +77,8 @@ spl_autoload_register("LoadClass");
 				}
 			?>
 					</select>
+					<input type="hidden" name="codeHidden" id="codeHidden">
+					<input type="hidden" name="codeEndHidden" id="codeEndHidden">
 				<h4 id="texto-cpf-pessoa">CPF:</h3><span id="cpf-span-pessoa">*</span> &nbsp 
 					<input id="input-cpf-pessoa" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
 				<h4 id="texto-data-pessoa">Data de Nascimento:</h4><span id="nome-span-data">*</span>
@@ -153,10 +155,10 @@ spl_autoload_register("LoadClass");
 					<td id='gridTelefone'>{$pessoa->getTelefone()}</td>
 					<td id='gridCelular'>{$pessoa->getCelular()}</td>
 					<td id='gridEmail'>{$pessoa->getEmail()}</td>
-					<td id='gridEndereco'>{$pessoa->getEndereco()}</td>
+					<td id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
 					<td id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
 					<td colspan='2' id='gridAcao'> 
-						<form class=\"form_edit\" action=\"helper/PessoaHelper.php?action=edit\" method=\"post\">
+						<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
 						<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
                    		<input type=\"submit\" value=\"Editar\">
                    		</form>

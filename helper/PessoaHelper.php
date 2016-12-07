@@ -16,6 +16,14 @@ switch($action){
 			$login = new Login();
 
 			if(isset($_POST["inputNome"])){
+				if(isset($_POST["codeHidden"])){
+					$pessoa->setCode($_POST["codeHidden"]);
+					
+					if(isset($_POST["codeEndHidden"])){
+						$pessoa->endereco->setCode($_POST["codeEndHidden"]);
+					}
+				}
+
 			    $pessoa->setFKPerfil($_POST["perfil"]);
                 $pessoa->setNome($_POST["inputNome"]);
                 $pessoa->setCPF($_POST["cpf"]);
@@ -75,7 +83,7 @@ switch($action){
 			break;
 		case 'edit':
 			$control = new PessoaController();	
-        	$pessoa = $control->getByCode($_POST["codeEdit"]);
+        	$pessoa = $control->ListByCode($_POST["codeEdit"]);
             
 			$array = $pessoa->toArray();
 

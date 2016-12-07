@@ -18,9 +18,6 @@ class Pessoa{
         $this->nome = 0;
         $this->setHoraAula(0);
         $this->setFoto("noimg.png");
-
-        $enderecoControl = new EnderecoController();
-        $this->endereco = enderecoControl->getByPessoa($this->getCode());
     }
 
     function getCode(){
@@ -29,6 +26,9 @@ class Pessoa{
 
     function setCode($code){
         $this->code = $code;
+
+        $enderecoControl = new EnderecoController();
+        $this->endereco = $enderecoControl->getByPessoa($this->getCode());
     }
 
     function getFKPerfil(){
@@ -112,12 +112,13 @@ class Pessoa{
     }
 
     function toArray(){
+
+    if($this->endereco->getCep() !== null ){
     return array(
         'code' => $this->getCode(),
         'perfil' => $this->getFKPerfil(),
         'nome' => $this->getNome(),
         'cpf' => $this->getCPF(),
-        'endereco' => $this->getEndereco(),
         'telefone' => $this->getTelefone(),
         'celular' => $this->getCelular(),
         'email' => $this->getEmail(),
@@ -125,15 +126,42 @@ class Pessoa{
         'sexo' => $this->getSexo(),
         'horaAula' => $this->getHoraAula(),
         'foto' => $this->getFoto(),
-        'codeEndereco' => $this->endereco=>getCode(),
-        'cep' => $this->endereco=>getCep(),
-        'logradouro' => $this->endereco=>getLogradouro(),
-        'numero' => $this->endereco=>getNumero(),
-        'complemento' => $this->endereco=>getComplemento(),
-        'bairro' => $this->endereco=>getBairro(),
-        'cidade' => $this->endereco=>getCidade(),
-        'uf' => $this->endereco=>getUF()
+        'codeEndereco' => $this->endereco->getCode(),
+        'cep' => $this->endereco->getCep(),
+        'logradouro' => $this->endereco->getLogradouro(),
+        'numero' => $this->endereco->getNumero(),
+        'complemento' => $this->endereco->getComplemento(),
+        'bairro' => $this->endereco->getBairro(),
+        'cidade' => $this->endereco->getCidade(),
+        'uf' => $this->endereco->getUF()
     );
+
+    }
+
+    else{
+        return array(
+        'code' => $this->getCode(),
+        'perfil' => $this->getFKPerfil(),
+        'nome' => $this->getNome(),
+        'cpf' => $this->getCPF(),
+        'telefone' => $this->getTelefone(),
+        'celular' => $this->getCelular(),
+        'email' => $this->getEmail(),
+        'dataNascimento' => $this->getDataNascimento(),
+        'sexo' => $this->getSexo(),
+        'horaAula' => $this->getHoraAula(),
+        'foto' => $this->getFoto(),
+        'codeEndereco' => "",
+        'cep' => "",
+        'logradouro' => "",
+        'numero' => "",
+        'complemento' => "",
+        'bairro' => "",
+        'cidade' => "",
+        'uf' => ""
+    );
+
+    }
 }
 }
 ?>
