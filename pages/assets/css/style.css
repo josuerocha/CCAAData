@@ -232,8 +232,8 @@ label {
 }
 #table_sala{
 	position: relative;
-	left: 540px;
-	top: -5px;
+	left: 40px;
+	top: 190px;
 }
 #text-dados-titular{
 	position: relative;
@@ -423,8 +423,12 @@ label {
 	left: 5px;
 
 }
+#sala-span{
+	color: red;
+}
 #sala{
 	position: relative;
+	left: 410px;
 	top: 32px;
 }
 #table_trabalhos_aluno{
@@ -487,8 +491,8 @@ label {
 }
 #textoSala{
 	position: absolute;
-	left: 54px;
-	top: 230px;
+	left: 455px;
+	top: 227px;
 }
 #alterar_hora_aula{
 	position: relative;
@@ -1255,12 +1259,12 @@ input[type="time"]{
 	left: -216px;
 }
 #btn-salvar-sala{
-	top: 85px;
-	left: -216px;
+	top: 33px;
+	left: 415px;
 }
 #btn-cancelar-sala{
-	top: 85px;
-	left: -216px;
+	top: 33px;
+	left: 415px;
 }
 #btn-cancelar-idioma,#btn-cancelar-conta{
 	top: 60px;
