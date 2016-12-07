@@ -14,7 +14,6 @@
 					$endereco->setCode($code);
 				}else{	
 					$query = "update tbl_Endereco set cod_Pessoa = {$endereco->getCodePessoa()}, cep_Endereco = '{$endereco->getCep()}',logradouro_Endereco = '{$endereco->getLogradouro()}',numero_Endereco = '{$endereco->getNumero()}', complemento_Endereco = '{$endereco->getComplemento()}',bairro_Endereco = '{$endereco->getBairro()}', cidade_Endereco = '{$endereco->getCidade()}',uf_Endereco = '{$endereco->getUF()}', where cod_Endereco = {$endereco->getCode()} ";
-					echo $query;
 					$this->connection->query($query);
 				}
 				$this->Disconnect();
@@ -100,10 +99,12 @@
 				$this->Connect();	
 				$query = "select * from tbl_Endereco where cod_Pessoa = {$codePessoa}";
 				$result = $this->connection->query($query);	
-				$this->Disconnect();				
-				$register = mysqli_fetch_assoc($result);
+				$this->Disconnect();
 
 				$endereco = new Endereco();
+				if($result !== false){				
+				$register = mysqli_fetch_assoc($result);
+
 				$endereco->setCode($register['cod_Endereco']);
 				$endereco->setCodePessoa($register['cod_Pessoa']);
                 $endereco->setCep($register['cep_Endereco']);
@@ -114,7 +115,8 @@
                 $endereco->setCidade($register['cidade_Endereco']);
                 $endereco->setUF($register['uf_Endereco']);
 
-				$result->close();				
+				$result->close();
+				}				
 			}
 
 			catch(Exception $ex){

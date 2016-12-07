@@ -27,8 +27,10 @@ class Pessoa{
     function setCode($code){
         $this->code = $code;
 
-        $enderecoControl = new EnderecoController();
-        $this->endereco = $enderecoControl->getByPessoa($this->getCode());
+        if($code !== 0){
+            $enderecoControl = new EnderecoController();
+            $this->endereco = $enderecoControl->getByPessoa($this->getCode());
+        }
     }
 
     function getFKPerfil(){
