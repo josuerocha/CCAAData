@@ -80,6 +80,12 @@ CREATE TABLE tbl_Login (
 CREATE TABLE tbl_Perfil (
   cod_Perfil INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   perfil_Perfil VARCHAR(50) NOT NULL,
+  registration_Permission BOOL NOT NULL,
+  complex_Registration_Permission BOOL NOT NULL,
+  report_Permission BOOL NOT NULL,
+  complex_Report_Permission BOOL NOT NULL,
+  student_Permission BOOL NOT NULL,
+  teacher_Permission BOOL NOT NULL,
   PRIMARY KEY(cod_Perfil)
 );
 
@@ -177,7 +183,10 @@ CREATE TABLE tbl_Observacao (
   PRIMARY KEY (cod_Observacao));
 
 INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES 
-('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
+('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
+('josue@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
+('wolmer@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
+('seagal@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
 
 INSERT INTO tbl_Sala(numero_Sala, descricao_Sala) VALUES
 (1, 'Sala de aula em vídeo conferência'),
@@ -185,14 +194,13 @@ INSERT INTO tbl_Sala(numero_Sala, descricao_Sala) VALUES
 (3, 'Sala de aula regular - 10 pessoas'),
 (4, 'Sala de aula regular - 15 pessoas');
 
-INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil) VALUES
-(1,'Administrador'),
-(2,'Coordenador(a)'),
-(3,'Secretario(a)'),
-(4,'Professor'),
-(5,'Aluno'),
-(6,'Tutor'),
-(7,'Responsavel');
+INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil,registration_Permission,complex_Registration_Permission,report_Permission,complex_Report_Permission,student_Permission,teacher_Permission) VALUES
+(1,'Administrador',1,1,1,1,1,0),
+(2,'Coordenador(a)',1,1,1,1,1,0),
+(3,'Secretario(a)',1,0,1,0,1,0),
+(4,'Professor',0,0,0,0,0,1),
+(5,'Aluno',0,0,0,0,1,0),
+(7,'Responsavel',0,0,0,0,1,0);
 
 INSERT INTO tbl_TipoConta (cod_TipoConta,tipo_TipoConta) VALUES
 (1,'Mensalidade'),
@@ -201,7 +209,7 @@ INSERT INTO tbl_TipoConta (cod_TipoConta,tipo_TipoConta) VALUES
 (4,'Gas');
 
 INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
-(4,'Josué Rocha', '111.111.111-75','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
+(4,'Steven Seagal', '111.111.111-75','(31)3849-5310','(31)99989-4466','seagal@email.com','2016-01-01','m','0','noimg.png'),
 (4,'Wolmer', '111.111.111-75','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
 (1,'Root', '111.111.111-75','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
 
