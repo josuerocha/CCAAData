@@ -4,16 +4,30 @@ $.fn.dataTable.ext.search.push(
         var valueMax = $('#dataMax').val();
         var min = new Date($('#dataMin').val());
         var max = new Date($('#dataMax').val());
-        var dateExp = new Date(data[2]) || 0; // use data for the dateExp column
-        var datePay = new Date(data[3]) || 0;
+
+
+        var expDateArray = data[2].split('-');
+        var payDateArray = data[3].split('-');
+
+        if(expDateArray[0] > 12){
+            var expDateConverted = expDateArray[1] + '-' + expDateArray[0] + '-' + expDateArray[2];
+            var payDateConverted = payDateArray[1] + '-' + payDateArray[0] + '-' + payDateArray[2];
+        }
+        else{
+            var expDateConverted = data[2];
+            var payDateConverted = data[3];
+        }
+
+        var dateExp = new Date(expDateConverted) || 0; // use data for the dateExp column
+        var datePay = new Date(payDateConverted) || 0;
 
         if(min.getTime() >= max.getTime()){
             alert('Faixa de dados inválida.');
         }
- 
+        alert(max);
         if ( ( !Date.parse(valueMin) && !Date.parse(valueMax) ) || ( !Date.parse(valueMin) && dateExp.getTime() <= max.getTime() ) || ( min.getTime() <= dateExp.getTime()   &&  !Date.parse(valueMax)) 
         || ( min.getTime() <= dateExp.getTime()   && dateExp.getTime() <= max.getTime() ) || ( !Date.parse(valueMin) && datePay.getTime() <= max.getTime() ) || ( min.getTime() <= datePay.getTime()   &&  !Date.parse(valueMax)) 
-        || ( min.getTime() <= dateExp.getTime()   && dateExp.getTime() <= max.getTime() ) )
+        || ( min.getTime() <= datePay.getTime()   && datePay.getTime() <= max.getTime() ) )
         {
             return true;
         }
@@ -37,7 +51,7 @@ $(document).ready(function() {
         buttons: [
             {
                 extend: 'pdfHtml5',
-                message: 'Relatório gerado em ' + getDate() + 'às ' + getTime() + ' CCAA\u00A9',
+                message: 'Relatório gerado em ' + getDate() + ' às ' + getTime() + ' CCAA\u00A9',
                 customize: function ( doc ) {
                     doc.content.splice( 1, 0, {
                         margin: [ 0, 0, 0, 12 ],

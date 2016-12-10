@@ -1,4 +1,3 @@
-
 <?PHP
 require_once("../util/checkSession.php");
 ?>
@@ -13,11 +12,11 @@ require_once("../util/checkSession.php");
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
-<link rel="stylesheet" href="assets/css/style.css">
 
 <?include "../util/StandardHeader.php" ?>
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -67,12 +66,12 @@ $contas = $contasControl->ListAll();
 $tipoControl = new TipoContaController();
 ?>
 <thead>
-	<tr> 		
-        <th data-type="numeric">Tipo</th>
-        <th>Valor</th>
-        <th>Data de vencimento</th>
-		<th>Data de pagamento</th>
-		<th>Situação</th>
+	<tr class="table_entry"> 		
+        <th data-type="numeric" >Tipo</th>
+        <th> Valor</th>
+        <th> Data de vencimento</th>
+		<th> Data de pagamento</th>
+		<th> Situação</th>
 	</tr>
 </thead>
 <tfoot>
@@ -91,7 +90,7 @@ $tipoControl = new TipoContaController();
 		 while ($contaPagar = array_pop($contas)) { 
             $tipoConta = $tipoControl->ListByCode($contaPagar->getTipo());
         echo "
-		    <tr align=\"center\">
+		    <tr>
 					<td>{$tipoConta->getTipo()}</th>
 					<td>{$contaPagar->getValor()}</th>
 					<td>{$contaPagar->getDtVencimento()}</th>

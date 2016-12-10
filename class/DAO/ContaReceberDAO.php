@@ -50,7 +50,7 @@
 					$contaReceber = new ContaReceber();
 
 					$contaReceber->setCode($register['cod_ContaReceber']);
-					$contaReceber->setPessoa($register['pessoa_ContaReceber']);
+					//$contaReceber->setPessoa($register['pessoa_ContaReceber']);
                     $contaReceber->setTipo($register['tbl_TipoConta_cod_TipoConta']);
 					$contaReceber->setValor($register['valor_ContaReceber']);
 					$contaReceber->setDtVencimento(date("d-m-Y", strtotime($register['dataVencimento_ContaReceber'])));

@@ -2285,3 +2285,7 @@ list-style: none;
 
 	color:#3D84E6 !important;
 }
+
+th.table_entry{
+	text-align: center;
+}
