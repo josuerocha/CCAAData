@@ -1,5 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +48,7 @@ require_once("../util/checkSession.php");
 	</div>
 	<!-- /.navbar -->
 
-
+	<!-- /.Nome da pagina -->
 	<header id="head" class="secondary_aluno">
         <div class="container">
             <h1 id="texto_modulo">Contas à receber</h1>
@@ -58,9 +60,6 @@ require_once("../util/checkSession.php");
 
 
 <?PHP
-require_once ("../util/autoload.php");
-spl_autoload_register("LoadClass");
-
 $contasControl = new ContaReceberController();
 $contas = $contasControl->ListAll();
 

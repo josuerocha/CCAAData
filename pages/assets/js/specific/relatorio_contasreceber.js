@@ -24,7 +24,7 @@ $.fn.dataTable.ext.search.push(
         if(min.getTime() >= max.getTime()){
             alert('Faixa de dados inválida.');
         }
-        alert(max);
+
         if ( ( !Date.parse(valueMin) && !Date.parse(valueMax) ) || ( !Date.parse(valueMin) && dateExp.getTime() <= max.getTime() ) || ( min.getTime() <= dateExp.getTime()   &&  !Date.parse(valueMax)) 
         || ( min.getTime() <= dateExp.getTime()   && dateExp.getTime() <= max.getTime() ) || ( !Date.parse(valueMin) && datePay.getTime() <= max.getTime() ) || ( min.getTime() <= datePay.getTime()   &&  !Date.parse(valueMax)) 
         || ( min.getTime() <= datePay.getTime()   && datePay.getTime() <= max.getTime() ) )

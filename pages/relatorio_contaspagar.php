@@ -1,5 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,8 +59,6 @@ require_once("../util/checkSession.php");
 <table id="tabela" class="display nowrap" cellspacing="0" width="100%">
 
 <?PHP
-require_once ("../util/autoload.php");
-spl_autoload_register("LoadClass");
 
 $contasControl = new ContaPagarController();
 $contas = $contasControl->ListAll();
