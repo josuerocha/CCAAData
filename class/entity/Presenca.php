@@ -1,5 +1,5 @@
 <?php
-class PresencaProfessor{
+class Presenca{
 
 private $code;
 private $codePessoa;

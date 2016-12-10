@@ -16,7 +16,7 @@ class ReceitaController {
     function CalculateProfit() {
         $contaPagarControl = new ContaPagarController();
         $contaReceberControl = new ContaReceberController();
-        $presencaProfessorControl = new PresencaProfessorController();
+        $presencaProfessorControl = new PresencaController();
         $pessoaControl = new PessoaController();
 
         $contasPagar = $contaPagarControl->ListAll();
@@ -37,7 +37,7 @@ class ReceitaController {
         $presencas = $presencaProfessorControl->ListAll();
 
         while($presenca = array_pop($presencas)){
-            $professor = $pessoaControl->ListByCode($presenca->getProfessor());
+            $professor = $pessoaControl->ListByCode($presenca->getCodePessoa());
 
             $this->spenditures += $professor->getHoraAula();
         }

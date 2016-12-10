@@ -99,30 +99,15 @@ CREATE TABLE tbl_Pessoa (
   INDEX tbl_Pessoa_FKIndex2(tbl_Perfil_cod_Perfil)
 );
 
-CREATE TABLE tbl_PresencaAluno (
-  cod_PresencaAluno INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  tbl_Pessoa_cod_Pessoa INTEGER UNSIGNED NOT NULL,
-  data_PresencaAluno DATE NOT NULL,
-  situacao_PresencaAluno BOOL NOT NULL,
-  PRIMARY KEY(cod_PresencaAluno),
-  INDEX tbl_PresencaAluno_FKIndex1(tbl_Pessoa_cod_Pessoa)
-);
-
-CREATE TABLE tbl_PresencaAlunoTurma (
-  tbl_PresencaAluno_cod_PresencaAluno INTEGER UNSIGNED NOT NULL,
-  tbl_Turma_cod_Turma INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(tbl_PresencaAluno_cod_PresencaAluno, tbl_Turma_cod_Turma),
-  INDEX tbl_PresencaAluno_has_tbl_Turma_FKIndex1(tbl_PresencaAluno_cod_PresencaAluno),
-  INDEX tbl_PresencaAluno_has_tbl_Turma_FKIndex2(tbl_Turma_cod_Turma)
-);
-
-CREATE TABLE tbl_PresencaProfessor (
-  cod_PresencaProfessor INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  tbl_Pessoa_cod_Pessoa INTEGER UNSIGNED NOT NULL,
-  situacao_PresencaProfessor BOOL NOT NULL,
-  data_PresencaProfessor DATE NOT NULL,
-  PRIMARY KEY(cod_PresencaProfessor),
-  INDEX tbl_PresencaProfessor_FKIndex1(tbl_Pessoa_cod_Pessoa)
+CREATE TABLE tbl_Presenca (
+  cod_Presenca INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  cod_Pessoa INTEGER UNSIGNED NOT NULL,
+  cod_Turma INTEGER UNSIGNED NOT NULL,
+  situacao BOOL NOT NULL,
+  data DATE NOT NULL,
+  PRIMARY KEY(cod_Presenca),
+  INDEX tbl_Presenca_FKIndex1(cod_Pessoa),
+  INDEX tbl_Presenca_FKIndex2(cod_Turma)
 );
 
 CREATE TABLE tbl_Sala (
@@ -219,6 +204,13 @@ INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pe
 (4,'Josué Rocha', '111.111.111-75','(31)3849-5310','(31)99989-4466','josuerocha@me.com','2016-01-01','m','0','noimg.png'),
 (4,'Wolmer', '111.111.111-75','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
 (1,'Root', '111.111.111-75','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
+
+INSERT INTO tbl_Presenca(cod_Pessoa,cod_Turma,situacao, data) VALUES
+(1,2,1,2015-01-02),
+(2,2,1,2015-01-02),
+(2,2,0,2015-02-15),
+(3,2,0,2015-02-15),
+(3,2,0,2015-02-15);
 
 INSERT INTO tbl_Endereco(cod_Pessoa,cep_Endereco,logradouro_Endereco,numero_Endereco,complemento_Endereco,bairro_Endereco,cidade_Endereco,uf_Endereco) VALUES
 (1,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),

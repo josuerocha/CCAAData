@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?PHP
+require_once (__DIR__."/../util/autoload.php");
+spl_autoload_register("LoadClass");
 require_once("../util/checkSession.php");
 ?>
 <html lang="en">
@@ -10,21 +12,21 @@ require_once("../util/checkSession.php");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="free-educational-responsive-web-template-webEdu">
-	<meta name="author" content="webThemez.com">
 	<title>CCAA- Controle de Presença do Professor</title>
-	<link rel="icon" href="assets/images/favicon.png">
+	<?include "../util/StandardHeader.php" ?>
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="assets/css/responsive.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-	<link rel="stylesheet" href="assets/css/font-awesome-4.1.0/css/font-awesome.min.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -70,8 +72,6 @@ require_once("../util/checkSession.php");
 					<h3 id="text_presenca_prof">Presença do Professor</h3>
 					<select id="sltProf" name="sltProf">
 					<?PHP
-					require_once (__DIR__."/../util/autoload.php");
-					spl_autoload_register("LoadClass");
 					$pessoaControl = new PessoaController();
 					$perfilControl = new PerfilController();
 					$perfil = $perfilControl->getByDescricao("Professor");
@@ -81,7 +81,7 @@ require_once("../util/checkSession.php");
 					echo "<option value='{$professor->getCode()}'>{$professor->getNome()}</option>";
 					}
 					?>
-					
+					</select>
 					<input class="input_check" name="situacao" type="checkbox">&nbsp 
 					<?PHP
 						echo "<input type=\"hidden\" name=\"data\" value=\"".date("Y-m-d")."\" >";
@@ -89,16 +89,32 @@ require_once("../util/checkSession.php");
 			<input type="submit" class="btn_salvar_freq_prof" name="salvar_temp" value="Salvar">&nbsp 
 			<input type="button" class="btn_cancelar_freq_prof" value="Cancelar"/>
 			</form>
-			<table id="table_freq_prof">
-				<tr>
-					<th id="gridCodigo">Código</th>
-					<th id="gridConta">Professor</th>
-					<th id="gridConta">Situacao</th>
-					<th id="gridConta">Data</th>
-					<th colspan="2" id="gridAcao">Ação</th>
-				</tr>
-			                 <?PHP
-				$controller = new PresencaProfessorController();
+			</div>
+			</div>
+
+			<div class="container">
+			<div id = "result">
+			<table id="tabela_frequencia" class="display nowrap" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th >Código</th>
+						<th >Professor</th>
+						<th >Situacao</th>
+						<th >Data</th>
+						<th colspan="2" id="gridAcao">Ação</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th >Código</th>
+						<th >Professor</th>
+						<th >Situacao</th>
+						<th >Data</th>
+						<th colspan="2" id="gridAcao">Ação</th>
+					</tr>
+				</tfoot>
+                <?PHP
+				$controller = new PresencaController();
 				$presencas = $controller->ListAll();
 				while($presenca=array_pop($presencas)){
 				$pessoaControl = new PessoaController();
@@ -106,10 +122,10 @@ require_once("../util/checkSession.php");
 
 				echo "
 				<tr>
-                <th id='gridCodigo'>{$presenca->getCode()}</th>
-				<th id='gridCodigo'>{$pessoa->getNome()}</th>
-				<th id='gridCodigo'>{$presenca->getSituacao()}</th>
-				<th id='gridCodigo'>{$presenca->getData()}</th>
+                <th>	{$presenca->getCode()}	</th>
+				<th>	{$pessoa->getNome()}	</th>
+				<th>	{$presenca->getSituacao()}	</th>
+				<th>	{$presenca->getData()}	</th>
                 <th>
 				   <form id=\"formDelete\" action=\"../helper/PresencaProfessorHelper.php?action=delete\" method=\"post\">
 				   <input type=\"hidden\" name=\"deleteCode\" id=\"deleteCode\" value=\"{$presenca->getCode()}\"/>
@@ -121,9 +137,8 @@ require_once("../util/checkSession.php");
 				}
 				?>
 			</table>
-		</div>
-			
-	</div>
+			</div>
+			</div>
 	<!-- COLOQUEI ESSA GUAMBEARRA SÓ PRA MEXER NOS COMPONENTES NA TELA. AINDA FAREI O CSS-->
 	
 		<div class="clear"></div>
@@ -163,10 +178,17 @@ require_once("../util/checkSession.php");
 	</footer>
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.12.3.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/controle_presencaprofessor.js"></script>
+
 </body>
 </html>

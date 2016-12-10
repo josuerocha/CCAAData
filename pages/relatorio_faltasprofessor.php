@@ -177,6 +177,5 @@ if(isset($_POST['sltProfessor'])){
 <script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
 <script type="text/javascript" src="assets/js/specific/relatorio_presencaprofessor.js"></script>
-</script>
 
 </html>
