@@ -1,5 +1,14 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
+
+
+$pessoaControl = new PessoaController();
+$pessoa = $pessoaControl->getByEmail($_SESSION["email"]);
+
+$perfilControl = new PerfilController();
+$perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +35,7 @@ require_once("../util/checkSession.php");
 
 		<header id="head" class="secondary_aluno">
             <div class="container">
-                <h1 id="texto_modulo">Módulo do Aluno</h1>
+                <h1 id="texto_modulo">Módulo do <?PHP echo $perfil->getDescricao(); ?></h1>
             </div>
     	</header>
     
