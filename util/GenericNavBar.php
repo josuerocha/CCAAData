@@ -11,8 +11,6 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 
 $picture = "../users/pictures/" . $pessoa->getFoto();
 ?>
-
-
 <!-- Fixed navbar -->
 	<div class="navbar navbar-inverse">
 		<div class="container">
@@ -30,21 +28,21 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
 					<li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Pessoas</a></li>
-                            <li><a href="#">Contas a receber</a></li>
-                            <li><a href="#">Contas a pagar</a></li>
-                            <li><a href="#">Idiomas</a></li>
-                            <li><a href="#">Perfis</a></li>
+                            <li><a href="cadastro_pessoa.php">Pessoas</a></li>
+                            <li><a href="cadastro_contasreceber.php">Contas a receber</a></li>
+                            <li><a href="cadastro_contaspagar.php">Contas a pagar</a></li>
+                            <li><a href="cadastro_idioma.php">Idiomas</a></li>
+                            <li><a href="cadastro_perfil.php">Perfis</a></li>
                         </ul>
                     </li>
 
 					<li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Relatórios <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Contas à receber</a></li>
-                            <li><a href="#">Contas a pagar</a></li>
-                            <li><a href="#">Faltas do professor</a></li>
-                            <li><a href="#">Perfis</a></li>
+                            <li><a href="relatorio_contasreceber.php">Contas à receber</a></li>
+                            <li><a href="relatorio_contaspagar.php">Contas a pagar</a></li>
+                            <li><a href="relatorio_faltasprofessor.php">Faltas do professor</a></li>
+                            <li><a href="relatorio_receita.php">Faltas do professor</a></li>
                         </ul>
                     </li>
 
@@ -58,7 +56,6 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
                             <li><a href="../util/logout.php">Logout</a></li>
                         </ul>
                     </li>
-
 					
 				</ul>
 			</div>

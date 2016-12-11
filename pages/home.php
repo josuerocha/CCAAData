@@ -41,38 +41,9 @@ require_once("../util/checkSession.php");
 			<img src="assets/images/pagamento-online.png" class="icon-pagamento-online" alt="Techro HTML5 pagamento-online"><a id="pagamento-online" href="aluno_alterar_senha.html">Pagamento online</a>
         </div>
   
-		<div class="footer2_aluno"> <!-- alterar css -->
-			<div class="container">
-				<div class="row">
 
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="inicio.html">Home</a>
-								<a href="sobre.html">Sobre</a>
-								<a href="cursos.html">Cursos</a>
-          						<a href="estude.html">Estude no CCAA</a>
-          						<a href="unidades.html">Unidades</a>
-								<a href="precos.html">Preços</a>
-          						<a href="convenios.html">Convênios</a>
-          						<a href="contato.html">Contato</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. Template by<a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
+        <!--FOOTER GENÈRICA !! -->
+		<?PHP include "../util/GenericFooter.php"; ?>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

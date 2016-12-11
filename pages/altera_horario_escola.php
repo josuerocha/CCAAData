@@ -46,7 +46,7 @@ require_once("../util/checkSession.php");
 	</form>
 	</div>
 
-			<div class="clear"></div>
+	<div class="clear"></div>
 			<!--CLEAR FLOATS-->
 		</div>
 		<div id="fo_altera-hora-aula" class="footer2_login">
