@@ -29,7 +29,6 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 </head>
 
 <body>
-		
 		<!--NAVBAR GENÈRICA !! -->
 		<?PHP include "../util/GenericNavBar.php"; ?>
 

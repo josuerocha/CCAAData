@@ -194,7 +194,7 @@ INSERT INTO tbl_Sala(numero_Sala, descricao_Sala) VALUES
 (4, 'Sala de aula regular - 15 pessoas');
 
 INSERT INTO tbl_Perfil (cod_Perfil, perfil_Perfil,registration_Permission,complex_Registration_Permission,report_Permission,complex_Report_Permission,student_Permission,teacher_Permission) VALUES
-(1,'Administrador',1,1,1,1,1,0),
+(1,'Administrador',1,1,1,1,1,1),
 (2,'Coordenador(a)',1,1,1,1,1,0),
 (3,'Secretario(a)',1,0,1,0,1,0),
 (4,'Professor',0,0,0,0,0,1),

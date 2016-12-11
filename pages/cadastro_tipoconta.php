@@ -6,7 +6,7 @@ require_once("../util/checkSession.php");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CCAA-Cadastro - Conta</title>
+	<title>Cadastro de tipos de conta</title>
 
 	<?include "../util/StandardHeader.php" ?>
 	<link rel="stylesheet" media="screen" href="assets/css/fonts-google.css">
