@@ -15,6 +15,7 @@ spl_autoload_register("LoadClass");
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 
+
 <?include "../util/StandardHeader.php" ?>
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
 <link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
@@ -23,30 +24,10 @@ spl_autoload_register("LoadClass");
 </head>
 
 <body>
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- Button for smallest screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html">
-					<img src="assets/images/logo.png" alt="Techro HTML5 template"></a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="home_secretario.php">Home</a></li>
-					<li class="active"><a href="cadastros.php">Cadastros</a></li>
-					<li><a href="cadastro_pessoa.php">Cadastrar Pessoa</a></li>
-					<li><a href="cadastro_contaspagar.php">Contas a Pagar</a></li>
-					<li><a href="cadastro_contasreceber.php">Contas a Receber</a></li>
-          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
-					<li><a href="../util/logout.php">Logout</a></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-	</div>
-	<!-- /.navbar -->
+	
+	<!--NAVBAR GENÈRICA !! -->
+	<?PHP include "../util/GenericNavBar.php"; ?>
+
 
 	<header id="head" class="secondary_aluno">
         <div class="container">
@@ -141,6 +122,7 @@ $tipoControl = new TipoContaController();
 </body>
 
 <script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
 <script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
@@ -150,6 +132,7 @@ $tipoControl = new TipoContaController();
 <script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
 <script type="text/javascript" src="assets/js/specific/relatorio_contaspagar.js"></script>
+
 </script>
 
 </html>

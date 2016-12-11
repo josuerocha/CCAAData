@@ -18,9 +18,9 @@ class PerfilController implements IControllerGeneral {
         return $perfilDAO->ListAll();
     }
 
-    function ListByCode($code){
+    function GetByCode($code){
         $perfilDAO = new PerfilDAO();
-        return $perfilDAO->ListByCode($code);
+        return $perfilDAO->GetByCode($code);
     }
 
     function getByDescricao($descricao){

@@ -184,7 +184,6 @@ CREATE TABLE tbl_Observacao (
 
 INSERT INTO tbl_Login (email_Login, senha_Login,isConfirmed_Login,chaveConfirmacao_Login) VALUES 
 ('root@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
-('josue@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
 ('wolmer@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado'),
 ('seagal@email.com', 'e10adc3949ba59abbe56e057f20f883e',1,'confirmado');
 

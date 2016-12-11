@@ -1,20 +1,21 @@
 <?PHP
-require_once("../util/checkSession.php");
+require_once "../util/checkSession.php";
 ?>
 <html lang="en">
 <?PHP 
-	require_once (__DIR__."/../util/autoload.php");
+	require_once "../util/autoload.php";
 	spl_autoload_register("LoadClass");
 ?>
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="free-educational-responsive-web-template-webEdu">
-	<meta name="author" content="webThemez.com">
-	<title>CCAA-Alteração de hora-aula do professor</title>
-	<link rel="icon" href="assets/images/favicon.png">
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+	<title>Alteração de hora-aula do professor</title>
+	
+	<?include "../util/StandardHeader.php" ?>
+	<link rel="stylesheet" media="screen" href="assets/css/fonts-google.css">
+
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<!-- Custom styles for our template -->
@@ -28,33 +29,11 @@ require_once("../util/checkSession.php");
 </head>
 
 <body>
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- Button for smallest screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html">
-					<img src="assets/images/logo.png" alt="Techro HTML5 template"></a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right mainNav">
-					<li><a href="home_coordenador.php">Home</a></li>
-					<li><a href="altera_horario_escola.php">Horário da Escola</a></li>
-					<li><a href="contas.php">Contas</a></li>
-					<li><a href="montagem_grade.php">Grade de Horário</a></li>
-					<li class="active"><a href="alterar_hora_aula.php">Hora/Aula</a></li>
-					<li><a href="visualizar-receita.php">Receita</a></li>
-          			<li><a href="alterar_senha.php">Alterar Senha</a></li>
-					<li><a href="../util/logout.php">Logout</a></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-	</div>
-	<!-- /.navbar -->
+	
+	<!--NAVBAR GENÈRICA !! -->
+	<?PHP include "../util/GenericNavBar.php"; ?>	
 
-		<header id="head" class="secondary_login">
+	<header id="head" class="secondary_login">
             <div class="container">
                     <h1 id="alterar_hora_aula">Alteração de hora-aula do professor</h1>
                 </div>
@@ -128,8 +107,8 @@ require_once("../util/checkSession.php");
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
 </body>
 </html>

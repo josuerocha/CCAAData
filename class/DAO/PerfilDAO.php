@@ -8,12 +8,12 @@
 			try{
 				$this->Connect();		
 				if($perfil->getCode()==0){				
-					$query = "insert into tbl_Perfil (perfil_Perfil) values ('{$perfil->getDescricao()}')";
+					$query = "insert into tbl_Perfil (perfil_Perfil,registration_Permission,complex_Registration_Permission,report_Permission,complex_Report_Permission,student_Permission,teacher_Permission) values ({$perfil->getDescricao()},{$perfil->getRegistration()},{$perfil->getComplexRegistration()},{$perfil->getReport()},{$perfil->getComplexReport()},{$perfil->getStudy()},{$perfil->getTeach()})";
 					$this->connection->query($query);					
 					$code = $this->conexao->insert_id;
 					$perfil->setCode($code);
 				}else{	
-					$query = "update tbl_Perfil set perfil_Perfil = '{$perfil->getDescricao()}' where cod_Perfil = {$perfil->getCode()}";
+					$query = "update tbl_Perfil set perfil_Perfil = '{$perfil->getDescricao()}',registration_Permission = {$perfil->getRegistration()}, complex_Registration_Permission = {$perfil->getComplexRegistration()}, report_Permission = {$perfil->getReport()}, complex_Report_Permission = {$perfil->getComplexReport()}, student_Permission = {$perfil->getStudy()}, teacher_Permission = {$perfil->getTeach()} where cod_Perfil = {$perfil->getCode()}";
 					$this->connection->query($query);
 				}
 				$this->Disconnect();
@@ -48,9 +48,13 @@
 				while($register = mysqli_fetch_assoc($result)) {
 					$perfil = new Perfil();
 					$perfil->setCode($register['cod_Perfil']);
-					//echo $perfil->getCode();
                     $perfil->setDescricao($register['perfil_Perfil']);
-					//echo $perfil->getDescricao();
+                    $perfil->setRegistration($register['registration_Permission']);
+                    $perfil->setComplexRegistration($register['complex_Registration_Permission']);
+                    $perfil->setReport($register['report_Permission']);
+                    $perfil->setComplexReport($register['complex_Report_Permission']);
+                    $perfil->setStudy($register['student_Permission']);
+                    $perfil->setTeach($register['teacher_Permission']);
 					array_push($perfis, $perfil);
 				}		
 				$result->close();				
@@ -60,7 +64,7 @@
 			return $perfis;
 		}
 
-        function ListByCode($code){
+        function GetByCode($code){
 		
 			try{
 
@@ -74,6 +78,12 @@
 				$perfil = new Perfil();
 				$perfil->setCode($register['cod_Perfil']);
                 $perfil->setDescricao($register['perfil_Perfil']);
+             	$perfil->setRegistration($register['registration_Permission']);
+                $perfil->setComplexRegistration($register['complex_Registration_Permission']);
+                $perfil->setReport($register['report_Permission']);
+                $perfil->setComplexReport($register['complex_Report_Permission']);
+                $perfil->setStudy($register['student_Permission']);
+                $perfil->setTeach($register['teacher_Permission']);
 						
 				$result->close();	
 
@@ -90,14 +100,26 @@
 				$query = "select * from tbl_Perfil where perfil_Perfil = '{$descricao}'";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();	
-				$register = mysqli_fetch_assoc($result);			
+
+				$register = mysqli_fetch_assoc($result);
+
 				$perfil = new Perfil();
 				$perfil->setCode($register['cod_Perfil']);
 				$perfil->setDescricao($register['perfil_Perfil']);
-				$result->close();				
-			}catch(Exception $ex){
+			 	$perfil->setRegistration($register['registration_Permission']);
+                $perfil->setComplexRegistration($register['complex_Registration_Permission']);
+                $perfil->setReport($register['report_Permission']);
+                $perfil->setComplexReport($register['complex_Report_Permission']);
+                $perfil->setStudy($register['student_Permission']);
+                $perfil->setTeach($register['teacher_Permission']);
+				$result->close();
+
+			}
+
+			catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
-			}			
+			}		
+
 			return $perfil;
 		}
 }

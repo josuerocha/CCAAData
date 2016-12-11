@@ -1,30 +1,84 @@
 <?php
 class Perfil{
 
-private $code;
-private $descricao;
+	private $code;
+	private $descricao;
+	//Permissions of access follow below
+	private $registation;
+	private $complexRegistration;
+	private $report;
+	private $complexReport;
+	private $study;
+	private $teach;
 
 
-function __construct(){
-    $this->setCode(0);
-    $this->setDescricao('');
-}
+	function __construct(){
+	    $this->setCode(0);
+	    $this->setDescricao('');
+	}
 
-function getCode(){
-    return $this->code;
-}
+	function getCode(){
+	    return $this->code;
+	}
 
-function setCode($code){
-    $this->code = $code;
-}
+	function setCode($code){
+	    $this->code = $code;
+	}
 
-function getDescricao(){
-    return $this->descricao;
-}
+	function getDescricao(){
+	    return $this->descricao;
+	}
 
-function setDescricao($descricao){
-    $this->descricao = $descricao;
-}
+	function setDescricao($descricao){
+	    $this->descricao = $descricao;
+	}
 
+	function getRegistration(){
+	    return $this->registration;
+	}
+
+	function setRegistration($registration){
+	    $this->registration = $registration;
+	}
+
+	function getComplexRegistration(){
+	    return $this->complexRegistration;
+	}
+
+	function setComplexRegistration($complexRegistration){
+	    $this->complexRegistration = $complexRegistration;
+	}
+
+	function getReport(){
+	    return $this->report;
+	}
+
+	function setReport($report){
+	    $this->report = $report;
+	}
+
+	function getComplexReport(){
+	    return $this->complexReport;
+	}
+
+	function setComplexReport($complexReport){
+	    $this->complexReport = $complexReport;
+	}
+
+	function getStudy(){
+	    return $this->study;
+	}
+
+	function setStudy($study){
+	    $this->study = $study;
+	}
+
+	function getTeach(){
+	    return $this->teach;
+	}
+
+	function setTeach($teach){
+	    $this->teach = $teach;
+	}
 }
 ?>
