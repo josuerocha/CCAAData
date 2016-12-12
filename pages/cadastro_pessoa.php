@@ -9,7 +9,7 @@ spl_autoload_register("LoadClass");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CCAA-Cadastros - Pessoas</title>
+	<title>Cadastro de pessoas</title>
 
 	<?include "../util/StandardHeader.php" ?>
 	<link rel="stylesheet" media="screen" href="assets/css/fonts-google.css">
@@ -19,9 +19,11 @@ spl_autoload_register("LoadClass");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specific/cadastro_pessoa.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTables.fixedColumn.css">
 </head>
 
 <body>
@@ -31,7 +33,7 @@ spl_autoload_register("LoadClass");
 
 	<header id="head" class="secondary_login">
             <div class="container">
-                    <h1 id="cad-titulo-pessoa">Cadastros - Pessoas</h1>
+                    <h1 id="cad-titulo-pessoa">Cadastro de pessoas</h1>
                 </div>
     </header>
 
@@ -86,69 +88,69 @@ spl_autoload_register("LoadClass");
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
 			</form>
 		</div>	
-	<div class="container">&nbsp
-				<table id="table_pessoas" border="2">
+
+	<div id="div_table_pessoas" class="container">&nbsp
+				<table id="table_pessoas" class="stripe row-border order-column" cellspacing="0" width="100%">
 				<thead>
-				<tr>
-					<th id="gridcod">Código</th>
-					<th id="gridnome">Perfil</th>
-					<th id="gridnome">Nome</th>
-					<th id="gridnome">Sexo</th>
-					<th id="gridnome">CPF</th>
-					<th id="gridnome">Telefone</th>
-					<th id="gridnome">Celular</th>
-					<th id="gridnome">Email</th>
-					<th id="gridnome">Endereco</th>
-					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome" colspan='2'>Ação</th>
-				</tr>
+					<tr>
+						<th>Nome</th>
+						<th>Perfil</th>
+						<th>Sexo</th>
+						<th>CPF</th>
+						<th>Telefone</th>
+						<th>Celular</th>
+						<th>Email</th>
+						<th>Endereco</th>
+						<th>Data Nascimento</th>
+						<th>Ação</th>
+					</tr>
 				</thead>
 				<tfoot>
-				<tr>
-					<th id="gridcod">Código</th>
-					<th id="gridnome">Perfil</th>
-					<th id="gridnome">Nome</th>
-					<th id="gridnome">Sexo</th>
-					<th id="gridnome">CPF</th>
-					<th id="gridnome">Telefone</th>
-					<th id="gridnome">Celular</th>
-					<th id="gridnome">Email</th>
-					<th id="gridnome">Endereco</th>
-					<th id="gridnome">Data Nascimento</th>
-					<th id="gridnome" colspan='2'>Ação</th>
-				</tr>
+					<tr>
+						<th>Nome</th>
+						<th>Perfil</th>
+						<th>Sexo</th>
+						<th>CPF</th>
+						<th>Telefone</th>
+						<th>Celular</th>
+						<th>Email</th>
+						<th>Endereco</th>
+						<th>Data Nascimento</th>
+						<th>Ação</th>
+					</tr>
 				</tfoot>
 				<tbody>
 				<?PHP
-				$controller = new PessoaController();
-				$pessoas = $controller->ListAll();
+				$pessoaControl = new PessoaController();
+				$perfilControl = new PerfilController();
+
+				$pessoas = $pessoaControl->ListAll();
+
 				while($pessoa=array_pop($pessoas)){
-				echo "
-				<tr>
-					<td align=center id='gridCodigo'>{$pessoa->getCode()}</td>
-					<td align=center id='gridPerfil'>{$pessoa->getFKPerfil()}</td>
-					<td align=center id='gridNome'>{$pessoa->getNome()}</td>
-					<td align=center id='gridSexo'>{$pessoa->getSexo()}</td>
-					<td align=center id='gridCPF'>{$pessoa->getCPF()}</td>
-					<td align=center id='gridTelefone'>{$pessoa->getTelefone()}</td>
-					<td align=center id='gridCelular'>{$pessoa->getCelular()}</td>
-					<td align=center id='gridEmail'>{$pessoa->getEmail()}</td>
-					<td align=center id='gridEndereco'>{$pessoa->endereco->getAll()}</td>
-					<td align=center id='gridDtNascimento'>{$pessoa->getDataNascimento()}</td>
-					<td align=center id='gridAcao'> 
-						<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
-						<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
-                   		<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
-                   		</form>
-				   </td>
-				   <td align=center>
-				   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
-				   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
-                   		<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
-						</form>         	
-					</td>
-				</tr>
-				";
+					$perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
+					echo "
+					<tr>
+						<td>{$pessoa->getNome()}</td>
+						<td>{$perfil->getDescricao()}</td>
+						<td>{$pessoa->getSexo()}</td>
+						<td>{$pessoa->getCPF()}</td>
+						<td>{$pessoa->getTelefone()}</td>
+						<td>{$pessoa->getCelular()}</td>
+						<td>{$pessoa->getEmail()}</td>
+						<td>{$pessoa->endereco->getAll()}</td>
+						<td>{$pessoa->getDataNascimento()}</td>
+						<td> 
+							<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
+							<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
+	                   		<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+	                   		</form>
+					   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
+					   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
+	                   		<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+							</form>         	
+						</td>
+					</tr>
+					";
 				}
 				?>
 				</tbody>
@@ -198,6 +200,7 @@ spl_autoload_register("LoadClass");
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.fixedColumns.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>

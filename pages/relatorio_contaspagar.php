@@ -82,7 +82,6 @@ $tipoControl = new TipoContaController();
 			";
       }
 	?>
-	</tr>
     </tbody>
 </table>
 </div>

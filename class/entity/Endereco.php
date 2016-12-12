@@ -88,7 +88,7 @@ class Endereco{
     }
 
     function getAll(){
-        return "{$this->getLogradouro()}"." "."{$this->getNumero()}"." "."{$this->getComplemento()}".", "."{$this->getCidade()}".", "."{$this->getUF()}".", "."{$this->getCep()}";
+        return "{$this->getLogradouro()}"." "."{$this->getNumero()}"." "."{$this->getComplemento()}".", <br>"."{$this->getCidade()}".", "."{$this->getUF()}".", "."{$this->getCep()}";
     }
 }
 ?>
