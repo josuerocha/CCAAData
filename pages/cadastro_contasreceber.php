@@ -1,5 +1,7 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,11 +18,9 @@ require_once("../util/checkSession.php");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -68,54 +68,64 @@ require_once("../util/checkSession.php");
 			</div>
 
 			<div id="coluna_esquerda">&nbsp;
-				
-				
-				<form onsubmit="return tagSearch(this)">
-    			<input type="date" name="Dt_venc" onfocus="if (this.value == '{text:Search Label}') {this.value=''}" onblur="if (this.value == '') {this.value='{text:Search Label}'}" />
-    			<input type="submit" value="Search" />
-				</form>
 
-				<table id="listaContas" border="2">
-					
-					<tr>
-						<th id="gridtipo">Tipo</th>&nbsp
-						<th id="gridVl">Valor</th>&nbsp
-						<th id="gridDt_venc">Data de vencimento</th>&nbsp
-						<th id="gridDt_Pg">Data de Pagamento</th>&nbsp
-						<th id="gridSituacao">Situacao</th>&nbsp
-						<th id="gridAção">Ação</th>
-					</tr>
+
+			<div id="table_area">
+				<table id="table_contas" >
+
+					<thead>
+						<tr>
+							<th> Tipo</th>
+							<th> Valor</th>
+							<th> Data de vencimento</th>
+							<th> Data de Pagamento</th>
+							<th> Situacao</th>
+							<th> Ação</th>
+						</tr>
+					</thead>
+
+
+					<tfoot>
+						<tr>
+							<th> Tipo</th>
+							<th> Valor</th>
+							<th> Data de vencimento</th>
+							<th> Data de Pagamento</th>
+							<th> Situacao</th>
+							<th> Ação</th>
+						</tr>
+					</tfoot>
+
+					<tbody>
+
 					<?PHP
-					require_once ("../util/autoload.php");
-					spl_autoload_register("LoadClass");
 					$controller = new ContaReceberController();
 					$contasReceber = $controller->ListAll();
 					while($contaReceber=array_pop($contasReceber)){
-					echo "
-					<tr>
-					<th id='gridtipo'>{$contaReceber->getTipo()}</th>
-					<th id='gridVl'>{$contaReceber->getValor()}</th>
-					<th id='gridDt_venc'>{$contaReceber->getDtVencimento()}</th>
-					<th id='gridDt_Pg'>{$contaReceber->getDtPagamento()}</th>
-					<th id='gridSituacao'>{$contaReceber->getSituacao()}</th>
-					<th>
-					<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
-					<input type=\"submit\" value=\"Excluir\">
-					</form>
-					</th>
+						echo "
+						<tr>
+							<td id='gridtipo'>{$contaReceber->getTipo()}</td>
+							<td id='gridVl'>{$contaReceber->getValor()}</td>
+							<td id='gridDt_venc'>{$contaReceber->getDtVencimento()}</td>
+							<td id='gridDt_Pg'>{$contaReceber->getDtPagamento()}</td>
+							<td id='gridSituacao'>{$contaReceber->getSituacao()}</td>
+							<td>
+								<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
+								<input type=\"submit\" value=\"Excluir\">
+								</form>
 
-					<th>
-					<form class=\"form_edit\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"POST\">
-					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaReceber->getCode()}>
-					<input type=\"submit\" value=\"Editar\">
-						</form>
-					</th>
-					</tr>
-					";
+								<form class=\"form_edit\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"POST\">
+								<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaReceber->getCode()}>
+								<input type=\"submit\" value=\"Editar\">
+								</form>
+							</td>
+						</tr>
+						";
 					}
 					?>
-
+					</tbody>
 				</table>
+			</div>
 		</div>
 
 	</div>
@@ -161,8 +171,16 @@ require_once("../util/checkSession.php");
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/specific/contas_receber.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/contas_receber.js"></script>
 </body>
 </html>
