@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION["email"]))
 {
-	header("Location: home_aluno.php");
+	header("Location: home.php");
 }
 else
 {

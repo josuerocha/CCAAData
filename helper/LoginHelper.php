@@ -33,12 +33,13 @@ switch($action){
 		$control = new LoginController();
 		$validation = '';
 		if($control->Validate($_POST["email"],MD5($_POST["senha"]))){
-			$validation = "<script>	document.location.href = '../pages/home_aluno.php';
+			$validation = "<script>	document.location.href = '../pages/home.php';
     					   	</script>";
 
 			if(!isset($_SESSION)){ 
 				session_start();
 				$_SESSION["email"] = $_POST["email"];
+				
 				} 
 			else{
 				session_destroy();
