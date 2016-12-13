@@ -2,7 +2,6 @@
 require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
 
-
 $pessoaControl = new PessoaController();
 $pessoa = $pessoaControl->getByEmail($_SESSION["email"]);
 

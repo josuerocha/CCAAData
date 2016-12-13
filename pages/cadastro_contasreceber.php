@@ -69,7 +69,6 @@ spl_autoload_register("LoadClass");
 
 			<div id="coluna_esquerda">&nbsp;
 
-
 			<div id="table_area">
 				<table id="table_contas" >
 
@@ -102,13 +101,14 @@ spl_autoload_register("LoadClass");
 					$controller = new ContaReceberController();
 					$contasReceber = $controller->ListAll();
 					while($contaReceber=array_pop($contasReceber)){
+						$tipoConta = $tipoContaControl->getByCode($contaReceber->getTipo());
 						echo "
 						<tr>
-							<td id='gridtipo'>{$contaReceber->getTipo()}</td>
-							<td id='gridVl'>{$contaReceber->getValor()}</td>
-							<td id='gridDt_venc'>{$contaReceber->getDtVencimento()}</td>
-							<td id='gridDt_Pg'>{$contaReceber->getDtPagamento()}</td>
-							<td id='gridSituacao'>{$contaReceber->getSituacao()}</td>
+							<td> {$tipoConta->getTipo()}</td>
+							<td> {$contaReceber->getValor()}</td>
+							<td> {$contaReceber->getDtVencimento()}</td>
+							<td> {$contaReceber->getDtPagamento()}</td>
+							<td> {$contaReceber->getSituacao()}</td>
 							<td>
 								<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
 								<input type=\"submit\" value=\"Excluir\">

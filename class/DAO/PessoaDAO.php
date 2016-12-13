@@ -148,6 +148,7 @@
 				
 				$pessoa = new Pessoa();
 				$pessoa->setCode($register['cod_Pessoa']);
+				$pessoa->setFKPerfil($register['tbl_Perfil_cod_Perfil']);
 				$pessoa->setNome($register['nome_Pessoa']);
 				$pessoa->setCPF($register['cpf_Pessoa']);
 				$pessoa->setTelefone($register['telefone_Pessoa']);

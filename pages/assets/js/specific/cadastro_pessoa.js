@@ -35,9 +35,14 @@ $.fn.dataTable.ext.search.push(
 
 $(document).ready(function() {
 
+    $('#input-cpf-pessoa').mask('000.000.000-00', {reverse: true});
+    $('#input-tel-pessoa').mask('(00)0000-0000');
+    $('#input-cel-pessoa').mask('(00)00000-0000');
+    $('#input-cep-pessoa').mask('00000-000');
+
     $('#table_pessoas tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" class="inputPesquisa" placeholder="Pesquisar '+title+'" />' );
+        var title = $(this).text().toLowerCase();
+        $(this).html( '<input type="text" style = "width:140px;" placeholder="Pesquisar '+title+'" />' );
     } );
 
     var table = $('#table_pessoas').removeAttr('width').DataTable( {

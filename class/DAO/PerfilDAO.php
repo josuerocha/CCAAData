@@ -64,12 +64,10 @@
 			return $perfis;
 		}
 
-        function GetByCode($code){
-		
+        function getByCode($code){
 			try{
-
 				$this->Connect();	
-				$query = "select * from tbl_Perfil";
+				$query = "select * from tbl_Perfil where cod_Perfil = {$code}";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				

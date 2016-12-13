@@ -3,6 +3,7 @@
 require_once 'IControllerGeneral.php';
 
 class PerfilController implements IControllerGeneral {
+    
     function Save($perfil) {
         $perfilDAO = new PerfilDAO();
         return $perfilDAO->Save($perfil);
@@ -18,9 +19,9 @@ class PerfilController implements IControllerGeneral {
         return $perfilDAO->ListAll();
     }
 
-    function GetByCode($code){
+    function getByCode($code){
         $perfilDAO = new PerfilDAO();
-        return $perfilDAO->GetByCode($code);
+        return $perfilDAO->getByCode($code);
     }
 
     function getByDescricao($descricao){

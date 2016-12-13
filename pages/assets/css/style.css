@@ -2286,10 +2286,6 @@ list-style: none;
 	color:#3D84E6 !important;
 }
 
-#footerall {
-		position:absolute;
-		bottom:0;
-		width:100%;
-		height:60px;			/* Height of the footer */
-		background:#6cf;
-	}
+.search-input {
+	width: 20px;	
+}

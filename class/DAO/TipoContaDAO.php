@@ -58,7 +58,7 @@
 			return $tipoContas;
 		}
 
-        function ListByCode($code){
+        function getByCode($code){
 			try{
 				$this->Connect();	
 				$query = "select * from tbl_TipoConta where cod_TipoConta = {$code}";

@@ -122,7 +122,6 @@ spl_autoload_register("LoadClass");
 				<tbody>
 				<?PHP
 				$pessoaControl = new PessoaController();
-				$perfilControl = new PerfilController();
 
 				$pessoas = $pessoaControl->ListAll();
 
@@ -208,6 +207,7 @@ spl_autoload_register("LoadClass");
 	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/mask/jquery.mask.js"></script>
 	<script type="text/javascript" src="assets/js/specific/cadastro_pessoa.js"></script>
 </body>
 </html>
