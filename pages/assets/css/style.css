@@ -567,37 +567,7 @@ select{
 	height: 32px;
 	border-radius: 3px;
 }
-#texto_idioma_turma{
-	position: absolute;
-	left: 38px;
-	top: 260px;
-}
-.select_idioma{
-	position: absolute;
-	left: 100px;
-	top: 270px;
-}
-#textoDesc{
-	position: absolute;
-	left: 20px;
-	top: 290px;
-}
-.desc_turma{
-	position: absolute;
-	left: 100px;
-	top: 300px;
-	border-radius: 3px;
-}
-#add_turma{
-	position: absolute;
-	left: 100px;
-	top: 370px;
-}
-#cancel_turma{
-	position: absolute;
-	left: 190px;
-	top: 370px;
-}
+
 .input_check{
 	position: absolute;
 	top: 275px;
@@ -1241,6 +1211,34 @@ input[type="time"]{
 	border-color: #3d84e6;
 	background-color: #3d84e6;
 }
+
+.btn-salvar{
+	position: relative;
+	height: 30px;
+	width: 100px;
+	color: #fff;
+	font-size: 16px;
+	border: 1px;
+	font-weight: bold;
+	border-radius: 3px;
+	border-color: #3d84e6;
+	background-color: #3d84e6;
+}
+
+
+.btn-cancelar{
+	position: relative;
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	font-size: 16px;
+	border: 1px;
+	font-weight: bold;
+	border-radius: 3px;
+	border-color: #DA252A;
+	background-color: #DA252A;
+}
+
 #btn-enviar-pesquisa{
 	left: 680px;
 	top: -200px;

@@ -1,0 +1,38 @@
+#texto_idioma_turma{
+	position: absolute;
+	left: 30px;
+	top: 260px;
+}
+
+#texto_sala{
+	position: absolute;
+	left: 40px;
+	top: 232px;
+}
+
+.select_idioma{
+	position: absolute;
+	left: 100px;
+	top: 270px;
+}
+#textoDesc{
+	position: absolute;
+	left: 20px;
+	top: 290px;
+}
+.desc_turma{
+	position: absolute;
+	left: 100px;
+	top: 300px;
+	border-radius: 3px;
+}
+#add_turma{
+	position: absolute;
+	left: 95px;
+	top: 370px;
+}
+#cancel_turma{
+	position: absolute;
+	left: 200px;
+	top: 370px;
+}

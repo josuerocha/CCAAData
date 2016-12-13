@@ -1,7 +1,6 @@
 <?PHP
 require_once("../util/checkSession.php");
-require_once (__DIR__."/../util/autoload.php");
-include "../util/StandardHeader.php";
+require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
 ?>
 <!DOCTYPE html>

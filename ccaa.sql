@@ -231,6 +231,10 @@ INSERT INTO tbl_Endereco(cod_Pessoa,cep_Endereco,logradouro_Endereco,numero_Ende
 (2,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),
 (3,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG');
 
+INSERT INTO tbl_Idioma(descricao_Idioma) VALUES
+('Inglês'),
+('Espanhol');
+
 INSERT INTO tbl_Estado (nome, sigla) VALUES 
 ('Acre', 'AC'),
 ('Alagoas', 'AL'),

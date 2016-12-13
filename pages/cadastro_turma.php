@@ -1,5 +1,11 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
+
+$salaControl = new SalaController();
+$idiomaControl = new IdiomaController();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,6 +21,7 @@ require_once("../util/checkSession.php");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specific/cadastro_turma.css">
 
 </head>
 
@@ -36,16 +43,35 @@ require_once("../util/checkSession.php");
 				<!-- CODIGO DA TURMA -->
 				<input type="hidden" name="cod_turma" />
 				<!-- SELECIONAR SALA -->
-				<h4 id="textoSala">Sala:</h4><select class="select_sala"></select> 
+				<h4 id="texto_sala">Sala:</h4>
+				<select class="select_sala" name="select_sala" id="select_sala">
+					<?PHP
+					$salas = $salaControl->ListAll();
+					while($sala = array_shift($salas)){
+						echo "<option value=\"{$sala->getCode()}\"> {$sala->getNumero()} </option>";
+					}
+					?>
+				</select> 
+
 				<!-- SELECIONAR IDIOMA -->
-				<h4 id="texto_idioma_turma">Idioma:</h4> <select class="select_idioma"></select> 
+				<h4 id="texto_idioma_turma">Idioma:</h4> <select class="select_idioma">
+					<?PHP
+					$idiomas = $idiomaControl->ListAll();
+					while($idioma = array_shift($idiomas)){
+						echo "<option value=\"{$idioma->getCode()}\"> {$idioma->getDescricao()} </option>";
+					}
+					?>
+
+				</select> 
 				<!-- DESCRIÇÃO DA TURMA -->
 				<h4 id="textoDesc">Descrição:</h4><input class="desc_turma" type="text"/>
-				<input id="add_turma" type="submit" name="btnAdd" value="Adicionar" />
-				<input id="cancel_turma" type="button" name="btnCancel" value="Cancelar" />
+				<input id="add_turma" class="btn-salvar" type="submit" name="btnAdd" value="Adicionar" />
+				<input id="cancel_turma" class="btn-cancelar" type="button" name="btnCancel" value="Cancelar" />
 			</form>
 			
         </div>
+
+
         <!-- COLOQUEI ESSA GUAMBEARRA SÓ PRA MEXER NOS COMPONENTES NA TELA. AINDA FAREI O CSS-->
         <br><br><br><br><br><br><br><br><br><br>
 		<div class="footer2_login"> <!-- alterar css -->
