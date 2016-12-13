@@ -1,7 +1,38 @@
+
+#text{
+	position: relative;
+	left: -75px;
+	top: 35px;
+}
+
+#short-text{
+	position: relative;
+	left: -75px;
+	top: 25px;
+}
+
+#div_buttons{
+	position: relative;
+	left: 25px;
+	top: -2px;
+}
+
 #table_area{
 	position: absolute;
 	top: 258px;
 	left: 400px;
 	width: 50%;
 	height: 30%;
+}
+
+#btn-salvar-perfil{
+	position: relative;
+	left: -25px;
+	top: 20px;
+}
+
+#btn-cancelar-perfil{
+	position: relative;
+	left: -10px;
+	top: 20px;
 }

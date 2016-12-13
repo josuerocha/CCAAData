@@ -38,35 +38,54 @@ $perfilControl = new PerfilController();
     
     <div class="container" contenteditable>
 		<div id="coluna_esquerda">
-			<h4 id="text_perfil">Perfil: <span>*</span></h4><input id="input_perfil" type="text" name="perfil">	
 
-			<h4 id="text_cadastro">Cadastros simples: <span>*</span></h4>
-			<input type="radio" id="cadastro" name="cadastro" value="1"> Permitido
-			<input type="radio" id="cadastro" name="cadastro" value="0"> Não Permitido
+			<form action="../helper/PerfilHelper.php?action=save" method="POST">
+				<input type="hidden" id="codeHidden" name="codeHidden" />
 
-			<h4 id="text_cadastrocomplexo">Cadastros complexos: <span>*</span></h4>
-			<input type="radio" id="cadastro_complexo" name="cadastro_complexo" value="1"> Permitido
-			<input type="radio" id="cadastro_complexo" name="cadastro_complexo" value="0"> Não Permitido
+				<h4 id="text">Perfil: <span>*</span></h4>
+				<div id="div_buttons">
+					<input id="descricao" name="descricao" type="text" name="perfil">	
+				</div>
 
-			<h4 id="text_relatorio">Relatórios simples: <span>*</span></h4>
-			<input type="radio" id="relatorio" name="relatorio" value="1"> Permitido
-			<input type="radio" id="relatorio" name="relatorio" value="0"> Não Permitido
+				<h4 id="text">&nbspCadastros <br>&nbsp simples: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="cadastro1" name="cadastro" value="1"> Permitido
+					<input type="radio" id="cadastro2" name="cadastro" value="0"> Não Permitido
+				</div>
 
-			<h4 id="text_relatoriocomplexo">Relatórios complexos: <span>*</span></h4>
-			<input type="radio" id="relatorio_complexo" name="relatorio_complexo" value="1"> Permitido
-			<input type="radio" id="relatorio_complexo" name="relatorio_complexo" value="0"> Não Permitido
+				<h4 id="text">Cadastros <br> complexos: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="cadastro_complexo1" name="cadastro_complexo" value="1"> Permitido
+					<input type="radio" id="cadastro_complexo2" name="cadastro_complexo" value="0"> Não Permitido
+				</div>
 
-			<h4 id="text_estudante">Estudante: <span>*</span></h4>
-			<input type="radio" id="estudante" name="estudante" value="1"> Permitido
-			<input type="radio" id="estudante" name="estudante" value="0"> Não Permitido
+				<h4 id="text">Relatórios <br> simples: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="relatorio1" name="relatorio" value="1"> Permitido
+					<input type="radio" id="relatorio2" name="relatorio" value="0"> Não Permitido
+				</div>
 
-			<h4 id="text_professor">Professor: <span>*</span></h4>
-			<input type="radio" id="professor" name="professor" value="1"> Permitido
-			<input type="radio" id="professor" name="professor" value="0"> Não Permitido
+				<h4 id="text">Relatórios <br> complexos: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="relatorio_complexo1" name="relatorio_complexo" value="1"> Permitido
+					<input type="radio" id="relatorio_complexo2" name="relatorio_complexo" value="0"> Não Permitido
+				</div>
 
-			<input id="btn-salvar-perfil" type="submit" name="Salvar" value="Salvar">
-			<input id="btn-cancelar-perfil" type="button" name="Cancelar" value="Cancelar">
-			
+				<h4 id="short-text">Estudante: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="estudante1" name="estudante" value="1"> Permitido
+					<input type="radio" id="estudante2" name="estudante" value="0"> Não Permitido
+				</div>
+
+				<h4 id="short-text">Professor: <span>*</span></h4>
+				<div id="div_buttons">
+					<input type="radio" id="professor1" name="professor" value="1"> Permitido
+					<input type="radio" id="professor2" name="professor" value="0"> Não Permitido
+				</div>
+
+					<input id="btn-salvar-perfil" class="btn-salvar" type="submit" name="Salvar" value="Salvar">
+					<input id="btn-cancelar-perfil" class="btn-cancelar" name="Cancelar" value="Cancelar" type="button" onclick="Novo();">
+			</form>
 		</div>
 
 		<div id="table_area">

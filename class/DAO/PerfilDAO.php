@@ -8,9 +8,12 @@
 			try{
 				$this->Connect();		
 				if($perfil->getCode()==0){				
-					$query = "insert into tbl_Perfil (perfil_Perfil,registration_Permission,complex_Registration_Permission,report_Permission,complex_Report_Permission,student_Permission,teacher_Permission) values ({$perfil->getDescricao()},{$perfil->getRegistration()},{$perfil->getComplexRegistration()},{$perfil->getReport()},{$perfil->getComplexReport()},{$perfil->getStudy()},{$perfil->getTeach()})";
+					
+					$query = "insert into tbl_Perfil (perfil_Perfil,registration_Permission,complex_Registration_Permission,report_Permission,complex_Report_Permission,student_Permission,teacher_Permission) values ('{$perfil->getDescricao()}',{$perfil->getRegistration()},{$perfil->getComplexRegistration()},{$perfil->getReport()},{$perfil->getComplexReport()},{$perfil->getStudy()},{$perfil->getTeach()})";
+					
+					echo $query;
 					$this->connection->query($query);					
-					$code = $this->conexao->insert_id;
+					$code = $this->connection->insert_id;
 					$perfil->setCode($code);
 				}else{	
 					$query = "update tbl_Perfil set perfil_Perfil = '{$perfil->getDescricao()}',registration_Permission = {$perfil->getRegistration()}, complex_Registration_Permission = {$perfil->getComplexRegistration()}, report_Permission = {$perfil->getReport()}, complex_Report_Permission = {$perfil->getComplexReport()}, student_Permission = {$perfil->getStudy()}, teacher_Permission = {$perfil->getTeach()} where cod_Perfil = {$perfil->getCode()}";
@@ -30,7 +33,7 @@
                 $this->Connect();	
                 $query = "delete from tbl_Perfil where cod_Perfil = {$perfil->getCode()}";
                 $this->connection->query($query);
-                $this->desconectar();
+                $this->Disconnect();
             }catch(Exception $ex){
                 $situation = FALSE;
                 echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();

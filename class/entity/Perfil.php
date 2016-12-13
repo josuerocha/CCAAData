@@ -104,5 +104,19 @@ class Perfil{
 	  	 	return "<td align=\"center\"><img src=\"assets/images/xmark.png\" alt=\"Ausente\" ></td>";
 	  	}
 	}
+
+	function toArray(){
+		 return array(
+	        'code' => $this->getCode(),
+	        'descricao' => $this->getDescricao(),
+	        'registration' => $this->getRegistration(),
+	        'complexRegistration' => $this->getComplexRegistration(),
+	        'report' => $this->getReport(),
+	        'complexReport' => $this->getComplexReport(),
+	        'teach' => $this->getTeach(),
+	        'study' => $this->getStudy()
+    	);
+	}
+
 }
 ?>

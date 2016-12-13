@@ -78,9 +78,16 @@ $('.form_edit').submit(function(event){
 
 	var posting = $.post(url,{codeEdit: codigoValue},function(data,status){
 			if(status == 'success'){
-				var idiomaEditar = JSON.parse(escapeSpecialChars(data));
-				document.getElementById("codeHidden").value = idiomaEditar.code;
-				document.getElementById("input_idioma").value = idiomaEditar.descricao;
+				var perfilEditar = JSON.parse(escapeSpecialChars(data));
+				document.getElementById("codeHidden").value = perfilEditar.code;
+				document.getElementById("descricao").value = perfilEditar.descricao;
+
+                SetCheckMark("cadastro", perfilEditar.registration);
+                SetCheckMark("cadastro_complexo",perfilEditar.complexRegistration);
+                SetCheckMark("relatorio",perfilEditar.report);
+                SetCheckMark("relatorio_complexo",perfilEditar.complexReport);
+                SetCheckMark("estudante",perfilEditar.study);
+                SetCheckMark("professor",perfilEditar.teach);
             }
         }
 		);
@@ -96,5 +103,31 @@ function escapeSpecialChars(jsonString) {
 
 function Novo(){
 	document.getElementById("codeHidden").value = '';
-    document.getElementById("input_idioma").value = '';
+    document.getElementById("descricao").value = '';
+
+    Uncheck("cadastro");
+    Uncheck("cadastro_complexo");
+    Uncheck("relatorio");
+    Uncheck("relatorio_complexo");
+    Uncheck("estudante");
+    Uncheck("professor");
+}
+
+function SetCheckMark(id,value){
+    if(value == 1){
+        id = id + '1';
+        document.getElementById(id).checked = true;
+    }
+    else{
+        id = id + '2';
+        document.getElementById(id).checked = true;
+    }
+}
+
+function Uncheck(id){
+    id1 = id + '1';
+    document.getElementById(id1).checked = false;
+
+    id2 = id + '2';
+    document.getElementById(id2).checked = false;
 }
