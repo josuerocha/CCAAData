@@ -1,5 +1,9 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
+
+$idiomaControl = new IdiomaController();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,6 +22,10 @@ require_once("../util/checkSession.php");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specific/cadastro_idioma.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -27,27 +35,70 @@ require_once("../util/checkSession.php");
 
 	<header id="head" class="secondary_login">
             <div class="container">
-                    <h1 id="text_cad_perf">Cadastros - Idiomas</h1>
+                    <h1 id="text_cad_perf">Cadastro de idiomas</h1>
                 </div>
     </header>
 
     
     <div class="container">
 				<div id="coluna_esquerda">
-					<h4 id="text_idioma">Idioma: <span>*</span></h4><input id="input_idioma" type="text" name="descricao">	
-					<input id="btn-salvar-idioma" type="submit" name="btnSalvar" value="Salvar">
-					<input id="btn-cancelar-idioma" type="button" name="btnCancelar" value="Cancelar">
+
+				<form action="../helper/IdiomaHelper.php?action=save" method="post">
+
+					<input name="codeHidden" id="codeHidden" type="hidden"/>
+
+					<h4 id="text_idioma">Idioma: <span>*</span></h4>
+					<input id="input_idioma" type="text" name="descricao">	
+
+					<input class="btn-salvar" id="btn-salvar-idioma" type="submit" name="btnSalvar" value="Salvar">
+					<input class="btn-cancelar" id="btn-cancelar-idioma" type="button" name="btnCancelar" value="Cancelar" onclick="Novo();">
     			
+    			</form>
 				
 
 				<!-- TABELA DO GRID AQUI!!! -->
-				<table id="table_idioma" border="2">
-					<tr>
-						<th id="gridcod">Código</th>
-						<th id="gridPerfil">Idioma</th>
-						<th colspan="2" id="gridAcao">Ação</th>
-					</tr>
-				</table>
+				<div id="table_area">
+					<table id="table_idioma" class="stripe row-border order-column" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th> Idioma</th>
+								<th> Ação</th>
+							</tr>
+						</thead>
+
+						<tfoot>
+							<tr>
+								<th> Idioma</th>
+								<th> Ação</th>
+							</tr>
+						</tfoot>
+
+						<tbody>
+							<?PHP
+								$idiomas = $idiomaControl->ListAll();
+
+								while($idioma = array_shift($idiomas)){
+									echo "	<tr>
+												<td> {$idioma->getDescricao()}</td>
+												<td>
+													<form class=\"form_edit\" action=\"../helper/IdiomaHelper.php?action=edit\" method=\"post\">
+														<input type=\"hidden\" name=\"codeEdit\" value=\"{$idioma->getCode()}\">
+		                   								<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+		                   							</form>
+									   				
+									   				<form action=\"../helper/IdiomaHelper.php?action=delete\" method=\"post\">
+									   					<input type=\"hidden\" name=\"codeDelete\" value=\"{$idioma->getCode()}\">
+					                   					<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+													</form>
+												</td>
+											</tr>";
+								}
+
+							?>
+						</tbody>
+
+					</table>
+				</div>
 			</div>
 
 	</div>
@@ -90,6 +141,16 @@ require_once("../util/checkSession.php");
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/cadastro_idioma.js"></script>
 </body>
 </html>

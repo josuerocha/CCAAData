@@ -1,0 +1,28 @@
+#text_idioma{
+	position: relative;
+	left: -70px;
+	top: 32px;
+}
+
+
+#input_idioma{
+	position: relative;
+	left: 5px;
+}
+
+#btn-salvar-idioma{
+	top: 60px;
+	left: -216px;
+}
+
+#btn-cancelar-idioma{
+	top: 60px;
+	left: -216px;
+}
+
+#table_area{
+	position: relative;
+	left: 460px;
+	top: -35px;
+	width: 45%;
+}

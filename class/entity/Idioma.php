@@ -24,5 +24,11 @@ class Idioma{
 	    return $this->descricao;
 	}
 
+    function toArray(){
+	    return array(
+	        'code' => $this->getCode(),
+	        'descricao' => $this->getDescricao()
+    	);
+	}
 }
 ?>

@@ -221,7 +221,7 @@ label {
 	position: relative;
 	left: 500px;
 }
-#table_perfil,#table_idioma,#table_conta{
+#table_perfil,#table_conta{
 	position: relative;
 	left: 540px;
 	top: -35px;
@@ -397,7 +397,7 @@ label {
 	position: relative;
 	top: 100px;
 }
-#text_perfil,#text_idioma,#textoSala,#textoTipoConta{
+#text_perfil,#textoSala,#textoTipoConta{
 	position: relative;
 	left: -70px;
 	top: 32px;
@@ -423,11 +423,11 @@ label {
 	left: -5px;
 
 }
-#input_idioma,#contatipo{
+#contatipo{
 	position: relative;
 	left: 5px;
-
 }
+
 #sala-span{
 	color: red;
 }
@@ -1195,7 +1195,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil, #btn_salvar_freq_prof,#btn-salvar-idioma, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar, #btn-salvar-perfil,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil, #btn_salvar_freq_prof, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
@@ -1253,7 +1253,7 @@ input[type="time"]{
 	top: 60px;
 	left: -225px;
 }
-#btn-salvar-idioma,#btn-salvar-conta{
+#btn-salvar-conta{
 	top: 60px;
 	left: -216px;
 }
@@ -1265,7 +1265,7 @@ input[type="time"]{
 	top: 33px;
 	left: 415px;
 }
-#btn-cancelar-idioma,#btn-cancelar-conta{
+#btn-cancelar-conta{
 	top: 60px;
 	left: -216px;
 }
@@ -1289,7 +1289,7 @@ input[type="time"]{
 	top: -450px;
 	left: 20px;
 }
-#cancelar, #btn-cancelar-perfil,#btn_cancelar_temp, #btn_reset,#btn_reset-hora-aula,#btn-cancelar-conta,#btn-cancelar-idioma,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
+#cancelar, #btn-cancelar-perfil,#btn_cancelar_temp, #btn_reset,#btn_reset-hora-aula,#btn-cancelar-conta,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
 	position: relative;
 	
 	width: 100px;

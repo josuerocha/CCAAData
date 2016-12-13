@@ -59,7 +59,7 @@ class Turma{
             'descricao' => $this->getDescricao(),
             'horario' => $this->getHorario()
         );
-}
+    }
 
 }
 ?>

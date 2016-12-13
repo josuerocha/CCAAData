@@ -10,7 +10,7 @@
 				if($idioma->getCode()==0){				
 					$query = "insert into tbl_Idioma (descricao_Idioma) values ('{$idioma->getDescricao()}')";
 					$this->connection->query($query);					
-					$code = $this->conexao->insert_id;
+					$code = $this->connection->insert_id;
 					$idioma->setCode($code);
 				}else{	
 					$query = "update tbl_Idioma set descricao_Idioma = '{$idioma->getDescricao()}' where cod_Idioma = {$idioma->getCode()}";
