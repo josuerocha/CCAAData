@@ -24,11 +24,9 @@
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -38,7 +36,7 @@
 
 	<header id="head" class="secondary_login">
             <div class="container">
-                    <h1>Cadastro Contas a Pagar</h1>
+                    <h1>Cadastro contas a pagar</h1>
                 </div>
     </header>
 
@@ -82,54 +80,63 @@
 				
 				<br/>
 
-				<table id="listaContas" border="2">
+				<table id="table_contas">
 					
-					<tr>
-						<th id="gridtipo">Tipo</th>&nbsp
-						<th id="gridVl">Valor</th>&nbsp
-						<th id="gridDt_venc">Data de vencimento</th>&nbsp
-						<th id="gridDt_Pg">Data de Pagamento</th>&nbsp
-						<th id="gridSituacao">Situacao</th>&nbsp
-						<th id="gridAção">Ação</th>
-					</tr>
-				<?PHP
+					<thead>
+						<tr>
+							<th> Tipo</th>
+							<th> Valor</th>
+							<th> Data de vencimento</th>
+							<th> Data de Pagamento</th>
+							<th> Situacao</th>
+							<th> Ação </th>
+						</tr>
+					</thead>
+
+
+					<tfoot>
+						<tr>
+							<th> Tipo</th>
+							<th> Valor</th>
+							<th> Data de vencimento</th>
+							<th> Data de Pagamento</th>
+							<th> Situacao</th>
+							<th> Ação </th>
+						</tr>
+					</tfoot>
+
+					<tbody>
+					<?PHP
 					$controller = new ContaPagarController();
 					$contasPagar = $controller->ListAll();
 					while($contaPagar = array_pop($contasPagar)){
-					echo "
-					<tr>
-					<th id='gridtipo'>{$contaPagar->getTipo()}</th>
-					<th id='gridVl'>{$contaPagar->getValor()}</th>
-					<th id='gridDt_venc'>{$contaPagar->getDtVencimento()}</th>
-					<th id='gridDt_Pg'>{$contaPagar->getDtPagamento()}</th>
-					<th id='gridSituacao'>{$contaPagar->getSituacao()}</th>
-					<th>
-					<form action=\"../helper/ContaPagarHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
-					<input type=\"submit\" value=\"Excluir\">
-						</form>
-					</th>
+						echo "
+						<tr>
+							<td id='gridtipo'>{$contaPagar->getTipo()}</th>
+							<td id='gridVl'>{$contaPagar->getValor()}</th>
+							<td id='gridDt_venc'>{$contaPagar->getDtVencimento()}</th>
+							<td id='gridDt_Pg'>{$contaPagar->getDtPagamento()}</th>
+							<td id='gridSituacao'>{$contaPagar->getSituacao()}</th>
+							<td>
+								<form action=\"../helper/ContaPagarHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
+									<input type=\"submit\" value=\"Excluir\">
+								</form>
 
-					<th>
-					<form class=\"form_edit\" action=\"../helper/ContaPagarHelper.php?action=edit\"  method=\"post\">
-					<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaPagar->getCode()}>
-					<input type=\"submit\" value=\"Editar\">
-						</form>
-					</th>
-					</tr>
-					";
+								<form class=\"form_edit\" action=\"../helper/ContaPagarHelper.php?action=edit\"  method=\"post\">
+									<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaPagar->getCode()}>
+									<input type=\"submit\" value=\"Editar\">
+								</form>
+							</td>
+						</tr>
+						";
 					}
 					?>
+					</tbody>
 					</table>
-
-		</div>
-	</div>
-<div>
-			<br/>
-			<br/>
+			</div>
 
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
-		</div>
 		<div class="footer2_login">
 			<div class="container">
 				<div class="row">
@@ -167,8 +174,16 @@
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/specific/contas_pagar.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/contas_pagar.js"></script>
 </body>
 </html>

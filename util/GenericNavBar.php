@@ -9,6 +9,8 @@ $perfilControl = new PerfilController();
 $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 
 $picture = "../users/pictures/" . $pessoa->getFoto();
+
+$url = $_SERVER['REQUEST_URI'];
 ?>
 <!-- Fixed navbar -->
 	<div class="navbar navbar-inverse">
@@ -22,7 +24,7 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
 
-					<li><a href="home.php">Home</a></li>
+					<li <?PHP if (strpos($url, 'home') !== false) {echo  "class=\"active\"";} ?>><a href="home.php">Home</a></li>
 					
 
 
@@ -31,18 +33,21 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
                     if($perfil->getRegistration()){
 
                     ?>
-					<li class="dropdown">
+					<li <?PHP if (strpos($url, 'cadastro') !== false) {echo  "class=\"dropdown active\"";} else{ echo  "class=\"dropdown\""; }?>   >
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="cadastro_pessoa.php">Pessoas</a></li>
                             <li><a href="cadastro_contasreceber.php">Contas a receber</a></li>
                             <li><a href="cadastro_contaspagar.php">Contas a pagar</a></li>
+                            <li><a href="cadastro_sala.php">Sala</a></li>
+                            <li><a href="cadastro_turma.php">Turma</a></li>
 
                         <?PHP
                             if($perfil->getComplexRegistration()){
                         ?>    
                                 <li><a href="cadastro_idioma.php">Idiomas</a></li>
                                 <li><a href="cadastro_perfil.php">Perfis</a></li>
+                                <li><a href="cadastro_tipoconta.php">Tipo de conta</a></li>
                         <?PHP
                             }
                         ?>
@@ -59,7 +64,7 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
                     if($perfil->getReport()){
 
                     ?>
-					<li class="dropdown">
+					<li <?PHP if (strpos($url, 'relatorio') !== false) {echo  "class=\"dropdown active\"";} else{ echo  "class=\"dropdown\""; }?>>
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Relatórios <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="relatorio_contasreceber.php">Contas à receber</a></li>
@@ -84,15 +89,15 @@ $picture = "../users/pictures/" . $pessoa->getFoto();
                     <?PHP
                     if($perfil->getStudy()){
                     ?>
-                    <li><a href="relatorio_boletim.php">Boletim</a></li>
-                    <li><a href="pagamento.php">Pagamento</a></li>
+                    <li <?PHP if (strpos($url, 'boletim') !== false) {echo  "class=\"active\"";} ?>><a href="boletim.php">Boletim</a></li>
+                    <li <?PHP if (strpos($url, 'pagamento') !== false) {echo  "class=\"active\"";} ?>><a href="pagamento.php">Pagamento</a></li>
 					
                     <?PHP
                     }
 
                     if($perfil->getTeach()){
                     ?>
-                    <li><a href="entrada_diario.php">Lançamento de diário</a></li>
+                    <li <?PHP if (strpos($url, 'diario') !== false) {echo  "class=\"active\"";} ?>><a href="entrada_diario.php">Lançamento de diário</a></li>
 
                     <?PHP
                     }

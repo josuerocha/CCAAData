@@ -9,7 +9,7 @@ spl_autoload_register("LoadClass");
 <html lang="pt-br">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relatório de contas a pagar</title>
+<title>Relatório de contas a receber</title>
 <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
