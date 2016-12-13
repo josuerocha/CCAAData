@@ -17,5 +17,10 @@ class TurmaController implements IControllerGeneral {
         $turmaDAO = new TurmaDAO();
         return $turmaDAO->ListAll();
     }
+
+    function getByCode($code){
+        $turmaDAO = new TurmaDAO();
+        return $turmaDAO->getByCode($code);
+    }
 }
 ?> 

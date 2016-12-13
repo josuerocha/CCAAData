@@ -557,11 +557,7 @@ label {
 	top: 25px;
 	left: 565px;
 }
-.select_sala{
-	position: absolute;
-	left: 100px;
-	top: 240px;
-}
+
 select{
 	width: 160px;
 	height: 32px;

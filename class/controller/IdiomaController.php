@@ -17,5 +17,10 @@ class IdiomaController implements IControllerGeneral {
         $idiomaDAO = new IdiomaDAO();
         return $idiomaDAO->ListAll();
     }
+
+    function getByCode($code){
+        $idiomaDAO = new IdiomaDAO();
+        return $idiomaDAO->getByCode($code);
+    }
 }
 ?> 

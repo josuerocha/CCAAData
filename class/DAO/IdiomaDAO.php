@@ -58,8 +58,28 @@
 			return $idiomas;
 		}
 
-        function ListById($id){
-            
-        }
+		function getByCode($code){		
+			try{
+				$this->Connect();	
+				$query = "select * from tbl_Idioma where cod_Idioma = {$code}";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();				
+
+				$register = mysqli_fetch_assoc($result);
+
+				$idioma = new Idioma();
+				$idioma->setCode($register['cod_Idioma']);
+                $idioma->setDescricao($register['descricao_Idioma']);	
+
+				$result->close();	
+
+			}
+
+			catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $idioma;
+		}
+        
 }
 ?>

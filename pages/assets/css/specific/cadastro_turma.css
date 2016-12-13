@@ -1,38 +1,68 @@
 #texto_idioma_turma{
 	position: absolute;
 	left: 30px;
-	top: 260px;
+	top: 280px;
 }
 
 #texto_sala{
 	position: absolute;
 	left: 40px;
-	top: 232px;
+	top: 237px;
 }
 
-.select_idioma{
+#select_sala{
 	position: absolute;
 	left: 100px;
-	top: 270px;
+	top: 240px;
+	width: 90px;
+}
+
+#select_idioma{
+	position: absolute;
+	left: 100px;
+	top: 285px;
+	width: 100px;
 }
 #textoDesc{
 	position: absolute;
 	left: 20px;
-	top: 290px;
+	top: 325px;
 }
-.desc_turma{
+
+#texto_horario{
+	position: absolute;
+	left: 30px;
+	top: 375px;
+}
+
+#horario_turma{
 	position: absolute;
 	left: 100px;
-	top: 300px;
+	top: 380px;
+	width: 120px;
+}
+
+#desc_turma{
+	position: absolute;
+	left: 100px;
+	top: 330px;
 	border-radius: 3px;
 }
 #add_turma{
 	position: absolute;
 	left: 95px;
-	top: 370px;
+	top: 430px;
 }
 #cancel_turma{
 	position: absolute;
 	left: 200px;
-	top: 370px;
+	top: 430px;
+}
+
+#table_area{
+	position: absolute;
+	top: 240px;
+	left:380px;
+	width: 60%;
+
 }

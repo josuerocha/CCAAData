@@ -154,12 +154,12 @@ spl_autoload_register("LoadClass");
 						<td>{$pessoa->getDataNascimento()}</td>
 						<td> 
 							<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
-							<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
-	                   		<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+								<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
+	                   			<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
 	                   		</form>
-					   		<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
-					   		<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
-	                   		<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+					   			<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
+					   			<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
+	                   			<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
 							</form>         	
 						</td>
 					</tr>

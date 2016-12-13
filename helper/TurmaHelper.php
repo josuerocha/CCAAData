@@ -6,72 +6,61 @@ $action = $_GET["action"];
 
 switch($action){
 	        case 'save':
-            $flag = "ok";
 			$control = new TurmaController();
-            
+            $turma = new Turma();
 
-            $vetorCodeNota = $_POST['codigoNota'];
-            $vetorCodeAluno = $_POST['codigoAluno'];
-            $vetorNotaMid = $_POST['notaMid'];
-            $vetorNotaFinal = $_POST['notaFinal'];
-            $vetorNotaOral = $_POST['notaOral'];
 
-            while($codeAluno = array_pop($vetorCodeAluno)){
-                $nota = new Nota();
-                $codeNota = array_pop($vetorCodeNota);
+            if(isset($_POST['desc_turma'])){
 
-                $nota->setCodeAluno($codeAluno);
+            	if(isset($_POST['codeHidden'])){
+            		$turma->setCode($_POST['codeHidden']);
+            	}
 
-                if($codeNota != ""){
-                    $nota->setCode($codeNota);
-                }
-                else{
-                    $nota->setCode(0);
-                }
-                $nota->setMid(array_pop($vetorNotaMid));
-                $nota->setFinal(array_pop($vetorNotaFinal));
-                $nota->setOral(array_pop($vetorNotaOral));
-                $nota->setAno($ano);
-                $nota->setSemestre($semestre);
+	            $turma->setSala($_POST['select_sala']);
+	            $turma->setIdioma($_POST['select_idioma']);
+	            $turma->setDescricao($_POST['desc_turma']);
+	            $turma->setHorario($_POST['horario_turma']);
 
-                //echo $nota->getCodeAluno();
-                if($control->Save($nota)){		
-				    $flag = "ok"; 
-			    }else{
-                    $flag = "ops";
-                    break;	 
-			    }			
-            }
+	            if($control->Save($turma)){		
+					echo "<script>alert('Registro salvo com sucesso!');</script>"; 
+				}
+
+				else{		
+					echo "<script>alert('Erro ao salvar o registro.');</script>"; 
+				}			
+			}
+
+			else{		
+					echo "<script>alert('Erro ao salvar o registro.');</script>"; 
+			}	
+			echo "<script>location.href='../pages/cadastro_turma.php';</script>"; 			
 			
-            if($flag == "ok"){		
-				echo "<script>alert('Registro salvo com sucesso!');</script>"; 
-			}else{		
-				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
-			}			
-			echo "<script>location.href='../pages/entrada_diario_avaliacoes.php';</script>"; 			
-			
-		break;	
+		break;
+
 		case 'edit':
-			$control = new ContaPagarController();	
-            $contaPagar = new ContaPagar();
-            $contaPagar = $control->ListById($_POST["codeEdit"]);
-			//var_dump ($contaPagar->toArray());
-			$array = $contaPagar->toArray();
+			$control = new TurmaController();	
+            $turma = $control->getByCode($_POST["codeEdit"]);
+
+			$array = $turma->toArray();
 			echo  json_encode($array);
 
 		break;
 
 		case 'delete':
-			$control = new ContaPagarController();	
-            $contaPagar = new ContaPagar();
-            $contaPagar->setCode($_GET["code"]);
-			if($control->Delete($contaPagar)){
+			$control = new TurmaController();	
+            $turma = new Turma();
+            $turma->setCode($_POST["codeDelete"]);
+			
+			if($control->Delete($turma)){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
-			}else{
+			}
+
+			else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}			
-			echo "<script>location.href='../pages/cadastro_contaspagar.php';</script>"; 			
-		break;			
+			echo "<script>location.href='../pages/cadastro_turma.php';</script>"; 			
+		break;
+
 		default:
 			echo "<script>alert('Acesso negado!');</script>";
 		break;

@@ -1,17 +1,5 @@
 ALTER DATABASE `ccaa` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE tbl_Avaliacao (
-  cod_Avaliacao INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  tbl_Pessoa_cod_Pessoa INTEGER UNSIGNED NOT NULL,
-  tbl_Turma_cod_Turma INTEGER UNSIGNED NOT NULL,
-  descricao_Avaliacao VARCHAR(200) NOT NULL,
-  nota_Avaliacao FLOAT NOT NULL,
-  data_Avaliacao DATE NOT NULL,
-  PRIMARY KEY(cod_Avaliacao),
-  INDEX tbl_Avaliacao_FKIndex1(tbl_Turma_cod_Turma),
-  INDEX tbl_Avaliacao_FKIndex2(tbl_Pessoa_cod_Pessoa)
-);
-
 CREATE TABLE tbl_ContaPagar (
   cod_ContaPagar INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   tbl_TipoConta_cod_TipoConta INTEGER UNSIGNED NOT NULL,
@@ -145,6 +133,7 @@ CREATE TABLE tbl_Turma (
   cod_Turma INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   tbl_Sala_numero_Sala INTEGER UNSIGNED NOT NULL,
   tbl_Idioma_cod_Idioma INTEGER UNSIGNED NOT NULL,
+  horario_Turma TIME NOT NULL,
   descricao_Turma VARCHAR(200) NOT NULL,
   PRIMARY KEY(cod_Turma),
   INDEX tbl_Turma_FKIndex1(tbl_Idioma_cod_Idioma),
