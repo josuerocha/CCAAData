@@ -1,11 +1,15 @@
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
+
+$perfilControl = new PerfilController();
 ?>
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CCAA-Cadastro - Perfis</title>
+	<title>Cadastro de perfis</title>
 
 	<?include "../util/StandardHeader.php" ?>
 	<link rel="stylesheet" media="screen" href="assets/css/fonts-google.css">
@@ -15,11 +19,10 @@ require_once("../util/checkSession.php");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
+	<link rel="stylesheet" href="assets/css/specific/cadastro_perfil.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -28,26 +31,100 @@ require_once("../util/checkSession.php");
 
 	<header id="head" class="secondary_login">
             <div class="container">
-                    <h1 id="text_cad_perf">Cadastros - Perfis</h1>
+                    <h1 id="text_cad_perf">Cadastro de perfis</h1>
                 </div>
     </header>
 
     
     <div class="container" contenteditable>
-				<div id="coluna_esquerda">
-					<h4 id="text_perfil">Perfil: <span>*</span></h4><input id="input_perfil" type="text" name="perfil">	
-					<input id="btn-salvar-perfil" type="submit" name="Salvar" value="Salvar">
-					<input id="btn-cancelar-perfil" type="button" name="Cancelar" value="Cancelar">
-				<!-- TABELA DO GRID AQUI!!! -->
-				<table id="table_perfil" border="2">
-					<tr>
-						<th id="gridcod">Código</th>
-						<th id="gridPerfil">Perfil</th>
-						<th colspan="2" id="gridAcao">Ação</th>
-					</tr>
-				</table>
-			</div>
+		<div id="coluna_esquerda">
+			<h4 id="text_perfil">Perfil: <span>*</span></h4><input id="input_perfil" type="text" name="perfil">	
 
+			<h4 id="text_cadastro">Cadastros simples: <span>*</span></h4>
+			<input type="radio" id="cadastro" name="cadastro" value="1"> Permitido
+			<input type="radio" id="cadastro" name="cadastro" value="0"> Não Permitido
+
+			<h4 id="text_cadastrocomplexo">Cadastros complexos: <span>*</span></h4>
+			<input type="radio" id="cadastro_complexo" name="cadastro_complexo" value="1"> Permitido
+			<input type="radio" id="cadastro_complexo" name="cadastro_complexo" value="0"> Não Permitido
+
+			<h4 id="text_relatorio">Relatórios simples: <span>*</span></h4>
+			<input type="radio" id="relatorio" name="relatorio" value="1"> Permitido
+			<input type="radio" id="relatorio" name="relatorio" value="0"> Não Permitido
+
+			<h4 id="text_relatoriocomplexo">Relatórios complexos: <span>*</span></h4>
+			<input type="radio" id="relatorio_complexo" name="relatorio_complexo" value="1"> Permitido
+			<input type="radio" id="relatorio_complexo" name="relatorio_complexo" value="0"> Não Permitido
+
+			<h4 id="text_estudante">Estudante: <span>*</span></h4>
+			<input type="radio" id="estudante" name="estudante" value="1"> Permitido
+			<input type="radio" id="estudante" name="estudante" value="0"> Não Permitido
+
+			<h4 id="text_professor">Professor: <span>*</span></h4>
+			<input type="radio" id="professor" name="professor" value="1"> Permitido
+			<input type="radio" id="professor" name="professor" value="0"> Não Permitido
+
+			<input id="btn-salvar-perfil" type="submit" name="Salvar" value="Salvar">
+			<input id="btn-cancelar-perfil" type="button" name="Cancelar" value="Cancelar">
+			
+		</div>
+
+		<div id="table_area">
+			<table id="table_perfil" class="stripe row-border order-column" cellspacing="0" width="100%">
+				
+				<thead>
+					<tr>
+						<th>Perfil</th>
+						<th>Cadastros</th>
+						<th>Cadastros complexos</th>
+						<th>Relatórios</th>
+						<th>Relatórios complexos</th>
+						<th>Professor</th>
+						<th>Aluno</th>
+						<th>Ação</th>
+					</tr>
+				</thead>
+
+				<tfoot>
+					<tr>
+						<th>Perfil</th>
+						<th>Cadastros</th>
+						<th>Cadastros complexos</th>
+						<th>Relatórios</th>
+						<th>Relatórios complexos</th>
+						<th>Professor</th>
+						<th>Aluno</th>
+						<th>Ação</th>
+					</tr>
+				</tfoot>
+
+				<tbody>
+					<?PHP
+						$perfis = $perfilControl->ListAll();
+						while($perfil = array_shift($perfis)){
+							echo "	<tr>
+										<td> {$perfil->getDescricao()} </td>
+
+										{$perfil->DisplayPermissionsTabular()}
+
+										<td>
+											<form class=\"form_edit\" action=\"../helper/PerfilHelper.php?action=edit\" method=\"post\">
+												<input type=\"hidden\" name=\"codeEdit\" value=\"{$perfil->getCode()}\">
+                   								<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+                   							</form>
+							   				
+							   				<form action=\"../helper/PerfilHelper.php?action=delete\" method=\"post\">
+							   					<input type=\"hidden\" name=\"codeDelete\" value=\"{$perfil->getCode()}\">
+			                   					<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+											</form>
+										</td>
+									</tr>";
+						}
+					?>
+				</tbody>
+
+			</table>
+		</div>
 	</div>
 			<div class="clear"></div>
 			<!--CLEAR FLOATS-->
@@ -88,6 +165,16 @@ require_once("../util/checkSession.php");
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/cadastro_perfil.js"></script>
 </body>
 </html>

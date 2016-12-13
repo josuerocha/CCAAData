@@ -80,5 +80,29 @@ class Perfil{
 	function setTeach($teach){
 	    $this->teach = $teach;
 	}
+
+	function DisplayPermissionsTabular(){
+		$tabularData = '';
+		$tabularData = $tabularData . $this->DisplayPermission($this->getRegistration());
+		$tabularData = $tabularData . $this->DisplayPermission($this->getComplexRegistration());
+		$tabularData = $tabularData . $this->DisplayPermission($this->getReport());
+		$tabularData = $tabularData . $this->DisplayPermission($this->getComplexReport());
+		$tabularData = $tabularData . $this->DisplayPermission($this->getTeach());
+		$tabularData = $tabularData . $this->DisplayPermission($this->getStudy());
+
+		return $tabularData;
+	}
+
+	function DisplayPermission($permission){
+		
+		if($permission){
+		  	return "<td align=\"center\"><img src=\"assets/images/checkmark.png\" alt=\"Presente\" ></td>";
+
+	  	}
+
+	    else{
+	  	 	return "<td align=\"center\"><img src=\"assets/images/xmark.png\" alt=\"Ausente\" ></td>";
+	  	}
+	}
 }
 ?>
