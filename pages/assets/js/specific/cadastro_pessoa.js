@@ -35,6 +35,29 @@ $.fn.dataTable.ext.search.push(
 
 $(document).ready(function() {
 
+
+    $('#input-cep-pessoa').blur(function(){
+           /* Configura a requisição AJAX */
+           $.ajax({
+                url : '../util/consultar_cep.php', /* URL que será chamada */ 
+                type : 'POST', /* Tipo da requisição */ 
+                data: 'cep=' + $('#input-cep-pessoa').val(), /* dado que será enviado via POST */
+                dataType: 'json', /* Tipo de transmissão */
+                success: function(data){
+                    if(data.sucesso == 1){
+                        $('#input-logra-pessoa').val(data.rua);
+                        $('#input-bairro-pessoa').val(data.bairro);
+                        $('#input-cid-pessoa').val(data.cidade);
+                        $('#input-uf-pessoa').val(data.estado);
+ 
+                        $('#input-numero-pessoa').focus();
+                    }
+                }
+           });   
+   return false;    
+   })
+
+
     $('#input-cpf-pessoa').mask('000.000.000-00', {reverse: true});
     $('#input-tel-pessoa').mask('(00)0000-0000');
     $('#input-cel-pessoa').mask('(00)00000-0000');

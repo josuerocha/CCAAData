@@ -164,6 +164,13 @@ CREATE TABLE tbl_Endereco (
   PRIMARY KEY(cod_Endereco)
 );
 
+
+CREATE TABLE tbl_Estado (
+cod_Estado INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20),
+sigla VARCHAR(2)
+);
+
 CREATE TABLE tbl_Nota (
   cod_Nota INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   cod_Aluno INT NOT NULL,
@@ -223,4 +230,33 @@ INSERT INTO tbl_Endereco(cod_Pessoa,cep_Endereco,logradouro_Endereco,numero_Ende
 (1,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),
 (2,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG'),
 (3,'3580000','Rua 20','40','apto 02','V. dos Tecnicos','Timoteo','MG');
+
+INSERT INTO tbl_Estado (nome, sigla) VALUES 
+('Acre', 'AC'),
+('Alagoas', 'AL'),
+('Amapá', 'AP'),
+('Amazonas', 'AM'),
+('Bahia', 'BA'),
+('Ceará', 'CE'),
+('Distrito Federal', 'DF'),
+('Espirito Santo', 'ES'),
+('Goiás', 'GO'),
+('Maranhão', 'MA'),
+('Mato Grosso do Sul', 'MS'),
+('Mato Grosso', 'MT'),
+('Minas Gerais', 'MG'),
+('Pará', 'PA'),
+('Paraíba', 'PB'),
+('Paraná', 'PR'),
+('Pernambuco', 'PE'),
+('Piauí', 'PI'),
+('Rio de Janeiro', 'RJ'),
+('Rio Grande do Norte', 'RN'),
+('Rio Grande do Sul', 'RS'),
+('Rondônia', 'RO'),
+('Roraima', 'RR'),
+('Santa Catarina', 'SC'),
+('São Paulo', 'SP'),
+('Sergipe', 'SE'),
+('Tocantins', 'TO');
 

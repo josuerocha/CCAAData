@@ -19,9 +19,9 @@ class PessoaController implements IControllerGeneral{
         return $pessoaDAO->ListAll();
     }
 
-    function ListByCode($code){
+    function getByCode($code){
             $pessoaDAO = new PessoaDAO();
-            return $pessoaDAO->ListByCode($code);
+            return $pessoaDAO->getByCode($code);
     }
 
     function ListByPerfil($fkPerfil){

@@ -69,7 +69,7 @@ $tipoControl = new TipoContaController();
 		
         <?PHP
 		 while ($contaPagar = array_pop($contas)) { 
-            $tipoConta = $tipoControl->ListByCode($contaPagar->getTipo());
+            $tipoConta = $tipoControl->getByCode($contaPagar->getTipo());
         echo "
 		    <tr>
 					<td>{$tipoConta->getTipo()}</th>

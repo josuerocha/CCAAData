@@ -72,7 +72,7 @@
 			return $pessoas;
 		}			
 		
-		function ListByCode($code){
+		function getByCode($code){
 			
 			$pessoa = new Pessoa();			
 			try{

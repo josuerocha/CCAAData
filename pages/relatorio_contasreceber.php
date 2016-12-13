@@ -64,7 +64,7 @@ $tipoControl = new TipoContaController();
 		
         <?PHP
 		 while ($contaReceber = array_pop($contas)) { 
-            $tipoConta = $tipoControl->ListByCode($contaReceber->getTipo());
+            $tipoConta = $tipoControl->getByCode($contaReceber->getTipo());
         echo "
 		    <tr align=\"center\">
 					<td >{$tipoConta->getTipo()}</th>

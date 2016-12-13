@@ -1,8 +1,10 @@
 <?PHP
+
 require_once("../util/checkSession.php");
 include "../util/StandardHeader.php";
 require_once (__DIR__."/../util/autoload.php");
 spl_autoload_register("LoadClass");
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +62,7 @@ spl_autoload_register("LoadClass");
 					</select>
 					<input type="hidden" name="codeHidden" id="codeHidden">
 					<input type="hidden" name="codeEndHidden" id="codeEndHidden">
-				<h4 id="texto-cpf-pessoa">CPF:</h3><span id="cpf-span-pessoa">*</span> &nbsp 
+				<h4 id="texto-cpf-pessoa">CPF:</h4><span id="cpf-span-pessoa">*</span> &nbsp 
 					<input id="input-cpf-pessoa" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" pattern="[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]-[0-9][0-9]" required/>
 				<h4 id="texto-data-pessoa">Data de Nascimento:</h4><span id="nome-span-data">*</span>
 					<input id="input-data-pessoa" type="date" name="dtNasc" required>
@@ -83,7 +85,19 @@ spl_autoload_register("LoadClass");
 				<h4 id="texto-cid-pessoa">Cidade:</h4><span id="cid-span-pessoa" >*</span> &nbsp 
 					<input id="input-cid-pessoa" type="text" name="cidade"  required/>
 				<h4 id="texto-uf-pessoa">UF:</h4><span id="uf-span-pessoa">*</span> &nbsp 
-					<input id="input-uf-pessoa" type="text" name="uf"  required/>
+					<select id="input-uf-pessoa" name="uf">
+						<option value="">---</option>
+						<?PHP
+							$estadoControl = new EstadoController();
+
+							$estados = $estadoControl->ListAll();
+
+							while($estado = array_pop($estados)){
+								echo $estado->getNome();
+								echo "<option value=\"{$estado->getSigla()}\"> {$estado->getSigla()} </option>";
+							}
+						?>
+						</select>
 				<input id="btn-salvar-pessoa" type="submit" name="salvar_temp" value="Salvar" />&nbsp 
 				<input id="btn-cancelar-pessoa" type="button" name="cancelar_temp" value="Cancelar"  onclick="Novo();"/>	
 			</form>

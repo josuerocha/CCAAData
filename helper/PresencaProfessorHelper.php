@@ -43,7 +43,7 @@ switch($action){
 				
 			 	while ($professor = array_pop($professores)) { 
 			 		$codeProfessor = $professor->getCode();
-			        $perfil = $pessoaControl->ListByCode($professor->getCode());
+			        $perfil = $pessoaControl->getByCode($professor->getCode());
 			        echo "<option value=\"{$professor->getCode()}\" > {$professor->getNome()} </option>";
 			    }
 

@@ -83,7 +83,7 @@ switch($action){
 			break;
 		case 'edit':
 			$control = new PessoaController();	
-        	$pessoa = $control->ListByCode($_POST["codeEdit"]);
+        	$pessoa = $control->getByCode($_POST["codeEdit"]);
             
 			$array = $pessoa->toArray();
 
@@ -94,7 +94,7 @@ switch($action){
 		case 'delete':
 			$control = new PessoaController();
 
-			$pessoa = $control->ListByCode($_POST["codeDelete"]);		
+			$pessoa = $control->getByCode($_POST["codeDelete"]);		
 			if($control->Delete($pessoa)){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{

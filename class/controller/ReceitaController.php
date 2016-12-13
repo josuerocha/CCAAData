@@ -37,7 +37,7 @@ class ReceitaController {
         $presencas = $presencaProfessorControl->ListAll();
 
         while($presenca = array_pop($presencas)){
-            $professor = $pessoaControl->ListByCode($presenca->getCodePessoa());
+            $professor = $pessoaControl->getByCode($presenca->getCodePessoa());
 
             $this->spenditures += $professor->getHoraAula();
         }
