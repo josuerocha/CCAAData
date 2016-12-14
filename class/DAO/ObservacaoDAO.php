@@ -16,7 +16,6 @@
 				}else{	
 					$query = "UPDATE tbl_Observacao SET cod_Aluno = {$observacao->getCodeAluno()}, descricao_Observacao = '{$observacao->getDescricao()}' 
 					,enviado_Observacao = {$observacao->getEnviado()} WHERE cod_Observacao = {$observacao->getCode()}";
-					echo $query;
 					$this->connection->query($query);
 				}
 				$this->Disconnect();

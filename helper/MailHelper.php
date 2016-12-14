@@ -31,7 +31,7 @@ switch($action){
 				}
 
 
-				//echo "<script>location.href='../pages/entrada_diario.php';</script>";
+				echo "<script>location.href='../pages/entrada_diario.php';</script>";
 			}
 			else{
 				echo "<script>alert('Acesso negado!'); location.href='../pages/inicio.html';</script>";
