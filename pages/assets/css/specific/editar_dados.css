@@ -1,0 +1,17 @@
+#texto-foto-pessoa{
+	position: relative;
+	left: 115px;
+	top: 40px;
+}
+
+#image{
+	position: relative;
+	left: 165px;
+	top: -10px;
+}
+
+#foto-span-pessoa{
+	position: relative;
+	left: 150px;
+	top: 5px;
+}

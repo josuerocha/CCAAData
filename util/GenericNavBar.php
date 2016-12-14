@@ -107,6 +107,7 @@ $url = $_SERVER['REQUEST_URI'];
                         <a href="" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?PHP echo $picture;?>" alt="User" height="20" width="20"> <?PHP echo $pessoa->getNome(); ?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="alterar_senha.php">Alterar senha</a></li>
+                            <li><a href="editar_dados.php">Editar dados</a></li>
                             <li><a href="../util/logout.php">Logout</a></li>
                         </ul>
                     </li>
