@@ -26,6 +26,7 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specific/home.css">
 </head>
 
 <body>
@@ -39,21 +40,34 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
             </div>
     	</header>
     
-        <div id="body" class="container">
-			<!--<h3 class="academico">Acadêmico</h3>
-			<h3 class="financeiro">Financeiro</h3>
-            <img src="assets/images/diarios.jpg" class="icon-diarios" alt="Techro HTML5 diarios"><a id="diarios" href="aluno_diarios.html">Diários</a>
-			<img src="assets/images/boletim.png" class="icon-boletim" alt="Techro HTML5 boletim"><a id="boletim" href="aluno_boletim.html">Boletim</a>
-			<img src="assets/images/alterar-senha.png" class="icon-alterar-senha" alt="Techro HTML5 alterar-senha"><a id="alterar-senha" href="aluno_alterar_senha.html">Alterar senha</a>
+        <div id="div-body" class="container">
+			<h3 class="academico">Geral</h3>
+			<h3 class="financeiro">Acadêmico</h3>
+
+			<img src="../users/pictures/<?PHP echo $pessoa->getFoto(); ?>" id="foto-user" alt="Vocẽ">
+			<a id="alterar-dados" href="editar_dados.php">Alterar dados</a>
+
+			<h3 style="color: #000000;" id="nome-user"> <b>Usuário:</b> &nbsp <?PHP echo $pessoa->getNome(); ?> </h3>
+
+            <img src="assets/images/logout.jpg" class="icon-diarios" alt="Techro HTML5 diarios"><a id="diarios" href="../util/logout.php">Logout</a>
+
+			<?PHP if($perfil->getStudy()){ ?>
+			<img src="assets/images/boletim.png" class="icon-alterar-senha" alt="Techro HTML5 boletim"><a id="alterar-senha" href="aluno_boletim.html">&nbsp Boletim</a>
+
+
+
+			<img src="assets/images/alterar-senha.png" class="icon-boletim"  alt="Techro HTML5 alterar-senha"><a id="boletim"  href="alterar_senha.php">Alterar senha</a>
 			<img src="assets/images/mensalidade.jpg" class="icon-mensalidades" alt="Techro HTML5 mensalidades"><a id="mensalidades" href="aluno_diarios.html">Mensalidades</a>
 			<img src="assets/images/materiais.jpg" class="icon-materiais" alt="Techro HTML5 materiais"><a id="materiais" href="aluno_boletim.html">Materiais</a>
 			<img src="assets/images/pagamento-online.png" class="icon-pagamento-online" alt="Techro HTML5 pagamento-online"><a id="pagamento-online" href="aluno_alterar_senha.html">Pagamento online</a>
-        -->
+        
+        	<?PHP } ?>
         </div>
-  
 
         <!--FOOTER GENÈRICA !! -->
-		<?PHP include "../util/GenericFooter.php"; ?>
+        <div id="div-footer">
+			<?PHP include "../util/GenericFooter.php"; ?>
+		</div>
 		</div>
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

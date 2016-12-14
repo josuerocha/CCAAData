@@ -1,0 +1,37 @@
+#div-body{
+	position: relative;
+	top: -100px;
+	left: 400px;
+}
+
+#div-footer{
+	position: absolute;
+	bottom: 0px;
+	left: 50px;
+}
+
+#foto-user{
+	position: relative;
+	top: 180px;
+	left: -320px;
+	height: 200px;
+	width: 200px;
+}
+
+#nome-user{
+	position: relative;
+	top: 190px;
+	left: -280px;
+
+}
+
+#alterar-dados{
+	position: relative;
+	top: 300px;
+	left: -460px;
+
+}
+
+#icon-alterar-senha{
+	width: 20px !important;
+}
