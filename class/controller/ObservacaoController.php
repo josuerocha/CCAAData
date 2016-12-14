@@ -17,5 +17,10 @@ class ObservacaoController implements IControllerGeneral {
         $observacaoDAO = new ObservacaoDAO();
         return $observacaoDAO->ListAll();
     }
+
+    function getByCode($code){
+        $observacaoDAO = new ObservacaoDAO();
+        return $observacaoDAO->getByCode($code);
+    }
 }
 ?> 

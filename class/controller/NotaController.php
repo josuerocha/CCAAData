@@ -48,9 +48,9 @@ class NotaController implements IControllerGeneral {
         return $notaDAO->ListByAluno($codeAluno);
     }
 
-    function getEarliestYear(){
+    function getAvailableYears(){
         $notaDAO = new NotaDAO();
-        return $notaDAO->getEarliestYear();
+        return $notaDAO->getAvailableYears();
     }
 }
 ?> 

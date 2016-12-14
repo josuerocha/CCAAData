@@ -30,7 +30,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                     <div class="modal-header">
-                        <h1>Sistema acadêmico do CCAA de Timóteo</h1>
+                        <h1 style="color:#8B0000";>Sistema acadêmico do CCAA de Timóteo</h1>
                     </div>
                     <div class="modal-body">
                         <h3>Em caso de dúvida durante a operação, favor entrar em contato conosco. Quando você vê, <b>you are speaking.</b></h3>

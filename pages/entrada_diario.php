@@ -48,11 +48,16 @@ $perfilControl = new PerfilController();
 				<select name="ano" id ="ano">
 					<?PHP 
 					$date = date("Y-m-d");
-					$anoAtual =  explode('-', $date);
+					$currentYear =  explode('-', $date)[0];
+					$years = $notaControl->getAvailableYears();
 
-					for($year = $anoAtual[0]; $year >= $notaControl->getEarliestYear(); $year--){
+					echo "<option value=\"{$currentYear}\"> {$currentYear} </option>";
+					
+					while($year = array_shift($years)){
 						echo "<option value=\"{$year}\"> {$year} </option>";
 					}
+					
+					
 					?>
 				</select>			
 
@@ -154,6 +159,7 @@ $perfilControl = new PerfilController();
 						<tr>
 							<th> Nome</th>
 							<th> Observação</th>
+							<th> Email enviado</th>
 							<th> Ação</th>
 						</tr>
 					</thead>
@@ -162,6 +168,7 @@ $perfilControl = new PerfilController();
 						<tr>
 							<th> Nome</th>
 							<th> Observação</th>
+							<th> Email enviado</th>
 							<th> Ação</th>
 						</tr>
 					</tfoot>
@@ -176,7 +183,7 @@ $perfilControl = new PerfilController();
 						<tr>
 							<td> {$aluno->getNome()}</td>
 							<td> {$observacao->getDescricao()}</td>
-
+							{$observacao->DisplayEnviado()}
 							<td>
 								<span style=\"display: inline-block;\">
 									<form class=\"form_editar\" action=\"../helper/ObservacaoHelper.php?action=edit\" method=\"post\">
@@ -189,8 +196,8 @@ $perfilControl = new PerfilController();
 	       								<input id=\"btn-exc-sala\" class=\"button-delete\" type=\"submit\" value=\"\">
 									</form>
 
-									<form class=\"button-inline\" action=\"../helper/ObservacaoHelper.php?action=delete\" method=\"post\">
-	       								<input type=\"hidden\" name=\"codeDelete\" value=\"{$observacao->getCode()}\">
+									<form class=\"button-inline\" action=\"../helper/MailHelper.php?action=notificationMail\" method=\"post\">
+	       								<input type=\"hidden\" name=\"codeMail\" value=\"{$observacao->getCode()}\">
 	       								<input id=\"btn-mail-sala\" class=\"button-mail\" type=\"submit\" value=\"\">
 									</form>           
 								</span>

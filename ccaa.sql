@@ -175,6 +175,7 @@ CREATE TABLE tbl_Nota (
 CREATE TABLE tbl_Observacao (
   cod_Observacao INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   cod_Aluno INT NOT NULL,
+  enviado_Observacao BOOL NOT NULL,
   descricao_Observacao VARCHAR(300) NOT NULL,
   PRIMARY KEY (cod_Observacao));
 

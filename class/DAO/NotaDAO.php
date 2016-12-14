@@ -113,17 +113,20 @@
 			return $nota;          
         }
 
-        function getEarliestYear(){
+        function getAvailableYears(){
+        	$anos = array();
         	try{
 				$this->Connect();	
-				$query = "SELECT MIN(ano_Nota) FROM tbl_Nota";
+				$query = "SELECT ano_Nota FROM tbl_Nota";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();
 
 
 				$register = mysqli_fetch_assoc($result);
 
-                $ano = $register['MIN(ano_Nota)'];
+                $ano = $register['ano_Nota'];
+
+                array_push($anos,$ano);
 				$result->close();			
 
 			}
@@ -131,7 +134,7 @@
 			catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}			
-			return $ano;     
+			return $anos;     
 
         }
 }
