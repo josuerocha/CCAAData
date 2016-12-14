@@ -1,0 +1,21 @@
+#table_area{
+	position: relative;
+	left: 400px;
+	top: -35px;
+	width: 50%;
+}
+
+#contatipo{
+	position: relative;
+	left: 5px;
+}
+
+#btn-salvar-conta{
+	top: 60px;
+	left: -216px;
+}
+
+#btn-cancelar-conta{
+	top: 60px;
+	left: -216px;
+}

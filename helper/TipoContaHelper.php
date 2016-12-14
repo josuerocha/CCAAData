@@ -9,6 +9,10 @@ switch($action){
 			$control = new TipoContaController();
 			$tipoConta = new TipoConta();
 			
+			if(isset($_POST['codeHidden'])){
+				$tipoConta->setCode($_POST['codeHidden']);
+			}
+
 			$tipoConta->setTipo($_POST["contatipo"]);
 
             if($control->Save($tipoConta)){		
@@ -16,51 +20,35 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}
-			ReloadList();			
+			echo "<script>location.href='../pages/cadastro_tipoconta.php';</script>"; 
+
+		break;
+
+		case 'edit':
+			$control = new TipoContaController();	
+            $tipoConta = $control->getByCode($_POST['codeEdit']);
+            
+			$array = $tipoConta->toArray();
+
+			echo  json_encode($array);
+
 		break;	
 
 		case 'delete':
 			$control = new TipoContaController();	
             $tipoConta = new Sala();
-            $tipoConta->setCode($_POST["deleteCode"]);
+            $tipoConta->setCode($_POST["codeDelete"]);
 			if($control->Delete($tipoConta)){
 				echo "<script>alert('Registro excluído com sucesso!');</script>"; 
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
-			}						
-			ReloadList();
+			}
+			//echo "<script>location.href='../pages/cadastro_tipoconta.php';</script>"; 						
 		break;			
+
 		default:
-			echo "<script>alert('Acesso negado!'); location.href='../pages/paginaInicial.html';</script>";
+			echo "<script>alert('Acesso negado!'); location.href='../pages/inicio.html';</script>";
 		break;
 	}
-
-	function ReloadList(){
-		?>
-		<table id="listaContas">
-		<tr>
-			<th id="gridCodigo">Código</th>
-			<th id="gridConta">Conta</th>
-			<th colspan="2" id="gridAcao">Ação</th>
-		</tr>
-			<?PHP
-		require_once ("../util/autoload.php");
-		spl_autoload_register("LoadClass");
-		$controller = new TipoContaController();
-		$tipoContas = $controller->ListAll();
-		while($tipoConta=array_pop($tipoContas)){
-		echo "
-		<tr>
-		<th id='gridCodigo'>{$tipoConta->getCode()}</th>
-		<th id='gridCodigo'>{$tipoConta->getTipo()}</th>
-		<th>
-			<form action=\"../helper/TipoContaHelper.php?action=delete&code={$tipoConta->getCode()}\" method=\"post\">
-			<input type=\"submit\" value=\"Excluir\">
-			</form>
-		</th>
-		</tr>
-		";
-		}
-
-	}	
+	
 ?>

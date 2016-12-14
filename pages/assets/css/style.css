@@ -423,10 +423,6 @@ label {
 	left: -5px;
 
 }
-#contatipo{
-	position: relative;
-	left: 5px;
-}
 
 #sala-span{
 	color: red;
@@ -1195,7 +1191,7 @@ input[type="time"]{
 	position: relative;
 	top: -20px;
 }
-#salvar,#btn_salvar_temp,#btn-salvar-conta,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil, #btn_salvar_freq_prof, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
+#salvar,#btn_salvar_temp,#btn-pagamento,#btn-salvar-pessoa, #btn-salvar-sala, #btn-pesquisar-perfil, #btn_salvar_freq_prof, #btn-pesquisar-idioma,#btn_salvar_hora_prof,#btn-enviar-pesquisa{
 	position: relative;
 	height: 30px;
 	width: 100px;
@@ -1250,10 +1246,6 @@ input[type="time"]{
 	top: 20px;
 }
 
-#btn-salvar-conta{
-	top: 60px;
-	left: -216px;
-}
 #btn-salvar-sala{
 	top: 33px;
 	left: 415px;
@@ -1261,10 +1253,6 @@ input[type="time"]{
 #btn-cancelar-sala{
 	top: 33px;
 	left: 415px;
-}
-#btn-cancelar-conta{
-	top: 60px;
-	left: -216px;
 }
 
 #btn-pesquisar-perfil,#btn-pesquisar-idioma
@@ -1283,7 +1271,7 @@ input[type="time"]{
 	top: -450px;
 	left: 20px;
 }
-#cancelar,#btn_cancelar_temp, #btn_reset,#btn_reset-hora-aula,#btn-cancelar-conta,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
+#cancelar,#btn_cancelar_temp, #btn_reset,#btn_reset-hora-aula,#btn-cancelar-pessoa,#btn_cancelar_hora_prof,#btn-cancelar-sala{
 	position: relative;
 	
 	width: 100px;
