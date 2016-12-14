@@ -51,6 +51,20 @@ switch($action){
             	if($enderecoControl->Save($endereco)){
 
 				echo "<script>alert('Registro salvo com sucesso!');</script>"; 
+				$mailControl = new MailController();
+
+				$subject = "Confirmação de e-mail";
+
+				$message = "	<p>Olá prezado <b>{$pessoa->getNome()}</b>,</p>
+						 	<p>segue abaixo o link para confirmação do e-mail de login no sistema do <b>Centro Cultural Anglo Americano</b>:</p>
+						 <p><a href='https://localhost/EngSoftware/pages/confirmacao_email.php?action=confirm&code={$login->getEmail()}'>Confirmar e-mail</a></p>
+					 	<p>Caso ainda hajam dúvidas favor entrar em contato. </p>
+						 <p>Agradecemos sua preferência.</p>
+						 	<p>Av. Juscelino Kubitscheck, 4 - Funcionários, Timóteo - MG, 35180-410  <b>Telefone:</b> (31) 3848-3432<img src=\"../pages/assets/images/logo.png\" alt=\"CCAA\" style=\"width:50px;height:25px;\"></p>
+						 ";
+
+
+				$mailControl->SendMail($pessoa->getEmail(),$subject,$message);
 				}
 				else{
 					echo "<script>alert('Erro ao salvar endereço!');</script>";

@@ -31,25 +31,28 @@ switch($action){
 
 	case 'validate':
 		$control = new LoginController();
+		$login = $control->getByEmail($_POST['email']);
 		$validation = '';
-		if($control->Validate($_POST["email"],MD5($_POST["senha"]))){
-			$validation = "<script>	document.location.href = '../pages/home.php';
-    					   	</script>";
 
-			if(!isset($_SESSION)){ 
-				session_start();
-				$_SESSION["email"] = $_POST["email"];
-				
-				} 
-			else{
-				session_destroy();
-				session_start();
-				$_SESSION["email"] = $_POST["email"];
-			}
+		if($control->Validate($_POST["email"],MD5($_POST["senha"])) && $login->getIsConfirmed()){
+
+    			$validation = "<script>	document.location.href = '../pages/home.php';
+    					   	</script>";
+				if(!isset($_SESSION)){ 
+					session_start();
+					$_SESSION["email"] = $_POST["email"];
+					
+					} 
+				else{
+					session_destroy();
+					session_start();
+					$_SESSION["email"] = $_POST["email"];
+				}
 		}
 		else{
-			$validation = "<script>alert('Dados inválidos!');</script>";
+				$validation = "<script>alert('Favor confirmar seus dados utilizando o e-mail em sua caixa de entrada!');</script>";
 		}
+
 		echo ($validation);
 
 	break;
@@ -60,6 +63,9 @@ switch($action){
 	
 		if(isset($_POST["email"])){
         	$login->setEmail($_POST["email"]);
+
+        	echo $login->getEmail();
+
         	$login->setSenha(MD5($_POST["senha"]));
 
 			if($control->Save($login)){		
@@ -73,6 +79,24 @@ switch($action){
 
 		echo "<script>location.href='../cadastroLogin.php';</script>";
 	break;	
+
+	case 'confirmEmail':
+		$control = new LoginController();
+
+		$login = $control->getByEmail($_POST['codeHidden']);
+		$login->setIsConfirmed(1);
+		$login->setSenha(MD5($_POST['senha']));
+
+		if ($control->Update($login)){
+			echo "<script>alert('Email confirmado.');</script>";
+			 
+		}
+		else{
+			echo "<script>alert('Email não confirmado.');</script>";
+		}
+
+		echo "<script>location.href='../pages/login.php';</script>";
+	break;
 
 	case 'delete':
 		$control = new LoginController();
