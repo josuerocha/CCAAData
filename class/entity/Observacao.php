@@ -54,5 +54,14 @@ class Observacao{
 	  	 	return "<td><img src=\"assets/images/xmark.png\" alt=\"Ausente\" ></td>";
 	  	}
 	}
+
+	function toArray(){
+		return array(
+	        'code' => $this->getCode(),
+	        'codeAluno' => $this->getCodeAluno(),
+	        'descricao' => $this->getDescricao()
+    	);
+
+	}
 }
 ?>

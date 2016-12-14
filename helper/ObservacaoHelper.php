@@ -25,6 +25,17 @@ switch($action){
 			
 		break;	
 
+		case 'edit':
+			
+			$control = new ObservacaoController();	
+            $observacao = $control->getByCode($_POST['codeEdit']);
+            
+			$array = $observacao->toArray();
+
+			echo  json_encode($array);
+
+		break;
+
 		case 'delete':
 			$control = new ObservacaoController();
 			$observacao = new Observacao();

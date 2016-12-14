@@ -131,9 +131,9 @@ $perfilControl = new PerfilController();
 				
 				<h2><b>Observações</b></h2>
 				<form action="../helper/ObservacaoHelper.php?action=save" method="post">
-					<input type="hidden" name="codeHidden" id="codeHidden"/>
+					<input type="hidden" name="codeHidden2" id="codeHidden2"/>
 
-					<h4>Aluno: &nbsp <select name="codeAluno">
+					<h4>Aluno: &nbsp <select name="codeAluno" id="codeAluno">
 						<?PHP
 						$perfil = $perfilControl->getByDescricao("Aluno");
 						$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
@@ -142,15 +142,17 @@ $perfilControl = new PerfilController();
 						}
 						?>
 					</select>
-				</h4>
+					</h4>
 
-				<br/>
-				<br/>
+					<br/>
+					<br/>
 				
-				<textarea rows="4" cols="160" name="descricao" placeholder="Observações" required></textarea>
+					<textarea rows="4" cols="160" name="descricao" id="descricao" placeholder="Observações" required></textarea>
 				
-				<input type="submit" class = "btn-salvar" id = "btn-salvar-notificacao" name="salvar_temp" value="Salvar">&nbsp 
-				<input type="button" class = "btn-cancelar" id = "btn-cancelar-notificacao" name="cancelar_temp" value="Cancelar">
+					<input type="submit" class = "btn-salvar" id = "btn-salvar-notificacao" name="salvar_temp" value="Salvar">&nbsp 
+					<input type="button" class = "btn-cancelar" id = "btn-cancelar-notificacao" name="cancelar_temp" value="Cancelar" onclick="Novo();">
+
+				</form>
 
 				<div id="table_area_observacoes">
 					<table id="table_observacoes" class="display"  cellspacing="0" width="100%">
@@ -186,8 +188,8 @@ $perfilControl = new PerfilController();
 							{$observacao->DisplayEnviado()}
 							<td>
 								<span style=\"display: inline-block;\">
-									<form class=\"form_editar\" action=\"../helper/ObservacaoHelper.php?action=edit\" method=\"post\">
-										<input type=\"hidden\" name=\"codeEdit\" value=\"{$observacao->getCode()}\">
+									<form class=\"form_edit\" action=\"../helper/ObservacaoHelper.php?action=edit\" method=\"post\">
+										<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value=\"{$observacao->getCode()}\">
 	   									<input class=\"button-edit\" id=\"btn-edit-sala\" type=\"submit\" value=\"\">
 	   								</form>
 		   			
