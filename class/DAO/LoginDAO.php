@@ -23,8 +23,7 @@
 			try{
 				$this->Connect();						
 				$query = "update tbl_Login set senha_Login = '{$login->getSenha()}',isConfirmed_Login = '{$login->getIsConfirmed()}',chaveConfirmacao_Login = '{$login->getChaveConfirmacao()}' where email_Login = '{$login->getEmail()}'";
-
-				echo $query;
+				
 				$this->connection->query($query);					
 				$this->Disconnect();
 

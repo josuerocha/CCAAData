@@ -56,6 +56,30 @@ switch($action){
 		echo ($validation);
 
 	break;
+
+	case 'recover':
+		$loginControl = new LoginController();
+		$pessoaControl = new PessoaController();
+		$mailControl = new MailController();
+
+		$login = $loginControl->getByEmail($_POST['email']);
+		$pessoa = $pessoaControl->getByEmail($_POST['email']);
+
+		$subject = "Recuperação de senha";
+
+		$message = "	<p>Olá prezado <b>{$pessoa->getNome()}</b>,</p>
+				 	<p>segue abaixo o link para recuperação de senha de login no sistema do <b>Centro Cultural Anglo Americano</b>:</p>
+				 <p><a href='https://localhost/EngSoftware/pages/redefinicao_senha.php?code={$login->getEmail()}'>Recuperar senha</a></p>
+			 	<p>Caso ainda hajam dúvidas favor entrar em contato. </p>
+				 <p>Agradecemos sua preferência.</p>
+				 	<p>Av. Juscelino Kubitscheck, 4 - Funcionários, Timóteo - MG, 35180-410  <b>Telefone:</b> (31) 3848-3432<img src=\"../pages/assets/images/logo.png\" alt=\"CCAA\" style=\"width:50px;height:25px;\"></p>
+				 ";
+
+
+		$mailControl->SendMail($pessoa->getEmail(),$subject,$message);
+		echo "<script>location.href='../pages/inicio.html';</script>";
+
+	break;
     
     case 'save':
 		$control = new LoginController();
@@ -93,6 +117,23 @@ switch($action){
 		}
 		else{
 			echo "<script>alert('Email não confirmado.');</script>";
+		}
+
+		echo "<script>location.href='../pages/login.php';</script>";
+	break;
+
+	case 'redefine':
+		$control = new LoginController();
+
+		$login = $control->getByEmail($_POST['codeHidden']);
+		$login->setSenha(MD5($_POST['senha']));
+
+		if ($control->Update($login)){
+			echo "<script>alert('Senha redefinida.');</script>";
+			 
+		}
+		else{
+			echo "<script>alert('Senha não redefinida.');</script>";
 		}
 
 		echo "<script>location.href='../pages/login.php';</script>";

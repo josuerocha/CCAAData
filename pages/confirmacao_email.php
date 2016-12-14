@@ -31,7 +31,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li class="active"><a href="inicio.html">Home</a></li>
+					<li><a href="inicio.html">Home</a></li>
 					<li><a href="sobre.html">Sobre</a></li>
 					<li><a href="cursos.html">Cursos</a></li>
           <li><a href="estude.html">Estude no CCAA</a></li>
