@@ -30,6 +30,7 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 
 <body>
 		<!--NAVBAR GENÈRICA !! -->
+		<div id="container">
 		<?PHP include "../util/GenericNavBar.php"; ?>
 
 		<header id="head" class="secondary_aluno">
@@ -38,8 +39,8 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
             </div>
     	</header>
     
-        <div id="icones-home-aluno" class="container">
-			<h3 class="academico">Acadêmico</h3>
+        <div id="body" class="container">
+			<!--<h3 class="academico">Acadêmico</h3>
 			<h3 class="financeiro">Financeiro</h3>
             <img src="assets/images/diarios.jpg" class="icon-diarios" alt="Techro HTML5 diarios"><a id="diarios" href="aluno_diarios.html">Diários</a>
 			<img src="assets/images/boletim.png" class="icon-boletim" alt="Techro HTML5 boletim"><a id="boletim" href="aluno_boletim.html">Boletim</a>
@@ -47,12 +48,13 @@ $perfil = $perfilControl->getByCode($pessoa->getFKPerfil());
 			<img src="assets/images/mensalidade.jpg" class="icon-mensalidades" alt="Techro HTML5 mensalidades"><a id="mensalidades" href="aluno_diarios.html">Mensalidades</a>
 			<img src="assets/images/materiais.jpg" class="icon-materiais" alt="Techro HTML5 materiais"><a id="materiais" href="aluno_boletim.html">Materiais</a>
 			<img src="assets/images/pagamento-online.png" class="icon-pagamento-online" alt="Techro HTML5 pagamento-online"><a id="pagamento-online" href="aluno_alterar_senha.html">Pagamento online</a>
+        -->
         </div>
   
 
         <!--FOOTER GENÈRICA !! -->
 		<?PHP include "../util/GenericFooter.php"; ?>
-
+		</div>
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
