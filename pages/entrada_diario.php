@@ -5,7 +5,8 @@ require_once ("../util/autoload.php");
 spl_autoload_register("LoadClass");
 
 $notaControl = new NotaController();
-
+$pessoaControl = new PessoaController();
+$perfilControl = new PerfilController();
 ?>
 
 <head>
@@ -45,7 +46,9 @@ $notaControl = new NotaController();
 				
 				<br/>
 				<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
-				<h4>Ano: &nbsp <select name="ano" id ="ano"></h4>
+				<h4>Ano: </h4>
+
+				<select name="ano" id ="ano">
 					<?PHP 
 						$date = date("Y-m-d");
 						$anoAtual =  explode('-', $date);
@@ -56,7 +59,8 @@ $notaControl = new NotaController();
 					?>
 				</select>			
 
-			<h4>Semestre: &nbsp <select name="semestre"></h4>
+			<h4>Semestre: </h4>
+			<select name="semestre">
 				<option value='1'>1º</option>
 				<option value='2'>2º</option>
 			</select>
@@ -65,15 +69,26 @@ $notaControl = new NotaController();
 			<table id="example" class="display" cellspacing="0" width="100%">
 			
 				<thead>
-				<tr>
-					<th> Número </th>
-					<th> Aluno </th>
-					<th> Nota final </th>
-					<th> Nota midterm </th>
-					<th> Oral </th>
-					<th> Situacao </th>
-				</tr>
+					<tr>
+						<th> Número </th>
+						<th> Aluno </th>
+						<th> Nota final </th>
+						<th> Nota midterm </th>
+						<th> Oral </th>
+						<th> Situação </th>
+					</tr>
 				</thead>
+
+				<tfoot>
+					<tr>
+						<th> Número </th>
+						<th> Aluno </th>
+						<th> Prova final </th>
+						<th> Prova Midterm </th>
+						<th> Prova oral </th>
+						<th> Situação </th>
+					</tr>
+				</tfoot>
 
 				<tbody>
 				<?PHP
@@ -118,14 +133,10 @@ $notaControl = new NotaController();
 				<form action="../helper/ObservacaoHelper.php?action=save" method="post">
 				<h4>Aluno: &nbsp <select name="codeAluno">
 					<?PHP
-					require_once (__DIR__."/../util/autoload.php");
-					spl_autoload_register("LoadClass");
-					$pessoaControl = new PessoaController();
-					$perfilControl = new PerfilController();
 					$perfil = $perfilControl->getByDescricao("Aluno");
 					$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
 					while($aluno = array_pop($alunos)){
-					echo "<option value='{$aluno->getCode()}'>{$aluno->getNome()}</option>";
+						echo "<option value='{$aluno->getCode()}'>{$aluno->getNome()}</option>";
 					}
 					?>
 					</select>
@@ -229,10 +240,17 @@ $notaControl = new NotaController();
 	</footer>
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.12.3.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="assets/js/specific/cadastro_sala.js"></script>
 	<script src="assets/js/specific/entrada_diario_avaliacoes.js"></script>
 </body>
 </html>
