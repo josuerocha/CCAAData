@@ -43,7 +43,7 @@ switch($action){
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}
-			//echo "<script>location.href='../pages/cadastro_tipoconta.php';</script>"; 						
+			echo "<script>location.href='../pages/cadastro_tipoconta.php';</script>"; 						
 		break;			
 
 		default:

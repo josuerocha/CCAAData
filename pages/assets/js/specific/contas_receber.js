@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     $('#table_contas tfoot th').each( function () {
         var title = $(this).text().toLowerCase();
-        $(this).html( '<input type="text" style = "width:180px;" placeholder="Pesquisar '+ title +'" />');
+        $(this).html( '<input type="text" style = "width:130px;" placeholder="Pesquisar '+ title +'" />');
     } );
 
     var table = $('#table_contas').DataTable( {

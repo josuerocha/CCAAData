@@ -79,7 +79,7 @@
 
 				
 				<br/>
-
+			<div id="table_area">
 				<table id="table_contas">
 					
 					<thead>
@@ -118,13 +118,13 @@
 							<td id='gridDt_Pg'>{$contaPagar->getDtPagamento()}</th>
 							<td id='gridSituacao'>{$contaPagar->getSituacao()}</th>
 							<td>
-								<form action=\"../helper/ContaPagarHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
-									<input type=\"submit\" value=\"Excluir\">
+								<form class=\"button-inline\" action=\"../helper/ContaPagarHelper.php?action=delete&code={$contaPagar->getCode()}\" method=\"post\">
+									<input type=\"submit\" class=\"button-delete\" value=\"\">
 								</form>
 
 								<form class=\"form_edit\" action=\"../helper/ContaPagarHelper.php?action=edit\"  method=\"post\">
 									<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaPagar->getCode()}>
-									<input type=\"submit\" value=\"Editar\">
+									<input type=\"submit\" class=\"button-edit\" value=\"\">
 								</form>
 							</td>
 						</tr>
@@ -133,44 +133,11 @@
 					?>
 					</tbody>
 					</table>
-			</div>
-
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		<div class="footer2_login">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="inicio.html">Home</a>
-								<a href="sobre.html">Sobre</a>
-								<a href="cursos.html">Cursos</a>
-          						<a href="estude.html">Estude no CCAA</a>
-          						<a href="unidades.html">Unidades</a>
-								<a href="precos.html">Preços</a>
-          						<a href="convenios.html">Convênios</a>
-          						<a href="contato.html">Contato</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. 
-								<br/>
-								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
 				</div>
-				<!-- /row of panels -->
 			</div>
-		</div>
-	</footer>
+
+	<!--FOOTER GENÉRICA -->
+	<?PHP include "../util/GenericFooter.php" ?>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

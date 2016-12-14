@@ -129,12 +129,12 @@ $perfilControl = new PerfilController();
 										<td>
 											<form class=\"form_edit\" action=\"../helper/PerfilHelper.php?action=edit\" method=\"post\">
 												<input type=\"hidden\" name=\"codeEdit\" value=\"{$perfil->getCode()}\">
-                   								<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+                   								<input class=\"button-edit\" id=\"btn-edit-sala\" type=\"submit\" value=\"\">
                    							</form>
 							   				
-							   				<form action=\"../helper/PerfilHelper.php?action=delete\" method=\"post\">
+							   				<form class=\"button-inline\" action=\"../helper/PerfilHelper.php?action=delete\" method=\"post\">
 							   					<input type=\"hidden\" name=\"codeDelete\" value=\"{$perfil->getCode()}\">
-			                   					<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+			                   					<input class=\"button-delete\" id=\"btn-exc-sala\" type=\"submit\" value=\"\">
 											</form>
 										</td>
 									</tr>";

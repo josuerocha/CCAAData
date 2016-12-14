@@ -21,10 +21,10 @@ $perfilControl = new PerfilController();
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="assets/css/responsive.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-	<link rel="stylesheet" href="assets/css/font-awesome-4.1.0/css/font-awesome.min.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="assets/css/specific/entrada_diario.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -33,224 +33,193 @@ $perfilControl = new PerfilController();
 	<?PHP include "../util/GenericNavBar.php"; ?>
 
 	<header id="head" class="secondary_login">
-            <div class="container">
-                    <h1>Registro de entrada do diário</h1>
-			</div>
-    </header>
+		<div class="container">
+			<h1>Registro de entrada do diário</h1>
+		</div>
+	</header>
 
 
-    <div class="container">
-			<div id="coluna_esquerda">&nbsp;
-				<h3>Avaliações</h3>
-				<br/>
-				
-				<br/>
-				<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
+	<div class="container">
+		<div id="coluna_esquerda">&nbsp;
+
+			<form id="form_notas" action="../helper/NotaHelper.php?action=save" method="post">
 				<h4>Ano: </h4>
 
 				<select name="ano" id ="ano">
 					<?PHP 
-						$date = date("Y-m-d");
-						$anoAtual =  explode('-', $date);
+					$date = date("Y-m-d");
+					$anoAtual =  explode('-', $date);
 
-						for($year = $anoAtual[0]; $year >= $notaControl->getEarliestYear(); $year--){
-							echo "<option value=\"{$year}\"> {$year} </option>";
-						}
+					for($year = $anoAtual[0]; $year >= $notaControl->getEarliestYear(); $year--){
+						echo "<option value=\"{$year}\"> {$year} </option>";
+					}
 					?>
 				</select>			
 
-			<h4>Semestre: </h4>
-			<select name="semestre">
-				<option value='1'>1º</option>
-				<option value='2'>2º</option>
-			</select>
-			<br>
-			<br>
-			<table id="example" class="display" cellspacing="0" width="100%">
-			
-				<thead>
-					<tr>
-						<th> Número </th>
-						<th> Aluno </th>
-						<th> Nota final </th>
-						<th> Nota midterm </th>
-						<th> Oral </th>
-						<th> Situação </th>
-					</tr>
-				</thead>
+				<h4>Semestre: </h4>
+				<select name="semestre">
+					<option value='1'>1º</option>
+					<option value='2'>2º</option>
+				</select>
 
-				<tfoot>
-					<tr>
-						<th> Número </th>
-						<th> Aluno </th>
-						<th> Prova final </th>
-						<th> Prova Midterm </th>
-						<th> Prova oral </th>
-						<th> Situação </th>
-					</tr>
-				</tfoot>
+				<div id="grade_table_area">
+					<table id="table_notas" class="display" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th> Número </th>
+								<th> Aluno </th>
+								<th> Nota final </th>
+								<th> Nota midterm </th>
+								<th> Oral </th>
+								<th> Situação </th>
+							</tr>
+						</thead>
 
-				<tbody>
-				<?PHP
-					$perfilControl = new PerfilController();
-					$pessoaControl = new PessoaController();
+						<tfoot>
+							<tr>
+								<th> Número </th>
+								<th> Aluno </th>
+								<th> Nota final </th>
+								<th> Nota midterm </th>
+								<th> Oral </th>
+								<th> Situação </th>
+							</tr>
+						</tfoot>
 
-					$perfil = $perfilControl->getByDescricao("Aluno");
-					$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
-					while($aluno = array_pop($alunos)){
-						$controlNota = new NotaController();
-						$nota = $controlNota->ListByAluno($aluno->getCode());
-						echo "<tr>	
-							<input type='hidden' name='codigoNota[]' value='{$nota->getCode()}' />
-							<input type='hidden' name='codigoAluno[]' value='{$aluno->getCode()}' />
-							<th>  {$aluno->getCode()} </th>
-							<th>  {$aluno->getNome()}  </th>
-							<th>  <input type='text' name='notaFinal[]' value='{$nota->getFinal()}' />    </th>
-							<th>  <input type='text' name='notaMid[]' value='{$nota->getMid()}' />    </th>
-							<th>  <input type='text' name='notaOral[]' value='{$nota->getOral()}' />    </th>
-							<th>  {$nota->getSituacao()}   </th>
-							<th>";
-							echo "</tr>";
-					}
-				?>
+						<tbody>
+							<?PHP
+							$perfilControl = new PerfilController();
+							$pessoaControl = new PessoaController();
 
-			</tbody>
-			</table>
+							$perfil = $perfilControl->getByDescricao("Aluno");
+							$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
+							while($aluno = array_pop($alunos)){
+								$controlNota = new NotaController();
+								$nota = $controlNota->ListByAluno($aluno->getCode());
+								echo "	<tr>	
+											<input type='hidden' name='codigoNota[]' value='{$nota->getCode()}' />
+											<input type='hidden' name='codigoAluno[]' value='{$aluno->getCode()}' />
+											<td>  {$aluno->getCode()} </td>
+											<td>  {$aluno->getNome()} </td>
+											<td>  <input class=\"input-nota\" type='text' style=\"width: 150px;\" name='notaFinal[]' value='{$nota->getFinal()}'/> </td>
+											<td>  <input class=\"input-nota\" type='text' style=\"width: 150px;\" name='notaMid[]' value='{$nota->getMid()}'/> </td>
+											<td>  <input class=\"input-nota\" type='text' style=\"width: 150px;\" name='notaOral[]' value='{$nota->getOral()}'/> </td>
+											<td>  {$nota->getSituacao()}   </td>
+								
+										</tr>";
+								}
+								?>
+
+							</tbody>
+						</table>
+					</div>
+
+					<input class="btn-salvar" id="btn-salvar" type="submit" name="salvar_temp" value="Salvar">&nbsp 
+					<input class="btn-cancelar" id="btn-cancelar" type="button" name="cancelar_temp" value="Cancelar">
+				</form>		
+			</div>
 
 			<br/>
+			<br/>
 
-			<input class="btn-primary" type="submit" name="salvar_temp" value="Salvar">&nbsp 
-			<input class="btn-danger" type="button" name="cancelar_temp" value="Cancelar">
-			</form>		
-		</div>
-
-		<br/>
-		<br/>
-
-		<div id="coluna_direita">
+			<div id="coluna_direita">
 				
-				<h3>Observações</h3>
+				<h2><b>Observações</b></h2>
 				<form action="../helper/ObservacaoHelper.php?action=save" method="post">
-				<h4>Aluno: &nbsp <select name="codeAluno">
-					<?PHP
-					$perfil = $perfilControl->getByDescricao("Aluno");
-					$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
-					while($aluno = array_pop($alunos)){
-						echo "<option value='{$aluno->getCode()}'>{$aluno->getNome()}</option>";
-					}
-					?>
+					<input type="hidden" name="codeHidden" id="codeHidden"/>
+
+					<h4>Aluno: &nbsp <select name="codeAluno">
+						<?PHP
+						$perfil = $perfilControl->getByDescricao("Aluno");
+						$alunos = $pessoaControl->ListByPerfil($perfil->getCode());
+						while($aluno = array_pop($alunos)){
+							echo "<option value='{$aluno->getCode()}'>{$aluno->getNome()}</option>";
+						}
+						?>
 					</select>
 				</h4>
 
 				<br/>
 				<br/>
 				
-				<input type="text" name="descricao" placeholder="Observações" size="40">
-				<br/>
-				<br/>
+				<textarea rows="4" cols="160" name="descricao" placeholder="Observações" required></textarea>
 				
-				<input type="submit" name="salvar_temp" value="Salvar">&nbsp 
-				<input type="button" name="cancelar_temp" value="Cancelar">
-				<!-- BOTÃO NOTIFICAR POR EMAIL -->
-				</form>
-				<form action="../util/EnviarEmail.php" method="post">
-				<input class="btn-notifica" type="submit" name="notifica_temp" value="Notificar Email">
-				</form>
-				<table id="listaContas" border="2">
-					
-					<tr>
-						<th id="gridtipo">Nome</th>&nbsp
-						<th id="gridVl">Observacao</th>&nbsp
+				<input type="submit" class = "btn-salvar" id = "btn-salvar-notificacao" name="salvar_temp" value="Salvar">&nbsp 
+				<input type="button" class = "btn-cancelar" id = "btn-cancelar-notificacao" name="cancelar_temp" value="Cancelar">
 
-					</tr>
-				<?PHP
+				<div id="table_area_observacoes">
+					<table id="table_observacoes" class="display"  cellspacing="0" width="100%">
+					
+					<thead>
+						<tr>
+							<th> Nome</th>
+							<th> Observação</th>
+							<th> Ação</th>
+						</tr>
+					</thead>
+
+					<tfoot>
+						<tr>
+							<th> Nome</th>
+							<th> Observação</th>
+							<th> Ação</th>
+						</tr>
+					</tfoot>
+
+					<?PHP
 					$controller = new ObservacaoController();
 					$pessoaControl = new PessoaController();
 					$observacoes = $controller->ListAll();
 					while($observacao = array_pop($observacoes)){
-					$aluno = $pessoaControl->ListById($observacao->getCodeAluno());
-					echo "
-					<tr>
-					<th id='gridVl'>{$aluno->getNome()}</th>
-					<th id='gridDt_venc'>{$observacao->getDescricao()}</th>
-					
-					<th>
-					<form action=\"../helper/ObservacaoHelper.php?action=delete\" name=\"editarform\" id=\"editarform\" method=\"post\">
-					<input type=\"hidden\" name=\"codeDelete\" id=\"codeDelete\" value={$observacao->getCode()}>
-					<input type=\"submit\" value=\"Excluir\">
-						</form>
-					</th>
-					</tr>
-					";
+						$aluno = $pessoaControl->GetByCode($observacao->getCodeAluno());
+						echo "
+						<tr>
+							<td> {$aluno->getNome()}</td>
+							<td> {$observacao->getDescricao()}</td>
+
+							<td>
+								<span style=\"display: inline-block;\">
+									<form class=\"form_editar\" action=\"../helper/ObservacaoHelper.php?action=edit\" method=\"post\">
+										<input type=\"hidden\" name=\"codeEdit\" value=\"{$observacao->getCode()}\">
+	   									<input class=\"button-edit\" id=\"btn-edit-sala\" type=\"submit\" value=\"\">
+	   								</form>
+		   			
+		   							<form class=\"button-inline\" action=\"../helper/ObservacaoHelper.php?action=delete\" method=\"post\">
+	       								<input type=\"hidden\" name=\"codeDelete\" value=\"{$observacao->getCode()}\">
+	       								<input id=\"btn-exc-sala\" class=\"button-delete\" type=\"submit\" value=\"\">
+									</form>
+
+									<form class=\"button-inline\" action=\"../helper/ObservacaoHelper.php?action=delete\" method=\"post\">
+	       								<input type=\"hidden\" name=\"codeDelete\" value=\"{$observacao->getCode()}\">
+	       								<input id=\"btn-mail-sala\" class=\"button-mail\" type=\"submit\" value=\"\">
+									</form>           
+								</span>
+							</td>
+						</tr>
+						";
 					}
 					?>
 					</table>
-
-
-			</div>
-			<br/>
-			<br/>
-			
-		
-
-
-	</div>
-
-
-<div>
-			<br/>
-			<br/>
-
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		</div>
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="inicio.html">Home</a>
-								<a href="sobre.html">Sobre</a>
-								<a href="cursos.html">Cursos</a>
-          						<a href="estude.html">Estude no CCAA</a>
-          						<a href="unidades.html">Unidades</a>
-								<a href="precos.html">Preços</a>
-          						<a href="convenios.html">Convênios</a>
-          						<a href="contato.html">Contato</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. 
-								<br/>
-								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
 				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
 
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
-	<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
-	<script type="text/javascript" src="assets/js/specific/cadastro_sala.js"></script>
-	<script src="assets/js/specific/entrada_diario_avaliacoes.js"></script>
+		</div>
+	</div>
+	
+	<!--FOOTER GENÉRICA -->
+	<?PHP include "../util/GenericFooter.php" ?>
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
+<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.html5.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.print.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/buttons.flash.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/jszip.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/pdfmake.min.js"></script>
+<script type="text/javascript" src="assets/js/datatables/vfs_fonts.js"></script>
+<script type="text/javascript" src="assets/js/specific/cadastro_sala.js"></script>
+<script src="assets/js/specific/entrada_diario_avaliacoes.js"></script>
 </body>
 </html>

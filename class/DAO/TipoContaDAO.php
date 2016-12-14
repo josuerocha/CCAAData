@@ -29,7 +29,6 @@
             try{
                 $this->Connect();	
                 $query = "delete from tbl_TipoConta where cod_TipoConta = {$tipoConta->getCode()}";
-                echo $query;
                 $this->connection->query($query);
                 $this->Disconnect();
             }catch(Exception $ex){

@@ -68,42 +68,8 @@ require_once("../util/checkSession.php");
 			<br/>
 			<br/>
 
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		</div>
-		<div class="footer2_login">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="inicio.html">Home</a>| 
-								<a href="about.html">Sobre</a>|
-								<a href="courses.html">Cursos</a>|
-                                <a href="videos.html">Estude no CCAA</a>|
-                                <a href="videos.html">Unidades</a>|
-                                <a href="price.html">Preços</a>|
-                                <a href="price.html">Convênios</a>|
-                                <a href="contact.html">Contato</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. 
-								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
+				<!--FOOTER GENÉRICA -->
+	<?PHP include "../util/GenericFooter.php" ?>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

@@ -21,7 +21,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../pages/entrada_diario_avaliacoes.php';</script>"; 			
+			echo "<script>location.href='../pages/entrada_diario.php';</script>"; 			
 			
 		break;	
 
@@ -34,7 +34,7 @@ switch($action){
 			}else{
 				echo "<script>alert('Erro ao excluir ');</script>"; 
 			}						
-			echo "<script>location.href='../pages/entrada_diario_avaliacoes.php'</script>";
+			echo "<script>location.href='../pages/entrada_diario.php'</script>";
 		break;			
 		default:
 			echo "<script>alert('Acesso negado!'); location.href='../pages/login.html';</script>";

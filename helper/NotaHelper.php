@@ -50,7 +50,7 @@ switch($action){
 			}else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>"; 
 			}			
-			echo "<script>location.href='../pages/entrada_diario_avaliacoes.php';</script>"; 			
+			echo "<script>location.href='../pages/entrada_diario.php';</script>"; 			
 			
 		break;	
 		case 'edit':

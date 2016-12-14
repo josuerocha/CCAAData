@@ -117,11 +117,11 @@ $turmaControl = new TurmaController();
         								<td> 
         									<form class=\"form_edit\" action=\"../helper/TurmaHelper.php?action=edit\" method=\"post\">
 												<input type=\"hidden\" name=\"codeEdit\" value=\"{$turma->getCode()}\">
-	                   							<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+	                   							<input id=\"btn-edit-sala\" class=\"button-edit\" type=\"submit\" value=\"\">
 	                   						</form>
-								   			<form action=\"../helper/TurmaHelper.php?action=delete\" method=\"post\">
+								   			<form class=\"button-inline\" action=\"../helper/TurmaHelper.php?action=delete\" method=\"post\">
 								   				<input type=\"hidden\" name=\"codeDelete\" value=\"{$turma->getCode()}\">
-				                   				<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+				                   				<input id=\"btn-exc-sala\" class=\"button-delete\" type=\"submit\" value=\"\">
 											</form>
         								</td>
         						  	</tr>";

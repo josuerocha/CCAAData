@@ -901,7 +901,8 @@ footer {
 }
 .footer2 {
 	background: #000;
-	padding: 15px 0;
+	height: 50px;
+	width:100%;
 	color: #aaa;
 	font-size: 12px;
 }
@@ -2282,3 +2283,53 @@ list-style: none;
 .search-input {
 	width: 20px;	
 }
+
+input.button-edit {
+	display: inline-block !important;
+    background-image: url(../images/buttons/edit.png); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 20px;
+    width:  20px;           /* make this the size of your image */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+}
+
+input.button-delete {
+	display: inline-block !important;
+    background-image: url(../images/buttons/delete.png); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 20px;
+    width:  20px;           /* make this the size of your image */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+}
+
+input.button-mail {
+	display: inline-block !important;
+    background-image: url(../images/buttons/mail.png); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 20px;
+    width:  20px;           /* make this the size of your image */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+}
+
+.button-inline{
+	display: inline-block !important;
+}
+
+.form_editar,.form_edit{
+	display: inline-block !important;
+} 

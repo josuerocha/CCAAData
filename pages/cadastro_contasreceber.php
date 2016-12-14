@@ -18,6 +18,7 @@ spl_autoload_register("LoadClass");
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specific/cadastro_contasreceber.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables/dataTablesCss.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables/buttons.dataTables.min.css">
@@ -110,13 +111,13 @@ spl_autoload_register("LoadClass");
 							<td> {$contaReceber->getDtPagamento()}</td>
 							<td> {$contaReceber->getSituacao()}</td>
 							<td>
-								<form action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
-								<input type=\"submit\" value=\"Excluir\">
+								<form class=\"button-inline\" action=\"../helper/ContaReceberHelper.php?action=delete&code={$contaReceber->getCode()}\" method=\"post\">
+								<input type=\"submit\" class=\"button-delete\" value=\"\">
 								</form>
 
 								<form class=\"form_edit\" action=\"../helper/ContaReceberHelper.php?action=edit\" method=\"POST\">
 								<input type=\"hidden\" name=\"codeEdit\" id=\"codeEdit\" value={$contaReceber->getCode()}>
-								<input type=\"submit\" value=\"Editar\">
+								<input type=\"submit\" class=\"button-edit\" value=\"\">
 								</form>
 							</td>
 						</tr>
@@ -129,45 +130,8 @@ spl_autoload_register("LoadClass");
 		</div>
 
 	</div>
-<div>
-
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		</div>
-		<div class="footer2_login">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="inicio.html">Home</a>
-								<a href="sobre.html">Sobre</a>
-								<a href="cursos.html">Cursos</a>
-          						<a href="estude.html">Estude no CCAA</a>
-          						<a href="unidades.html">Unidades</a>
-								<a href="precos.html">Preços</a>
-          						<a href="convenios.html">Convênios</a>
-          						<a href="contato.html">Contato</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. 
-								<br/>
-								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
+	<!--FOOTER GENÉRICA -->
+	<?PHP include "../util/GenericFooter.php" ?>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

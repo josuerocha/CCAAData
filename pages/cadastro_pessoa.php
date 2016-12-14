@@ -155,11 +155,11 @@ spl_autoload_register("LoadClass");
 						<td> 
 							<form class=\"form_edit\" action=\"../helper/PessoaHelper.php?action=edit\" method=\"post\">
 								<input type=\"hidden\" name=\"codeEdit\" value=\"{$pessoa->getCode()}\">
-	                   			<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+	                   			<input class=\"button-edit\" id=\"btn-edit-sala\" type=\"submit\" value=\"\">
 	                   		</form>
-					   			<form action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
+					   			<form class=\"button-inline\" action=\"../helper/PessoaHelper.php?action=delete\" method=\"post\">
 					   			<input type=\"hidden\" name=\"codeDelete\" value=\"{$pessoa->getCode()}\">
-	                   			<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+	                   			<input class=\"button-delete\" id=\"btn-exc-sala\" type=\"submit\" value=\"\">
 							</form>         	
 						</td>
 					</tr>
@@ -171,41 +171,8 @@ spl_autoload_register("LoadClass");
 				
 			</div>	
 
-	<div>
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		</div>
-		<div id="fo_pessoa" class="footer2_login">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="home_secretario.php">Home</a>| 
-								<a href="cadastros.php">Cadastros</a>|
-								<a href="cadastro_pessoa.php">Cadastrar Pessoa</a>|
-								<a href="cadastro_contaspagar.php">Contas a pagar</a>|
-                				<a href="cadastro_contasreceber.php">Contas a receber</a>|
-                				<a href="alterar_senha.php">Alterar Senha</a>|
-                				<a id="fo-logout" href="../util/logout.php">Logout</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2016. 
-								Site by <a href="http://Jess&Josh&Nick.com/" rel="develop">Jess&Josh&Nick.com</a>
-							</p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
+	<!--FOOTER GENÉRICA -->
+	<?PHP include "../util/GenericFooter.php" ?>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->

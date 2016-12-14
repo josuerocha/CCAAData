@@ -75,12 +75,12 @@ spl_autoload_register("LoadClass");
 									<td > 
 										<form class=\"form_editar\" action=\"../helper/SalaHelper.php?action=edit\" method=\"post\">
 											<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
-           									<input id=btn-edit-sala type=\"submit\" value=\"Editar\">
+           									<input id=\"btn-edit-sala\" class=\"button-edit\" type=\"submit\" value=\"\">
            								</form>
 			   			
-			   							<form action=\"../helper/SalaHelper.php?action=delete\" method=\"post\">
+			   							<form class=\"button-inline\" action=\"../helper/SalaHelper.php?action=delete\" method=\"post\">
                								<input type=\"hidden\" name=\"code\" value=\"{$sala->getCode()}\">
-               								<input id=\"btn-exc-sala\"type=\"submit\" value=\"Excluir\">
+               								<input id=\"btn-exc-sala\" class=\"button-delete\" type=\"submit\" value=\"\">
 										</form>         	
 									</td>
 									</tr>";

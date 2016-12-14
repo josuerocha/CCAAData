@@ -80,12 +80,12 @@ $tipoContaControl = new TipoContaController();
 												<td>
 													<form class=\"form_edit\" action=\"../helper/TipoContaHelper.php?action=edit\" method=\"POST\">
 														<input type=\"hidden\" name=\"codeEdit\" value=\"{$tipoConta->getCode()}\">
-		                   								<input id=\"btn-edit-sala\" type=\"submit\" value=\"Editar\">
+		                   								<input class=\"button-edit\" id=\"btn-edit-sala\" type=\"submit\" value=\"\">
 		                   							</form>
 						   							
-						   							<form action=\"../helper/TipoContaHelper.php?action=delete\" method=\"POST\">
+						   							<form class=\"button-inline\" action=\"../helper/TipoContaHelper.php?action=delete\" method=\"POST\">
 						   								<input type=\"hidden\" name=\"codeDelete\" value=\"{$tipoConta->getCode()}\">
-		                   								<input id=\"btn-exc-sala\" type=\"submit\" value=\"Excluir\">
+		                   								<input id=\"btn-exc-sala\" class=\"button-delete\" type=\"submit\" value=\"\">
 													</form>         	
 
 												</td>

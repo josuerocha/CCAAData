@@ -1,0 +1,38 @@
+#grade_table_area{
+	position: relative;
+	top: 50px;
+	width: 80%;
+}
+
+.input-nota{
+	position: relative;
+	width: 60px;
+}
+
+#btn-salvar{
+	position: relative;
+	top: 50px;
+}
+
+#btn-cancelar{
+	position: relative;
+	top: 50px;
+}
+
+#btn-salvar-notificacao{
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+#btn-cancelar-notificacao{
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+#table_area_observacoes{
+	position: relative;
+	top: 40px;
+	padding-bottom: 40px;
+}
