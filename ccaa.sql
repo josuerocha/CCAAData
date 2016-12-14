@@ -205,7 +205,7 @@ INSERT INTO tbl_TipoConta (cod_TipoConta,tipo_TipoConta) VALUES
 
 INSERT INTO tbl_Pessoa (tbl_Perfil_cod_Perfil,nome_Pessoa,cpf_Pessoa,telefone_Pessoa,celular_Pessoa,email_Pessoa,dataNascimento_Pessoa,sexo_Pessoa,horaAula_Pessoa,foto_Pessoa) VALUES (5,'Chuck Norris', '111.111.111-75','(31)3849-5310','(31)99989-4466','chucknorris@me.com','2016-01-01','m','0','noimg.png'),
 (4,'Steven Seagal', '111.111.111-75','(31)3849-5310','(31)99989-4466','seagal@email.com','2016-01-01','m','0','noimg.png'),
-(4,'Wolmer', '111.111.111-75','(31)3849-6464','(31)99989-4466','wolmer@hotmail.com','1900-01-01','m','0','noimg.png'),
+(4,'Wolmer', '111.111.111-75','(31)3849-6464','(31)99989-4466','wolmer@email.com','1900-01-01','m','0','noimg.png'),
 (1,'Root', '111.111.111-75','(00)0000-0000','(00)00000-0000','root@email.com','1900-01-01','m','0','noimg.png');
 
 INSERT INTO tbl_Presenca(cod_Pessoa,cod_Turma,situacao, data) VALUES
