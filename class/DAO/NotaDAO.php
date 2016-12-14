@@ -93,7 +93,7 @@
             $nota = new Nota();
             try{
 				$this->Connect();	
-				$query = "select * from tbl_Nota where cod_Aluno = {$codeAluno}";
+				$query = "SELECT * FROM tbl_Nota WHERE cod_Aluno = {$codeAluno}";
 				$result = $this->connection->query($query);	
 				$this->Disconnect();				
 				$register = mysqli_fetch_assoc($result);
@@ -113,6 +113,27 @@
 			return $nota;          
         }
 
+        function getEarliestYear(){
+        	try{
+				$this->Connect();	
+				$query = "SELECT MIN(ano_Nota) FROM tbl_Nota";
+				$result = $this->connection->query($query);	
+				$this->Disconnect();
 
+
+				$register = mysqli_fetch_assoc($result);
+
+                $ano = $register['MIN(ano_Nota)'];
+				$result->close();			
+
+			}
+
+			catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}			
+			return $ano;     
+
+        }
 }
 ?>
+

@@ -136,9 +136,8 @@ $tipoContaControl = new TipoContaController();
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/dataTables.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/dataTables.fixedColumns.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables/dataTables.buttons.min.js"></script>

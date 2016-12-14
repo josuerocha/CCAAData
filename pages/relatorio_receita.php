@@ -9,11 +9,11 @@ spl_autoload_register("LoadClass");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="free-educational-responsive-web-template-webEdu">
-	<meta name="author" content="webThemez.com">
-	<title>CCAA-Visualizar receita</title>
-	<link rel="icon" href="assets/images/favicon.png">
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<title>Relatório de receita</title>
+	
+	<?include "../util/StandardHeader.php" ?>
+	<link rel="stylesheet" media="screen" href="assets/css/fonts-google.css">
+
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<!-- Custom styles for our template -->
@@ -100,10 +100,8 @@ spl_autoload_register("LoadClass");
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	
 </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?PHP
 require_once("../util/checkSession.php");
+require_once ("../util/autoload.php");
+spl_autoload_register("LoadClass");
+
+$notaControl = new NotaController();
+
 ?>
-<html lang="en">
-<?PHP 
-	require_once ("../util/autoload.php");
-	spl_autoload_register("LoadClass");
-?>
+
 <head>
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registro de entrada do diário</title>
 	
@@ -33,7 +33,7 @@ require_once("../util/checkSession.php");
 
 	<header id="head" class="secondary_login">
             <div class="container">
-                    <h1 id="avaliacoes">Registro de entrada do diário - Avaliações</h1>
+                    <h1>Registro de entrada do diário</h1>
 			</div>
     </header>
 
@@ -44,14 +44,19 @@ require_once("../util/checkSession.php");
 				<br/>
 				
 				<br/>
-			<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
-			<?PHP 
-				$date = date("Y-m-d");
-				$ano =  explode('-', $date);
-				echo "<h4>Ano: &nbsp<input type=\"year\" name=\"ano\" value=\"$ano[0]\"></h4>"
-			?>
-			
-			<h4>Semestre: &nbsp<select name="semestre"></h4>
+				<form id="tabelaNotas" action="../helper/NotaHelper.php?action=save" method="post">
+				<h4>Ano: &nbsp <select name="ano" id ="ano"></h4>
+					<?PHP 
+						$date = date("Y-m-d");
+						$anoAtual =  explode('-', $date);
+
+						for($year = $anoAtual[0]; $year >= $notaControl->getEarliestYear(); $year--){
+							echo "<option value=\"{$year}\"> {$year} </option>";
+						}
+					?>
+				</select>			
+
+			<h4>Semestre: &nbsp <select name="semestre"></h4>
 				<option value='1'>1º</option>
 				<option value='2'>2º</option>
 			</select>
@@ -61,12 +66,12 @@ require_once("../util/checkSession.php");
 			
 				<thead>
 				<tr>
-					<th id="gridnum">Número      </th>&nbsp
-					<th id="gridAlunio">Aluno    </th>&nbsp
-					<th id="gridNotaFinal">Nota final   </th>&nbsp
-					<th id="gridNotaFinal">Nota midterm </th>&nbsp
-					<th id="gridNotaOral">Oral     </th>&nbsp
-					<th id="gridSituacao">Situacao    </th>&nbsp
+					<th> Número </th>
+					<th> Aluno </th>
+					<th> Nota final </th>
+					<th> Nota midterm </th>
+					<th> Oral </th>
+					<th> Situacao </th>
 				</tr>
 				</thead>
 

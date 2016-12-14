@@ -75,7 +75,7 @@ $url = $_SERVER['REQUEST_URI'];
                             ?>
 
                             <li><a href="relatorio_faltasprofessor.php">Faltas do professor</a></li>
-                            <li><a href="relatorio_receita.php">Faltas do professor</a></li>
+                            <li><a href="relatorio_receita.php">Receita</a></li>
 
                              <?PHP
                                 }
