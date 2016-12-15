@@ -97,11 +97,11 @@ switch($action){
 			else{		
 				echo "<script>alert('Erro ao salvar o registro.');</script>";
 			}						
-			echo "<script>location.href='../pages/cadastro_pessoa.php';</script>";
+			echo "<script>location.href='../pages/editar_dados.php';</script>";
 		break;	
 		
 		default:
-		   echo "<script> location.href='../cadastro_pessoa.php';</script>";
+		   echo "<script> location.href='../editar_dados.php';</script>";
 		break;
 	}	
 

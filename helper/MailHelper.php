@@ -13,7 +13,7 @@ switch($action){
 
 			if(isset($_POST['codeMail'])){
 				$observacao = $observacaoControl->getByCode($_POST['codeMail']);
-				$aluno = $pessoaControl->getByCode($observacao->getCode());
+				$aluno = $pessoaControl->getByCode($observacao->getCodeAluno());
 
 				$subject = "CCAA - Notificação";
 
@@ -24,6 +24,7 @@ switch($action){
 						 <p>Agradecemos sua preferência.</p>
 						 	<p>Av. Juscelino Kubitscheck, 4 - Funcionários, Timóteo - MG, 35180-410  <b>Telefone:</b> (31) 3848-3432<img src=\"../pages/assets/images/logo.png\" alt=\"CCAA\" style=\"width:50px;height:25px;\"></p>
 						 ";
+
 
 				if($mailControl->SendMail($aluno->getEmail(),$subject,$text)){
 					$observacao->setEnviado(1);

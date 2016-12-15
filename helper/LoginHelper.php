@@ -50,7 +50,13 @@ switch($action){
 				}
 		}
 		else{
-				$validation = "<script>alert('Favor confirmar seus dados utilizando o e-mail em sua caixa de entrada!');</script>";
+			if($login->getIsConfirmed()){
+				$validation = "<script>alert('Dados inválidos!');</script>";
+			}
+			else{
+				$validation = "<script>alert('Favor confirmar seus dados utilizando o e-mail em sua caixa de entrada!');</script>";			
+				
+			}
 		}
 
 		echo ($validation);
